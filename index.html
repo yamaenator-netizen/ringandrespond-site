@@ -506,6 +506,22 @@
       var STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/test_bJeaEQcXX8aq7HI6pLdQQ00';
 
       var signup = { active: false, step: 0, values: {} };
+      var SIGNUP_STORE_KEY = 'rdr_signup_progress_v1';
+      function saveSignupProgress() {
+        try { localStorage.setItem(SIGNUP_STORE_KEY, JSON.stringify({ step: signup.step, values: signup.values })); } catch (e) {}
+      }
+      function loadSignupProgress() {
+        try {
+          var raw = localStorage.getItem(SIGNUP_STORE_KEY);
+          if (!raw) return null;
+          var data = JSON.parse(raw);
+          if (!data || typeof data.step !== 'number' || data.step <= 0 || data.step >= signupFields.length || !data.values) return null;
+          return data;
+        } catch (e) { return null; }
+      }
+      function clearSignupProgress() {
+        try { localStorage.removeItem(SIGNUP_STORE_KEY); } catch (e) {}
+      }
       var signupFields = [
         { key: 'practice', label: 'Practice', prompt: 'What is the name of your dental practice?' },
         { key: 'location', label: 'Location', prompt: 'What city and state is the practice in?' },
@@ -582,14 +598,20 @@
         return '';
       }
 
-      function startSignup() {
+      function startSignup(resume) {
         setOpen(true, false);
+        var saved = resume === true ? loadSignupProgress() : null;
         signup.active = true;
-        signup.step = 0;
-        signup.values = {};
+        signup.step = saved ? saved.step : 0;
+        signup.values = saved ? saved.values : {};
         if (chips) chips.hidden = true;
-        appendMessage('Let’s get your dental pilot ready. I’ll collect six quick details, show you the pilot terms in plain language, and then take you to the $499 Stripe setup checkout.', 'assistant');
-        appendMessage(signupFields[0].prompt, 'assistant');
+        if (!saved) clearSignupProgress();
+        if (saved) {
+          appendMessage('Welcome back — picking up where you left off. ' + saved.step + ' of ' + signupFields.length + ' details already saved.', 'assistant');
+        } else {
+          appendMessage('Let’s get your dental pilot ready. I’ll collect six quick details, show you the pilot terms in plain language, and then take you to the $499 Stripe setup checkout.', 'assistant');
+        }
+        appendMessage(signupFields[signup.step].prompt, 'assistant');
         input.placeholder = 'Type your answer…';
         input.focus();
       }
@@ -607,6 +629,7 @@
 
       function renderTerms() {
         signup.active = false;
+        clearSignupProgress();
         var card = document.createElement('div');
         card.className = 'signup-card';
 
@@ -703,6 +726,7 @@
         }
         signup.values[field.key] = answer;
         signup.step += 1;
+        saveSignupProgress();
         if (signup.step < signupFields.length) appendMessage(signupFields[signup.step].prompt, 'assistant');
         else {
           appendMessage('Thanks — here is everything together. Please review it before checkout.', 'assistant');
@@ -732,6 +756,7 @@
         ask(input.value);
       });
       chips.addEventListener('click', function (event) {
+        if (event.target.matches('[data-resume-signup]')) return;
         if (event.target.matches('[data-start-signup]')) startSignup();
         else if (event.target.matches('.starter-chip')) ask(event.target.textContent);
       });
@@ -745,6 +770,143 @@
       document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape' && !panel.hidden) setOpen(false);
       });
+      if (chips && loadSignupProgress()) {
+        var resumeChip = document.createElement('button');
+        resumeChip.className = 'starter-chip';
+        resumeChip.type = 'button';
+        resumeChip.setAttribute('data-resume-signup', '');
+        resumeChip.textContent = 'Continue my signup';
+        resumeChip.addEventListener('click', function () { startSignup(true); });
+        chips.insertBefore(resumeChip, chips.firstChild);
+      }
+    }());
+  </script>
+  <script>
+    /* Engagement features (additive): smart-timed chat nudge, entry-aware hero, value-tailored CTAs. */
+    (function () {
+      'use strict';
+
+      function $(sel, root) { return (root || document).querySelector(sel); }
+      function oncePerSession(key) {
+        try {
+          if (sessionStorage.getItem(key)) return false;
+          sessionStorage.setItem(key, '1');
+          return true;
+        } catch (e) { return true; }
+      }
+
+      /* ---------- 1. Smart-timed chat nudge (45s, 60% scroll, or exit intent) ---------- */
+      var launcher = document.getElementById('chatLauncher');
+      var panel = document.getElementById('chatPanel');
+      if (launcher && panel) {
+        var nudgeShown = false;
+        var chatOpened = false;
+        var fired = false;
+        function dismissNudge() {
+          var b = document.getElementById('rdrNudge');
+          if (b && b.parentNode) b.parentNode.removeChild(b);
+          launcher.classList.remove('rdr-nudge-pulse');
+        }
+        launcher.addEventListener('click', function () { chatOpened = true; dismissNudge(); }, true);
+        function showNudge() {
+          if (nudgeShown || chatOpened || panel.hidden === false) return;
+          if (!oncePerSession('rdr_nudge_v1')) return;
+          nudgeShown = true;
+          var style = document.createElement('style');
+          style.textContent =
+            '.rdr-nudge-pulse{animation:rdrPulse 1.6s ease-in-out 3;}' +
+            '@keyframes rdrPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}' +
+            '#rdrNudge{position:fixed;right:22px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:48;max-width:250px;' +
+            'background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;' +
+            'padding:10px 12px;font:600 13px "DM Sans",sans-serif;box-shadow:var(--shadow);cursor:pointer;}' +
+            '#rdrNudge button{float:right;border:0;background:none;color:var(--muted);cursor:pointer;' +
+            'font-size:14px;line-height:1;padding:0 0 4px 8px;}' +
+            '@media (max-width:560px){#rdrNudge{right:14px;bottom:calc(74px + env(safe-area-inset-bottom));}}';
+          document.head.appendChild(style);
+          var bubble = document.createElement('div');
+          bubble.id = 'rdrNudge';
+          bubble.setAttribute('role', 'status');
+          var close = document.createElement('button');
+          close.type = 'button';
+          close.setAttribute('aria-label', 'Dismiss');
+          close.textContent = '×';
+          close.addEventListener('click', function (ev) { ev.stopPropagation(); dismissNudge(); });
+          bubble.appendChild(close);
+          bubble.appendChild(document.createTextNode('Questions about the pilot? I can walk you through it right here.'));
+          bubble.addEventListener('click', function () { dismissNudge(); launcher.click(); });
+          document.body.appendChild(bubble);
+          launcher.classList.add('rdr-nudge-pulse');
+          setTimeout(dismissNudge, 14000);
+        }
+        function maybeNudge() { if (!fired) { fired = true; showNudge(); } }
+        setTimeout(maybeNudge, 45000);
+        var scrollFired = false;
+        window.addEventListener('scroll', function () {
+          if (scrollFired) return;
+          var h = document.documentElement;
+          var max = h.scrollHeight - h.clientHeight;
+          if (max > 0 && h.scrollTop / max >= 0.6) { scrollFired = true; maybeNudge(); }
+        }, { passive: true });
+        document.addEventListener('mouseout', function (e) {
+          if (!e.relatedTarget && e.clientY <= 0) maybeNudge();
+        });
+      }
+
+      /* ---------- 2. Entry-aware hero (UTM source / referrer) ---------- */
+      (function entryAwareHero() {
+        var sub = $('.hero-copy > p:not(.eyebrow)');
+        if (!sub) return;
+        var params = new URLSearchParams(window.location.search);
+        var src = (params.get('utm_source') || '').toLowerCase();
+        var ref = (document.referrer || '').toLowerCase();
+        function isSocial(s) { return /facebook|instagram|threads|tiktok|linkedin/.test(s); }
+        function isSearch(s) { return /google|bing|duckduckgo|yahoo/.test(s); }
+        if (isSocial(src) || isSocial(ref)) {
+          sub.textContent = 'Saw us on social? Here’s the short version: an AI receptionist answers when your staff can’t, collects the caller’s details, and hands your team a clear callback list.';
+        } else if (isSearch(src) || isSearch(ref)) {
+          sub.textContent = 'Looking for an AI receptionist for your dental office? Ours answers when your staff can’t, collects the caller’s details, and hands your team a clear callback list.';
+        }
+      })();
+
+      /* ---------- 4. Value-tailored CTAs (demo watched / pricing lingered) ---------- */
+      (function tailoredCtas() {
+        var cta = $('.hero-actions .btn-primary');
+        if (!cta) return;
+        var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+        function tailorNote(text) {
+          var note = $('.hero-note');
+          if (note && !note.dataset.tailored) {
+            note.dataset.tailored = '1';
+            note.textContent = text;
+          }
+        }
+        var demoVideo = document.querySelector('#demo video');
+        if (demoVideo) {
+          demoVideo.addEventListener('play', function () {
+            cta.innerHTML = 'Start your 2-week pilot ' + arrow;
+            tailorNote('You saw Sunny in action — your pilot uses the same call flow, tuned to your office.');
+          });
+        }
+        var pricing = document.getElementById('pricing');
+        if (pricing && 'IntersectionObserver' in window) {
+          var tailored = false;
+          var timer = null;
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (tailored) return;
+              if (en.isIntersecting) {
+                timer = setTimeout(function () {
+                  tailored = true;
+                  cta.innerHTML = 'Start your pilot — $499 setup ' + arrow;
+                  tailorNote('$499 one-time setup · two-week pilot with no monthly charge · $299/mo after.');
+                  io.disconnect();
+                }, 3000);
+              } else if (timer) { clearTimeout(timer); timer = null; }
+            });
+          }, { threshold: 0.4 });
+          io.observe(pricing);
+        }
+      })();
     }());
   </script>
 </body>
