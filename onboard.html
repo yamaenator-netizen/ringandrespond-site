@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Set Up Sunny — Front-Desk OS</title>
+<meta name="description" content="Chat with Sunny's setup assistant to configure your AI receptionist in about 5 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5faf7; --surface:#ffffff; --ink:#102420; --muted:#4d625d;
+    --line:#cbdad4; --teal:#0b766c; --teal-dark:#07564f; --mint:#cfeee1;
+    --coral:#f06449; --sun:#f6c855; --radius-lg:20px;
+    --shadow:0 18px 50px rgba(16,36,32,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);
+    display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+  header{background:var(--surface);border-bottom:1px solid var(--line);
+    padding:14px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .avatar{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Archivo",sans-serif;font-weight:800;font-size:20px;flex-shrink:0}
+  .htext h1{font-family:"Archivo",sans-serif;font-size:17px;font-weight:700}
+  .htext p{font-size:13px;color:var(--muted)}
+  .progress{height:4px;background:var(--line);flex-shrink:0}
+  .progress i{display:block;height:100%;background:var(--teal);width:0;transition:width .4s ease}
+  #chat{flex:1;overflow-y:auto;padding:20px 16px 12px;display:flex;flex-direction:column;gap:12px;
+    max-width:640px;width:100%;margin:0 auto;-webkit-overflow-scrolling:touch}
+  .msg{max-width:82%;padding:12px 16px;border-radius:18px;font-size:15.5px;line-height:1.5;
+    animation:pop .25s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .bot{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:6px;align-self:flex-start}
+  .user{background:var(--teal);color:#fff;border-bottom-right-radius:6px;align-self:flex-end}
+  .typing{display:inline-flex;gap:5px;padding:14px 18px}
+  .typing span{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+  #inputbar{background:var(--surface);border-top:1px solid var(--line);padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+    flex-shrink:0}
+  #inputwrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{border:1.5px solid var(--teal);color:var(--teal-dark);background:var(--surface);
+    border-radius:999px;padding:10px 18px;font-size:15px;font-weight:600;font-family:"DM Sans",sans-serif;
+    cursor:pointer;transition:all .15s}
+  .pill:active,.pill.sel{background:var(--teal);color:#fff}
+  .pill.multi.sel{background:var(--mint);color:var(--teal-dark);border-color:var(--teal)}
+  .row{display:flex;gap:10px}
+  select,input[type=text],input[type=tel]{flex:1;border:1.5px solid var(--line);border-radius:12px;
+    padding:12px 14px;font-size:16px;font-family:"DM Sans",sans-serif;color:var(--ink);
+    background:var(--surface);min-width:0}
+  select:focus,input:focus{outline:none;border-color:var(--teal)}
+  .btn{background:var(--teal);color:#fff;border:none;border-radius:12px;padding:12px 22px;
+    font-size:16px;font-weight:700;font-family:"DM Sans",sans-serif;cursor:pointer;white-space:nowrap}
+  .btn:active{background:var(--teal-dark)}
+  .btn:disabled{opacity:.5}
+  .btn.ghost{background:transparent;color:var(--muted);font-weight:600}
+  .hint{font-size:13px;color:var(--muted);text-align:center}
+  .summary{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;font-size:14.5px;align-self:stretch;max-width:100%}
+  .summary h3{font-family:"Archivo",sans-serif;font-size:15px;margin-bottom:10px;color:var(--teal-dark)}
+  .summary dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px}
+  .summary dt{color:var(--muted);font-weight:600}
+  .summary dd{font-weight:500}
+  .done-check{width:72px;height:72px;border-radius:50%;background:var(--mint);color:var(--teal-dark);
+    display:flex;align-items:center;justify-content:center;margin:8px auto;font-size:34px;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <div class="avatar">S</div>
+  <div class="htext"><h1>Sunny Setup</h1><p>Let's get your receptionist ready — about 5 minutes</p></div>
+</header>
+<div class="progress"><i id="bar"></i></div>
+<div id="chat"></div>
+<div id="inputbar"><div id="inputwrap"></div></div>
+<script>
+const chat = document.getElementById('chat');
+const inputwrap = document.getElementById('inputwrap');
+const bar = document.getElementById('bar');
+const answers = {};
+const scroll = () => chat.scrollTo({top: chat.scrollHeight, behavior: 'smooth'});
+function botSay(html){
+  return new Promise(res => {
+    const t = document.createElement('div');
+    t.className = 'msg bot typing';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    chat.appendChild(t); scroll();
+    setTimeout(() => { t.classList.remove('typing'); t.innerHTML = html; scroll(); res(); }, 650);
+  });
+}
+function userSay(text){
+  const m = document.createElement('div');
+  m.className = 'msg user'; m.textContent = text;
+  chat.appendChild(m); scroll();
+}
+function setProgress(p){ bar.style.width = Math.round(p*100) + '%'; }
+function clearInput(){ inputwrap.innerHTML = ''; }
+function askPills(question, options, multi){
+  return new Promise(res => {
+    botSay(question).then(() => {
+      const box = document.createElement('div'); box.className = 'pills';
+      const picked = new Set();
+      options.forEach(o => {
+        const b = document.createElement('button');
+        b.className = 'pill' + (multi ? ' multi' : ''); b.textContent = o;
+        b.onclick = () => {
+          if(multi){ picked.has(o) ? picked.delete(o) : picked.add(o); b.classList.toggle('sel'); }
+          else { userSay(o); clearInput(); res(o); }
+        };
+        box.appendChild(b);
+      });
+      inputwrap.appendChild(box);
+      if(multi){
+        const row = document.createElement('div'); row.className = 'row';
+        const done = document.createElement('button'); done.className = 'btn'; done.textContent = 'Done';
+        done.onclick = () => { if(!picked.size) return; const v = [...picked].join(', '); userSay(v); clearInput(); res(v); };
+        row.appendChild(done); inputwrap.appendChild(row);
+      }
+      scroll();
+    });
+  });
+}
+function askText(question, placeholder, type, optional){
+  return new Promise(res => {
+    botSay(question).then(() => {
+      const row = document.createElement('div'); row.className = 'row';
+      const inp = document.createElement('input');
+      inp.type = type || 'text'; inp.placeholder = placeholder || '';
+      inp.autocomplete = 'off'; inp.enterKeyHint = 'go';
+      const btn = document.createElement('button'); btn.className = 'btn'; btn.textContent = 'Send';
+      const go = () => { const v = inp.value.trim(); if(!v && !optional) return;
+        userSay(v || '(skipped)'); clearInput(); res(v); };
+      btn.onclick = go;
+      inp.onkeydown = e => { if(e.key === 'Enter') go(); };
+      row.appendChild(inp); row.appendChild(btn);
+      inputwrap.appendChild(row); inp.focus(); scroll();
+    });
+  });
+}
+function askTime(question, allowClosed){
+  return new Promise(res => {
+    botSay(question).then(() => {
+      const row = document.createElement('div'); row.className = 'row';
+      const mk = (ph) => {
+        const s = document.createElement('select');
+        s.innerHTML = '<option value="">' + ph + '</option>' +
+          ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM',
+           '1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','8:00 PM']
+          .map(t => '<option>' + t + '</option>').join('');
+        return s;
+      };
+      const open = mk('Opens'), close = mk('Closes');
+      const btn = document.createElement('button'); btn.className = 'btn'; btn.textContent = 'Send';
+      btn.onclick = () => { if(!open.value || !close.value) return;
+        const v = open.value + ' - ' + close.value; userSay(v); clearInput(); res(v); };
+      row.appendChild(open); row.appendChild(close); row.appendChild(btn);
+      inputwrap.appendChild(row);
+      if(allowClosed){
+        const c = document.createElement('div'); c.style.textAlign = 'center';
+        const b = document.createElement('button'); b.className = 'btn ghost'; b.textContent = 'Closed that day';
+        b.onclick = () => { userSay('Closed'); clearInput(); res('Closed'); };
+        c.appendChild(b); inputwrap.appendChild(c);
+      }
+      scroll();
+    });
+  });
+}
+const SERVICES = ['Cleanings & Exams','Fillings','Crowns & Bridges','Implants','Orthodontics / Invisalign','Emergency Care','Cosmetic Dentistry','Dentures','Root Canals','Teeth Whitening','Pediatric Dentistry','Oral Surgery'];
+async function run(){
+  setProgress(0.02);
+  await botSay("Hi! I'm Sunny's setup assistant. I'll get your AI receptionist configured in about 5 minutes. Let's start simple -");
+  await botSay("Quick note: this form is for <b>your office's</b> details only - please don't enter any patient names, health info, or appointment details here.");
+  answers.practice = await askText("What's your practice's name?", "Bright Smile Dental");
+  setProgress(0.1);
+  answers.address = await askText("And the office address?", "123 Main St, San Diego, CA");
+  setProgress(0.18);
+  answers.phone = await askText("What's the main office phone number - the one you'll forward to Sunny after hours?", "(619) 555-0100", "tel");
+  setProgress(0.26);
+  await botSay("Got it. Now your hours - this tells Sunny when to say you're open.");
+  answers.weekdayHours = await askTime("What are your Monday-Friday hours?");
+  setProgress(0.36);
+  answers.satHours = await askTime("And Saturdays?", true);
+  setProgress(0.44);
+  answers.sunHours = await askTime("And Sundays?", true);
+  setProgress(0.52);
+  answers.services = await askPills("Which services should Sunny mention? Tap all that apply.", SERVICES, true);
+  setProgress(0.62);
+  answers.newPatients = await askPills("Are you accepting new patients?", ["Yes, accepting", "Waitlist only", "Referrals only", "Not right now"]);
+  setProgress(0.7);
+  await botSay("Almost done - now the important part: how Sunny handles your after-hours calls.");
+  answers.callHandling = await askPills("When someone calls after hours, Sunny should...", [
+    "Take a detailed message", "Book them into the next available slot", "Send urgent callers to an on-call number"
+  ]);
+  setProgress(0.8);
+  if(answers.callHandling.includes("on-call")){
+    answers.oncallNumber = await askText("What's the on-call number for urgent calls?", "(619) 555-0100", "tel");
+    answers.emergency = await askPills("For dental emergencies specifically...", [
+      "Give the on-call number", "Take a message marked urgent", "Both - number first, then message"
+    ]);
+  } else {
+    answers.emergency = await askPills("If a caller says it's a dental emergency...", [
+      "Take a message marked urgent", "Give them an emergency number", "Just take a normal message"
+    ]);
+    if(answers.emergency.includes("emergency number"))
+      answers.oncallNumber = await askText("What's that emergency number?", "(619) 555-0100", "tel");
+  }
+  setProgress(0.86);
+  answers.donts = await askText("Anything Sunny should <b>never</b> say or do? (Optional - tap Send to skip)", "e.g. never quote prices, never promise same-day", null, true);
+  if(!answers.donts) answers.donts = "-";
+  setProgress(0.9);
+  await botSay("One more thing - the better Sunny connects with your office, the more she can do for you.");
+  answers.software = await askPills("What practice software does your office run on? Tap all that apply.", ["Dentrix", "Eaglesoft", "Open Dental", "Curve Dental", "Denticon", "Something else"], true);
+  answers.calendar = await askPills("How do you manage your appointment calendar?", ["Our dental software handles it", "Google Calendar", "Outlook calendar", "Paper / other"]);
+  answers.email = await askText("What's the best office email for us to reach you?", "office@brightsmiledental.com");
+  answers.integrations = await askText("Anything else you'd love Sunny to connect with? (Optional - tap Send to skip)", "e.g. text confirmations, online booking link", null, true);
+  if(!answers.integrations) answers.integrations = "-";
+  setProgress(0.95);
+  const rows = [
+    ["Practice", answers.practice], ["Address", answers.address], ["Phone", answers.phone],
+    ["Mon-Fri", answers.weekdayHours], ["Saturday", answers.satHours], ["Sunday", answers.sunHours],
+    ["Services", answers.services], ["New patients", answers.newPatients],
+    ["Call handling", answers.callHandling],
+    ...(answers.oncallNumber ? [["On-call #", answers.oncallNumber]] : []),
+    ["Emergencies", answers.emergency], ["Never do", answers.donts],
+    ["Practice software", answers.software], ["Calendar", answers.calendar],
+    ["Office email", answers.email], ["Wants connected", answers.integrations]
+  ];
+  await botSay("Here's everything - give it a quick look:");
+  const s = document.createElement('div'); s.className = 'summary';
+  s.innerHTML = '<h3>Your Sunny configuration</h3><dl>' +
+    rows.map(r => '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>').join('') + '</dl>';
+  chat.appendChild(s); scroll();
+  const ok = await new Promise(res => {
+    const box = document.createElement('div'); box.className = 'pills';
+    [["Looks good", true], ["Start over", false]].forEach(function(pair){
+      const b = document.createElement('button'); b.className = 'pill'; b.textContent = pair[0];
+      b.onclick = () => { userSay(pair[0]); clearInput(); res(pair[1]); };
+      box.appendChild(b);
+    });
+    inputwrap.appendChild(box); scroll();
+  });
+  if(!ok){ location.reload(); return; }
+  await botSay("Perfect - sending this off now...");
+  clearInput();
+  inputwrap.innerHTML = '<p class="hint">Finishing up...</p>';
+  try {
+    const r = await fetch('/api/onboard', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({answers: answers, at: new Date().toISOString()})
+    });
+    if(!r.ok) throw new Error('send failed');
+    setProgress(1);
+    const d = document.createElement('div'); d.className = 'msg bot';
+    d.innerHTML = '<div class="done-check">OK</div><b>You are all set!</b><br><br>Your configuration is on its way to our team. We will build your Sunny, tune her voice, and run test calls with you - then she goes live on your line.<br><br>Questions? <a href="mailto:hello@ringandrespond.com" style="color:#0b766c;font-weight:600">hello@ringandrespond.com</a>';
+    chat.appendChild(d); scroll();
+    inputwrap.innerHTML = '';
+  } catch(e) {
+    await botSay("Hmm, that didn't send. No worries - tap below to email your answers directly:");
+    inputwrap.innerHTML = '';
+    const a = document.createElement('a');
+    a.className = 'btn'; a.style.display = 'block'; a.style.textAlign = 'center'; a.style.textDecoration = 'none';
+    a.href = 'mailto:hello@ringandrespond.com?subject=' + encodeURIComponent('New Sunny setup: ' + answers.practice)
+      + '&body=' + encodeURIComponent(rows.map(function(r){ return r[0] + ': ' + r[1]; }).join('\n'));
+    a.textContent = 'Email my answers';
+    inputwrap.appendChild(a);
+  }
+}
+run();
+</script>
+</body>
+</html>
