@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How Does an AI Receptionist Work for Dental Offices?</title>
+<meta name="description" content="From ring to booked appointment: exactly how an AI receptionist works for a dental office — setup, call flow, scheduling, emergencies, and what it can't do." />
+<link rel="canonical" href="https://www.ringandrespond.com/how-ai-receptionist-works-dental.html" />
+<meta property="og:title" content="How Does an AI Receptionist Work for Dental Offices?" />
+<meta property="og:description" content="From ring to booked appointment: exactly how an AI receptionist works for a dental office — setup, call flow, and honest limitations." />
+<meta property="og:url" content="https://www.ringandrespond.com/how-ai-receptionist-works-dental.html" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{--teal:#0b766c;--teal-d:#07564f;--ink:#102420;--mut:#4d625d;--bg:#f5faf7;--card:#ffffff;--line:#cbdad4;--accent:#f06449;--gold:#f6c855}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+h1,h2,h3{font-family:"Archivo",sans-serif;line-height:1.2}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1100px;margin:0 auto}
+.brand{font-family:"Archivo";font-weight:800;font-size:20px;color:var(--teal-d);text-decoration:none}
+.brand span{color:var(--accent)}
+.btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:13px 26px;border-radius:12px;text-decoration:none;font-size:16px}
+.btn:hover{background:var(--teal-d)}
+.btn.ghost{background:#fff;color:var(--teal-d);border:2px solid var(--teal)}
+.hero{background:linear-gradient(135deg,#e9f3ee 0%,#f5faf7 60%);padding:64px 0 48px;text-align:center}
+.hero h1{font-size:clamp(30px,5vw,44px);font-weight:800;color:var(--teal-d);margin-bottom:16px}
+.hero p.sub{font-size:19px;color:var(--mut);max-width:700px;margin:0 auto 26px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+section{padding:40px 0}
+h2{font-size:28px;color:var(--teal-d);margin-bottom:18px}
+h3{font-size:20px;margin:22px 0 10px}
+p{margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0}
+.faq{border-bottom:1px solid var(--line);padding:16px 0}
+.faq h3{font-size:18px;margin:0 0 8px}
+.faq p{color:var(--mut);margin:0}
+.pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
+.pricing h2{color:#fff}
+.pricing .price{font-family:"Archivo";font-size:44px;font-weight:800;margin:12px 0}
+.pricing p{color:#cfeee1}
+footer{background:var(--ink);color:#cbdad4;padding:36px 0;text-align:center;font-size:14px}
+footer a{color:#fff}
+.breadcrumb{font-size:13px;color:var(--mut);padding:18px 0 0}
+.breadcrumb a{color:var(--teal)}
+ol.steps{margin:14px 0 14px 22px}
+ol.steps li{padding:10px 0}
+ol.steps li strong{color:var(--teal-d)}
+ul.ticks{list-style:none;margin:14px 0}
+ul.ticks li{padding:8px 0 8px 32px;position:relative}
+ul.ticks li::before{content:"✓";position:absolute;left:4px;color:var(--teal);font-weight:800}
+@media(max-width:640px){.cta-row .btn{width:100%;text-align:center}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://www.ringandrespond.com/#org","name":"Ring & Respond","url":"https://www.ringandrespond.com/","description":"AI receptionist for dental offices. Sunny answers after-hours calls, captures new patients and books appointments.","telephone":"+1-619-366-2218","email":"hello@ringandrespond.com"},
+{"@type":"WebSite","@id":"https://www.ringandrespond.com/#site","url":"https://www.ringandrespond.com/","name":"Ring & Respond","publisher":{"@id":"https://www.ringandrespond.com/#org"}},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ringandrespond.com/"},
+{"@type":"ListItem","position":2,"name":"How an AI Receptionist Works","item":"https://www.ringandrespond.com/how-ai-receptionist-works-dental.html"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How does an AI receptionist work for a dental office?","acceptedAnswer":{"@type":"Answer","text":"Your office number forwards to Sunny when you choose — after hours, overflow, or 24/7. She answers in your practice's name, understands the caller's request, books appointments per your rules, answers routine questions from your approved answers, triages emergencies against your protocol, and sends you a summary of every call."}},
+{"@type":"Question","name":"Do I need a new phone number?","acceptedAnswer":{"@type":"Answer","text":"No. Your existing number forwards to Sunny — a standard carrier feature that takes minutes to set up. Patients dial the same number they've always used."}},
+{"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"Most practices go live within days. Onboarding is a 2-minute questionnaire: hours, services, new-patient policy, emergency rules, scheduling preferences, and anything Sunny should never say. Then you forward your line."}},
+{"@type":"Question","name":"How does Sunny book appointments?","acceptedAnswer":{"@type":"Answer","text":"Using your scheduling rules — which providers take new patients, where new-patient blocks go, how emergency slots work. She collects the details your team needs (name, number, insurance, reason for visit) so every booking arrives complete."}},
+{"@type":"Question","name":"What happens when Sunny can't handle a call?","acceptedAnswer":{"@type":"Answer","text":"She doesn't guess. Anything outside her scope — clinical questions, billing disputes, upset callers — becomes a detailed request with full context for your team, or an immediate escalation if it's urgent."}},
+{"@type":"Question","name":"Can I change what Sunny says?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your answers to hours, services, insurance, pricing guidance, and emergency rules are all configurable, and updates apply to future calls. Tell us what to change and it's done."}},
+{"@type":"Question","name":"Does it work with my practice management software?","acceptedAnswer":{"@type":"Answer","text":"Sunny works from the scheduling rules you define, so she doesn't require PMS integration to start booking correctly on day one. Tell us which software you run during onboarding and we'll configure the workflow around it."}},
+{"@type":"Question","name":"What can't an AI receptionist do?","acceptedAnswer":{"@type":"Answer","text":"She won't give clinical advice, diagnose, prescribe, negotiate billing disputes, or counsel distressed patients — those go to your team with full context. She's built to know what she doesn't know."}}
+]}]}
+</script>
+</head>
+<body>
+<header><div class="nav">
+<a class="brand" href="/">Ring <span>&amp;</span> Respond</a>
+<a class="btn" href="https://buy.stripe.com/bJeaEQcXX8aq7HI6pLdQQ00">Start 2-Week Pilot</a>
+</div></header>
+
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a> &rsaquo; How an AI Receptionist Works</nav></div>
+
+<div class="hero"><div class="wrap">
+<h1>How Does an AI Receptionist Work for Dental Offices?</h1>
+<p class="sub">No jargon, no magic: exactly what happens from the moment the phone rings to the moment the appointment is booked — plus setup, and the honest limitations.</p>
+<div class="cta-row">
+<a class="btn" href="https://buy.stripe.com/bJeaEQcXX8aq7HI6pLdQQ00">Start Your 2-Week Pilot — $499</a>
+<a class="btn ghost" href="tel:+16192021085">Hear Sunny: (619) 202-1085</a>
+</div>
+</div></div>
+
+<div class="wrap">
+<section>
+<h2>A call, step by step</h2>
+<div class="card">
+<ol class="steps">
+<li><strong>The phone rings.</strong> Your office number forwards to Sunny — after hours, on overflow, or 24/7, your choice. Standard call forwarding; no new number, no new hardware.</li>
+<li><strong>She answers on the second ring,</strong> in your practice's name: "Hi, thanks for calling Bright Smile Dental — I'm Sunny, the after-hours assistant..."</li>
+<li><strong>She listens and understands.</strong> New patient? Toothache? Reschedule? Insurance question? She identifies the need the way a trained receptionist would.</li>
+<li><strong>She acts.</strong> Routine booking? Scheduled live, per your rules. Emergency? Triaged against your protocol, bridged to on-call if urgent. Question? Answered from your approved answers.</li>
+<li><strong>You get the summary.</strong> Every call logged — who called, what they needed, what was booked or escalated. Morning brings a clean report, not a voicemail backlog.</li>
+</ol>
+</div>
+<p>The best way to understand it is to experience it: call <a href="tel:+16192021085">(619) 202-1085</a> and have a conversation. That's not a demo recording — it's Sunny, live.</p>
+</section>
+
+<section>
+<h2>Setup: what we need from you</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Your hours</strong> — when Sunny covers vs. your team (nights, weekends, lunch, overflow, or all of it).</li>
+<li><strong>Your services</strong> — what you offer, so she answers accurately.</li>
+<li><strong>Scheduling rules</strong> — new-patient blocks, providers, emergency slots.</li>
+<li><strong>Emergency protocol</strong> — what counts as urgent, who gets paged, on what number.</li>
+<li><strong>Your "never" list</strong> — anything she should never say, promise, or discuss.</li>
+<li><strong>Approved answers</strong> — insurance plans, pricing guidance, location details.</li>
+</ul>
+<p style="margin:14px 0 0">That's a 2-minute onboarding questionnaire. Most practices are live within days — then it's one call-forwarding setting with your carrier.</p>
+</div>
+</section>
+
+<section>
+<h2>What she won't do (on purpose)</h2>
+<p>Sunny doesn't give clinical advice, diagnose, or prescribe. She doesn't negotiate billing disputes or counsel distressed patients. When a call goes beyond her scope, she captures everything and routes it to your team with full context — or escalates immediately if it's urgent. Knowing what she <em>doesn't</em> know is a feature, not a gap. (For the compliance side, see <a href="/hipaa-ai-receptionist-dental.html">HIPAA and AI receptionists</a>.)</p>
+</section>
+
+<div class="pricing">
+<h2>Live within days, $299/month flat</h2>
+<div class="price">$499 <span style="font-size:20px">setup + $299/mo</span></div>
+<p>2-minute onboarding. No new number. No new hardware.<br/>Two-week pilot — money back if Sunny doesn't earn her keep.</p>
+<p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://buy.stripe.com/bJeaEQcXX8aq7HI6pLdQQ00">Start Your Pilot</a></p>
+</div>
+
+<section>
+<h2>How it works FAQs</h2>
+<div class="faq"><h3>How does an AI receptionist work for a dental office?</h3><p>Your office number forwards to Sunny when you choose. She answers in your practice's name, books appointments per your rules, answers routine questions, triages emergencies, and sends you a summary of every call.</p></div>
+<div class="faq"><h3>Do I need a new phone number?</h3><p>No. Your existing number forwards to Sunny — a standard carrier feature that takes minutes. Patients dial the same number they've always used.</p></div>
+<div class="faq"><h3>How long does setup take?</h3><p>Most practices go live within days. Onboarding is a 2-minute questionnaire covering hours, services, emergency rules, scheduling preferences, and your "never" list.</p></div>
+<div class="faq"><h3>How does Sunny book appointments?</h3><p>Using your scheduling rules — providers, new-patient blocks, emergency slots. She collects name, number, insurance, and reason for visit so every booking arrives complete.</p></div>
+<div class="faq"><h3>What happens when Sunny can't handle a call?</h3><p>She doesn't guess. Anything outside her scope becomes a detailed request with full context for your team, or an immediate escalation if urgent.</p></div>
+<div class="faq"><h3>Can I change what Sunny says?</h3><p>Yes — hours, services, insurance, pricing guidance, and emergency rules are all configurable, and updates apply to future calls.</p></div>
+<div class="faq"><h3>Does it work with my practice management software?</h3><p>Sunny works from the scheduling rules you define, so she books correctly on day one without PMS integration. Tell us your software during onboarding and we'll configure around it.</p></div>
+<div class="faq"><h3>What can't an AI receptionist do?</h3><p>Clinical advice, diagnosis, prescribing, billing disputes, counseling distressed patients — those go to your team with full context.</p></div>
+</section>
+
+<section style="text-align:center">
+<h2>The fastest explanation is a phone call</h2>
+<p style="max-width:640px;margin:0 auto 24px">Thirty seconds on the demo line teaches more than any page.</p>
+<div class="cta-row">
+<a class="btn" href="tel:+16192021085">Call (619) 202-1085</a>
+<a class="btn ghost" href="https://buy.stripe.com/bJeaEQcXX8aq7HI6pLdQQ00">Start 2-Week Pilot</a>
+</div>
+</section>
+</div>
+
+<footer><div class="wrap">
+<p><strong style="color:#fff">Ring &amp; Respond</strong> — <a href="/">AI Receptionist for Dental Offices</a> · <a href="/hipaa-ai-receptionist-dental.html">HIPAA &amp; AI</a> · <a href="/dental-answering-service.html">Answering Service Guide</a></p>
+<p style="margin-top:10px">(619) 366-2218 · hello@ringandrespond.com</p>
+</div></footer>
+</body>
+</html>
