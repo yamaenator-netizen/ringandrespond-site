@@ -1,6 +1,27 @@
+# Ring & Respond — crawl control (Living Spaces-style hygiene, tightened 2026-10-20)
+# Goal: search + AI crawlers spend their budget on the 14 money pages only.
+# Functional / post-purchase pages are noindex in-page as well; robots is the belt to that suspenders.
+
 User-agent: *
 Allow: /
-Disallow: /thank-you.html
+# Functional + post-purchase flows (linked for humans, not search results)
 Disallow: /api/
+Disallow: /onboard.html
+Disallow: /thank-you.html
+# Junk parameters / duplicate URLs — the canonical URL is the only indexable version
+Disallow: /*?*
+
+# AI answer engines: explicitly welcome (FAQ hubs are built to be cited)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://www.ringandrespond.com/sitemap.xml
