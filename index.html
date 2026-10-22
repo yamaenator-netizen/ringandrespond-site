@@ -77,6 +77,10 @@
     .topbar nav a:hover { color: var(--ink); }
     .availability { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; color: var(--muted); font-weight: 600; }
     .availability::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #35ad78; box-shadow: 0 0 0 5px rgba(53,173,120,.13); }
+    .topbar .nav-call { color: var(--ink); font-weight: 700; white-space: nowrap; }
+    .demo-call { margin-top: 24px; color: #f7fffb; font-weight: 600; }
+    .demo-call a { color: #62cdbd; font-weight: 800; text-decoration: none; font-size: 18px; }
+    .demo-call a:hover { text-decoration: underline; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 9px;
       min-height: 48px; padding: 0 20px; border-radius: 999px;
@@ -210,7 +214,7 @@
     .chat-panel {
       position: fixed; right: 22px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 49;
       width: min(380px, calc(100vw - 28px)); max-height: min(590px, calc(100dvh - 110px));
-      display: grid; grid-template-rows: auto minmax(0, 1fr) auto; padding: 0;
+      display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; padding: 0;
       overflow: hidden; border: 1px solid var(--line); border-radius: 22px;
       background: var(--surface); box-shadow: 0 24px 70px rgba(16, 36, 32, .22);
     }
@@ -228,6 +232,8 @@
     .starter-chips { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 2px; }
     .starter-chip { border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; cursor: pointer; background: var(--surface); color: var(--ink); font: 600 12px "DM Sans", sans-serif; }
     .starter-chip:hover, .starter-chip:focus-visible { border-color: var(--teal); }
+    .chat-footnote { margin: 0; padding: 8px 12px 10px; font-size: 12px; line-height: 1.45; color: var(--muted); border-top: 1px solid var(--line); background: var(--surface); }
+    .chat-footnote a { color: inherit; text-decoration: underline; }
     .chat-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 12px; border-top: 1px solid var(--line); background: var(--surface); }
     .chat-form input { min-width: 0; height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; background: var(--paper); color: var(--ink); font: 500 14px "DM Sans", sans-serif; }
     .chat-form input:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
@@ -254,7 +260,7 @@
     .restart-signup { margin-top: 8px; border: 0; padding: 0; background: transparent; color: var(--teal-dark); font: 700 12px "DM Sans", sans-serif; cursor: pointer; text-decoration: underline; }
 
     @media (max-width: 880px) {
-      .topbar nav a:not(.nav-cta) { display: none; }
+      .topbar nav a:not(.nav-cta):not(.nav-call) { display: none; }
       .hero { padding-top: 32px; }
       .hero-grid, .section-heading, .demo-grid, .pricing-shell { grid-template-columns: 1fr; }
       .hero-grid { gap: 38px; }
@@ -304,7 +310,7 @@
     }
   </style>
   <link rel="canonical" href="https://www.ringandrespond.com/" />
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.ringandrespond.com/#org","name":"Ring & Respond","url":"https://www.ringandrespond.com/","description":"AI receptionist for dental offices. Sunny answers after-hours calls, captures new patients and books appointments.","telephone":"+1-619-366-2218","email":"hello@ringandrespond.com"},{"@type":"WebSite","@id":"https://www.ringandrespond.com/#site","url":"https://www.ringandrespond.com/","name":"Ring & Respond","publisher":{"@id":"https://www.ringandrespond.com/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will this replace my front-desk staff?","acceptedAnswer":{"@type":"Answer","text":"No. It covers calls when your team is busy or closed. Your staff stays in control of scheduling and anything that needs a person."}},{"@type":"Question","name":"Does it give medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. It records what the caller says and follows your urgent-call rules. It does not diagnose or recommend treatment."}},{"@type":"Question","name":"Can it use our real hours and services?","acceptedAnswer":{"@type":"Answer","text":"Yes. We set it up with the business details and answers you approve."}},{"@type":"Question","name":"Do we need a new phone number?","acceptedAnswer":{"@type":"Answer","text":"No. Your office line forwards to your receptionist after hours — set it once on a schedule, or toggle it manually when you close. Daytime calls ring your team like normal."}},{"@type":"Question","name":"What happens during the free pilot?","acceptedAnswer":{"@type":"Answer","text":"The $499 one-time setup covers building and testing your receptionist. After you approve the test calls, it handles a defined group of calls for two weeks with no monthly charge. The $299 monthly plan starts after the pilot unless you cancel by emailing hello@ringandrespond.com before it ends. The $499 setup is fully refundable — if the pilot doesn’t prove itself, email us before the two weeks end and it comes straight back."}},{"@type":"Question","name":"Do you integrate with Dentrix?","acceptedAnswer":{"@type":"Answer","text":"We don't need to for the pilot. Sunny hands your team a clean call summary and they confirm in Dentrix the way they already work. Deeper integrations are on our roadmap; the pilot doesn't wait for them."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.ringandrespond.com/#org","name":"Ring & Respond","url":"https://www.ringandrespond.com/","description":"AI receptionist for dental offices. Sunny answers after-hours calls, captures new patients and books appointments.","telephone":"+1-619-202-1085","email":"hello@ringandrespond.com"},{"@type":"WebSite","@id":"https://www.ringandrespond.com/#site","url":"https://www.ringandrespond.com/","name":"Ring & Respond","publisher":{"@id":"https://www.ringandrespond.com/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will this replace my front-desk staff?","acceptedAnswer":{"@type":"Answer","text":"No. It covers calls when your team is busy or closed. Your staff stays in control of scheduling and anything that needs a person."}},{"@type":"Question","name":"Does it give medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. It records what the caller says and follows your urgent-call rules. It does not diagnose or recommend treatment."}},{"@type":"Question","name":"Can it use our real hours and services?","acceptedAnswer":{"@type":"Answer","text":"Yes. We set it up with the business details and answers you approve."}},{"@type":"Question","name":"Do we need a new phone number?","acceptedAnswer":{"@type":"Answer","text":"No. Your office line forwards to your receptionist after hours — set it once on a schedule, or toggle it manually when you close. Daytime calls ring your team like normal."}},{"@type":"Question","name":"What happens during the free pilot?","acceptedAnswer":{"@type":"Answer","text":"The $499 one-time setup covers building and testing your receptionist. After you approve the test calls, it handles a defined group of calls for two weeks with no monthly charge. The $299 monthly plan starts after the pilot unless you cancel by emailing hello@ringandrespond.com before it ends. The $499 setup is fully refundable — if the pilot doesn’t prove itself, email us before the two weeks end and it comes straight back."}},{"@type":"Question","name":"Do you integrate with Dentrix?","acceptedAnswer":{"@type":"Answer","text":"We don't need to for the pilot. Sunny hands your team a clean call summary and they confirm in Dentrix the way they already work. Deeper integrations are on our roadmap; the pilot doesn't wait for them."}}]}]}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -314,6 +320,8 @@
       <a href="#services">Services</a>
       <a href="#demo">See it work</a>
       <a href="#pricing">Pricing</a>
+      <a class="nav-call" href="tel:+16192021085">Call the demo · (619) 202-1085</a>
+      <a href="tel:+16192021085" aria-label="Call the live demo line, 619 202 1085">(619) 202-1085</a>
       <a class="btn btn-secondary nav-cta" href="#pricing" data-start-signup>Start your pilot</a>
     </nav>
   </header>
@@ -332,6 +340,7 @@
             </a>
             <a class="btn btn-secondary" href="#demo">Watch the 60-second demo</a>
           </div>
+          <p class="hero-note">Hear her answer a live call right now: <a href="tel:+16192021085">(619) 202-1085</a></p>
           <div class="hero-note">Set up with your hours, services, FAQs, and call rules.</div>
         </div>
         <div class="hero-visual">
@@ -394,6 +403,8 @@
         <div>
           <h2>Hear what your callers will hear.</h2>
           <p>Watch a one-minute example of an after-hours dental call, from the greeting to the morning callback list.</p>
+          <p>Or skip the video and hear the real thing — call the live demo line: <a href="tel:+16192021085">(619) 202-1085</a></p>
+          <p class="demo-call">Prefer live? Call Sunny now: <a href="tel:+16192021085">(619) 202-1085</a></p>
           <div class="demo-points">
             <div class="demo-point"><b>1</b><div><strong>A customer calls</strong><span>Your custom greeting answers instead of voicemail.</span></div></div>
             <div class="demo-point"><b>2</b><div><strong>The request is captured</strong><span>Name, callback number, need, and preferred time are confirmed.</span></div></div>
@@ -495,7 +506,7 @@
       </button>
     </div>
     <div class="chat-log" id="chatLog" aria-live="polite" aria-relevant="additions">
-      <div class="message assistant">Hi! I can answer questions or guide you through a dental pilot signup right here.</div>
+      <div class="message assistant">Hi! I’m an automated assistant. I can answer questions about the pilot — cost, setup, your software, privacy — or guide you through signup right here.</div>
       <div class="starter-chips" id="starterChips" aria-label="Suggested questions">
         <button class="starter-chip" type="button" data-start-signup>Start my pilot</button>
         <button class="starter-chip" type="button">What does it cost?</button>
@@ -511,6 +522,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
       </button>
     </form>
+    <p class="chat-footnote">You’re chatting with an automated assistant, not a person — California law asks us to say so plainly. For a human, email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> or call <a href="tel:+16192021085">(619) 202-1085</a>.</p>
   </section>
 
   <script>
@@ -586,6 +598,48 @@
       function answerFor(question) {
         var q = question.toLowerCase().replace(/[^a-z0-9$@.\s-]/g, ' ');
         if (includesAny(q, ['sign up', 'signup', 'start my pilot', 'get started', 'checkout', 'enroll'])) return '__START_SIGNUP__';
+        if (includesAny(q, ['demo', 'hear her', 'hear sunny', 'live call', 'test call', 'listen to', 'example call', 'try her', 'try sunny'])) {
+          return 'You can hear Sunny on a real call right now — call (619) 202-1085 and talk to her the way a patient would. That’s our live demo line.';
+        }
+        if (includesAny(q, ['robot', 'real person', 'is it ai', 'is this ai', 'artificial intelligence', 'a bot', 'chatbot', 'actual person'])) {
+          return 'Sunny is an AI receptionist, and she’s upfront about it — if a caller asks whether she’s a person or an AI, she says she’s the office’s automated assistant. And a real person from your team always follows up.';
+        }
+        if (includesAny(q, ['dentrix', 'eaglesoft', 'open dental', 'curve dental', 'denticon', 'carestack', 'software', 'pms', 'integrate', 'integration', 'compatible'])) {
+          return 'Sunny works alongside the software you already run — Dentrix, Eaglesoft, Open Dental, Curve Dental. She captures the caller’s name, number, and request, and your team confirms it in your own system in the morning. No migration, no new logins. Deeper integrations are on our roadmap.';
+        }
+        if (includesAny(q, ['hipaa', 'baa', 'privacy', 'private', 'secure', 'security', 'patient data', 'recording', 'recorded'])) {
+          return 'Privacy is built into the pilot: we sign a business associate agreement (BAA) with your practice before real patient calls, calls are recorded only so your team can follow up, and Sunny never asks for Social Security numbers, insurance IDs, or dates of birth.';
+        }
+        if (includesAny(q, ['keep my number', 'keep our number', 'keep the number', 'forward', 'new number', 'change my number', 'change our number', 'phone number', 'our number', 'my number'])) {
+          return 'You keep your number. Your office line simply forwards to Sunny after hours — daytime calls ring your staff exactly as they do now. Your patients never have to learn a new number.';
+        }
+        if (includesAny(q, ['how long', 'setup take', 'set up', 'install', 'onboarding', 'go live'])) {
+          return 'Setup is white-glove: we build Sunny around your hours, services, FAQs, and call rules, you approve a few test calls, and then the two-week pilot starts. Most offices are ready within a few days, and your team does almost none of the work.';
+        }
+        if (includesAny(q, ['emergency', 'emergencies', 'urgent', 'severe pain', 'tooth pain', 'swelling', 'bleeding'])) {
+          return 'If a caller describes a true emergency, Sunny tells them to call 911 or go to urgent care right away. Urgent dental problems — severe pain, swelling, bleeding — get flagged as top priority on your team’s morning list.';
+        }
+        if (includesAny(q, ['hours', '24 7', '24/7', 'weekend', 'sunday', 'saturday', 'holiday', 'overnight', 'after hours', 'after-hours', 'lunch', 'closed'])) {
+          return 'Sunny covers the hours your team can’t: nights, weekends, holidays, lunch breaks, and the busy stretches when phones ring off the hook. Whenever you’re open and available, your staff handles calls exactly as they do now.';
+        }
+        if (includesAny(q, ['appointment', 'book', 'booking', 'reschedule', 'schedule a', 'schedule an', 'cancel my appointment', 'cancel an appointment'])) {
+          return 'Sunny captures the appointment request — name, callback number, what they need, and the time they’d like — and your team confirms it in your own software. She never promises a slot that isn’t confirmed, so there are no double-bookings.';
+        }
+        if (includesAny(q, ['summary', 'summaries', 'report', 'transcript', 'callback list', 'morning', 'what do i get', 'what do we get', 'what happens after', 'follow up list', 'follow-up list'])) {
+          return 'After every call you get a clean summary: the caller’s name, callback number, what they need, how urgent it is, and the time they asked for. Urgent calls are flagged, and your team starts the morning with one organized callback list.';
+        }
+        if (includesAny(q, ['refund', 'money back', 'guarantee', 'cancel', 'contract', 'commitment', 'locked in'])) {
+          return 'The $499 setup is fully refundable — if Sunny doesn’t earn her keep during the two-week pilot, it comes straight back. After the pilot, the $299/month plan is month-to-month and you can cancel anytime. No long contract.';
+        }
+        if (includesAny(q, ['greeting', 'custom', 'script', 'my hours', 'my services', 'our hours', 'our services', 'faq'])) {
+          return 'Everything is built around your office: your greeting, your hours, your services, your FAQs, and your call rules. You approve test calls before Sunny ever talks to a real patient.';
+        }
+        if (includesAny(q, ['two offices', 'two locations', 'multiple offices', 'multiple locations', 'second office', 'both offices', 'both locations'])) {
+          return 'One setup can cover two offices — the $499 setup fee covers both locations for the pilot, and each office keeps its own greeting and call rules.';
+        }
+        if (includesAny(q, ['san diego', 'where are you', 'located', 'your area', 'service area', 'near me'])) {
+          return 'We’re based in the San Diego area and are onboarding local dental offices for pilots right now.';
+        }
         if (includesAny(q, ['human', 'person', 'someone', 'talk to', 'speak to', 'contact', 'email', 'call you'])) {
           return 'You can reach us at ' + contact + ' — we reply fast.';
         }
@@ -610,7 +664,7 @@
         if (includesAny(q, ['what is', 'what does', 'how does', 'module', 'service', 'front-desk os', 'front desk os'])) {
           return 'Front-Desk OS starts with an AI receptionist that answers calls and collects customer details. Missed-call text-back and review tools are coming later.';
         }
-        return 'I don’t have that detail yet. You can reach us at ' + contact + ' — we reply fast.';
+        return 'I don’t have that one yet — but you can hear Sunny handle questions live at (619) 202-1085, or reach us at ' + contact + ' and we’ll reply fast.';
       }
 
       function validateSignupValue(field, value) {
