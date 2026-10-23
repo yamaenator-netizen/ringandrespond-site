@@ -105,14 +105,13 @@
 </footer>
 <script>
 (function(){
-  var API = 'https://voice.ringandrespond.com:8445';
   var code = new URLSearchParams(window.location.search).get('c') || '';
   var states = ['state-loading','state-nocode','state-invalid','state-claimed','state-form','state-done'];
   function show(id){
     states.forEach(function(s){ document.getElementById(s).style.display = (s === id) ? 'block' : 'none'; });
   }
   if(!code){ show('state-nocode'); return; }
-  fetch(API + '/champion/check?c=' + encodeURIComponent(code))
+  fetch('/api/champion-api?c=' + encodeURIComponent(code))
     .then(function(r){ return r.json(); })
     .then(function(d){
       if(d.status === 'valid') show('state-form');
@@ -134,7 +133,7 @@
       role: document.getElementById('f-role').value,
       contact: document.getElementById('f-contact').value.trim()
     };
-    fetch(API + '/champion/claim', {
+    fetch('/api/champion-api', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload)
