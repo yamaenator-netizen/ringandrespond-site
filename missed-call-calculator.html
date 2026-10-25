@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Missed Call Calculator for Dental Offices — How Much Do Missed Calls Cost Your Practice? | Ring &amp; Respond</title>
+<meta name="description" content="Free missed call calculator for dental offices. See what unanswered calls really cost your practice each month — honest math, every assumption on the page, nothing sent or stored." />
+<meta property="og:title" content="Missed Call Calculator for Dental Offices" />
+<meta property="og:description" content="How much do missed calls cost a dental office? Run your own numbers — every assumption shown, existing patients not counted as lost." />
+<meta property="og:type" content="website" />
+<style>
+:root{--teal:#0b766c;--teal-d:#07564f;--ink:#102420;--mut:#4d625d;--bg:#f5faf7;--card:#ffffff;--line:#cbdad4;--accent:#f06449;--gold:#f6c855}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"DM Sans","Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+h1,h2,h3{font-family:"Archivo","Arial Black",Arial,sans-serif;line-height:1.2}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1100px;margin:0 auto;gap:12px;flex-wrap:wrap}
+.brand{font-family:"Archivo","Arial Black",Arial,sans-serif;font-weight:800;font-size:20px;color:var(--teal-d);text-decoration:none}
+.brand span{color:var(--accent)}
+.btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:13px 26px;border-radius:12px;text-decoration:none;font-size:16px;border:none;cursor:pointer;text-align:center}
+.btn:hover{background:var(--teal-d)}
+.btn.ghost{background:#fff;color:var(--teal-d);border:2px solid var(--teal)}
+.btn.ghost:hover{background:#e9f3ee}
+.hero{background:linear-gradient(135deg,#e9f3ee 0%,#f5faf7 60%);padding:56px 0 40px;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--teal-d);margin-bottom:16px}
+.hero p.sub{font-size:19px;color:var(--mut);max-width:700px;margin:0 auto 10px}
+.hero p.privacy{font-size:14px;color:var(--mut)}
+section{padding:36px 0}
+h2{font-size:28px;color:var(--teal-d);margin-bottom:18px}
+h3{font-size:20px;margin:22px 0 10px}
+p{margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0}
+.faq{border-bottom:1px solid var(--line);padding:16px 0}
+.faq h3{font-size:18px;margin:0 0 8px}
+.faq p{color:var(--mut);margin:0}
+footer{background:var(--ink);color:#cbdad4;padding:36px 0;text-align:center;font-size:14px}
+footer a{color:#fff}
+.breadcrumb{font-size:13px;color:var(--mut);padding:18px 0 0}
+.breadcrumb a{color:var(--teal)}
+.example-tag{display:inline-block;background:var(--gold);color:var(--ink);font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+.field{margin:0 0 26px}
+.field:last-child{margin-bottom:6px}
+.field-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.field label{font-weight:700;font-size:17px}
+.field .note{font-size:14px;color:var(--mut);margin:4px 0 10px}
+.field .note strong{color:var(--ink)}
+.numwrap{display:flex;align-items:center;gap:6px}
+.numwrap .prefix,.numwrap .suffix{font-weight:700;color:var(--teal-d)}
+input[type="number"]{width:110px;font:inherit;font-size:17px;font-weight:700;color:var(--ink);padding:8px 10px;border:2px solid var(--line);border-radius:10px;background:#fff;text-align:right}
+input[type="number"]:focus{outline:3px solid var(--gold);border-color:var(--teal)}
+input[type="range"]{width:100%;accent-color:var(--teal);height:32px;cursor:pointer}
+input[type="range"]:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.results{background:var(--teal-d);color:#fff;border-radius:20px;padding:34px;margin:26px 0}
+.results h2{color:#fff;margin-bottom:6px}
+.results .example-tag{margin-bottom:14px}
+.big-loss{font-family:"Archivo","Arial Black",Arial,sans-serif;font-size:clamp(38px,7vw,54px);font-weight:800;line-height:1.1;margin:6px 0 2px}
+.results .per{font-size:18px;color:#cfeee1}
+.results p{color:#e6f4ee}
+.results .patients{font-size:20px;font-weight:700;color:#fff;margin:16px 0 4px}
+.turn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:18px 20px;margin:20px 0}
+.turn p{margin:0;color:#fff}
+.cta-row{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;margin-top:22px}
+.results .btn{background:#fff;color:var(--teal-d)}
+.results .btn:hover{background:var(--gold);color:var(--ink)}
+.results .btn.ghost{background:transparent;color:#fff;border:2px solid #fff}
+.results .btn.ghost:hover{background:rgba(255,255,255,.12)}
+ol.steps{margin:14px 0 14px 22px}
+ol.steps li{margin-bottom:12px}
+ol.steps .n{font-weight:800;color:var(--teal-d)}
+.zero-note{color:var(--mut);font-size:15px}
+.sources{font-size:14px;color:var(--mut)}
+.sources li{margin-bottom:8px;margin-left:20px}
+@media(max-width:640px){
+  .cta-row .btn{width:100%}
+  input[type="number"]{width:96px}
+  .card{padding:20px}
+  .results{padding:24px 20px}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where do these numbers come from?","acceptedAnswer":{"@type":"Answer","text":"Three published sources: a Dental Economics benchmark finding that practices miss 30–38% of incoming calls during business hours; an Open Dental study of 8,887 calls finding that 97% of existing patients who reach a busy signal call back within the hour; and industry estimates putting a new patient's first-year value between $850 and $1,500. The one number with no study behind it — how many missed new-patient callers never try again — is labeled an assumption on the calculator, and you can set it yourself."}},
+{"@type":"Question","name":"Why doesn't the calculator count missed calls from existing patients?","acceptedAnswer":{"@type":"Answer","text":"Because the Open Dental study of 8,887 calls found 97% of existing patients who hit a busy phone call back within the hour. Counting them as lost revenue would inflate the answer, so this calculator counts them as $0 lost. The real loss concentrates in new patients, who simply call the next office."}},
+{"@type":"Question","name":"Are my numbers stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator runs entirely in your browser. There is no form, no account, and nothing you type is transmitted or saved."}},
+{"@type":"Question","name":"Would Sunny really catch all of these calls?","acceptedAnswer":{"@type":"Answer","text":"Sunny answers when your team can't — after hours on the $199 plan, or any time on 24/7 Complete — and captures each caller's request for your team to confirm. Not every captured caller will book, which is why the calculator also shows the break-even: how few new patients Sunny needs to save each month to pay for herself."}}]}
+</script>
+</head>
+<body>
+<header><div class="nav">
+<a class="brand" href="/">Ring <span>&amp;</span> Respond</a>
+<a class="btn" href="https://ringandrespond.com/pilot">Start 30-Day Pilot</a>
+</div></header>
+
+<div class="wrap"><nav class="breadcrumb"><a href="/">Home</a> &rsaquo; Free Tools &rsaquo; Missed Call Calculator</nav></div>
+
+<div class="hero"><div class="wrap">
+<h1>How much do missed calls cost your dental office?</h1>
+<p class="sub">Slide the numbers to match your practice and watch the math happen — every step shown, every assumption on the table. No black box, no scare tactics.</p>
+<p class="privacy">🔒 This calculator runs entirely in your browser. Nothing you type is sent, stored, or tracked.</p>
+</div></div>
+
+<div class="wrap">
+<section aria-label="Missed call calculator">
+<noscript><div class="card"><p><strong>This calculator needs JavaScript to do its math in your browser.</strong> With scripts off we can't run your numbers — but you can hear the other half of the story live: call Sunny at <a href="tel:+16192021085">(619) 202-1085</a>.</p></div></noscript>
+<div class="card">
+
+<div class="field">
+<div class="field-head">
+<label for="callsNum">Calls your office gets per week</label>
+<span class="numwrap"><input type="number" id="callsNum" min="1" max="2000" step="1" value="100" inputmode="numeric" aria-label="Calls per week, number" /></span>
+</div>
+<p class="note">Count everything — new patients, existing patients, pharmacies, labs. If you're not sure, your phone bill or practice software can tell you.</p>
+<input type="range" id="callsRange" min="10" max="500" step="5" value="100" aria-label="Calls per week, slider" />
+</div>
+
+<div class="field">
+<div class="field-head">
+<label for="missedNum">Share of calls that go unanswered</label>
+<span class="numwrap"><input type="number" id="missedNum" min="0" max="100" step="1" value="30" inputmode="numeric" aria-label="Percent of calls missed, number" /><span class="suffix">%</span></span>
+</div>
+<p class="note"><strong>Published benchmark:</strong> practices miss <strong>30–38% of calls during business hours</strong> (Dental Economics). That counts lunch, the morning rush, and two lines ringing at once — not just after hours. We start the slider at 30%, the low end.</p>
+<input type="range" id="missedRange" min="0" max="70" step="1" value="30" aria-label="Percent of calls missed, slider" />
+</div>
+
+<div class="field">
+<div class="field-head">
+<label for="newNum">Of the missed callers, how many are NEW patients?</label>
+<span class="numwrap"><input type="number" id="newNum" min="0" max="100" step="1" value="25" inputmode="numeric" aria-label="Percent of missed callers who are new patients, number" /><span class="suffix">%</span></span>
+</div>
+<p class="note">This distinction matters — it's where honest calculators part ways with scare tactics (see the steps below). If one in four of your calls is someone shopping for a new dentist, 25% is a fair start.</p>
+<input type="range" id="newRange" min="0" max="100" step="1" value="25" aria-label="Percent of missed callers who are new patients, slider" />
+</div>
+
+<div class="field">
+<div class="field-head">
+<label for="noretryNum">Of those missed NEW patients, how many never call back?</label>
+<span class="numwrap"><input type="number" id="noretryNum" min="0" max="100" step="1" value="50" inputmode="numeric" aria-label="Percent of missed new patients who never call back, number" /><span class="suffix">%</span></span>
+</div>
+<p class="note"><strong>⚠ This one is an ASSUMPTION, not a study.</strong> A new patient who hits voicemail usually just calls the next office on Google — but nobody has published a definitive rate. We start at 50%. Suspicious? Drag it down to 25% and check the damage. We'd rather you lowball it.</p>
+<input type="range" id="noretryRange" min="0" max="100" step="1" value="50" aria-label="Percent of missed new patients who never call back, slider" />
+</div>
+
+<div class="field">
+<div class="field-head">
+<label for="valueNum">First-year value of one new patient</label>
+<span class="numwrap"><span class="prefix">$</span><input type="number" id="valueNum" min="0" max="10000" step="50" value="1000" inputmode="numeric" aria-label="First-year value of a new patient in dollars, number" /></span>
+</div>
+<p class="note"><strong>Published range:</strong> industry estimates put a new patient's first-year value at <strong>$850–$1,500</strong> (exam, hygiene, and the treatment that follows). We start at $1,000, below the middle.</p>
+<input type="range" id="valueRange" min="300" max="3000" step="50" value="1000" aria-label="First-year value of a new patient, slider" />
+</div>
+
+</div>
+
+<div class="results" aria-live="polite">
+<span class="example-tag">Example — your numbers, our math</span>
+<h2>What missed calls are costing you</h2>
+<div class="big-loss" id="lossYear">$0</div>
+<p class="per">per year — that's <strong id="lossMonth">$0</strong> walking out every month</p>
+<p class="patients">≈ <span id="lostPatients">0</span> new patients lost per month</p>
+<p>Counted only from missed <em>new-patient</em> callers who never try again. Your existing patients? We count them as $0 lost — see why below.</p>
+<div class="turn">
+<p><strong>The other side of the ledger:</strong> Sunny costs <strong>$199/mo</strong> (after-hours) or <strong>$299/mo</strong> (24/7 Complete). At your new-patient value, the after-hours plan pays for itself if she saves <strong id="breakeven199">—</strong>, and 24/7 Complete pays for itself if she saves <strong id="breakeven299">—</strong>. That's the whole bet.</p>
+</div>
+<div class="cta-row">
+<a class="btn" href="tel:+16192021085">Hear Sunny answer live — (619) 202-1085</a>
+<a class="btn ghost" href="https://ringandrespond.com/pilot">Start the 30-day pilot</a>
+</div>
+<p style="margin-top:14px;font-size:14px">The pilot is covered by an unconditional money-back guarantee — if Sunny doesn't earn her keep in 30 days, the month comes straight back.</p>
+</div>
+</section>
+
+<section aria-label="The math step by step">
+<h2>The math, step by step</h2>
+<div class="card">
+<p>Most calculators hide their workings and print the scariest number possible. Here's every step of ours, live with your numbers:</p>
+<ol class="steps">
+<li><strong>Calls per month:</strong> <span class="n" id="stepCallsWeek">100</span> calls/week × 4.33 weeks (52 ÷ 12) = <span class="n" id="stepCallsMonth">433</span> calls a month.</li>
+<li><strong>Missed per month:</strong> <span class="n" id="stepMissed">130</span> of those calls go unanswered (<span class="n" id="stepMissedPct">30</span>%).</li>
+<li><strong>Missed calls from EXISTING patients:</strong> <span class="n" id="stepExisting">98</span> — counted as <strong>$0 lost</strong>. An Open Dental study of 8,887 real calls found <strong>97% of existing patients who hit a busy phone call back within the hour</strong>. A few will slip away in real life, so counting them all as safe makes this estimate run conservative on purpose.</li>
+<li><strong>Missed calls from NEW patients:</strong> <span class="n" id="stepNew">33</span>. New patients have no loyalty to your office yet — you're one of several tabs open in their browser.</li>
+<li><strong>New patients who never call back:</strong> <span class="n" id="stepGone">16</span> of them (your <span class="n" id="stepNoretryPct">50</span>% assumption from the slider above).</li>
+<li><strong>Estimated loss:</strong> <span class="n" id="stepGone2">16</span> patients × $<span class="n" id="stepValue">1,000</span> first-year value = <span class="n" id="stepLossMonth">$16,250/month</span>, or <span class="n" id="stepLossYear">$195,000/year</span>.</li>
+</ol>
+<p class="zero-note">Think step 5 is too harsh? It might be — that's why it's a slider and not a footnote. Even at 25%, most offices find the number is still the most expensive line they never see.</p>
+</div>
+</section>
+
+<section aria-label="Sources">
+<h2>Where these numbers come from</h2>
+<div class="card">
+<ul class="sources">
+<li><strong>30–38% of in-hours calls missed</strong> — benchmark from Dental Economics, widely cited in dental practice-management reporting.</li>
+<li><strong>97% of existing patients call back within the hour</strong> — Open Dental study of 8,887 calls. This is why existing patients are excluded from the loss figure.</li>
+<li><strong>$850–$1,500 first-year value of a new patient</strong> — range across published dental industry estimates.</li>
+<li><strong>The never-call-back share for new patients</strong> — no published study we're willing to stand behind, so it's labeled an assumption above and left in your hands.</li>
+</ul>
+</div>
+</section>
+
+<section aria-label="Frequently asked questions">
+<h2>Honest FAQ</h2>
+<div class="faq"><h3>Where do these numbers come from?</h3><p>Three published sources: the Dental Economics benchmark (practices miss 30–38% of in-hours calls), the Open Dental study of 8,887 calls (97% of existing patients call back within the hour), and industry estimates of new-patient value ($850–$1,500 in year one). The one figure with no study behind it — how many missed new patients never retry — is labeled an assumption on the calculator itself, and you set it.</p></div>
+<div class="faq"><h3>Why don't you count missed calls from existing patients?</h3><p>Because the evidence says they call back — 97% of them, within the hour. Counting them as lost would roughly triple the headline number, and it would be wrong. The real, quiet loss is new patients: no relationship, no loyalty, and a list of other offices one tap away.</p></div>
+<div class="faq"><h3>Are my numbers stored or sent anywhere?</h3><p>No. This page does all its math in your browser. There's no form to submit, no account, and nothing you type leaves your device.</p></div>
+<div class="faq"><h3>Would Sunny really catch all of these?</h3><p>She answers whenever your team can't — after hours on the $199 plan, around the clock on $299 — and captures each caller's request, preferred time, and details for your team to confirm in the morning. Not every captured caller will book, and we won't pretend otherwise. That's exactly why the break-even line above matters: she doesn't need to save everyone. She needs to save a handful.</p></div>
+</section>
+
+<section style="text-align:center">
+<h2>One saved patient pays for Sunny. Hear her prove it. ☀️</h2>
+<p style="max-width:640px;margin:0 auto 24px">Call (619) 202-1085 — that's Sunny answering a real line, live, right now. Then start your guaranteed 30-day pilot.</p>
+<div class="cta-row" style="justify-content:center">
+<a class="btn" href="https://ringandrespond.com/pilot">Start the 30-day pilot</a>
+<a class="btn ghost" href="tel:+16192021085">Call (619) 202-1085</a>
+</div>
+<p style="margin-top:14px;color:var(--mut)">$0 setup · 30-day money-back guarantee · month-to-month after</p>
+</section>
+</div>
+
+<footer><div class="wrap">
+<p><strong style="color:#fff">Ring &amp; Respond</strong> — <a href="/">AI Receptionist for Dental Offices</a> · <a href="https://ringandrespond.com/pilot">30-Day Pilot</a></p>
+<p style="margin-top:10px">A free tool from Ring &amp; Respond · Hear Sunny live: <a href="tel:+16192021085">(619) 202-1085</a> · hello@ringandrespond.com</p>
+</div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var WEEKS_PER_MONTH = 52/12;
+
+  function num(id){ var el=document.getElementById(id); var v=parseFloat(el.value); return isNaN(v)?0:v; }
+  function clamp(v,min,max){ return Math.min(max, Math.max(min, v)); }
+  function fmtMoney(v){ return "$" + Math.round(v).toLocaleString("en-US"); }
+  function fmtNum(v){ return Math.round(v).toLocaleString("en-US"); }
+  function fmtPatients(v){
+    var r = Math.round(v*10)/10;
+    return (r % 1 === 0) ? String(Math.round(r)) : r.toFixed(1);
+  }
+  function breakeven(cost, value){
+    if (value <= 0) return "—";
+    var needed = cost / value;
+    if (needed >= 1){
+      var n = Math.round(needed*10)/10;
+      var ns = (n % 1 === 0) ? String(Math.round(n)) : n.toFixed(1);
+      return "about " + ns + " new patient" + (n === 1 ? "" : "s") + " a month";
+    }
+    var months = 1 / needed;
+    if (months < 1.5) return "less than one new patient a month";
+    return "about 1 new patient every " + Math.round(months) + " months";
+  }
+
+  function compute(callsWeek, missedPct, newPct, noretryPct, value){
+    var callsMonth = callsWeek * WEEKS_PER_MONTH;
+    var missedMonth = callsMonth * missedPct / 100;
+    var missedNew = missedMonth * newPct / 100;
+    var missedExisting = missedMonth - missedNew;
+    var lostPatients = missedNew * noretryPct / 100;
+    var lossMonth = lostPatients * value;
+    var lossYear = lossMonth * 12;
+    return {
+      callsMonth: callsMonth, missedMonth: missedMonth,
+      missedNew: missedNew, missedExisting: missedExisting,
+      lostPatients: lostPatients, lossMonth: lossMonth, lossYear: lossYear
+    };
+  }
+
+  var pairs = [
+    ["callsRange","callsNum"],
+    ["missedRange","missedNum"],
+    ["newRange","newNum"],
+    ["noretryRange","noretryNum"],
+    ["valueRange","valueNum"]
+  ];
+
+  function readInputs(){
+    return {
+      callsWeek: clamp(num("callsNum"), 0, 2000),
+      missedPct: clamp(num("missedNum"), 0, 100),
+      newPct: clamp(num("newNum"), 0, 100),
+      noretryPct: clamp(num("noretryNum"), 0, 100),
+      value: clamp(num("valueNum"), 0, 10000)
+    };
+  }
+
+  function render(){
+    var i = readInputs();
+    var r = compute(i.callsWeek, i.missedPct, i.newPct, i.noretryPct, i.value);
+    document.getElementById("lossYear").textContent = fmtMoney(r.lossYear);
+    document.getElementById("lossMonth").textContent = fmtMoney(r.lossMonth);
+    document.getElementById("lostPatients").textContent = fmtPatients(r.lostPatients);
+    document.getElementById("breakeven199").textContent = breakeven(199, i.value);
+    document.getElementById("breakeven299").textContent = breakeven(299, i.value);
+    document.getElementById("stepCallsWeek").textContent = fmtNum(i.callsWeek);
+    document.getElementById("stepCallsMonth").textContent = fmtPatients(r.callsMonth);
+    document.getElementById("stepMissed").textContent = fmtPatients(r.missedMonth);
+    document.getElementById("stepMissedPct").textContent = fmtNum(i.missedPct);
+    document.getElementById("stepExisting").textContent = fmtPatients(r.missedExisting);
+    document.getElementById("stepNew").textContent = fmtPatients(r.missedNew);
+    document.getElementById("stepGone").textContent = fmtPatients(r.lostPatients);
+    document.getElementById("stepNoretryPct").textContent = fmtNum(i.noretryPct);
+    document.getElementById("stepGone2").textContent = fmtPatients(r.lostPatients);
+    document.getElementById("stepValue").textContent = fmtNum(i.value);
+    document.getElementById("stepLossMonth").textContent = fmtMoney(r.lossMonth) + "/month";
+    document.getElementById("stepLossYear").textContent = fmtMoney(r.lossYear) + "/year";
+  }
+
+  pairs.forEach(function(pair){
+    var range = document.getElementById(pair[0]);
+    var number = document.getElementById(pair[1]);
+    range.addEventListener("input", function(){
+      number.value = range.value;
+      render();
+    });
+    number.addEventListener("input", function(){
+      var v = parseFloat(number.value);
+      if (!isNaN(v)) {
+        var min = parseFloat(range.min), max = parseFloat(range.max);
+        range.value = clamp(v, min, max);
+      }
+      render();
+    });
+    number.addEventListener("change", function(){ render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
