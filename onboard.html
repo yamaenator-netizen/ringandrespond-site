@@ -216,7 +216,7 @@ async function run(){
   await botSay("One more thing - the better Sunny connects with your office, the more she can do for you.");
   answers.software = await askPills("What practice software does your office run on? Tap all that apply.", ["Dentrix", "Eaglesoft", "Open Dental", "Curve Dental", "Denticon", "Something else"], true);
   answers.calendar = await askPills("How do you manage your appointment calendar?", ["Our dental software handles it", "Google Calendar", "Outlook calendar", "Paper / other"]);
-  answers.email = await askText("What's the best office email for us to reach you?", "office@brightsmiledental.com");
+  answers.email = await askText("What's the best office email for us to reach you?", "office@yourdentalpractice.com");
   answers.integrations = await askText("Anything else you'd love Sunny to connect with? (Optional - tap Send to skip)", "e.g. text confirmations, online booking link", null, true);
   if(!answers.integrations) answers.integrations = "-";
   setProgress(0.95);
