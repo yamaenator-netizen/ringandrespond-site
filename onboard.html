@@ -175,7 +175,7 @@ async function run(){
   setProgress(0.02);
   await botSay("Hi! I'm Sunny's setup assistant. I'll get your AI receptionist configured in about 5 minutes. Let's start simple -");
   await botSay("Quick note: this form is for <b>your office's</b> details only - please don't enter any patient names, health info, or appointment details here.");
-  answers.practice = await askText("What's your practice's name?", "Bright Smile Dental");
+  answers.practice = await askText("What's your practice's name?", "Your Dental Practice");
   setProgress(0.1);
   answers.address = await askText("And the office address?", "123 Main St, San Diego, CA");
   setProgress(0.18);
