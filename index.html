@@ -80,8 +80,9 @@
     .availability::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #35ad78; box-shadow: 0 0 0 5px rgba(53,173,120,.13); }
     .topbar .nav-call { color: var(--ink); font-weight: 700; white-space: nowrap; }
     .demo-call { margin-top: 24px; color: #f7fffb; font-weight: 600; }
-    .demo-call a { color: #62cdbd; font-weight: 800; text-decoration: none; font-size: 18px; }
+    .demo-call a { color: #f6c855; font-weight: 800; text-decoration: none; font-size: 18px; }
     .demo-call a:hover { text-decoration: underline; }
+    .demo p a { color: #f6c855; font-weight: 700; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 9px;
       min-height: 48px; padding: 0 20px; border-radius: 999px;
@@ -89,7 +90,8 @@
       transition: transform .2s ease, background .2s ease, border-color .2s ease;
     }
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary { background: var(--sun); color: #102420; }
+    .btn-primary:hover { background: #eab54a; }
     .btn-secondary { border-color: var(--line); background: var(--surface); color: var(--ink); }
     .btn svg { width: 18px; height: 18px; }
 
@@ -149,20 +151,20 @@
     .demo p { color: #bcc9d3; font-size: 17px; }
     .demo-points { display: grid; gap: 18px; margin-top: 28px; }
     .demo-point { display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
-    .demo-point b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #62cdbd; color: #0b2424; font-family: "Archivo"; }
+    .demo-point b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f6c855; color: #0b2424; font-family: "Archivo"; }
     .demo-point strong { display: block; margin-bottom: 3px; }
     .demo-point span { color: #aebdc8; font-size: 14px; }
     .video-shell { background: #0b121d; border: 1px solid #324052; border-radius: 22px; padding: 10px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
     .video-shell video { border-radius: 14px; background: #070c12; aspect-ratio: 16/9; object-fit: contain; }
     .office-visual figure { margin: 0; }
-    .office-visual img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+    .office-visual img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow), 0 24px 70px rgba(246,200,85,.45); }
     .office-visual figcaption { margin-top: 14px; text-align: center; color: var(--muted, #5b6b7c); font-size: 1.05rem; }
     .video-caption { display: flex; justify-content: space-between; padding: 11px 5px 3px; font-size: 12px; color: #95a6b4; }
 
     .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
     .step { padding: 32px; min-height: 250px; border-right: 1px solid var(--line); }
     .step:last-child { border-right: 0; }
-    .step b { color: var(--coral); font-family: "Archivo"; font-size: 14px; }
+    .step b { color: #8a5a00; font-family: "Archivo"; font-size: 14px; }
     .step h3 { margin-top: 42px; font-size: 25px; }
     .step p { color: var(--muted); margin: 12px 0 0; }
     .forward-tip { margin-top: 28px; padding: 22px 26px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
@@ -180,6 +182,7 @@
     .price-line { display: flex; align-items: baseline; gap: 9px; margin: 28px 0 6px; }
     .price-line strong { font-family: "Archivo"; font-size: clamp(48px, 6vw, 70px); line-height: 1; letter-spacing: -.05em; }
     .price-line span { color: var(--muted); }
+    .price-line.featured { background: rgba(246,200,85,.16); border: 1.5px solid var(--sun); border-radius: 14px; padding: 10px 14px; }
     .setup { color: var(--muted); font-size: 14px; margin-bottom: 25px; }
     .included { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 28px; }
     .included h3 { font-size: 20px; margin-bottom: 18px; }
@@ -260,7 +263,7 @@
     .checkout-button { width: 100%; margin-top: 11px; border: 0; cursor: pointer; }
     .checkout-button:disabled { cursor: not-allowed; opacity: .48; transform: none; }
     .checkout-note { margin: 9px 0 0 !important; font-size: 11px !important; text-align: center; }
-    .placeholder-label { display: inline-flex; margin-top: 8px; padding: 4px 7px; border-radius: 6px; background: rgba(240,100,73,.13); color: var(--coral); font-size: 10px; font-weight: 800; letter-spacing: .02em; }
+    .placeholder-label { display: inline-flex; margin-top: 8px; padding: 4px 7px; border-radius: 6px; background: rgba(11,118,108,.10); color: var(--teal-dark); font-size: 10px; font-weight: 800; letter-spacing: .02em; }
     .restart-signup { margin-top: 8px; border: 0; padding: 0; background: transparent; color: var(--teal-dark); font: 700 12px "DM Sans", sans-serif; cursor: pointer; text-decoration: underline; }
 
     @media (max-width: 880px) {
@@ -458,7 +461,7 @@
           <p>Pick your coverage, and your first month is a pilot — paid up front, guaranteed. If Sunny doesn’t earn her keep in 30 days, the month comes straight back. Setup is on us: we build her around your office, done-for-you, a $499 value — you pay $0.</p>
           <div class="price-line"><strong>$199</strong><span>/ month · After-Hours Capture — nights, weekends, holidays</span></div>
           <a class="btn btn-secondary" href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01">Start with After-Hours Capture</a>
-          <div class="price-line"><strong>$299</strong><span>/ month · 24/7 Complete ⭐ most offices pick this one — adds lunch-hour and busy-desk overflow</span></div>
+          <div class="price-line featured"><strong>$299</strong><span>/ month · 24/7 Complete ⭐ most offices pick this one — adds lunch-hour and busy-desk overflow</span></div>
           <a class="btn btn-primary" href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02">Start with 24/7 Complete</a>
           <div class="setup">$0 setup, done-for-you (a $499 value) · First month is your pilot — unconditional money-back guarantee · Month-to-month after, no exit fee · Extra locations save 20% ($159 / $239) · Or prepay a year and get 2 months free ($1,990 / $2,990)</div>
           <a class="btn btn-primary" href="#pricing" data-start-signup>Start guided signup</a>
