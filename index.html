@@ -118,6 +118,8 @@
     @keyframes speak { 0%,100% { transform: scaleY(.55); } 50% { transform: scaleY(1); } }
     .live-card strong { display: block; font-family: "Archivo"; font-size: 14px; }
     .live-card span { color: var(--muted); font-size: 12px; }
+    .example-card { left: auto; bottom: auto; top: 18px; right: -14px; width: min(308px, 78%); }
+    .live-card .example-tag { display: block; color: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .09em; margin-bottom: 5px; }
 
     .trust-strip { border-block: 1px solid var(--line); background: var(--surface); }
     .trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
@@ -211,13 +213,13 @@
 
     .chat-launcher {
       position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 50;
-      min-height: 52px; padding: 0 19px; border: 0; border-radius: 999px;
+      min-height: 52px; padding: 0 19px; border: 1.5px solid var(--line); border-radius: 999px;
       display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
-      background: var(--ink); color: var(--paper); box-shadow: var(--shadow);
+      background: var(--surface); color: var(--ink); box-shadow: 0 6px 20px rgba(16, 36, 32, .08);
       font: 700 14px "DM Sans", sans-serif;
     }
     .chat-launcher svg { width: 19px; height: 19px; }
-    .chat-launcher[aria-expanded="true"] { background: var(--teal-dark); }
+    .chat-launcher[aria-expanded="true"] { background: var(--surface-2); }
     .chat-panel {
       position: fixed; right: 22px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 49;
       width: min(380px, calc(100vw - 28px)); max-height: min(590px, calc(100dvh - 110px));
@@ -298,6 +300,7 @@
       .hero-actions .btn { width: 100%; }
       .hero-visual { padding-left: 12px; }
       .live-card { left: -7px; bottom: 14px; }
+      .example-card { top: 10px; right: 4px; left: auto; bottom: auto; width: min(228px, 66%); padding: 12px; }
       section { padding: 68px 0; }
       .service { grid-template-columns: 34px 1fr; gap: 16px; }
       .service-meta { grid-column: 1 / -1; padding-left: 50px; }
@@ -328,7 +331,6 @@
       <a href="#demo">See it work</a>
       <a href="#pricing">Pricing</a>
       <a class="nav-call" href="tel:+16192021085">Call the demo · (619) 202-1085</a>
-      <a href="tel:+16192021085" aria-label="Call the live demo line, 619 202 1085">(619) 202-1085</a>
       <a class="btn btn-secondary nav-cta" href="#pricing" data-start-signup>Start your pilot</a>
     </nav>
   </header>
@@ -341,13 +343,14 @@
                 <h1>AI Receptionist for Dental Offices</h1>
           <p>An AI receptionist answers when your staff can’t, collects the caller’s details, and gives your team a clear callback list.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#pricing" data-start-signup>
-              Start your 30-day pilot
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <a class="btn btn-primary" href="tel:+16192021085">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg>
+              Hear Sunny live — (619) 202-1085
             </a>
             <a class="btn btn-secondary" href="#demo">Watch the 60-second demo</a>
+            <a class="btn btn-secondary" href="#pricing" data-start-signup>Start your 30-day pilot</a>
           </div>
-          <p class="hero-note">Hear her answer a live call right now: <a href="tel:+16192021085">(619) 202-1085</a></p>
+          <p class="hero-note">Real Sunny, real call — no signup, no sales pitch.</p>
           <div class="hero-note">Set up with your hours, services, FAQs, and call rules.</div>
         </div>
         <div class="hero-visual">
@@ -358,6 +361,11 @@
               <div><strong>AI receptionist on the call</strong><span>Capturing the request for your team</span></div>
             </div>
           </div>
+          <div class="live-card example-card" aria-label="Example call outcome">
+            <span class="example-tag">EXAMPLE CALL</span>
+            <strong>New patient — tooth pain</strong>
+            <span>Callback list: name, number, preferred time ✓</span>
+          </div>
         </div>
       </div>
     </section>
@@ -365,16 +373,16 @@
     <div class="trust-strip">
       <div class="wrap trust-inner">
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg>
-          <div><strong>Answers your calls</strong><span>After hours or when your team is busy</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg>
+          <div><strong>30-day pilot</strong><span>Unconditional money-back guarantee</span></div>
         </div>
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-          <div><strong>Texts missed callers</strong><span>Coming soon</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.24H4a1 1 0 0 0-1 1v5.59c0 .53.21 1.04.59 1.41l9.58 9.59a2 2 0 0 0 2.83 0l4.59-4.59a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r="1" fill="currentColor"/></svg>
+          <div><strong>$0 setup</strong><span>Done-for-you — a $499 value</span></div>
         </div>
         <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 2 3.1 6.3L22 9.3l-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1z"/></svg>
-          <div><strong>Helps earn reviews</strong><span>Coming soon</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+          <div><strong>Works alongside your software</strong><span>Dentrix · Eaglesoft · Open Dental · Curve</span></div>
         </div>
       </div>
     </div>
@@ -1148,7 +1156,7 @@
 
       /* ---------- 4. Value-tailored CTAs (demo watched / pricing lingered) ---------- */
       (function tailoredCtas() {
-        var cta = $('.hero-actions .btn-primary');
+        var cta = $('.hero-actions [data-start-signup]');
         if (!cta) return;
         var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
         function tailorNote(text) {
