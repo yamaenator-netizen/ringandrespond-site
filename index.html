@@ -649,6 +649,109 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   .demo-band .video-shell video { height: min(480px, 64vh); }
 }
 
+/* ===== Variant B (panel vote, 2026-10-27): panel-free hero — photo forward, welcome card floats bottom-right ===== */
+.hero {
+  background-image:
+    linear-gradient(100deg, rgba(245,250,247,.94) 0%, rgba(245,250,247,.85) 30%, rgba(245,250,247,.60) 56%, rgba(245,250,247,.28) 80%, rgba(245,250,247,.14) 100%),
+    url("sunny-office.webp"),
+    radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.32), transparent 62%),
+    linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+}
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background-image:
+      linear-gradient(100deg, rgba(245,250,247,.96) 0%, rgba(245,250,247,.88) 34%, rgba(245,250,247,.66) 62%, rgba(245,250,247,.46) 100%),
+      url("sunny-office.webp"),
+      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+  }
+}
+@media (min-width: 881px) {
+  .hero-grid { min-height: 500px; }
+  .hero-visual { margin-bottom: 0; align-self: stretch; display: flex; align-items: flex-end; justify-content: flex-end; }
+}
+.hero-welcome {
+  margin-top: 0; max-width: 402px; background: rgba(255,255,255,.97);
+  border-radius: 20px; padding: 22px 24px; gap: 7px;
+  box-shadow: 0 2px 6px rgba(16,36,32,.06), 0 28px 56px -18px rgba(16,36,32,.35);
+}
+.hero-welcome strong { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
+.hero-welcome > span { font-size: 14.5px; color: var(--pine-soft); line-height: 1.45; }
+.hero-welcome .lang-chips { margin-top: 9px; gap: 7px; }
+.hero-welcome .lang-chip { border-color: var(--mint-line); background: var(--mint-100); color: var(--teal-deep); font-size: 12.5px; padding: 6px 13px; }
+@media (max-width: 880px) {
+  .hero {
+    background-image:
+      linear-gradient(180deg, rgba(245,250,247,.90) 0%, rgba(245,250,247,.82) 55%, rgba(245,250,247,.74) 100%),
+      url("sunny-office.webp"),
+      radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.32), transparent 62%),
+      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+    background-size: auto, cover, auto, auto;
+  }
+  .hero-welcome { max-width: none; width: 100%; }
+}
+
+/* ===== Variant B2 (panel vote — road to 100, 2026-10-27): two-zone wash, capture chip, live dot, mobile photo band ===== */
+.hero {
+  background-image:
+    linear-gradient(100deg, rgba(245,250,247,.96) 0%, rgba(245,250,247,.93) 34%, rgba(245,250,247,.80) 52%, rgba(245,250,247,.36) 72%, rgba(245,250,247,.12) 100%),
+    linear-gradient(8deg, rgba(245,250,247,.42) 0%, rgba(245,250,247,0) 40%),
+    url("sunny-office.webp"),
+    radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.32), transparent 62%),
+    linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+  background-position: 0 0, 0 0, 16% 26%, 0 0, 0 0;
+  background-size: auto, auto, 112%, auto, auto;
+}
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background-image:
+      linear-gradient(100deg, rgba(245,250,247,.97) 0%, rgba(245,250,247,.94) 36%, rgba(245,250,247,.84) 56%, rgba(245,250,247,.52) 100%),
+      linear-gradient(8deg, rgba(245,250,247,.42) 0%, rgba(245,250,247,0) 40%),
+      url("sunny-office.webp"),
+      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+    background-position: 0 0, 0 0, 16% 26%, 0 0;
+    background-size: auto, auto, 112%, auto;
+  }
+}
+@media (min-width: 881px) {
+  .hero { padding-bottom: 54px; }
+  .hero-visual { flex-direction: column; align-items: flex-end; justify-content: flex-end; gap: 14px; }
+}
+.live-dot { display: inline-block; width: 9px; height: 9px; margin-right: 9px; border-radius: 50%; background: #1e9e6a; position: relative; vertical-align: 1px; }
+.hero-photo { display: none; }
+.live-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid rgba(30,158,106,.55); animation: livePulse 2s ease-out infinite; }
+@keyframes livePulse { 0% { transform: scale(.55); opacity: 1; } 70% { transform: scale(1); opacity: 0; } 100% { transform: scale(1); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; opacity: 0; } }
+.hero-capture {
+  width: 402px; max-width: 100%; background: #0d2019; color: #eef6f1;
+  border: 1px solid rgba(159,216,204,.22); border-radius: 18px; padding: 15px 20px 16px;
+  box-shadow: 0 2px 6px rgba(16,36,32,.10), 0 28px 56px -18px rgba(16,36,32,.45);
+  display: grid; gap: 3px; position: relative; z-index: 2;
+}
+.hc-top { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+.hc-wave { width: 17px; height: 17px; color: var(--sun); }
+.hc-label { font-size: 10.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #9fd8cc; }
+.hc-check { margin-left: auto; width: 19px; height: 19px; border-radius: 50%; background: rgba(30,158,106,.28); color: #5fd68f; display: grid; place-items: center; }
+.hc-check svg { width: 11px; height: 11px; }
+.hc-main { margin: 0; font-size: 16.5px; font-weight: 650; letter-spacing: -.01em; color: #fff; }
+.hc-sub { margin: 0; font-size: 13.5px; color: #b9cdc2; }
+@media (max-width: 880px) {
+  .hero {
+    background-image:
+      linear-gradient(180deg, rgba(245,250,247,.94) 0%, rgba(245,250,247,.88) 46%, rgba(245,250,247,.62) 78%, rgba(245,250,247,.48) 100%),
+      url("sunny-office.webp"),
+      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+    background-position: 0 0, 50% 100%, 0 0;
+    background-size: auto, 640px, auto;
+  }
+  .hero-visual { display: flex; flex-direction: column; gap: 12px; }
+  .hero-photo {
+    display: block; height: 168px; border-radius: 20px;
+    background: url("sunny-office.webp") 50% 85% / 150% no-repeat;
+    box-shadow: 0 2px 6px rgba(16,36,32,.06), 0 24px 48px -18px rgba(16,36,32,.35);
+  }
+  .hero-capture { width: 100%; }
+}
+
   </style>
   </head>
 <body>
@@ -679,30 +782,25 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
             <button class="btn btn-secondary" type="button" data-demo-open>Watch the 60-second demo</button>
             <p class="hero-pilot">or <a href="#pricing" data-start-signup>start your 30-day pilot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> — $0 setup, money-back guarantee</p>
           </div>
-          <p class="hero-note">Real Sunny, real call — no signup, no sales pitch.</p>
-          <div class="hero-note">Set up with your hours, services, FAQs, and call rules.</div>
+          <p class="hero-note hero-live"><span class="live-dot" aria-hidden="true"></span>Real Sunny, real call — no signup, no sales pitch.</p>
         </div>
         <div class="hero-visual">
-          <div class="call-panel" aria-label="Example of a Sunny call">
-            <div class="panel-tag">EXAMPLE CALL · AFTER HOURS</div>
-            <div class="live-card" aria-label="Example active call status">
-              <div class="live-row">
-                <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-                <div><strong>AI receptionist on the call</strong><span>Capturing the request for your team</span></div>
-              </div>
-            </div>
-            <div class="live-card" aria-label="Example call outcome">
-              <span class="example-tag">EXAMPLE CALL</span>
-              <strong>New patient — tooth pain</strong>
-              <span>Callback list: name, number, preferred time ✓</span>
-            </div>
+          <div class="hero-photo" aria-hidden="true"></div>
+          <div class="hero-welcome">
+            <strong>A welcome in their own language</strong>
+            <span>Sunny answers in English, Spanish, Arabic, and Farsi — your patients hear a welcome in their own language.</span>
             <div class="lang-chips" aria-label="Languages Sunny answers in">
               <span class="lang-chip">English</span><span class="lang-chip">Español</span><span class="lang-chip">العربية</span><span class="lang-chip">فارسی</span>
             </div>
           </div>
-          <div class="hero-welcome">
-            <strong>A welcome in their own language</strong>
-            <span>Sunny answers in English, Spanish, Arabic, and Farsi — your patients hear a welcome in their own language.</span>
+          <div class="hero-capture">
+            <div class="hc-top">
+              <svg class="hc-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 10v4M7.5 7v10M12 4v16M16.5 7v10M21 10v4"/></svg>
+              <span class="hc-label">Example · Sunny on the call</span>
+              <span class="hc-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+            <p class="hc-main">New patient — tooth pain</p>
+            <p class="hc-sub">Callback list: name, number, preferred time ✓</p>
           </div>
         </div>
       </div>
