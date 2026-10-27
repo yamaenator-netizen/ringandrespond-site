@@ -321,11 +321,286 @@
   </style>
   <link rel="canonical" href="https://www.ringandrespond.com/" />
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.ringandrespond.com/#org","name":"Ring & Respond","url":"https://www.ringandrespond.com/","description":"AI receptionist for dental offices. Sunny answers after-hours calls, captures new patients and appointment requests.","telephone":"+1-619-202-1085","email":"hello@ringandrespond.com"},{"@type":"WebSite","@id":"https://www.ringandrespond.com/#site","url":"https://www.ringandrespond.com/","name":"Ring & Respond","publisher":{"@id":"https://www.ringandrespond.com/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will this replace my front-desk staff?","acceptedAnswer":{"@type":"Answer","text":"No. It covers calls when your team is busy or closed. Your staff stays in control of scheduling and anything that needs a person."}},{"@type":"Question","name":"Does it give medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. It records what the caller says and follows your urgent-call rules. It does not diagnose or recommend treatment."}},{"@type":"Question","name":"Can it use our real hours and services?","acceptedAnswer":{"@type":"Answer","text":"Yes. We set it up with the business details and answers you approve."}},{"@type":"Question","name":"Do we need a new phone number?","acceptedAnswer":{"@type":"Answer","text":"No. Your office line forwards to your receptionist after hours — set it once on a schedule, or toggle it manually when you close. Daytime calls ring your team like normal."}},{"@type":"Question","name":"What happens during the pilot?","acceptedAnswer":{"@type":"Answer","text":"Your first month is the pilot: it's paid up front ($199 or $299 depending on coverage) with an unconditional money-back guarantee. We build Sunny around your office for free — setup is a $499 value, done-for-you — you approve test calls, and then she handles your missed calls for 30 days. Around day 25 you get a capture report of everything she caught. If she hasn't earned her keep, email hello@ringandrespond.com before day 30 and the month comes straight back. After the pilot, your plan continues month-to-month unless you cancel — no contract, no exit fee."}},{"@type":"Question","name":"Do you integrate with Dentrix?","acceptedAnswer":{"@type":"Answer","text":"We don't need to for the pilot. Sunny hands your team a clean call summary and they confirm in Dentrix the way they already work. Deeper integrations are on our roadmap; the pilot doesn't wait for them."}}]}]}</script>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add("js");</script>
+  <style id="rebuild-css">
+/* ============ REBUILD LAYER (research-driven, appended — original CSS untouched) ============ */
+:root {
+  --porcelain: #F5FAF7;
+  --mint-100: #EAF4EE;
+  --mint-200: #DCEFE2;
+  --mint-line: #D3E4D9;
+  --sun-cream: #FFF7DC;
+  --sun-100: #FCEFC2;
+  --sun-deep: #C98F1B;
+  --teal-deep: #084F49;
+  --pine: #102420;
+  --pine-soft: #3D554D;
+  --pine-night: #0A1B16;
+  --pine-panel: #163129;
+  --pine-line: #2A4A3F;
+  --shadow-card: 0 1px 2px rgba(16,36,32,.05), 0 16px 40px -16px rgba(11,118,108,.25);
+  --shadow-sun: 0 20px 48px -16px rgba(201,143,27,.35);
+  --serif: "Fraunces", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --dark-bg: radial-gradient(800px 400px at 50% -10%, rgba(11,118,108,.35), transparent 60%), linear-gradient(165deg, #102420 0%, #0A1B16 58%, #084F49 135%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --porcelain: #0d1718;
+    --mint-100: #122b25;
+    --mint-200: #1a3a31;
+    --mint-line: #2c4a41;
+    --sun-cream: #292410;
+    --sun-100: #3a2f14;
+    --sun-deep: #e8b95a;
+    --pine-soft: #a9c2b8;
+    --shadow-card: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.55);
+  }
+}
+/* grain — one static SVG noise layer over the page (recipe: opacity .025 light) */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: .025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+/* global craft: container, rhythm, serif H2 layer */
+.wrap { width: min(1200px, calc(100% - 40px)); }
+section { padding: 96px 0; }
+h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.015em; }
+.serif-i { font-style: italic; font-weight: 500; }
+/* scroll reveals (JS-gated; visible without JS) */
+html.js [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+html.js [data-reveal].in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+/* header brand wordmark */
+.brand { display: inline-flex; align-items: center; text-decoration: none; flex: 0 0 auto; }
+.brand img { height: 46px; width: auto; }
+/* hero — sunbeam wash + demo call panel */
+.hero {
+  background: radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.32), transparent 62%), linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
+  padding: 64px 0 88px;
+}
+@media (prefers-color-scheme: dark) {
+  .hero { background: radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.10), transparent 62%), linear-gradient(180deg, #12241e 0%, #0d1718 100%); }
+}
+.call-panel {
+  background: var(--dark-bg); border: 1px solid var(--pine-line); border-radius: 28px;
+  padding: 22px; box-shadow: var(--shadow); display: grid; gap: 14px; position: relative;
+}
+.panel-tag { display: flex; align-items: center; gap: 9px; color: #9fd8cc; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.panel-tag::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #35ad78; box-shadow: 0 0 0 5px rgba(53,173,120,.16); }
+.call-panel .live-card { position: static; width: auto; box-shadow: 0 12px 30px rgba(0,0,0,.28); }
+.lang-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.lang-chip { border: 1px solid var(--pine-line); color: #e8f4ef; border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 700; }
+.hero-pilot { flex-basis: 100%; margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
+.hero-pilot a { color: var(--teal-dark); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+.hero-pilot a:hover { text-decoration: underline; }
+.hero-pilot a svg { width: 16px; height: 16px; }
+@media (min-width: 881px) { .hero-visual { margin-bottom: -40px; z-index: 2; } }
+/* trust strip — tinted hairlines */
+.trust-strip { border-block: 1px solid var(--mint-line); }
+.trust-item { border-right: 1px solid var(--mint-line); }
+/* problem section */
+.problem { background: var(--porcelain); }
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pain-card { background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; padding: 28px; box-shadow: var(--shadow-card); }
+.pain-card .stat { font-family: var(--serif); font-size: 42px; font-weight: 600; color: var(--teal); line-height: 1; margin: 0 0 12px; }
+.pain-card h3 { font-size: 21px; margin-bottom: 9px; }
+.pain-card p { color: var(--muted); margin: 0; font-size: 15px; }
+.example-line { margin-top: 26px; background: var(--sun-100); border: 1px solid var(--sun); border-radius: 20px; padding: 20px 24px; color: var(--pine); font-size: 15px; }
+.example-line .ex-tag { display: inline-block; background: var(--sun); color: #102420; border-radius: 6px; padding: 2px 8px; font-size: 11px; font-weight: 800; letter-spacing: .07em; margin-right: 9px; vertical-align: 2px; }
+/* demo theatre */
+.demo { background: var(--dark-bg); color: #f2f8f4; }
+.demo h2 { text-align: center; max-width: 940px; margin: 0 auto; color: #fff; }
+.demo h2 a { color: var(--sun); text-decoration: none; white-space: nowrap; }
+.demo h2 a:hover { text-decoration: underline; }
+.demo .lede { text-align: center; color: #bcc9d3; font-size: 17px; max-width: 640px; margin: 18px auto 0; }
+.demo .video-shell { max-width: 880px; margin: 42px auto 0; background: var(--pine-panel); border: 1px solid var(--pine-line); border-radius: 28px; padding: 12px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+.demo .video-caption { color: #9db8ad; }
+.demo-under { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; max-width: 880px; margin: 26px auto 0; }
+.listen-card { background: var(--pine-panel); border: 1px solid var(--pine-line); border-radius: 20px; padding: 24px 26px; }
+.listen-card h3 { color: #fff; font-size: 19px; margin-bottom: 14px; }
+.listen-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
+.listen-card li { display: flex; gap: 10px; color: #d7e6de; font-size: 14.5px; }
+.listen-card li::before { content: "✓"; color: var(--sun); font-weight: 900; }
+.live-pill-card { background: var(--pine-panel); border: 1px solid var(--pine-line); border-radius: 20px; padding: 24px 26px; display: grid; align-content: center; gap: 12px; }
+.live-pill-card p { margin: 0; color: #bcc9d3; font-size: 14px; }
+.live-pill-card .btn { width: 100%; }
+/* services bento */
+.bento-sec { background: var(--mint-100); }
+.bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+.bento-card { background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; padding: 30px; box-shadow: var(--shadow-card); }
+.bento-voice { grid-column: span 4; }
+.bento-lang { grid-column: span 2; }
+.bento-cell { grid-column: span 2; }
+.bento-card h3 { font-size: clamp(23px, 2.6vw, 30px); margin: 16px 0 10px; }
+.bento-card .well { width: 46px; height: 46px; border-radius: 14px; background: var(--mint-200); display: grid; place-items: center; color: var(--teal); }
+.bento-card .well svg { width: 24px; height: 24px; }
+.bento-card > p { color: var(--muted); margin: 0 0 14px; }
+.badge-now { background: var(--sun-100); color: var(--sun-deep); }
+.lang-thumbs { margin-top: 16px; }
+.lang-thumbs img { border-radius: 14px; aspect-ratio: 16/10; object-fit: cover; height: auto; }
+.lang-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.lang-list span { border: 1px solid var(--mint-line); background: var(--porcelain); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 700; }
+/* how it works */
+.how-sec { background: var(--porcelain); }
+.how-grid { gap: 20px; border: 0; background: transparent; overflow: visible; position: relative; }
+.how-grid::before { content: ""; position: absolute; top: 54px; left: 8%; right: 8%; height: 2px; background: var(--mint-200); }
+.step { background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; box-shadow: var(--shadow-card); position: relative; }
+.step b { display: inline-grid; place-items: center; height: 44px; padding: 0 16px; border-radius: 999px; background: var(--mint-200); color: var(--teal-deep); font-size: 13px; letter-spacing: .06em; }
+.forward-tip { background: var(--sun-100); border: 1px solid var(--sun); border-radius: 20px; box-shadow: var(--shadow-card); padding: 22px 26px; }
+.forward-tip p { color: var(--pine); }
+/* office visual — sun-cream warm break */
+.office-sec { background: var(--sun-cream); }
+.office-frame { position: relative; max-width: 1020px; margin: 0 auto; }
+.office-frame figure { margin: 0; }
+.office-frame img { border-radius: 999px 999px 20px 20px; box-shadow: var(--shadow-card), 0 24px 70px rgba(246,200,85,.35); }
+.office-card { position: absolute; right: -18px; bottom: 36px; max-width: 390px; background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; padding: 24px 26px; box-shadow: var(--shadow-card); }
+.office-card h3 { font-size: 21px; margin-bottom: 9px; }
+.office-card p { color: var(--muted); margin: 0; font-size: 15px; }
+/* honest proof */
+.proof-sec { background: var(--surface); }
+.check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.check-card { background: var(--porcelain); border: 1px solid var(--mint-line); border-radius: 20px; padding: 28px; }
+.check-card h3 { font-size: 21px; margin-bottom: 9px; }
+.check-card p { color: var(--muted); margin: 0 0 14px; font-size: 15px; }
+.check-card a { color: var(--teal-dark); font-weight: 700; text-decoration: none; }
+.check-card a:hover { text-decoration: underline; }
+.outcome-card { margin-top: 24px; background: var(--porcelain); border: 1px dashed var(--teal); border-radius: 20px; padding: 24px 28px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.outcome-card .example-tag { color: var(--teal); font-size: 10px; font-weight: 800; letter-spacing: .09em; display: block; margin-bottom: 5px; }
+.outcome-card strong { font-family: "Archivo"; font-size: 16px; display: block; }
+.outcome-card span { color: var(--muted); font-size: 13.5px; }
+.outcome-note { flex: 1 1 260px; color: var(--muted); font-size: 13.5px; margin: 0; }
+/* compatibility */
+.compat-sec { background: var(--porcelain); }
+.compat-panel { background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; padding: 26px 28px; box-shadow: var(--shadow-card); }
+.compat-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.software-chip { border: 1px solid var(--mint-line); background: var(--porcelain); border-radius: 999px; padding: 9px 16px; font-weight: 700; font-size: 14.5px; }
+.compat-panel p { color: var(--muted); margin: 0; max-width: 760px; }
+.compat-sec small { display: block; margin-top: 16px; color: var(--pine-soft); }
+/* pricing */
+.pricing-sec { background: var(--mint-100); }
+.pricing-inner { max-width: 960px; margin: 0 auto; }
+.pricing-head { text-align: center; max-width: 720px; margin: 0 auto; }
+.pricing-head h2 { font-size: clamp(34px, 4vw, 52px); }
+.pricing-head > p { color: var(--muted); font-size: 17px; }
+.tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 40px; }
+.tier { background: var(--surface); border: 1px solid var(--mint-line); border-radius: 28px; padding: 34px; box-shadow: var(--shadow-card); }
+.tier-featured { background: linear-gradient(165deg, #102420 0%, #0A1B16 70%); color: #f2f8f4; border-color: var(--pine-line); transform: translateY(-16px); box-shadow: var(--shadow-sun); }
+.tier .plan-name { font-family: "Archivo"; font-weight: 700; font-size: 16px; letter-spacing: .02em; }
+.plan-badge { display: inline-flex; background: var(--sun); color: #102420; border-radius: 999px; padding: 6px 12px; font-weight: 800; font-size: 12px; letter-spacing: .06em; margin-left: 9px; vertical-align: 2px; }
+.tier .amount { font-family: "Archivo"; font-size: clamp(52px, 5.4vw, 66px); line-height: 1; letter-spacing: -.045em; margin: 18px 0 6px; }
+.tier .amount span { font-size: 17px; letter-spacing: 0; color: var(--muted); font-weight: 600; }
+.tier-featured .amount span { color: #b9cdc4; }
+.tier .covers { color: var(--muted); margin: 0 0 24px; font-size: 15px; }
+.tier-featured .covers { color: #b9cdc4; }
+.tier .btn { width: 100%; }
+.includes-below { margin-top: 34px; background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; padding: 28px 30px; box-shadow: var(--shadow-card); }
+.includes-below h3 { font-size: 20px; margin-bottom: 18px; }
+.includes-below ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 13px 30px; }
+.includes-below li { display: flex; align-items: flex-start; gap: 11px; color: var(--muted); font-size: 14.5px; }
+.includes-below li svg { flex: 0 0 auto; width: 18px; height: 18px; color: var(--teal); margin-top: 2px; }
+.guarantee-strip { margin-top: 24px; text-align: center; color: var(--pine-soft); font-size: 14px; }
+.guided-line { text-align: center; margin: 14px 0 0; color: var(--muted); font-size: 14.5px; }
+.guided-line a { color: var(--teal-dark); font-weight: 700; text-decoration: none; }
+.guided-line a:hover { text-decoration: underline; }
+.final-pilot { margin-top: 18px; color: #9db8ad; font-size: 14.5px; }
+.final-pilot a { color: var(--sun); font-weight: 700; text-decoration: none; }
+.final-pilot a:hover { text-decoration: underline; }
+.small-notes { margin-top: 16px; display: grid; gap: 9px; font-size: 12.5px; color: var(--pine-soft); }
+.small-notes p { margin: 0; }
+/* calculator band */
+.calc-sec { background: var(--porcelain); }
+.calc-box { max-width: 960px; margin: 0 auto; background: var(--surface); border: 1px solid var(--mint-line); border-radius: 28px; box-shadow: var(--shadow-card); padding: 34px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px; }
+.calc-box h2 { font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 10px; }
+.calc-box .sub { color: var(--muted); margin: 0 0 24px; font-size: 15.5px; }
+.calc-field { margin-bottom: 20px; }
+.calc-field label { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+.calc-field label output { color: var(--teal-deep); font-family: "Archivo"; }
+.calc-field input[type="range"] { width: 100%; accent-color: var(--teal); height: 32px; }
+.calc-out { background: var(--mint-100); border-radius: 20px; padding: 26px; align-self: start; }
+.calc-out .big { font-family: var(--serif); font-size: 44px; font-weight: 600; line-height: 1.05; }
+.calc-out .per { color: var(--pine-soft); font-size: 14px; margin: 4px 0 16px; }
+.calc-out .formula { font-size: 13px; color: var(--pine-soft); border-top: 1px solid var(--mint-line); padding-top: 14px; margin: 0 0 14px; }
+.calc-out .honest { font-size: 14px; font-weight: 700; color: var(--pine); margin: 0 0 12px; }
+.calc-out a { color: var(--teal-dark); font-weight: 700; font-size: 14px; }
+/* hipaa strip */
+.hipaa-strip { background: var(--sun-100); padding: 40px 0; }
+.hipaa-inner { display: flex; gap: 22px 34px; align-items: center; flex-wrap: wrap; }
+.hipaa-item { display: flex; gap: 11px; align-items: flex-start; flex: 1 1 240px; font-size: 14.5px; color: var(--pine); }
+.hipaa-item svg { flex: 0 0 auto; width: 21px; height: 21px; color: var(--teal-deep); margin-top: 1px; }
+.hipaa-link { font-weight: 800; color: var(--pine); white-space: nowrap; }
+/* faq */
+.faq-sec { background: var(--porcelain); }
+.faq-end { margin-top: 26px; text-align: center; color: var(--muted); }
+.faq-end a { color: var(--teal-dark); font-weight: 800; text-decoration: none; }
+/* final cta */
+.final-sec { background: var(--dark-bg); color: #f2f8f4; text-align: center; }
+.final-sec .sun-mark { display: grid; place-items: center; margin-bottom: 22px; }
+.final-sec h2 { color: #fff; max-width: 700px; margin: 0 auto; font-size: clamp(34px, 4.4vw, 56px); }
+.final-sec p { color: #bcc9d3; max-width: 560px; margin: 16px auto 0; }
+.final-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+.btn-ghost { border: 1.5px solid var(--pine-line); color: #fff; background: transparent; }
+.btn-ghost:hover { border-color: var(--sun); }
+/* guides */
+.guides-sec { background: var(--porcelain); }
+.guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.guide-card { background: var(--surface); border: 1px solid var(--mint-line); border-radius: 20px; padding: 26px; box-shadow: var(--shadow-card); text-decoration: none; display: grid; gap: 9px; align-content: start; transition: transform .2s ease; }
+.guide-card:hover { transform: translateY(-2px); }
+.guide-card .g-eyebrow { color: var(--teal); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.guide-card h3 { font-family: var(--serif); font-weight: 600; font-size: 22px; letter-spacing: -.01em; }
+.guide-card p { color: var(--muted); margin: 0; font-size: 14.5px; }
+/* footer */
+footer.site-footer { background: var(--dark-bg); color: #cfe0d8; padding: 72px 0 34px; font-size: 14px; }
+.footer-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 38px; }
+.footer-grid h4 { font-family: "Archivo"; color: #fff; font-size: 15px; margin: 0 0 14px; letter-spacing: .02em; }
+.footer-grid p { margin: 0 0 8px; color: #a9c0b5; }
+.footer-grid a { color: #cfe0d8; text-decoration: none; }
+.footer-grid a:hover { color: var(--sun); }
+.footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.footer-brand { font-family: "Archivo"; font-weight: 800; font-size: 21px; color: #fff; letter-spacing: -.02em; margin-bottom: 10px; }
+.footer-bottom { border-top: 1px solid var(--pine-line); margin-top: 38px; padding-top: 20px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: #8fa89d; font-size: 12.5px; }
+/* sticky mobile call bar */
+.sticky-call { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 60; display: none; }
+.sticky-call a { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--sun); color: #102420; font-weight: 800; font-size: 15.5px; border-radius: 999px; min-height: 52px; box-shadow: 0 14px 34px rgba(16,36,32,.30); text-decoration: none; padding: 6px 18px; text-align: center; }
+.sticky-call a svg { width: 19px; height: 19px; flex: 0 0 auto; }
+.chat-launcher { transition: opacity .25s ease, transform .25s ease; }
+body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: translateY(10px); }
+@media (max-width: 880px) {
+  section { padding: 56px 0; }
+  .hero { padding: 40px 0 64px; }
+  .sticky-call { display: block; transform: translateY(160%); transition: transform .35s ease; }
+  .sticky-call.on { transform: none; }
+  .pain-grid, .check-grid, .guide-grid, .footer-grid { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: 1fr; }
+  .bento-voice, .bento-lang, .bento-cell { grid-column: auto; }
+  .demo-under, .calc-box { grid-template-columns: 1fr; }
+  .tiers { grid-template-columns: 1fr; }
+  .tier-featured { transform: none; }
+  .includes-below ul { grid-template-columns: 1fr; }
+  .how-grid::before { display: none; }
+  .office-card { position: static; max-width: none; margin-top: 16px; }
+  .office-frame img { border-radius: 200px 200px 20px 20px; }
+  .hi-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .brand img { height: 34px; }
+  .nav-cta { padding: 9px 13px; font-size: 13px; white-space: nowrap; }
+  .topbar .nav-call { font-size: 0; gap: 6px; }
+  .topbar .nav-call::after { content: "(619) 202-1085"; font-size: 13.5px; }
+  .calc-box, .tier, .bento-card { padding: 24px; }
+  .calc-out .big { font-size: 36px; }
+}
+
+  </style>
+  </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="wrap topbar" aria-label="Site navigation">
-    <div class="availability">Dental pilots now open</div>
+    <a class="brand" href="#main" aria-label="Ring &amp; Respond — home"><img src="rr-logo-flat-lockup.png" alt="Ring &amp; Respond" /></a>
     <nav aria-label="Primary navigation">
       <a href="#services">Services</a>
       <a href="#demo">See it work</a>
@@ -340,7 +615,7 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Your front desk doesn’t clock out</p>
-                <h1>AI Receptionist for Dental Offices</h1>
+          <h1>AI Receptionist for Dental Offices</h1>
           <p>An AI receptionist answers when your staff can’t, collects the caller’s details, and gives your team a clear callback list.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+16192021085">
@@ -348,23 +623,28 @@
               Hear Sunny live — (619) 202-1085
             </a>
             <a class="btn btn-secondary" href="#demo">Watch the 60-second demo</a>
-            <a class="btn btn-secondary" href="#pricing" data-start-signup>Start your 30-day pilot</a>
+            <p class="hero-pilot">or <a href="#pricing" data-start-signup>start your 30-day pilot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> — $0 setup, money-back guarantee</p>
           </div>
           <p class="hero-note">Real Sunny, real call — no signup, no sales pitch.</p>
           <div class="hero-note">Set up with your hours, services, FAQs, and call rules.</div>
         </div>
         <div class="hero-visual">
-          <img src="hero-visual.webp" alt="Illustration of an after-hours reception desk connected to voice, message, and review tools" />
-          <div class="live-card" aria-label="Example active call status">
-            <div class="live-row">
-              <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-              <div><strong>AI receptionist on the call</strong><span>Capturing the request for your team</span></div>
+          <div class="call-panel" aria-label="Example of a Sunny call">
+            <div class="panel-tag">EXAMPLE CALL · AFTER HOURS</div>
+            <div class="live-card" aria-label="Example active call status">
+              <div class="live-row">
+                <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                <div><strong>AI receptionist on the call</strong><span>Capturing the request for your team</span></div>
+              </div>
             </div>
-          </div>
-          <div class="live-card example-card" aria-label="Example call outcome">
-            <span class="example-tag">EXAMPLE CALL</span>
-            <strong>New patient — tooth pain</strong>
-            <span>Callback list: name, number, preferred time ✓</span>
+            <div class="live-card" aria-label="Example call outcome">
+              <span class="example-tag">EXAMPLE CALL</span>
+              <strong>New patient — tooth pain</strong>
+              <span>Callback list: name, number, preferred time ✓</span>
+            </div>
+            <div class="lang-chips" aria-label="Languages Sunny answers in">
+              <span class="lang-chip">English</span><span class="lang-chip">Español</span><span class="lang-chip">العربية</span><span class="lang-chip">فارسی</span>
+            </div>
           </div>
         </div>
       </div>
@@ -387,67 +667,113 @@
       </div>
     </div>
 
-    <section id="services">
+    <section class="problem" id="problem">
       <div class="wrap">
-        <div class="section-heading">
-          <h2>Three jobs.<br />One front desk.</h2>
-          <p>We start by answering your calls. Text-back and review tools can be added when they are ready.</p>
+        <div class="section-heading" data-reveal>
+          <h2>When a call goes <span class="serif-i">unanswered</span></h2>
+          <p>Most callers don’t wait, don’t leave a message, and don’t call back. Three numbers every office should know:</p>
         </div>
-        <div class="service-list">
-          <article class="service">
-            <div class="service-number">01</div>
-            <div class="service-copy"><h3>AI voice receptionist</h3><p>Answers calls, handles approved FAQs, and collects the details your team needs.</p><span class="status">Dental pilot available now</span></div>
-            <ul class="service-meta"><li>Uses your real business information</li><li>Collects name, number, reason, and preferred time</li><li>Flags urgent calls using your rules</li><li>Creates a clear callback list</li></ul>
+        <div class="pain-grid">
+          <article class="pain-card" data-reveal>
+            <p class="stat">30–38%</p>
+            <h3>The desk is busy</h3>
+            <p>Your front desk is with the patient in the chair — calls ring out or hit hold. Benchmarks put 30–38% of in-hours dental calls in the unanswered pile.</p>
           </article>
-          <article class="service">
-            <div class="service-number">02</div>
-            <div class="service-copy"><h3>Missed-call text-back</h3><p>Will send a helpful text when a call goes unanswered, so the customer knows what to do next.</p><span class="status">Coming soon</span></div>
-            <ul class="service-meta"><li>Responds quickly after a missed call</li><li>Uses a message approved by your business</li><li>Works with the voice receptionist</li></ul>
+          <article class="pain-card" data-reveal>
+            <p class="stat">~45%</p>
+            <h3>After hours, no one’s there</h3>
+            <p>Roughly 45% of patient calls come outside office hours, when nobody is there to answer at all — the call lands in voicemail.</p>
           </article>
-          <article class="service">
-            <div class="service-number">03</div>
-            <div class="service-copy"><h3>Review manager</h3><p>Asks happy customers for a Google review and helps you respond to feedback.</p><span class="status">Coming soon</span></div>
-            <ul class="service-meta"><li>Sends Google review requests</li><li>Drafts replies for you to approve</li><li>Keeps feedback in one place</li></ul>
+          <article class="pain-card" data-reveal>
+            <p class="stat">14%</p>
+            <h3>They don’t leave a message</h3>
+            <p>Only about 14% of new patients leave a voicemail. The majority call the next practice on their list — a missed call is usually a lost patient, not a delayed one.</p>
           </article>
         </div>
+        <div class="example-line" data-reveal><span class="ex-tag">EXAMPLE</span>If Sunny catches two new-patient calls a month that would have gone to voicemail — and just one of them becomes a patient — most offices figure she’s paid for herself. Your mileage will vary; your day-25 capture report shows your real numbers.</div>
       </div>
     </section>
 
     <section class="demo" id="demo">
-      <div class="wrap demo-grid">
-        <div>
-          <h2>Hear what your callers will hear.</h2>
-          <p>Watch a one-minute example of an after-hours dental call, from the greeting to the morning callback list.</p>
-          <p>Or skip the video and hear the real thing — call the live demo line: <a href="tel:+16192021085">(619) 202-1085</a></p>
-          <p class="demo-call">Prefer live? Call Sunny now: <a href="tel:+16192021085">(619) 202-1085</a></p>
-          <div class="demo-points">
-            <div class="demo-point"><b>1</b><div><strong>A customer calls</strong><span>Your custom greeting answers instead of voicemail.</span></div></div>
-            <div class="demo-point"><b>2</b><div><strong>The request is captured</strong><span>Name, callback number, need, and preferred time are confirmed.</span></div></div>
-            <div class="demo-point"><b>3</b><div><strong>Your staff takes over</strong><span>The team starts the day with an organized follow-up.</span></div></div>
-          </div>
-        </div>
-        <div class="video-shell">
+      <div class="wrap">
+        <h2 data-reveal>Hear what your <span class="serif-i">callers</span> will hear — <a href="tel:+16192021085">(619) 202-1085</a></h2>
+        <p class="lede" data-reveal>Watch a one-minute example of an after-hours dental call, from the greeting to the morning callback list.</p>
+        <div class="video-shell" data-reveal>
           <video controls playsinline preload="metadata" aria-label="Demonstration of the Sunny dental AI receptionist">
             <source src="sunny-demo.mp4" type="video/mp4">
             Your browser does not support embedded video.
           </video>
           <div class="video-caption"><span>Sunny · dental receptionist demo</span><span>About 60 seconds</span></div>
         </div>
+        <div class="demo-under">
+          <div class="listen-card" data-reveal>
+            <h3>Listen for</h3>
+            <ul>
+              <li>Your custom greeting, answering in your practice’s name</li>
+              <li>Name, callback number, need, and preferred time — confirmed</li>
+              <li>Urgent calls flagged using your rules</li>
+              <li>Your staff starts the day with an organized callback list</li>
+            </ul>
+          </div>
+          <div class="live-pill-card" data-reveal>
+            <a class="btn btn-primary" href="tel:+16192021085">Prefer live? Call Sunny — (619) 202-1085</a>
+            <p>The video is an example. The demo line is the real Sunny, answering now — no signup, no sales pitch.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="office-visual">
+    <section class="bento-sec" id="services">
       <div class="wrap">
-        <figure>
-          <img src="sunny-office.webp" alt="Illustration of a dental office reception with an illuminated Sunny sign — a multilingual dental receptionist" width="2080" height="1136" loading="lazy" />
-          <figcaption>Sunny answers in English, Spanish, Arabic, and Farsi — your patients hear a welcome in their own language.</figcaption>
-        </figure>
+        <div class="section-heading" data-reveal>
+          <h2>Three jobs.<br />One front desk.</h2>
+          <p>We start by answering your calls. Text-back and review tools can be added when they are ready.</p>
+        </div>
+        <div class="bento">
+          <article class="bento-card bento-voice" data-reveal>
+            <div class="well"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg></div>
+            <h3>AI voice receptionist</h3>
+            <p>Answers calls, handles approved FAQs, and collects the details your team needs.</p>
+            <span class="status badge-now">Dental pilot available now</span>
+            <ul class="service-meta" style="margin-top:16px">
+              <li>Uses your real business information</li>
+              <li>Collects name, number, reason, and preferred time</li>
+              <li>Flags urgent calls using your rules</li>
+              <li>Creates a clear callback list</li>
+            </ul>
+          </article>
+          <article class="bento-card bento-lang" data-reveal>
+            <div class="well"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Four languages</h3>
+            <p>Sunny answers in English, Spanish, Arabic, and Farsi — your patients hear a welcome in their own language.</p>
+            <div class="lang-list"><span>English</span><span>Español</span><span>العربية</span><span>فارسی</span></div>
+            <div class="lang-thumbs"><img src="sunny-office.webp" alt="Illustration of a dental office reception with an illuminated Sunny sign" loading="lazy" /></div>
+          </article>
+          <article class="bento-card bento-cell" data-reveal>
+            <div class="well"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Missed-call text-back</h3>
+            <p>Will send a helpful text when a call goes unanswered, so the customer knows what to do next.</p>
+            <span class="status">Coming soon</span>
+          </article>
+          <article class="bento-card bento-cell" data-reveal>
+            <div class="well"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <h3>Review manager</h3>
+            <p>Asks happy customers for a Google review and helps you respond to feedback.</p>
+            <span class="status">Coming soon</span>
+          </article>
+          <article class="bento-card bento-cell" data-reveal>
+            <div class="well"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
+            <h3>A clear callback list</h3>
+            <p>Every call lands in one place — name, number, reason, and preferred time — so nothing falls through the cracks.</p>
+            <span class="status">Included in every voice plan</span>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section class="how-sec">
       <div class="wrap">
-        <div class="section-heading">
+        <div class="section-heading" data-reveal>
           <h2>From your FAQs<br />to your phone line.</h2>
           <p>We build the receptionist around your business. Your staff keeps control of scheduling and customer care.</p>
         </div>
@@ -456,27 +782,95 @@
           <article class="step"><b>STEP 02</b><h3>We build and test</h3><p>We set up the receptionist. You hear test calls and approve it before customers use it.</p></article>
           <article class="step"><b>STEP 03</b><h3>Your first month is the pilot</h3><p>The receptionist handles a set group of calls for 30 days. Around day 25 you get a capture report — and if she hasn’t earned her keep, the month comes straight back.</p></article>
         </div>
+        <div class="forward-tip" data-reveal><p><strong>Tip: keep the number your patients already know.</strong> Your office line forwards to your receptionist after hours — set it once on a schedule (evenings, weekends, holidays), or toggle it manually when you close. Daytime calls ring your team like normal, and every practice gets its own dedicated number to forward to.</p></div>
       </div>
     </section>
 
-    <div class="forward-tip"><p><strong>Tip: keep the number your patients already know.</strong> Your office line forwards to your receptionist after hours — set it once on a schedule (evenings, weekends, holidays), or toggle it manually when you close. Daytime calls ring your team like normal, and every practice gets its own dedicated number to forward to.</p></div>
-    <section><div class="wrap"><div class="section-heading"><h2>Works alongside the software you already run</h2><p>Dentrix, Eaglesoft, Open Dental, Curve Dental — whichever system runs your office, Sunny doesn't replace it. She answers after hours, captures the patient's name, number, and request, and your team confirms it in your own software in the morning. No migration, no new logins, no IT project.</p></div><p><small>Dentrix, Eaglesoft, Open Dental, and Curve Dental are trademarks of their respective owners. Ring & Respond is not affiliated with or endorsed by Henry Schein One, Patterson Companies, Open Dental Software, or Curve Dental.</small></p></div></section>
-    <section id="pricing">
-      <div class="wrap pricing-shell">
-        <div class="price">
+    <section class="office-sec">
+      <div class="wrap">
+        <div class="office-frame" data-reveal>
+          <figure>
+            <img src="sunny-office.webp" alt="Illustration of a dental office reception with an illuminated Sunny sign — a multilingual dental receptionist" width="2080" height="1136" loading="lazy" />
+          </figure>
+          <div class="office-card">
+            <h3>A welcome in their own language</h3>
+            <p>Sunny answers in English, Spanish, Arabic, and Farsi — your patients hear a welcome in their own language.</p>
+            <div class="lang-list"><span>English</span><span>Español</span><span>العربية</span><span>فارسی</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-sec" id="proof">
+      <div class="wrap">
+        <div class="section-heading" data-reveal>
+          <h2>We’re new — here’s how to <span class="serif-i">check us</span> anyway.</h2>
+          <p>No testimonials, no logo wall, no star ratings — we’re not going to invent them. Everything below is checkable today:</p>
+        </div>
+        <div class="check-grid">
+          <article class="check-card" data-reveal>
+            <h3>Call the live demo</h3>
+            <p>Don’t take our word for anything. Most owners test Sunny with a made-up emergency first — which is exactly the call that matters at 9 PM.</p>
+            <a href="tel:+16192021085">Call (619) 202-1085 →</a>
+          </article>
+          <article class="check-card" data-reveal>
+            <h3>Read the fine print first</h3>
+            <p>The FAQ on this page answers the hard questions, including what Sunny can’t do: she captures each request, and your team confirms it — she never pretends a booking happened.</p>
+            <a href="#faq">Read the FAQ →</a>
+          </article>
+          <article class="check-card" data-reveal>
+            <h3>Email a human</h3>
+            <p>Questions a page can’t answer? A person reads every message and replies — no ticket queue, no bot runaround.</p>
+            <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com →</a>
+          </article>
+        </div>
+        <div class="outcome-card" data-reveal>
+          <div>
+            <span class="example-tag">EXAMPLE CALL</span>
+            <strong>New patient — tooth pain</strong>
+            <span>Callback list: name, number, preferred time ✓</span>
+          </div>
+          <p class="outcome-note">This is an example of what lands on your team’s list — not a customer story. The first real ones get written by our pilot practices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="compat-sec">
+      <div class="wrap">
+        <div class="section-heading" data-reveal>
+          <h2>Works alongside the software you already run</h2>
+          <p>Dentrix, Eaglesoft, Open Dental, Curve Dental — whichever system runs your office, Sunny doesn’t replace it.</p>
+        </div>
+        <div class="compat-panel" data-reveal>
+          <p>She answers after hours, captures the patient’s name, number, and request, and your team confirms it in your own software in the morning. No migration, no new logins, no IT project.</p>
+          <div class="compat-chips"><span class="software-chip">Dentrix</span><span class="software-chip">Eaglesoft</span><span class="software-chip">Open Dental</span><span class="software-chip">Curve Dental</span></div>
+        </div>
+        <small>Dentrix, Eaglesoft, Open Dental, and Curve Dental are trademarks of their respective owners. Ring &amp; Respond is not affiliated with or endorsed by Henry Schein One, Patterson Companies, Open Dental Software, or Curve Dental.</small>
+      </div>
+    </section>
+
+    <section class="pricing-sec" id="pricing">
+      <div class="wrap pricing-inner">
+        <div class="pricing-head" data-reveal>
           <p class="eyebrow">Available now · dental voice pilot</p>
           <h2>Start with the call that would have gone unanswered.</h2>
           <p>Pick your coverage, and your first month is a pilot — paid up front, guaranteed. If Sunny doesn’t earn her keep in 30 days, the month comes straight back. Setup is on us: we build her around your office, done-for-you, a $499 value — you pay $0.</p>
-          <div class="price-line"><strong>$199</strong><span>/ month · After-Hours Capture — nights, weekends, holidays</span></div>
-          <a class="btn btn-secondary" href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01">Start with After-Hours Capture</a>
-          <div class="price-line featured"><strong>$299</strong><span>/ month · 24/7 Complete — adds lunch-hour and busy-desk overflow</span></div>
-          <a class="btn btn-primary" href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02">Start with 24/7 Complete</a>
-          <div class="setup">$0 setup, done-for-you (a $499 value) · First month is your pilot — unconditional money-back guarantee · Month-to-month after, no exit fee · Extra locations save 20% ($159 / $239) · Or prepay a year and get 2 months free ($1,990 / $2,990)</div>
-          <a class="btn btn-primary" href="#pricing" data-start-signup>Start guided signup</a>
-          <div class="launch-note">Sunny captures each caller’s request and your team confirms it in your own system — she never pretends a booking happened. Text-back and review tools are coming later and are not included in today’s voice plans.</div>
-          <div class="launch-note">EXAMPLE: if Sunny catches two new-patient calls a month that would have gone to voicemail — and just one of them becomes a patient — most offices figure she’s paid for herself. Your mileage will vary; your day-25 capture report shows your real numbers.</div>
         </div>
-        <div class="included">
+        <div class="tiers">
+          <article class="tier" data-reveal>
+            <div class="plan-name">After-Hours Capture</div>
+            <div class="amount">$199 <span>/ month</span></div>
+            <p class="covers">Nights, weekends, holidays — the hours your office is closed.</p>
+            <a class="btn btn-secondary" href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01">Start with After-Hours Capture</a>
+          </article>
+          <article class="tier tier-featured" data-reveal>
+            <div class="plan-name">Complete coverage <span class="plan-badge">24/7 COMPLETE</span></div>
+            <div class="amount">$299 <span>/ month</span></div>
+            <p class="covers">Everything after hours, plus lunch-hour and busy-desk overflow.</p>
+            <a class="btn btn-primary" href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02">Start with 24/7 Complete</a>
+          </article>
+        </div>
+        <div class="includes-below" data-reveal>
           <h3>Voice plan includes</h3>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Custom AI receptionist trained on your practice — your greeting, hours, services, and FAQs</span></li>
@@ -486,42 +880,141 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Lunch-hour and busy-desk overflow coverage (24/7 Complete) — not just after-hours</span></li>
           </ul>
         </div>
+        <p class="guarantee-strip" data-reveal>$0 setup, done-for-you (a $499 value) · First month is your pilot — unconditional money-back guarantee · Month-to-month after, no exit fee · Extra locations save 20% ($159 / $239) · Or prepay a year and get 2 months free ($1,990 / $2,990)</p>
+        <p class="guided-line">Prefer to be walked through it? <a href="#pricing" data-start-signup>Start guided signup →</a></p>
+        <div class="small-notes">
+          <p>Sunny captures each caller’s request and your team confirms it in your own system — she never pretends a booking happened. Text-back and review tools are coming later and are not included in today’s voice plans.</p>
+          <p>EXAMPLE: if Sunny catches two new-patient calls a month that would have gone to voicemail — and just one of them becomes a patient — most offices figure she’s paid for herself. Your mileage will vary; your day-25 capture report shows your real numbers.</p>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section class="calc-sec" id="calculator">
+      <div class="wrap">
+        <div class="calc-box" data-reveal>
+          <div>
+            <p class="eyebrow">Free tool · no email needed</p>
+            <h2>What are missed calls <span class="serif-i">costing</span> you?</h2>
+            <p class="sub">Three sliders, your real numbers — nothing is sent anywhere; it figures right here in your browser.</p>
+            <div class="calc-field">
+              <label for="calcCalls">Phone calls per week <output id="calcCallsOut">100</output></label>
+              <input type="range" id="calcCalls" min="10" max="300" step="5" value="100" />
+            </div>
+            <div class="calc-field">
+              <label for="calcMissed">Share that go unanswered <output id="calcMissedOut">30%</output></label>
+              <input type="range" id="calcMissed" min="5" max="70" step="1" value="30" />
+            </div>
+            <div class="calc-field">
+              <label for="calcValue">First-year value of a new patient <output id="calcValueOut">$1,000</output></label>
+              <input type="range" id="calcValue" min="300" max="3000" step="50" value="1000" />
+            </div>
+          </div>
+          <div class="calc-out">
+            <div class="big" id="calcLoss">$16,250</div>
+            <p class="per">a month in new-patient value walking away — about <span id="calcYear">$195,000</span> a year</p>
+            <p class="formula">How it’s figured: calls per week × 4.33 weeks × share unanswered × 25% who are new patients (an assumption) × 50% who never call back (an assumption) × your new-patient value. Existing patients are counted as $0 lost — most of them call back within the hour.</p>
+            <p class="honest" id="calcBreakeven">At your value, one saved new patient covers the $299 plan for about 3 months.</p>
+            <p class="honest">If your number comes out under the pilot price, you may not need us yet.</p>
+            <a href="/missed-call-calculator">Open the full calculator, with sources →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hipaa-strip" aria-label="Privacy specifics">
+      <div class="wrap hipaa-inner">
+        <div class="hipaa-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg><span><strong>BAA before patient calls.</strong> A signed business associate agreement comes before any real patient reaches Sunny — hard rule.</span></div>
+        <div class="hipaa-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg><span><strong>Never collected:</strong> dates of birth, insurance ID numbers, and Social Security numbers.</span></div>
+        <div class="hipaa-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span><strong>No training on patient data.</strong> Patient call data is never used to train AI models — not ours, not our providers’.</span></div>
+        <a class="hipaa-link" href="/hipaa-ai-receptionist-dental">Read the full HIPAA guide →</a>
+      </div>
+    </section>
+
+    <section class="faq-sec" id="faq">
       <div class="wrap faq">
-        <h2>Before you hand over the phone.</h2>
+        <h2 data-reveal>Before you hand over the phone.</h2>
         <details><summary>Will this replace my front-desk staff?</summary><p>No. It covers calls when your team is busy or closed. Your staff stays in control of scheduling and anything that needs a person.</p></details>
         <details><summary>Does it give medical advice?</summary><p>No. It records what the caller says and follows your urgent-call rules. It does not diagnose or recommend treatment.</p></details>
         <details><summary>Can it use our real hours and services?</summary><p>Yes. We set it up with the business details and answers you approve.</p></details>
         <details><summary>Do we need a new phone number?</summary><p>No. Your office line forwards to your receptionist after hours — set it once on a schedule, or toggle it manually when you close. Daytime calls ring your team like normal.</p></details>
-        <details><summary>What happens during the pilot?</summary><p>Your first month is the pilot: it's paid up front ($199 or $299 depending on coverage) with an unconditional money-back guarantee. We build Sunny around your office for free — setup is a $499 value, done-for-you — you approve test calls, and then she handles your missed calls for 30 days. Around day 25 you get a capture report of everything she caught. If she hasn't earned her keep, email hello@ringandrespond.com before day 30 and the month comes straight back. After the pilot, your plan continues month-to-month unless you cancel — no contract, no exit fee.</p></details>
-        <details><summary>Do you integrate with Dentrix?</summary><p>We don't need to for the pilot. Sunny hands your team a clean call summary and they confirm in Dentrix the way they already work. Deeper integrations are on our roadmap; the pilot doesn't wait for them.</p></details>
+        <details><summary>What happens during the pilot?</summary><p>Your first month is the pilot: it’s paid up front ($199 or $299 depending on coverage) with an unconditional money-back guarantee. We build Sunny around your office for free — setup is a $499 value, done-for-you — you approve test calls, and then she handles your missed calls for 30 days. Around day 25 you get a capture report of everything she caught. If she hasn’t earned her keep, email hello@ringandrespond.com before day 30 and the month comes straight back. After the pilot, your plan continues month-to-month unless you cancel — no contract, no exit fee.</p></details>
+        <details><summary>Do you integrate with Dentrix?</summary><p>We don’t need to for the pilot. Sunny hands your team a clean call summary and they confirm in Dentrix the way they already work. Deeper integrations are on our roadmap; the pilot doesn’t wait for them.</p></details>
+        <p class="faq-end">Still unsure? <a href="tel:+16192021085">Call the demo line and hear her first — (619) 202-1085</a>.</p>
       </div>
     </section>
 
-    <section>
+    <section class="final-sec">
       <div class="wrap">
-        <h2>Guides for dental offices.</h2>
-        <p>Straight answers on the questions practice owners ask before handing over the phones.</p>
-        <ul style="columns:2;column-gap:40px;list-style:none;padding:0"><li style="margin:6px 0"><a href="/after-hours-dental-answering">After-hours answering service for dentists</a></li><li style="margin:6px 0"><a href="/dental-answering-service">Dental answering service buyer&#x27;s guide</a></li><li style="margin:6px 0"><a href="/ai-receptionist-vs-answering-service">AI receptionist vs answering service</a></li><li style="margin:6px 0"><a href="/dental-answering-service-cost">How much does a dental answering service cost?</a></li><li style="margin:6px 0"><a href="/dental-missed-calls-cost">What missed calls cost a dental office</a></li><li style="margin:6px 0"><a href="/dental-emergency-after-hours">Dental emergency calls after hours</a></li><li style="margin:6px 0"><a href="/dental-new-patient-phone-calls">Capturing new patient phone calls</a></li><li style="margin:6px 0"><a href="/virtual-receptionist-dental-office">Virtual receptionist for dental offices</a></li><li style="margin:6px 0"><a href="/dental-front-desk-phone-overload">When the dental front desk is overwhelmed</a></li><li style="margin:6px 0"><a href="/dental-overflow-call-handling">Dental overflow call handling</a></li><li style="margin:6px 0"><a href="/hipaa-ai-receptionist-dental">HIPAA and AI receptionists: what to ask</a></li><li style="margin:6px 0"><a href="/how-ai-receptionist-works-dental">How an AI receptionist works for dental offices</a></li><li style="margin:6px 0"><a href="/ai-phone-answering-service">AI phone answering service explained</a></li></ul>
+        <div class="sun-mark" aria-hidden="true"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#f6c855" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4" fill="#f6c855" stroke="none"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+        <h2 data-reveal>Give every caller a better <span class="serif-i">next step</span>.</h2>
+        <p>Tell us when calls are being missed. We’ll show you how the receptionist can help.</p>
+        <div class="final-actions">
+          <a class="btn btn-primary" href="tel:+16192021085">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg>
+            Hear Sunny live — (619) 202-1085
+          </a>
+          <a class="btn btn-ghost" href="#demo">Watch the 60-second demo</a>
+        </div>
+        <p class="final-pilot">or <a href="#pricing" data-start-signup>start your 30-day pilot →</a> — $0 setup, money-back guarantee</p>
       </div>
     </section>
 
-    <section class="final-cta">
-      <div class="wrap cta-box">
-        <div><h2>Give every caller a better next step.</h2><p>Tell us when calls are being missed. We’ll show you how the receptionist can help.</p></div>
-        <a class="btn" href="#pricing" data-start-signup>Start guided signup</a>
+    <section class="guides-sec" id="guides">
+      <div class="wrap">
+        <div class="section-heading" data-reveal>
+          <h2>Guides for dental offices.</h2>
+          <p>Straight answers on the questions practice owners ask before handing over the phones.</p>
+        </div>
+        <div class="guide-grid">
+          <a class="guide-card" href="/dental-missed-calls-cost" data-reveal><span class="g-eyebrow">MISSED CALLS</span><h3>What missed calls cost a dental office</h3><p>The math on unanswered phones — and how to count your own.</p></a>
+          <a class="guide-card" href="/dental-answering-service-cost" data-reveal><span class="g-eyebrow">PRICING</span><h3>How much does a dental answering service cost?</h3><p>What offices actually pay for coverage, in plain terms.</p></a>
+          <a class="guide-card" href="/ai-receptionist-vs-answering-service" data-reveal><span class="g-eyebrow">COMPARISONS</span><h3>AI receptionist vs answering service</h3><p>Where each one wins, and what to ask both.</p></a>
+          <a class="guide-card" href="/after-hours-dental-answering" data-reveal><span class="g-eyebrow">AFTER HOURS</span><h3>After-hours answering service for dentists</h3><p>Coverage for the calls that come in after close.</p></a>
+          <a class="guide-card" href="/hipaa-ai-receptionist-dental" data-reveal><span class="g-eyebrow">PRIVACY</span><h3>HIPAA and AI receptionists: what to ask</h3><p>The questions to ask any vendor before patient calls.</p></a>
+          <a class="guide-card" href="/how-ai-receptionist-works-dental" data-reveal><span class="g-eyebrow">HOW IT WORKS</span><h3>How an AI receptionist works for dental offices</h3><p>From the greeting to the morning callback list.</p></a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    <div class="footer-row"><span>Front-Desk OS · Built for local service businesses</span><span>Voice pilots currently open for dental offices</span></div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Ring &amp; Respond</div>
+          <p>Front-Desk OS · Built for local service businesses.</p>
+          <p>Sunny is the AI receptionist your patients talk to — she answers in your practice’s name and hands your team a clean callback list.</p>
+        </div>
+        <div>
+          <h4>Talk to a human</h4>
+          <p>Yama — founder</p>
+          <p><a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
+          <p><a href="tel:+16193662218">(619) 366-2218</a></p>
+          <p>La Mesa, California</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#demo">See it work</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#calculator">Missed-call calculator</a></li>
+            <li><a href="#guides">Guides</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>Ring &amp; Respond — dental voice pilots</span><span>Voice pilots currently open for dental offices</span></div>
+    </div>
   </footer>
 
-  <button class="chat-launcher" id="chatLauncher" type="button" aria-expanded="false" aria-controls="chatPanel">
+  <div class="sticky-call" id="stickyCall" aria-hidden="true">
+    <a href="tel:+16192021085" tabindex="-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg>
+      Hear Sunny live — (619) 202-1085
+    </a>
+  </div>
+
+<button class="chat-launcher" id="chatLauncher" type="button" aria-expanded="false" aria-controls="chatPanel">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
     <span>Ask a question</span>
   </button>
@@ -555,7 +1048,7 @@
     <p class="chat-footnote">You’re chatting with an automated assistant, not a person — California law asks us to say so plainly. For a human, email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> or call <a href="tel:+16192021085">(619) 202-1085</a>.</p>
   </section>
 
-  <script>
+<script>
     (function () {
       var launcher = document.getElementById('chatLauncher');
       var panel = document.getElementById('chatPanel');
@@ -1194,6 +1687,82 @@
         }
       })();
     }());
+  </script>
+  <script>
+/* ============ REBUILD ADDITIONS (new script — original scripts untouched) ============ */
+(function () {
+  /* scroll reveals: once, fade + rise */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { ro.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* sticky mobile call bar: appears after the hero, hides at pricing / final CTA and while chat is open */
+  var bar = document.getElementById('stickyCall');
+  var hero = document.querySelector('.hero');
+  var chatBtn = document.getElementById('chatLauncher');
+  var heroVis = true;
+  var blockSet = new Set();
+  function syncBar() {
+    var chatOpen = chatBtn && chatBtn.getAttribute('aria-expanded') === 'true';
+    var on = !!bar && !heroVis && blockSet.size === 0 && !chatOpen;
+    if (bar) {
+      bar.classList.toggle('on', on);
+      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      var a = bar.querySelector('a');
+      if (a) a.tabIndex = on ? 0 : -1;
+    }
+    document.body.classList.toggle('bar-on', on);
+  }
+  if (bar && 'IntersectionObserver' in window) {
+    if (hero) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { heroVis = e.isIntersecting; });
+        syncBar();
+      }, { threshold: 0.06 }).observe(hero);
+    }
+    var bo = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) blockSet.add(e.target); else blockSet.delete(e.target);
+      });
+      syncBar();
+    }, { threshold: 0.1 });
+    document.querySelectorAll('#pricing, .final-sec').forEach(function (el) { bo.observe(el); });
+    if (chatBtn && 'MutationObserver' in window) {
+      new MutationObserver(syncBar).observe(chatBtn, { attributes: true, attributeFilter: ['aria-expanded'] });
+    }
+  }
+
+  /* compact missed-call calculator (same math and labeled assumptions as /missed-call-calculator) */
+  var cC = document.getElementById('calcCalls');
+  var cM = document.getElementById('calcMissed');
+  var cV = document.getElementById('calcValue');
+  if (cC && cM && cV) {
+    var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+    var calc = function () {
+      var calls = +cC.value, missed = +cM.value, value = +cV.value;
+      document.getElementById('calcCallsOut').textContent = calls;
+      document.getElementById('calcMissedOut').textContent = missed + '%';
+      document.getElementById('calcValueOut').textContent = fmt(value);
+      var loss = calls * (52 / 12) * (missed / 100) * 0.25 * 0.50 * value;
+      document.getElementById('calcLoss').textContent = fmt(loss);
+      document.getElementById('calcYear').textContent = fmt(loss * 12);
+      var months = Math.max(1, Math.round(value / 299));
+      document.getElementById('calcBreakeven').textContent =
+        'At your value, one saved new patient covers the $299 plan for about ' + months + (months === 1 ? ' month.' : ' months.');
+    };
+    [cC, cM, cV].forEach(function (el) { el.addEventListener('input', calc); });
+    calc();
+  }
+})();
+
   </script>
 </body>
 </html>
