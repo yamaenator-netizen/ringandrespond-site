@@ -194,7 +194,7 @@ async function run(){
   setProgress(0.7);
   await botSay("Almost done - now the important part: how Sunny handles your after-hours calls.");
   answers.callHandling = await askPills("When someone calls after hours, Sunny should...", [
-    "Take a detailed message", "Book them into the next available slot", "Send urgent callers to an on-call number"
+    "Take a detailed message", "Take their details and preferred time for the callback list", "Send urgent callers to an on-call number"
   ]);
   setProgress(0.8);
   if(answers.callHandling.includes("on-call")){
