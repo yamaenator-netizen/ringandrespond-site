@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="light" />
   <meta name="description" content="Sunny, the AI receptionist for dental offices, answers the calls your office misses — after hours and overflow. $0 setup, guaranteed 30-day pilot. Try her now." />
   <link rel="icon" href="data:," />
   <style>
@@ -13,7 +13,7 @@
     <title>AI Receptionist for Dental Offices | After-Hours Answering</title>
   <style>
     :root {
-      color-scheme: light dark;
+      color-scheme: light;
       --paper: #f5faf7;
       --surface: #ffffff;
       --surface-2: #e9f3ee;
@@ -31,26 +31,7 @@
       --radius-lg: 28px;
       --radius-md: 18px;
       --radius-sm: 11px;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --paper: #0d1718;
-        --surface: #142223;
-        --surface-2: #1b302e;
-        --ink: #effaf5;
-        --muted: #b6cbc3;
-        --line: #304844;
-        --teal: #63cfbf;
-        --teal-dark: #8be1d3;
-        --mint: #173b35;
-        --coral: #ff9275;
-        --sun: #f4cc67;
-        --sky: #67bdd5;
-        --navy: #0b111c;
-        --shadow: 0 20px 56px rgba(0, 0, 0, .34);
-      }
-    }
-    * { box-sizing: border-box; }
+    }    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
@@ -345,21 +326,7 @@
   --shadow-sun: 0 20px 48px -16px rgba(201,143,27,.35);
   --serif: "Fraunces", "Source Serif 4", Georgia, "Times New Roman", serif;
   --dark-bg: radial-gradient(800px 400px at 50% -10%, rgba(11,118,108,.35), transparent 60%), linear-gradient(165deg, #102420 0%, #0A1B16 58%, #084F49 135%);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --porcelain: #0d1718;
-    --mint-100: #122b25;
-    --mint-200: #1a3a31;
-    --mint-line: #2c4a41;
-    --sun-cream: #292410;
-    --sun-100: #3a2f14;
-    --sun-deep: #e8b95a;
-    --pine-soft: #a9c2b8;
-    --shadow-card: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.55);
-  }
-}
-/* grain — one static SVG noise layer over the page (recipe: opacity .025 light) */
+}/* grain — one static SVG noise layer over the page (recipe: opacity .025 light) */
 body::after {
   content: ""; position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: .025;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
@@ -382,11 +349,7 @@ html.js [data-reveal].in { opacity: 1; transform: none; }
 .hero {
   background: radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.32), transparent 62%), linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
   padding: 64px 0 88px;
-}
-@media (prefers-color-scheme: dark) {
-  .hero { background: radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.10), transparent 62%), linear-gradient(180deg, #12241e 0%, #0d1718 100%); }
-}
-.call-panel {
+}.call-panel {
   background: var(--dark-bg); border: 1px solid var(--pine-line); border-radius: 28px;
   padding: 22px; box-shadow: var(--shadow); display: grid; gap: 14px; position: relative;
 }
@@ -617,18 +580,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   background-position: 0 0, 24% 18%, 0 0, 0 0;
   background-size: auto, 112%, auto, auto;
   background-repeat: no-repeat;
-}
-@media (prefers-color-scheme: dark) {
-  .hero {
-    background-image:
-      linear-gradient(100deg, rgba(245,250,247,.96) 0%, rgba(245,250,247,.92) 46%, rgba(245,250,247,.78) 78%, rgba(245,250,247,.68) 100%),
-      url("sunny-office.webp"),
-      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
-    background-position: 0 0, 24% 18%, 0 0;
-    background-size: auto, 112%, auto;
-  }
-}
-.hero-welcome { margin-top: 16px; background: rgba(255,255,255,.9); border: 1px solid var(--mint-line); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow-card); display: grid; gap: 3px; position: relative; z-index: 2; }
+}.hero-welcome { margin-top: 16px; background: rgba(255,255,255,.9); border: 1px solid var(--mint-line); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow-card); display: grid; gap: 3px; position: relative; z-index: 2; }
 .hero-welcome strong { font-size: 15px; color: var(--pine); }
 .hero-welcome span { font-size: 13.5px; color: var(--muted); }
 .demo-band { background: var(--dark-bg); color: #f2f8f4; }
@@ -656,16 +608,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     url("sunny-office.webp"),
     radial-gradient(900px 480px at 82% -8%, rgba(246,200,85,.32), transparent 62%),
     linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
-}
-@media (prefers-color-scheme: dark) {
-  .hero {
-    background-image:
-      linear-gradient(100deg, rgba(245,250,247,.96) 0%, rgba(245,250,247,.88) 34%, rgba(245,250,247,.66) 62%, rgba(245,250,247,.46) 100%),
-      url("sunny-office.webp"),
-      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
-  }
-}
-@media (min-width: 881px) {
+}@media (min-width: 881px) {
   .hero-grid { min-height: 500px; }
   .hero-visual { margin-bottom: 0; align-self: stretch; display: flex; align-items: flex-end; justify-content: flex-end; }
 }
@@ -700,19 +643,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
   background-position: 0 0, 0 0, 16% 26%, 0 0, 0 0;
   background-size: auto, auto, 112%, auto, auto;
-}
-@media (prefers-color-scheme: dark) {
-  .hero {
-    background-image:
-      linear-gradient(100deg, rgba(245,250,247,.97) 0%, rgba(245,250,247,.94) 36%, rgba(245,250,247,.84) 56%, rgba(245,250,247,.52) 100%),
-      linear-gradient(8deg, rgba(245,250,247,.42) 0%, rgba(245,250,247,0) 40%),
-      url("sunny-office.webp"),
-      linear-gradient(180deg, #F5FAF7 0%, #EEF6F0 100%);
-    background-position: 0 0, 0 0, 16% 26%, 0 0;
-    background-size: auto, auto, 112%, auto;
-  }
-}
-@media (min-width: 881px) {
+}@media (min-width: 881px) {
   .hero { padding-bottom: 54px; }
   .hero-visual { flex-direction: column; align-items: flex-end; justify-content: flex-end; gap: 14px; }
 }
