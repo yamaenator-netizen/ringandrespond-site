@@ -791,7 +791,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     }());
   </script>
   <script>
-    /* Engagement features (additive): smart-timed chat nudge, entry-aware hero, value-tailored CTAs. */
+    /* Engagement features (additive): smart-timed chat nudge, value-tailored CTAs. */
     (function () {
       'use strict';
 
@@ -861,22 +861,6 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         });
       }
 
-      /* ---------- 2. Entry-aware hero (UTM source / referrer) ---------- */
-      (function entryAwareHero() {
-        var sub = $('.hero-copy > p:not(.eyebrow)');
-        if (!sub) return;
-        var params = new URLSearchParams(window.location.search);
-        var src = (params.get('utm_source') || '').toLowerCase();
-        var ref = (document.referrer || '').toLowerCase();
-        function isSocial(s) { return /facebook|instagram|threads|tiktok|linkedin/.test(s); }
-        function isSearch(s) { return /google|bing|duckduckgo|yahoo/.test(s); }
-        if (isSocial(src) || isSocial(ref)) {
-          sub.textContent = 'Saw us on social? Here’s the short version: an AI receptionist answers when your staff can’t, collects the caller’s details, and hands your team a clear callback list.';
-        } else if (isSearch(src) || isSearch(ref)) {
-          sub.textContent = 'Looking for an AI receptionist for your dental office? Ours answers when your staff can’t, collects the caller’s details, and hands your team a clear callback list.';
-        }
-      })();
-
       /* ---------- 4. Value-tailored CTAs (demo watched / pricing lingered) ---------- */
       (function tailoredCtas() {
         var cta = $('.hero-actions [data-start-signup]');
@@ -888,13 +872,6 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
             note.dataset.tailored = '1';
             note.textContent = text;
           }
-        }
-        var demoVideo = document.querySelector('.demo-modal video');
-        if (demoVideo) {
-          demoVideo.addEventListener('play', function () {
-            cta.innerHTML = 'Start your 30-day pilot ' + arrow;
-            tailorNote('You saw Sunny in action — your pilot uses the same call flow, tuned to your office.');
-          });
         }
         var pricing = document.getElementById('pricing');
         if (pricing && 'IntersectionObserver' in window) {
