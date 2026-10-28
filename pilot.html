@@ -61,6 +61,7 @@ ol.steps li{margin-bottom:12px}
 table.tiers{width:100%;border-collapse:collapse;margin:18px 0;background:var(--card)}
 table.tiers th,table.tiers td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
 table.tiers th{font-family:"Archivo",sans-serif;color:var(--teal-d);background:#e9f3ee}
+.tiers th[scope="row"]{font-family:inherit;color:inherit;background:transparent;font-weight:400}
 @media(max-width:640px){.cta-row .btn{width:100%;text-align:center}}
 </style>
 <script type="application/ld+json">
@@ -154,6 +155,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <a class="brand" href="/">Ring <span>&amp;</span> Respond</a>
 <a class="btn" href="/#pricing">Start 30-Day Pilot</a>
 </div></header>
+<main id="main">
 
 <div class="wrap"><nav class="breadcrumb"><a href="/">Home</a> &rsaquo; 30-Day Pilot</nav></div>
 
@@ -185,16 +187,16 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <section id="pricing">
 <h2>Pick your coverage</h2>
 <table class="tiers">
-<tr><th></th><th>After-Hours Capture</th><th>24/7 Complete ⭐</th></tr>
-<tr><td><strong>Price</strong></td><td><strong>$199/month</strong></td><td><strong>$299/month</strong></td></tr>
-<tr><td>Coverage</td><td>Nights, weekends, holidays</td><td>24/7 — adds lunch hour + daytime overflow</td></tr>
-<tr><td>Natural, human-feeling answering</td><td>✅</td><td>✅</td></tr>
-<tr><td>Full intake on every call</td><td>✅</td><td>✅</td></tr>
-<tr><td>Emergency handling + urgent flagging</td><td>✅</td><td>✅</td></tr>
-<tr><td>Morning callback list</td><td>✅</td><td>✅</td></tr>
-<tr><td>Day-25 capture report</td><td>✅</td><td>✅</td></tr>
-<tr><td>Setup</td><td><strong>$0</strong> — done-for-you setup included</td><td><strong>$0</strong> — done-for-you setup included</td></tr>
-<tr><td>Terms</td><td>Month-to-month · no exit fee, ever</td><td>Month-to-month · no exit fee, ever</td></tr>
+<tr><th scope="col"></th><th scope="col">After-Hours Capture</th><th scope="col">24/7 Complete ⭐</th></tr>
+<tr><th scope="row"><strong>Price</strong></th><td><strong>$199/month</strong></td><td><strong>$299/month</strong></td></tr>
+<tr><th scope="row">Coverage</th><td>Nights, weekends, holidays</td><td>24/7 — adds lunch hour + daytime overflow</td></tr>
+<tr><th scope="row">Natural, human-feeling answering</th><td>✅</td><td>✅</td></tr>
+<tr><th scope="row">Full intake on every call</th><td>✅</td><td>✅</td></tr>
+<tr><th scope="row">Emergency handling + urgent flagging</th><td>✅</td><td>✅</td></tr>
+<tr><th scope="row">Morning callback list</th><td>✅</td><td>✅</td></tr>
+<tr><th scope="row">Day-25 capture report</th><td>✅</td><td>✅</td></tr>
+<tr><th scope="row">Setup</th><td><strong>$0</strong> — done-for-you setup included</td><td><strong>$0</strong> — done-for-you setup included</td></tr>
+<tr><th scope="row">Terms</th><td>Month-to-month · no exit fee, ever</td><td>Month-to-month · no exit fee, ever</td></tr>
 </table>
 <p><strong>Annual option:</strong> pay for the year, get 2 months free — $1,990 (After-Hours) or $2,990 (24/7 Complete).<br/>
 <strong>Multiple locations?</strong> Each additional location is 20% off — $159 or $239/month.</p>
@@ -248,6 +250,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 </section>
 </div>
 
+</main>
 <footer><div class="wrap">
 <p><strong style="color:#fff">Ring &amp; Respond</strong> — <a href="/">AI Receptionist for Dental Offices</a> · <a href="/dental-front-desk-phone-overload">Front-Desk Overload</a> · <a href="/after-hours-dental-answering">After-Hours Answering</a></p>
 <p style="margin-top:10px">(619) 366-2218 · hello@ringandrespond.com · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></p>
