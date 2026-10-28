@@ -256,7 +256,7 @@ async function run(){
     if(!r.ok) throw new Error('send failed');
     setProgress(1);
     const d = document.createElement('div'); d.className = 'msg bot';
-    d.innerHTML = '<div class="done-check">OK</div><b>You are all set!</b><br><br>Your configuration is on its way to our team. We will build your Sunny, tune her voice, and run test calls with you - then she goes live on your line.<br><br>Questions? <a href="mailto:hello@ringandrespond.com" style="color:#0b766c;font-weight:600">hello@ringandrespond.com</a>';
+    d.innerHTML = '<div class="done-check">OK</div><b>You are all set!</b><br><br>Your configuration is on its way to our team. We will build your Sunny, tune her voice, and run test calls with you - then she goes live on your line.<br><br>She goes live within 5 days, and around day 25 of your pilot you will get a capture report of every call she caught.<br><br>Questions? <a href="mailto:hello@ringandrespond.com" style="color:#0b766c;font-weight:600">hello@ringandrespond.com</a>';
     chat.appendChild(d); scroll();
     inputwrap.innerHTML = '';
   } catch(e) {
