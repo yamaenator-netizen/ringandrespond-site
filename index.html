@@ -1633,6 +1633,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
             appendMessage(gotoLines[gotoId], 'assistant');
             var gotoEl = document.getElementById(gotoId);
             if (gotoEl) gotoEl.scrollIntoView({ behavior: 'smooth' });
+            else window.location.href = '/#' + gotoId;
           }
           else if (answer === '__OPEN_onboard__') {
             appendMessage('Opening the onboarding page in a new tab.', 'assistant');
