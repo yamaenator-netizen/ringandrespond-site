@@ -286,6 +286,89 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 
 <script>
     (function () {
+      /* Deferred brain (2026-10-29): the launcher button and the panel
+         markup are static HTML - they render instantly with the page.
+         Everything the chat KNOWS (the 183-pair knowledge base inside
+         initBrain below) used to parse and run on every page load; it
+         now initializes on the first of: a tap, click, hover, or
+         keyboard focus on the launcher; a click on a "start signup"
+         CTA or starter chip; a submitted question; a programmatic
+         launcher click (the timed nudge bubble calls launcher.click());
+         or the browser going idle after the page has loaded
+         (requestIdleCallback with a 2.5s timeout, armed at window
+         load so the wake never lands inside the page's own critical
+         load; the brain is awake before anyone realistically taps). Anything that happens in that first instant is queued
+         here and replayed by initBrain the moment it wakes - no lost
+         first message, no dead first click. */
+      var shellLauncher = document.getElementById('chatLauncher');
+      var shellForm = document.getElementById('chatForm');
+      var shellInput = document.getElementById('chatInput');
+      var shellChips = document.getElementById('starterChips');
+      var brainReady = false;
+      var pendingToggle = false;
+      var pendingSignup = false;
+      var pendingAsks = [];
+
+      function ensureBrain() {
+        if (brainReady) return;
+        brainReady = true;
+        initBrain();
+      }
+
+      if (shellLauncher) {
+        shellLauncher.addEventListener('pointerdown', ensureBrain);
+        shellLauncher.addEventListener('touchstart', ensureBrain, { passive: true });
+        shellLauncher.addEventListener('mouseenter', ensureBrain);
+        shellLauncher.addEventListener('focus', ensureBrain);
+        shellLauncher.addEventListener('click', function (event) {
+          if (brainReady) return;
+          pendingToggle = true;
+          if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+          ensureBrain();
+        });
+      }
+      if (shellForm) {
+        shellForm.addEventListener('submit', function (event) {
+          if (brainReady) return;
+          event.preventDefault();
+          pendingAsks.push(shellInput ? shellInput.value : '');
+          if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+          ensureBrain();
+        });
+      }
+      if (shellChips) {
+        shellChips.addEventListener('click', function (event) {
+          if (brainReady) return;
+          if (event.target.matches('[data-resume-signup]')) return;
+          if (event.target.matches('[data-start-signup]')) {
+            pendingSignup = true;
+            if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+            ensureBrain();
+          } else if (event.target.matches('.starter-chip')) {
+            pendingAsks.push(event.target.textContent);
+            if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+            ensureBrain();
+          }
+        });
+      }
+      document.querySelectorAll('[data-start-signup]').forEach(function (button) {
+        if (button.closest('#starterChips')) return;
+        button.addEventListener('click', function (event) {
+          if (brainReady) return;
+          event.preventDefault();
+          pendingSignup = true;
+          if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+          ensureBrain();
+        });
+      });
+      function armIdleWake() {
+        if (typeof requestIdleCallback === 'function') requestIdleCallback(ensureBrain, { timeout: 2500 });
+        else setTimeout(ensureBrain, 2500);
+      }
+      if (document.readyState === 'complete') armIdleWake();
+      else window.addEventListener('load', armIdleWake);
+
+      function initBrain() {
       var launcher = document.getElementById('chatLauncher');
       var panel = document.getElementById('chatPanel');
       var closeButton = document.getElementById('chatClose');
@@ -792,6 +875,12 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         resumeChip.textContent = 'Continue my signup';
         resumeChip.addEventListener('click', function () { startSignup(true); });
         chips.insertBefore(resumeChip, chips.firstChild);
+      }
+      /* Deferred-brain replay: the visitor's first action arrived
+         before the brain existed; perform it now. */
+      if (pendingToggle) { pendingToggle = false; setOpen(panel.hidden); }
+      if (pendingSignup) { pendingSignup = false; startSignup(); }
+      while (pendingAsks.length) ask(pendingAsks.shift());
       }
     }());
   </script>
