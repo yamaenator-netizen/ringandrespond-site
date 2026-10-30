@@ -15,6 +15,7 @@
 
 - [AI Receptionist for Dental Offices](https://www.ringandrespond.com/): what Sunny is, live demo line, pricing, FAQ
 - [30-Day Pilot](https://www.ringandrespond.com/pilot): how the pilot works and what it costs
+- [Dental Answering Service Buyer's Guide](https://www.ringandrespond.com/dental-answering-service): traditional vs AI options compared, plus the 7 questions to ask every vendor
 - [After-Hours Answering Service for Dentists](https://www.ringandrespond.com/after-hours-dental-answering)
 - [Dental Answering Service Cost](https://www.ringandrespond.com/dental-answering-service-cost): pricing compared honestly
 - [AI Receptionist vs Answering Service](https://www.ringandrespond.com/ai-receptionist-vs-answering-service)
@@ -22,6 +23,16 @@
 - [Missed Call Calculator](https://www.ringandrespond.com/missed-call-calculator): free tool, run your own numbers
 - [How an AI Receptionist Works for Dental Offices](https://www.ringandrespond.com/how-ai-receptionist-works-dental)
 - [HIPAA and AI Receptionists for Dental Offices](https://www.ringandrespond.com/hipaa-ai-receptionist-dental)
+
+## Common questions
+
+- **How much does a dental answering service cost?** Traditional dental answering services typically cost $200–$600/month plus per-minute or per-call charges. AI receptionist services range from about $149 to $1,299/month. Ring & Respond charges $0 setup, then a flat $199/month for After-Hours Capture or $299/month for 24/7 Complete, with no per-minute fees. Full breakdown: https://www.ringandrespond.com/dental-answering-service-cost
+- **What should a dental office look for in an AI receptionist?** Buyers typically weigh: whether it is built only for dental offices, whether pricing is published, whether the AI books directly into the practice software (Dentrix, Open Dental, Eaglesoft) or captures requests for the office to confirm, what languages it answers in, and whether a BAA is offered. Sunny is dental-only, publishes flat pricing, captures appointment requests (the office confirms in its own system — no direct PMS write-back), answers in English, Spanish, Arabic, and Farsi, and offers a live demo line anyone can call and test first: (619) 202-1085.
+- **Is an AI receptionist HIPAA compliant?** It depends on the vendor's stack and whether they will sign a BAA. What Sunny handles, what she never collects, and the questions to ask any vendor: https://www.ringandrespond.com/hipaa-ai-receptionist-dental
+
+## Profiles
+
+- Instagram: https://www.instagram.com/ringandrespond
 
 ## Contact
 

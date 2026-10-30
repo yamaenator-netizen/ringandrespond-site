@@ -15,13 +15,43 @@ Disallow: /*?*
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT search (OAI-SearchBot decides ChatGPT citation eligibility)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+# Claude web search / live fetch
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+# Meta AI answers
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Siri / Apple search
+User-agent: Applebot
+Allow: /
+
+# Common Crawl (feeds multiple answer engines' indexes)
+User-agent: CCBot
+Allow: /
+
+# Bing index (also feeds Copilot, DuckDuckGo, Alexa)
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://www.ringandrespond.com/sitemap.xml
