@@ -181,3 +181,38 @@ function calc() {
 });
 calc();
 updatePollProgress();
+
+/* ---------- Room progress rail + gentle reveal ---------- */
+(function () {
+  var rooms = document.querySelectorAll(".room[id]");
+  if (!rooms.length || !("IntersectionObserver" in window)) { return; }
+  var links = {};
+  document.querySelectorAll(".rail-link").forEach(function (a) {
+    links[a.getAttribute("data-room")] = a;
+  });
+  var current = null;
+  function setCurrent(id) {
+    if (current === id) { return; }
+    current = id;
+    Object.keys(links).forEach(function (k) {
+      var on = k === id;
+      links[k].classList.toggle("active", on);
+      if (on) { links[k].setAttribute("aria-current", "true"); }
+      else { links[k].removeAttribute("aria-current"); }
+    });
+  }
+  var railObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { setCurrent(e.target.id); }
+    });
+  }, { rootMargin: "-38% 0px -55% 0px" });
+  rooms.forEach(function (r) { railObs.observe(r); });
+  if (!reduced) {
+    var revObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("revealed"); revObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    rooms.forEach(function (r) { r.classList.add("reveal"); revObs.observe(r); });
+  }
+})();

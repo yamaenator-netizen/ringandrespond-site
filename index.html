@@ -79,15 +79,53 @@
   <button id="langToggle" class="lang-toggle" type="button" aria-label="Cambiar a español / Switch to Spanish">EN | <span class="lang-alt">ES</span></button>
 </header>
 
+
+<nav class="roomrail" aria-label="The rooms of this page">
+  <a class="rail-link" href="#doorway" data-room="doorway"><span data-en="The Doorway" data-es="La Entrada">The Doorway</span></a>
+  <a class="rail-link" href="#front-desk" data-room="front-desk"><span data-en="The Front Desk" data-es="La Recepción">The Front Desk</span></a>
+  <a class="rail-link" href="#workshop" data-room="workshop"><span data-en="The Workshop" data-es="El Taller">The Workshop</span></a>
+  <a class="rail-link" href="#night-office" data-room="night-office"><span data-en="The Night Office" data-es="La Oficina de Noche">The Night Office</span></a>
+  <a class="rail-link" href="#morning-room" data-room="morning-room"><span data-en="The Morning Room" data-es="La Sala de la Mañana">The Morning Room</span></a>
+  <a class="rail-link" href="#floor-plan" data-room="floor-plan"><span data-en="The Floor Plan" data-es="El Plano">The Floor Plan</span></a>
+</nav>
 <main>
-<!-- ============ HERO ============ -->
-<section class="hero" aria-labelledby="heroH">
+<!-- ============ ROOM 1 · THE DOORWAY ============ -->
+<section class="room room-doorway hero" id="doorway" aria-labelledby="heroH">
+  <p class="room-label" data-en="Room 1 · The Doorway" data-es="Sala 1 · La Entrada">Room 1 · The Doorway</p>
   <p class="kicker" data-en="For shops in East County &amp; San Diego" data-es="Para negocios del East County y San Diego">For shops in East County &amp; San Diego</p>
   <h1 id="heroH" data-en="Your phone, answered with a smile." data-es="Tu teléfono, contestado con una sonrisa.">Your phone, answered with a smile.</h1>
   <p class="lede" data-en="Sunny is an AI receptionist we're building for shops like yours — plumbing, electrical, HVAC, auto. When you're under a sink, on a roof, or home asleep, she answers in your shop's name, writes down who called and why, flags the emergencies, and hands you the list." data-es="Sunny es una recepcionista con IA que estamos creando para negocios como el tuyo: plomería, electricidad, HVAC, autos. Cuando estás bajo un fregadero, en un techo, o dormido en casa, ella contesta con el nombre de tu negocio, anota quién llamó y por qué, marca las emergencias y te entrega la lista.">Sunny is an AI receptionist we're building for shops like yours — plumbing, electrical, HVAC, auto. When you're under a sink, on a roof, or home asleep, she answers in your shop's name, writes down who called and why, flags the emergencies, and hands you the list.</p>
   <p class="slogan">Answered with a smile.</p>
+  <figure class="doorway-fig" aria-hidden="true">
+    <svg viewBox="0 0 340 240" focusable="false">
+      <defs>
+        <linearGradient id="doorGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#C09A68"/>
+          <stop offset="1" stop-color="#A47C52"/>
+        </linearGradient>
+      </defs>
+      <circle cx="170" cy="30" r="13" fill="#A47C52"/>
+      <g stroke="#A47C52" stroke-width="3" stroke-linecap="round">
+        <line x1="170" y1="6" x2="170" y2="12"/><line x1="146" y1="30" x2="152" y2="30"/>
+        <line x1="188" y1="30" x2="194" y2="30"/><line x1="153" y1="13" x2="157" y2="17"/>
+        <line x1="187" y1="13" x2="183" y2="17"/>
+      </g>
+      <circle cx="165.5" cy="28" r="1.7" fill="#0B1425"/><circle cx="174.5" cy="28" r="1.7" fill="#0B1425"/>
+      <path d="M164.5 33.5 Q170 38 175.5 33.5" fill="none" stroke="#0B1425" stroke-width="2" stroke-linecap="round"/>
+      <path d="M92 224 L92 106 A78 78 0 0 1 248 106 L248 224 L214 224 L214 110 A44 44 0 0 0 126 110 L126 224 Z" fill="#16283F"/>
+      <path d="M126 224 L126 110 A44 44 0 0 1 214 110 L214 224 Z" fill="url(#doorGlow)"/>
+      <path d="M126 224 L126 110 A44 44 0 0 1 170 66 L170 224 Z" fill="#0B1425" opacity=".9"/>
+      <line x1="130" y1="221" x2="210" y2="221" stroke="#C09A68" stroke-width="3" opacity=".85"/>
+      <polygon points="140,224 200,224 220,234 120,234" fill="#C09A68" opacity=".35"/>
+      <line x1="24" y1="224" x2="316" y2="224" stroke="#16283F" stroke-width="3"/>
+    </svg>
+  </figure>
+</section>
 
-  <div class="demo-card" id="demo">
+<!-- ============ ROOM 2 · THE FRONT DESK ============ -->
+<section class="room room-frontdesk band" id="front-desk" aria-label="The Front Desk">
+  <p class="room-label" data-en="Room 2 · The Front Desk" data-es="Sala 2 · La Recepción">Room 2 · The Front Desk</p>
+<div class="demo-card" id="demo">
     <div class="demo-head">
       <svg class="mark mark-small" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
         <g stroke="#A47C52" stroke-width="3.4" stroke-linecap="round"><line x1="32" y1="2" x2="32" y2="10"/><line x1="10" y1="10" x2="15" y2="16"/><line x1="54" y1="10" x2="49" y2="16"/><line x1="4" y1="27" x2="12" y2="28"/><line x1="60" y1="27" x2="52" y2="28"/></g>
@@ -114,6 +152,197 @@
     </ol>
     <p class="honest-tag" data-en="Illustrative example — fictional caller, fictional shop, 555 number. Sunny never quotes a price and never promises a time; the owner confirms and calls back." data-es="Ejemplo ilustrativo: cliente ficticio, negocio ficticio, número 555. Sunny nunca da precios ni promete horarios; el dueño confirma y devuelve la llamada.">Illustrative example — fictional caller, fictional shop, 555 number. Sunny never quotes a price and never promises a time; the owner confirms and calls back.</p>
   </div>
+  <div class="room-part">
+  <h2 id="callsH">Three kinds of calls she takes</h2>
+  <p class="section-lede">Every example below is fictional and labelled so. This is the shape of the work — the real recordings come from real shops.</p>
+  <div class="call-grid">
+    <article class="call-card">
+      <p class="call-tag urgent-tag">Emergency, flagged</p>
+      <h3>The burst pipe, 11 p.m.</h3>
+      <p class="call-line"><strong>Caller:</strong> "Water's coming through the kitchen ceiling."</p>
+      <p class="call-line"><strong>Sunny:</strong> takes the name, the callback number and the address area, marks it urgent, and puts it at the top of your list — and tells the caller to hang up and dial 911 if anyone is in danger.</p>
+    </article>
+    <article class="call-card">
+      <p class="call-tag">English · Español</p>
+      <h3>The no-cool call, in Spanish</h3>
+      <p class="call-line"><strong>Caller:</strong> "Se descompuso el aire y hay un bebé en casa."</p>
+      <p class="call-line"><strong>Sunny:</strong> answers in Spanish, captures the same details the same way, and your list shows the call in English with the language noted — nothing gets lost between languages.</p>
+    </article>
+    <article class="call-card">
+      <p class="call-tag">No prices, ever</p>
+      <h3>The price-shopper, auto shop</h3>
+      <p class="call-line"><strong>Caller:</strong> "How much for brakes on a 2016 Tacoma?"</p>
+      <p class="call-line"><strong>Sunny:</strong> "I can't quote prices — but I'll take your name and number and the owner will call you back with one." Captured, not guessed.</p>
+    </article>
+  </div>
+  </div>
+  <div class="room-part">
+  <h2 id="langH">English. Español. Honest about the rest.</h2>
+  <p class="section-lede">East County calls in more than one language — shops on Jamacha Road advertise multilingual staff on their own signs, because it's true of the neighbourhood. This page switches between English and Spanish at the top, and Sunny answers in both. San Diego also speaks Vietnamese, Tagalog, Arabic, Chinese, Korean and Farsi, and we won't pretend otherwise: Arabic and Farsi are in testing with real speakers, and a language only gets offered when it has passed them. A language we can't answer well in is worse than none.</p>
+  </div>
+</section>
+
+<!-- ============ ROOM 3 · THE WORKSHOP ============ -->
+<section class="room room-workshop" id="workshop" aria-label="The Workshop">
+  <p class="room-label" data-en="Room 3 · The Workshop" data-es="Sala 3 · El Taller">Room 3 · The Workshop</p>
+  <div id="problems">
+  <!-- SD-ISSUES FOLDED IN 2026-10-31: mapped to the top-5 of
+       ~/workspace/new-journey/SD-BUSINESS-ISSUES-20261031.md (EDC/SBDC survey,
+       BBB customer reviews, El Cajon market evidence). Angles only; no
+       invented stats; the file's locally-UNPROVEN items stay in question
+       form on the page (the poll asks, the site does not assert). -->
+  <h2 id="probH">The problems we're building for</h2>
+  <p class="section-lede">Not features looking for a buyer — the problems San Diego owners actually name. In the San Diego Regional EDC and SBDC small-business survey, the loudest stated challenge was sales and attracting customers. Our read of that, after studying how local shops lose the customers they already get: <strong>the customers are already calling — the leak is what happens next.</strong> Paraphrased from published San Diego survey work (EDC/SBDC), Better Business Bureau customer reviews of local shops, and national owner research, in plain words:</p>
+  <div class="problem-grid">
+    <article class="problem-card">
+      <h3>The phone rings while your hands are busy</h3>
+      <p>You're mid-job — under a sink, in an attic, under a lift — and the phone is in the truck, or ringing in an empty office. The biggest leak owners describe isn't only after hours; it's daytime, while the work is happening.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> she can ring you first, and take the call herself only when nobody picks up — overflow cover, not a replacement for you.</p>
+    </article>
+    <article class="problem-card">
+      <h3>A missed caller rarely leaves a message</h3>
+      <p>Owners tell researchers the same story: the caller just tries the next shop on Google. And slow follow-up after a message does get left loses the rest. What they ask for isn't magic — it's a fast, clear next step.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> every call becomes a written list — name, number, reason — the moment it ends, so the first callback you make is the right one.</p>
+    </article>
+    <article class="problem-card">
+      <h3>Coverage without a hire</h3>
+      <p>Hiring and keeping good people is a top challenge in San Diego's own owner surveys — and a front-desk seat is the hardest one to justify at three to fifteen people. So the owner becomes the front desk, the tech, and the callback list, all at once.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> she covers the answering and the writing-down around the clock — the seat you don't have to recruit, train, or replace — and you stay the person who decides, quotes, and calls back.</p>
+    </article>
+    <article class="problem-card">
+      <h3>One wrong promise can cost the whole relationship</h3>
+      <p>An invented time slot or a made-up price is the fastest way to lose a customer's trust. Owners are right to be wary of anything that talks to their customers unsupervised.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> she never quotes a price and never invents a slot. She captures, flags, and hands over — you confirm everything.</p>
+    </article>
+    <article class="problem-card">
+      <h3>Your Google front door works against you</h3>
+      <p>An unclaimed profile, wrong hours, a handful of old reviews nobody answered — that's the shop window most callers see first, and for many small shops it's quietly out of date.</p>
+      <p class="solves"><strong>How the wider build answers it:</strong> the front-door work pairs answering with claiming and fixing the Google profile and a legal, ask-everyone reviews habit — no shortcuts, no bought reviews.</p>
+    </article>
+  </div>
+  </div>
+  <h2 id="calcH">Do your own math</h2>
+  <p class="section-lede">The customers are already calling; the leak is what happens next. No scare numbers from us, though: move the sliders with <em>your</em> numbers — we will never supply the missed-call count for you. This is plain arithmetic, and nothing here is sent anywhere or saved.</p>
+  <div class="calc">
+    <label>Calls that go unanswered each week: <output id="cMissedOut" for="cMissed">4</output>
+      <input type="range" id="cMissed" min="0" max="30" step="1" value="4">
+    </label>
+    <label>Share of those callers who might have booked, if someone had answered: <output id="cShareOut" for="cShare">25%</output>
+      <input type="range" id="cShare" min="0" max="100" step="5" value="25">
+    </label>
+    <label>Your average job, in dollars: <output id="cValueOut" for="cValue">450</output>
+      <input type="range" id="cValue" min="50" max="3000" step="50" value="450">
+    </label>
+    <p class="calc-formula">The math: unanswered calls × share who might book × average job × 52 weeks.</p>
+    <p class="calc-result">About <strong id="calcOut">23,400</strong> dollars a year in work is calling and not reaching you — <em>an estimate from your numbers, not a promise.</em> We make no claim here about how much of it Sunny would recover. That is what hearing her, and the first real shops, are for.</p>
+  </div>
+</section>
+
+<!-- ============ ROOM 4 · THE NIGHT OFFICE ============ -->
+<section class="room room-night night" id="night-office" aria-labelledby="nightH">
+  <p class="room-label" data-en="Room 4 · The Night Office" data-es="Sala 4 · La Oficina de Noche">Room 4 · The Night Office</p>
+  <h2 id="nightH">It's 2 a.m. Your phone just rang. Sunny got it.</h2>
+  <p class="section-lede pale">Your customers should never hear silence — not at 2 p.m., not at 2 a.m. Read the customer reviews of San Diego shops and the angriest ones aren't about the repair; they're about the no-show, the missing update, the call nobody returned. Tap an hour: this is what happens at a small shop while the owner is off the clock — an illustration of the working pattern, not a log of real calls.</p>
+  <div class="timeline" role="group" aria-label="Night timeline">
+    <button type="button" class="hour" data-hour="17">5 PM</button>
+    <button type="button" class="hour" data-hour="19">7 PM</button>
+    <button type="button" class="hour" data-hour="21">9 PM</button>
+    <button type="button" class="hour" data-hour="0">12 AM</button>
+    <button type="button" class="hour hour-hot" data-hour="2">2 AM</button>
+    <button type="button" class="hour" data-hour="6">6 AM</button>
+  </div>
+  <div class="night-panel" id="nightPanel" role="status">
+    <h3 id="nightTitle">2:00 AM — the burst pipe</h3>
+    <p id="nightText">A homeowner finds water through the ceiling. Sunny answers on the second ring, says she's the shop's automated assistant, flags it urgent, and captures the callback number digit by digit. The owner wakes to one clear message instead of a voicemail they'll hear at nine — if the caller left one at all.</p>
+  </div>
+  <p class="honest-tag pale-tag">Illustrative pattern. Sunny always identifies herself as an AI, and true emergencies are pointed to 911 first.</p>
+</section>
+
+<!-- ============ ROOM 5 · THE MORNING ROOM ============ -->
+<section class="room room-morning" id="morning-room" aria-label="The Morning Room">
+  <p class="room-label" data-en="Room 5 · The Morning Room" data-es="Sala 5 · La Sala de la Mañana">Room 5 · The Morning Room</p>
+  <h2 id="bentoH">What she writes down</h2>
+  <div class="bento">
+    <article class="cell cell-big">
+      <h3>The message you wake up to</h3>
+      <div class="sms-card">
+        <p class="sms-from">Sunny · 2:04 AM</p>
+        <p>URGENT — burst pipe, El Cajon. Sam Rivera, 619-555-0147. Shut-off valve closed, water stopped. Call back first.</p>
+        <p class="sms-note">Illustrative example message — fictional caller and 555 number.</p>
+      </div>
+    </article>
+    <article class="cell"><h3>Name</h3><p>Who called, spelled back to them.</p></article>
+    <article class="cell"><h3>Callback number</h3><p>Taken digit by digit and read back — a wrong number is a lost job.</p></article>
+    <article class="cell"><h3>Reason</h3><p>The job, in the caller's own words, short and plain.</p></article>
+    <article class="cell"><h3>Urgent flag</h3><p>Emergencies jump the list. Danger means 911 first, always.</p></article>
+    <article class="cell"><h3>Language</h3><p>English or Spanish today, noted on every call.</p></article>
+    <article class="cell"><h3>Yours, always</h3><p>Your number, your Google profile, your reviews stay in your name — never ours. Owners here get robocalls threatening their listing and offers to sell them back their own free profile; the defence is that it was never handed over. No contract, no cancellation maze.</p></article>
+    <article class="cell"><h3>Junk calls</h3><p>Robocalls and "your listing will be removed" scams get sorted into the record as junk — not forwarded to your phone, and never treated as real calls.</p></article>
+  </div>
+  <h2 id="careH">Built carefully — including this page</h2>
+  <p class="section-lede">We study how other people's websites go wrong, and we build against the list. You can check every line of this on the page you're reading:</p>
+  <ul class="care-list">
+    <li><strong>No trackers, no cookies, no external fonts phoning home.</strong> The words on this page are set in font files served from this site alone.</li>
+    <li><strong>Nothing typed here is collected.</strong> The poll and the calculator run entirely in your browser until you choose to send something yourself.</li>
+    <li><strong>Readable on purpose.</strong> Every text colour on this page was checked by arithmetic against its background for strong contrast, links and buttons work from a keyboard, and motion calms down if your device asks it to.</li>
+    <li><strong>No secrets in the page.</strong> There is no sign-in, no account, and nothing hidden in the code that shouldn't be public — a static page should carry nothing worth stealing.</li>
+    <li><strong>Honest labels everywhere.</strong> Examples are marked fictional, estimates show their math, and there is not a single review, rating, or customer story on this page — because the first shops haven't happened yet. When they do, they'll be real, named, and asked for properly.</li>
+    <li><strong>Email that can prove it's us.</strong> Our domain's mail carries published anti-spoofing records (the technical names are SPF, DKIM and DMARC), so a message from hello@ can be checked — and an imitation can be caught.</li>
+  </ul>
+</section>
+
+<!-- ============ ROOM 6 · THE FLOOR PLAN ============ -->
+<section class="room room-floorplan band" id="floor-plan" aria-labelledby="planH">
+  <p class="room-label" data-en="Room 6 · The Floor Plan" data-es="Sala 6 · El Plano">Room 6 · The Floor Plan</p>
+  <h2 id="planH" data-en="The whole place, on one plan" data-es="Todo el lugar, en un solo plano">The whole place, on one plan</h2>
+  <p class="section-lede" data-en="The five rooms you've just walked, drawn from above — and the path a call takes through them, from the front door to the morning list." data-es="Las cinco salas que acabas de recorrer, dibujadas desde arriba — y el camino que sigue una llamada, desde la puerta principal hasta la lista de la mañana.">The five rooms you've just walked, drawn from above — and the path a call takes through them, from the front door to the morning list.</p>
+  <figure class="plan-fig">
+    <svg class="plan-svg" viewBox="0 0 660 400" role="img" aria-labelledby="planSvgTitle">
+      <title id="planSvgTitle" data-en="Floor plan of the five rooms — the doorway, the front desk, the workshop, the night office and the morning room — with the path of a call drawn through them." data-es="Plano de las cinco salas — la entrada, la recepción, el taller, la oficina de noche y la sala de la mañana — con el camino de una llamada dibujado entre ellas.">Floor plan of the five rooms — the doorway, the front desk, the workshop, the night office and the morning room — with the path of a call drawn through them.</title>
+      <rect x="30" y="30" width="600" height="340" fill="#F5F3F0"/>
+      <rect x="30" y="30" width="190" height="140" fill="#C09A68" fill-opacity=".22"/>
+      <rect x="440" y="30" width="190" height="140" fill="#16283F"/>
+      <rect x="30" y="30" width="600" height="340" fill="none" stroke="#0B1425" stroke-width="5"/>
+      <line x1="220" y1="30" x2="220" y2="170" stroke="#0B1425" stroke-width="4"/>
+      <line x1="440" y1="30" x2="440" y2="170" stroke="#0B1425" stroke-width="4"/>
+      <line x1="30" y1="170" x2="630" y2="170" stroke="#0B1425" stroke-width="4"/>
+      <line x1="30" y1="250" x2="630" y2="250" stroke="#0B1425" stroke-width="4"/>
+      <line x1="220" y1="250" x2="220" y2="370" stroke="#0B1425" stroke-width="4"/>
+      <line x1="440" y1="250" x2="440" y2="370" stroke="#0B1425" stroke-width="4"/>
+      <rect x="116" y="165" width="18" height="10" fill="#F5F3F0"/>
+      <rect x="116" y="245" width="18" height="10" fill="#F5F3F0"/>
+      <rect x="231" y="91" width="18" height="18" fill="#F5F3F0"/>
+      <rect x="431" y="91" width="18" height="18" fill="#16283F"/>
+      <rect x="526" y="165" width="18" height="10" fill="#16283F"/>
+      <rect x="526" y="245" width="18" height="10" fill="#F5F3F0"/>
+      <rect x="100" y="364" width="50" height="12" fill="#F5F3F0"/>
+      <path d="M150 370 A50 50 0 0 0 100 320" fill="none" stroke="#A8B0BF" stroke-width="2"/>
+      <path d="M125 322 L125 100 L330 100 L535 100 L535 322" fill="none" stroke="#A47C52" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/>
+      <circle cx="125" cy="322" r="5.5" fill="#A47C52" stroke="#0B1425" stroke-width="1.6"/>
+      <circle cx="125" cy="100" r="5.5" fill="#A47C52" stroke="#0B1425" stroke-width="1.6"/>
+      <circle cx="330" cy="100" r="5.5" fill="#A47C52" stroke="#0B1425" stroke-width="1.6"/>
+      <circle cx="535" cy="100" r="5.5" fill="#F5F3F0" stroke="#A47C52" stroke-width="1.6"/>
+      <path d="M535 322 l-7 -11 h14 Z" fill="#A47C52"/>
+      <text x="330" y="215" class="plan-hall" data-en="THE HALL" data-es="EL PASILLO">THE HALL</text>
+      <circle cx="52" cy="272" r="12" fill="#A47C52"/><text x="52" y="273" class="plan-num">1</text>
+      <text x="125" y="298" class="plan-label" data-en="The Doorway" data-es="La Entrada">The Doorway</text>
+      <text x="125" y="352" class="plan-sub" data-en="You come in here" data-es="Por aquí entras">You come in here</text>
+      <circle cx="52" cy="52" r="12" fill="#A47C52"/><text x="52" y="53" class="plan-num">2</text>
+      <text x="125" y="118" class="plan-label" data-en="The Front Desk" data-es="La Recepción">The Front Desk</text>
+      <circle cx="272" cy="52" r="12" fill="#A47C52"/><text x="272" y="53" class="plan-num">3</text>
+      <text x="330" y="118" class="plan-label" data-en="The Workshop" data-es="El Taller">The Workshop</text>
+      <circle cx="492" cy="52" r="12" fill="#A47C52"/><text x="492" y="53" class="plan-num">4</text>
+      <text x="535" y="118" class="plan-label plan-label-dark" data-en="The Night Office" data-es="La Oficina de Noche">The Night Office</text>
+      <circle cx="492" cy="272" r="12" fill="#A47C52"/><text x="492" y="273" class="plan-num">5</text>
+      <text x="535" y="298" class="plan-label" data-en="The Morning Room" data-es="La Sala de la Mañana">The Morning Room</text>
+    </svg>
+  </figure>
+  <ol class="plan-flow">
+    <li data-en="A call comes in" data-es="Entra una llamada">A call comes in</li>
+    <li data-en="Sunny answers, writes it down, and flags what's urgent" data-es="Sunny contesta, lo anota y marca lo urgente">Sunny answers, writes it down, and flags what's urgent</li>
+    <li data-en="You get the list in the morning" data-es="Recibes la lista en la mañana">You get the list in the morning</li>
+    <li data-en="You call back" data-es="Tú devuelves la llamada">You call back</li>
+  </ol>
 </section>
 
 <!-- ============ OWNER POLL ============ -->
@@ -182,150 +411,6 @@
     </p>
     <p class="honest-tag" data-en="The button opens your own email app with the answers written in — nothing leaves your phone until you press send there. Prefer to just talk? Email us the same address, any time." data-es="El botón abre tu propio correo con las respuestas ya escritas; nada sale de tu teléfono hasta que tú le des enviar. ¿Prefieres platicar? Escríbenos a la misma dirección cuando quieras.">The button opens your own email app with the answers written in — nothing leaves your phone until you press send there. Prefer to just talk? Email us the same address, any time.</p>
   </div>
-</section>
-
-<!-- ============ PROBLEMS WE HEAR (SD-ISSUES SLOT) ============ -->
-<section class="problems" id="problems" aria-labelledby="probH">
-  <!-- SD-ISSUES FOLDED IN 2026-10-31: mapped to the top-5 of
-       ~/workspace/new-journey/SD-BUSINESS-ISSUES-20261031.md (EDC/SBDC survey,
-       BBB customer reviews, El Cajon market evidence). Angles only; no
-       invented stats; the file's locally-UNPROVEN items stay in question
-       form on the page (the poll asks, the site does not assert). -->
-  <h2 id="probH">The problems we're building for</h2>
-  <p class="section-lede">Not features looking for a buyer — the problems San Diego owners actually name. In the San Diego Regional EDC and SBDC small-business survey, the loudest stated challenge was sales and attracting customers. Our read of that, after studying how local shops lose the customers they already get: <strong>the customers are already calling — the leak is what happens next.</strong> Paraphrased from published San Diego survey work (EDC/SBDC), Better Business Bureau customer reviews of local shops, and national owner research, in plain words:</p>
-  <div class="problem-grid">
-    <article class="problem-card">
-      <h3>The phone rings while your hands are busy</h3>
-      <p>You're mid-job — under a sink, in an attic, under a lift — and the phone is in the truck, or ringing in an empty office. The biggest leak owners describe isn't only after hours; it's daytime, while the work is happening.</p>
-      <p class="solves"><strong>How Sunny answers it:</strong> she can ring you first, and take the call herself only when nobody picks up — overflow cover, not a replacement for you.</p>
-    </article>
-    <article class="problem-card">
-      <h3>A missed caller rarely leaves a message</h3>
-      <p>Owners tell researchers the same story: the caller just tries the next shop on Google. And slow follow-up after a message does get left loses the rest. What they ask for isn't magic — it's a fast, clear next step.</p>
-      <p class="solves"><strong>How Sunny answers it:</strong> every call becomes a written list — name, number, reason — the moment it ends, so the first callback you make is the right one.</p>
-    </article>
-    <article class="problem-card">
-      <h3>Coverage without a hire</h3>
-      <p>Hiring and keeping good people is a top challenge in San Diego's own owner surveys — and a front-desk seat is the hardest one to justify at three to fifteen people. So the owner becomes the front desk, the tech, and the callback list, all at once.</p>
-      <p class="solves"><strong>How Sunny answers it:</strong> she covers the answering and the writing-down around the clock — the seat you don't have to recruit, train, or replace — and you stay the person who decides, quotes, and calls back.</p>
-    </article>
-    <article class="problem-card">
-      <h3>One wrong promise can cost the whole relationship</h3>
-      <p>An invented time slot or a made-up price is the fastest way to lose a customer's trust. Owners are right to be wary of anything that talks to their customers unsupervised.</p>
-      <p class="solves"><strong>How Sunny answers it:</strong> she never quotes a price and never invents a slot. She captures, flags, and hands over — you confirm everything.</p>
-    </article>
-    <article class="problem-card">
-      <h3>Your Google front door works against you</h3>
-      <p>An unclaimed profile, wrong hours, a handful of old reviews nobody answered — that's the shop window most callers see first, and for many small shops it's quietly out of date.</p>
-      <p class="solves"><strong>How the wider build answers it:</strong> the front-door work pairs answering with claiming and fixing the Google profile and a legal, ask-everyone reviews habit — no shortcuts, no bought reviews.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ============ THREE CALLS ============ -->
-<section class="calls" aria-labelledby="callsH">
-  <h2 id="callsH">Three kinds of calls she takes</h2>
-  <p class="section-lede">Every example below is fictional and labelled so. This is the shape of the work — the real recordings come from real shops.</p>
-  <div class="call-grid">
-    <article class="call-card">
-      <p class="call-tag urgent-tag">Emergency, flagged</p>
-      <h3>The burst pipe, 11 p.m.</h3>
-      <p class="call-line"><strong>Caller:</strong> "Water's coming through the kitchen ceiling."</p>
-      <p class="call-line"><strong>Sunny:</strong> takes the name, the callback number and the address area, marks it urgent, and puts it at the top of your list — and tells the caller to hang up and dial 911 if anyone is in danger.</p>
-    </article>
-    <article class="call-card">
-      <p class="call-tag">English · Español</p>
-      <h3>The no-cool call, in Spanish</h3>
-      <p class="call-line"><strong>Caller:</strong> "Se descompuso el aire y hay un bebé en casa."</p>
-      <p class="call-line"><strong>Sunny:</strong> answers in Spanish, captures the same details the same way, and your list shows the call in English with the language noted — nothing gets lost between languages.</p>
-    </article>
-    <article class="call-card">
-      <p class="call-tag">No prices, ever</p>
-      <h3>The price-shopper, auto shop</h3>
-      <p class="call-line"><strong>Caller:</strong> "How much for brakes on a 2016 Tacoma?"</p>
-      <p class="call-line"><strong>Sunny:</strong> "I can't quote prices — but I'll take your name and number and the owner will call you back with one." Captured, not guessed.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ============ NIGHT SHIFT CHAPTER ============ -->
-<section class="night" aria-labelledby="nightH">
-  <h2 id="nightH">It's 2 a.m. Your phone just rang. Sunny got it.</h2>
-  <p class="section-lede pale">Your customers should never hear silence — not at 2 p.m., not at 2 a.m. Read the customer reviews of San Diego shops and the angriest ones aren't about the repair; they're about the no-show, the missing update, the call nobody returned. Tap an hour: this is what happens at a small shop while the owner is off the clock — an illustration of the working pattern, not a log of real calls.</p>
-  <div class="timeline" role="group" aria-label="Night timeline">
-    <button type="button" class="hour" data-hour="17">5 PM</button>
-    <button type="button" class="hour" data-hour="19">7 PM</button>
-    <button type="button" class="hour" data-hour="21">9 PM</button>
-    <button type="button" class="hour" data-hour="0">12 AM</button>
-    <button type="button" class="hour hour-hot" data-hour="2">2 AM</button>
-    <button type="button" class="hour" data-hour="6">6 AM</button>
-  </div>
-  <div class="night-panel" id="nightPanel" role="status">
-    <h3 id="nightTitle">2:00 AM — the burst pipe</h3>
-    <p id="nightText">A homeowner finds water through the ceiling. Sunny answers on the second ring, says she's the shop's automated assistant, flags it urgent, and captures the callback number digit by digit. The owner wakes to one clear message instead of a voicemail they'll hear at nine — if the caller left one at all.</p>
-  </div>
-  <p class="honest-tag pale-tag">Illustrative pattern. Sunny always identifies herself as an AI, and true emergencies are pointed to 911 first.</p>
-</section>
-
-<!-- ============ WHAT SHE WRITES DOWN ============ -->
-<section class="bento-wrap" aria-labelledby="bentoH">
-  <h2 id="bentoH">What she writes down</h2>
-  <div class="bento">
-    <article class="cell cell-big">
-      <h3>The message you wake up to</h3>
-      <div class="sms-card">
-        <p class="sms-from">Sunny · 2:04 AM</p>
-        <p>URGENT — burst pipe, El Cajon. Sam Rivera, 619-555-0147. Shut-off valve closed, water stopped. Call back first.</p>
-        <p class="sms-note">Illustrative example message — fictional caller and 555 number.</p>
-      </div>
-    </article>
-    <article class="cell"><h3>Name</h3><p>Who called, spelled back to them.</p></article>
-    <article class="cell"><h3>Callback number</h3><p>Taken digit by digit and read back — a wrong number is a lost job.</p></article>
-    <article class="cell"><h3>Reason</h3><p>The job, in the caller's own words, short and plain.</p></article>
-    <article class="cell"><h3>Urgent flag</h3><p>Emergencies jump the list. Danger means 911 first, always.</p></article>
-    <article class="cell"><h3>Language</h3><p>English or Spanish today, noted on every call.</p></article>
-    <article class="cell"><h3>Yours, always</h3><p>Your number, your Google profile, your reviews stay in your name — never ours. Owners here get robocalls threatening their listing and offers to sell them back their own free profile; the defence is that it was never handed over. No contract, no cancellation maze.</p></article>
-    <article class="cell"><h3>Junk calls</h3><p>Robocalls and "your listing will be removed" scams get sorted into the record as junk — not forwarded to your phone, and never treated as real calls.</p></article>
-  </div>
-</section>
-
-<!-- ============ HONEST CALCULATOR ============ -->
-<section class="calc-wrap" aria-labelledby="calcH">
-  <h2 id="calcH">Do your own math</h2>
-  <p class="section-lede">The customers are already calling; the leak is what happens next. No scare numbers from us, though: move the sliders with <em>your</em> numbers — we will never supply the missed-call count for you. This is plain arithmetic, and nothing here is sent anywhere or saved.</p>
-  <div class="calc">
-    <label>Calls that go unanswered each week: <output id="cMissedOut" for="cMissed">4</output>
-      <input type="range" id="cMissed" min="0" max="30" step="1" value="4">
-    </label>
-    <label>Share of those callers who might have booked, if someone had answered: <output id="cShareOut" for="cShare">25%</output>
-      <input type="range" id="cShare" min="0" max="100" step="5" value="25">
-    </label>
-    <label>Your average job, in dollars: <output id="cValueOut" for="cValue">450</output>
-      <input type="range" id="cValue" min="50" max="3000" step="50" value="450">
-    </label>
-    <p class="calc-formula">The math: unanswered calls × share who might book × average job × 52 weeks.</p>
-    <p class="calc-result">About <strong id="calcOut">23,400</strong> dollars a year in work is calling and not reaching you — <em>an estimate from your numbers, not a promise.</em> We make no claim here about how much of it Sunny would recover. That is what hearing her, and the first real shops, are for.</p>
-  </div>
-</section>
-
-<!-- ============ BUILT CAREFULLY ============ -->
-<section class="careful" aria-labelledby="careH">
-  <h2 id="careH">Built carefully — including this page</h2>
-  <p class="section-lede">We study how other people's websites go wrong, and we build against the list. You can check every line of this on the page you're reading:</p>
-  <ul class="care-list">
-    <li><strong>No trackers, no cookies, no external fonts phoning home.</strong> The words on this page are set in font files served from this site alone.</li>
-    <li><strong>Nothing typed here is collected.</strong> The poll and the calculator run entirely in your browser until you choose to send something yourself.</li>
-    <li><strong>Readable on purpose.</strong> Every text colour on this page was checked by arithmetic against its background for strong contrast, links and buttons work from a keyboard, and motion calms down if your device asks it to.</li>
-    <li><strong>No secrets in the page.</strong> There is no sign-in, no account, and nothing hidden in the code that shouldn't be public — a static page should carry nothing worth stealing.</li>
-    <li><strong>Honest labels everywhere.</strong> Examples are marked fictional, estimates show their math, and there is not a single review, rating, or customer story on this page — because the first shops haven't happened yet. When they do, they'll be real, named, and asked for properly.</li>
-    <li><strong>Email that can prove it's us.</strong> Our domain's mail carries published anti-spoofing records (the technical names are SPF, DKIM and DMARC), so a message from hello@ can be checked — and an imitation can be caught.</li>
-  </ul>
-</section>
-
-<!-- ============ LANGUAGES ============ -->
-<section class="langs" aria-labelledby="langH">
-  <h2 id="langH">English. Español. Honest about the rest.</h2>
-  <p class="section-lede">East County calls in more than one language — shops on Jamacha Road advertise multilingual staff on their own signs, because it's true of the neighbourhood. This page switches between English and Spanish at the top, and Sunny answers in both. San Diego also speaks Vietnamese, Tagalog, Arabic, Chinese, Korean and Farsi, and we won't pretend otherwise: Arabic and Farsi are in testing with real speakers, and a language only gets offered when it has passed them. A language we can't answer well in is worse than none.</p>
 </section>
 
 <!-- ============ FAQ ============ -->
