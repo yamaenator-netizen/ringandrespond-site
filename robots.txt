@@ -1,57 +1,8 @@
-# Ring & Respond — crawl control (Living Spaces-style hygiene, tightened 2026-10-20)
-# Goal: search + AI crawlers spend their budget on the 14 money pages only.
-# Functional / post-purchase pages are noindex in-page as well; robots is the belt to that suspenders.
-
+# AI answer engines are welcome to read and quote this site (AEO):
+# GPTBot, ClaudeBot, PerplexityBot and Google-Extended all fall under the
+# wildcard allow below. No path here holds anything private.
 User-agent: *
 Allow: /
-# Functional + post-purchase flows (linked for humans, not search results)
-Disallow: /api/
-Disallow: /onboard.html
-Disallow: /thank-you.html
-# Junk parameters / duplicate URLs — the canonical URL is the only indexable version
-Disallow: /*?*
+Disallow: /404.html
 
-# AI answer engines: explicitly welcome (FAQ hubs are built to be cited)
-User-agent: GPTBot
-Allow: /
-
-# ChatGPT search (OAI-SearchBot decides ChatGPT citation eligibility)
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-# Claude web search / live fetch
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-# Meta AI answers
-User-agent: Meta-ExternalAgent
-Allow: /
-
-# Siri / Apple search
-User-agent: Applebot
-Allow: /
-
-# Common Crawl (feeds multiple answer engines' indexes)
-User-agent: CCBot
-Allow: /
-
-# Bing index (also feeds Copilot, DuckDuckGo, Alexa)
-User-agent: Bingbot
-Allow: /
-
-Sitemap: https://www.ringandrespond.com/sitemap.xml
+Sitemap: https://ringandrespond.com/sitemap.xml

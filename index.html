@@ -1,48 +1,376 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light" />
-  <title>Ring &amp; Respond — Under Construction</title>
-  <meta name="description" content="Ring & Respond is rebuilding. Reach us at hello@ringandrespond.com." />
-  <meta property="og:title" content="Ring & Respond — Under Construction" />
-  <meta property="og:description" content="We're rebuilding. Reach us at hello@ringandrespond.com." />
-  <meta property="og:url" content="https://www.ringandrespond.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ring &amp; Respond" />
-  <meta property="og:image" content="https://www.ringandrespond.com/rr-logo-lockup.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/dm-sans-var.woff2" as="font" type="font/woff2" crossorigin />
-  <style>
-  @font-face { font-family: 'Archivo'; font-style: normal; font-weight: 500 800; font-display: swap; src: url(fonts/archivo-var.woff2) format('woff2'); }
-  @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(fonts/dm-sans-var.woff2) format('woff2'); }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'DM Sans', system-ui, sans-serif; background: #fdfcf9; color: #123332; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  main { max-width: 560px; text-align: center; }
-  .brand img { width: min(340px, 80vw); height: auto; }
-  h1 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(2rem, 6vw, 3rem); color: rgb(10,96,74); margin: 28px 0 14px; letter-spacing: -0.01em; }
-  p { font-size: 1.125rem; line-height: 1.6; color: #33514d; }
-  .actions { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
-  a.btn { display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 1.05rem; text-decoration: none; border-radius: 999px; padding: 14px 30px; }
-  a.call { background: rgb(10,96,74); color: #fff; }
-  a.mail { color: rgb(10,96,74); border: 2px solid rgb(10,96,74); background: transparent; }
-  .slogan { margin-top: 34px; font-weight: 600; color: #b07d10; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ring &amp; Respond — Sunny answers your shop's phone | Answered with a smile.</title>
+<meta name="description" content="Sunny is an AI receptionist being built for Southern California shops — plumbers, electricians, HVAC and auto. She answers in your shop's name, writes down who called and why, flags emergencies, and hands you the list. We're asking local owners first: take the 30-second poll.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ringandrespond.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ring &amp; Respond">
+<meta property="og:title" content="Ring &amp; Respond — Answered with a smile.">
+<meta property="og:description" content="Sunny answers your shop's phone when you can't — during a job, after hours, in English and Spanish. Built for East County shops. Owners: tell us what you'd hand off first.">
+<meta property="og:url" content="https://ringandrespond.com/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ring &amp; Respond — Answered with a smile.">
+<meta name="twitter:description" content="Sunny answers your shop's phone, writes down every call, flags the emergencies. We're asking San Diego owners what they need first — take the poll.">
+<meta name="theme-color" content="#0A604A">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="preload" href="/assets/noto-serif-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ringandrespond.com/#org",
+      "name": "Ring & Respond",
+      "slogan": "Answered with a smile.",
+      "url": "https://ringandrespond.com/",
+      "email": "hello@ringandrespond.com",
+      "areaServed": { "@type": "AdministrativeArea", "name": "San Diego County, California" },
+      "description": "Ring & Respond builds Sunny, an AI receptionist for local shops: she answers the phone in the shop's name, captures the caller's name, number and reason, flags emergencies, and gives the owner the list."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ringandrespond.com/#site",
+      "url": "https://ringandrespond.com/",
+      "name": "Ring & Respond",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://ringandrespond.com/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ringandrespond.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is Sunny a robot?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sunny is an AI receptionist, and she always says so at the start of every call. Your customers will never be tricked into thinking she is a person." } },
+        { "@type": "Question", "name": "What does Sunny do on a call?", "acceptedAnswer": { "@type": "Answer", "text": "She answers in your shop's name, takes the caller's name, callback number and reason for calling, flags anything urgent, and hands you the list. She never quotes prices and never promises a slot — you confirm and call back." } },
+        { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "Prices are not published yet, on purpose. We are asking local shop owners first, and prices will be set from what owners tell us after the first shops have lived with Sunny. Anyone who shows you a price today is guessing." } },
+        { "@type": "Question", "name": "Does Sunny speak Spanish?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Sunny answers in English and Spanish. Arabic and Farsi are in testing and will not be offered until real speakers have tested them." } },
+        { "@type": "Question", "name": "How do I reach Ring & Respond?", "acceptedAnswer": { "@type": "Answer", "text": "Email hello@ringandrespond.com. That is the one way to reach us right now, and a person reads every message." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
-  <main>
-    <div class="brand"><img src="rr-logo-horizontal.png" alt="Ring &amp; Respond" width="1500" height="300" /></div>
-    <h1>We&rsquo;re rebuilding.</h1>
-    <p>This website is under construction while we build what&rsquo;s next.<br />
-    One way to reach us right now:</p>
-    <div class="actions">
-      <a class="btn call" href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a>
+<a class="skip" href="#poll" data-en="Skip to the owner poll" data-es="Saltar a la encuesta">Skip to the owner poll</a>
+
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Ring and Respond — home">
+    <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="Ring and Respond logo: a deep green handset cradling a smiling gold sun">
+      <g stroke="#FFC61A" stroke-width="3.4" stroke-linecap="round">
+        <line x1="32" y1="2" x2="32" y2="10"/><line x1="10" y1="10" x2="15" y2="16"/><line x1="54" y1="10" x2="49" y2="16"/>
+        <line x1="4" y1="27" x2="12" y2="28"/><line x1="60" y1="27" x2="52" y2="28"/>
+      </g>
+      <circle cx="32" cy="30" r="12" fill="#FFC61A"/>
+      <circle cx="27.5" cy="28" r="1.8" fill="#0A2C21"/><circle cx="36.5" cy="28" r="1.8" fill="#0A2C21"/>
+      <path d="M26 34 Q32 39 38 34" fill="none" stroke="#0A2C21" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M14 22 Q10 44 26 54 L30 48 Q18 41 19 26 Z" fill="#0A604A"/>
+      <path d="M50 22 Q54 44 38 54 L34 48 Q46 41 45 26 Z" fill="#0A604A"/>
+    </svg>
+    <span class="wordmark">Ring <span class="amp">&amp;</span> Respond</span>
+  </a>
+  <button id="langToggle" class="lang-toggle" type="button" aria-label="Cambiar a español / Switch to Spanish">EN | <span class="lang-alt">ES</span></button>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="heroH">
+  <p class="kicker" data-en="For shops in East County &amp; San Diego" data-es="Para negocios del East County y San Diego">For shops in East County &amp; San Diego</p>
+  <h1 id="heroH" data-en="Your phone, answered with a smile." data-es="Tu teléfono, contestado con una sonrisa.">Your phone, answered with a smile.</h1>
+  <p class="lede" data-en="Sunny is an AI receptionist we're building for shops like yours — plumbing, electrical, HVAC, auto. When you're under a sink, on a roof, or home asleep, she answers in your shop's name, writes down who called and why, flags the emergencies, and hands you the list." data-es="Sunny es una recepcionista con IA que estamos creando para negocios como el tuyo: plomería, electricidad, HVAC, autos. Cuando estás bajo un fregadero, en un techo, o dormido en casa, ella contesta con el nombre de tu negocio, anota quién llamó y por qué, marca las emergencias y te entrega la lista.">Sunny is an AI receptionist we're building for shops like yours — plumbing, electrical, HVAC, auto. When you're under a sink, on a roof, or home asleep, she answers in your shop's name, writes down who called and why, flags the emergencies, and hands you the list.</p>
+  <p class="slogan">Answered with a smile.</p>
+
+  <div class="demo-card" id="demo">
+    <div class="demo-head">
+      <svg class="mark mark-small" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <g stroke="#FFC61A" stroke-width="3.4" stroke-linecap="round"><line x1="32" y1="2" x2="32" y2="10"/><line x1="10" y1="10" x2="15" y2="16"/><line x1="54" y1="10" x2="49" y2="16"/><line x1="4" y1="27" x2="12" y2="28"/><line x1="60" y1="27" x2="52" y2="28"/></g>
+        <circle cx="32" cy="30" r="12" fill="#FFC61A"/><circle cx="27.5" cy="28" r="1.8" fill="#0A2C21"/><circle cx="36.5" cy="28" r="1.8" fill="#0A2C21"/>
+        <path d="M26 34 Q32 39 38 34" fill="none" stroke="#0A2C21" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M14 22 Q10 44 26 54 L30 48 Q18 41 19 26 Z" fill="#0A604A"/><path d="M50 22 Q54 44 38 54 L34 48 Q46 41 45 26 Z" fill="#0A604A"/>
+      </svg>
+      <div>
+        <h2 class="demo-title" data-en="Hear the idea: a concept call" data-es="Escucha la idea: una llamada de concepto">Hear the idea: a concept call</h2>
+        <p class="demo-note" data-en="This is a concept walk-through, not a recording of a real customer. The caller, the shop and the number are made up to show how Sunny would handle a burst pipe at night. Real call recordings come with the first shops." data-es="Esto es un ejemplo de concepto, no la grabación de un cliente real. Quien llama, el negocio y el número son inventados para mostrar cómo Sunny atendería una tubería rota de noche. Las grabaciones reales llegarán con los primeros negocios.">This is a concept walk-through, not a recording of a real customer. The caller, the shop and the number are made up to show how Sunny would handle a burst pipe at night. Real call recordings come with the first shops.</p>
+      </div>
     </div>
-    <p class="slogan">Answered with a smile.</p>
-  </main>
+    <canvas id="sunCanvas" width="640" height="180" aria-hidden="true"></canvas>
+    <div class="demo-controls">
+      <button id="playBtn" class="btn btn-gold" type="button" aria-label="Play the concept call walk-through"><span id="playGlyph" aria-hidden="true">▶</span> <span data-en="Play the concept call" data-es="Reproducir la llamada de concepto">Play the concept call</span></button>
+      <p class="demo-status" id="demoStatus" role="status" data-en="Sunny always says she's an AI — watch for it in line one." data-es="Sunny siempre dice que es una IA. Fíjate en la primera línea.">Sunny always says she's an AI — watch for it in line one.</p>
+    </div>
+    <ol class="transcript" id="transcript">
+      <li data-t="0"><strong>Sunny:</strong> <span data-en="Thanks for calling Mike's Plumbing — I'm Sunny, the shop's automated assistant, and this call may be recorded. How can I help?" data-es="Gracias por llamar a Mike's Plumbing. Soy Sunny, la asistente automática del negocio, y esta llamada puede ser grabada. ¿En qué le ayudo?">Thanks for calling Mike's Plumbing — I'm Sunny, the shop's automated assistant, and this call may be recorded. How can I help?</span></li>
+      <li data-t="1"><strong data-en="Caller:" data-es="Cliente:">Caller:</strong> <span data-en="A pipe burst under my kitchen sink — water everywhere. I'm over in El Cajon." data-es="Se rompió una tubería bajo el fregadero de mi cocina. Hay agua por todas partes. Estoy en El Cajon.">A pipe burst under my kitchen sink — water everywhere. I'm over in El Cajon.</span></li>
+      <li data-t="2"><strong>Sunny:</strong> <span data-en="I'm flagging that as urgent for the owner right now. Can I get your name and the best callback number?" data-es="Lo marco como urgente para el dueño ahora mismo. ¿Me da su nombre y el mejor número para devolverle la llamada?">I'm flagging that as urgent for the owner right now. Can I get your name and the best callback number?</span></li>
+      <li data-t="3"><strong data-en="Caller:" data-es="Cliente:">Caller:</strong> <span data-en="Sam Rivera — 619-555-0147." data-es="Sam Rivera, 619-555-0147.">Sam Rivera — 619-555-0147.</span></li>
+      <li data-t="4"><strong>Sunny:</strong> <span data-en="Got it: Sam Rivera, 619-555-0147, burst pipe in El Cajon. The owner gets this at the top of the list and calls you back. If water is rising or you smell gas, hang up and call 911." data-es="Anotado: Sam Rivera, 619-555-0147, tubería rota en El Cajon. El dueño lo recibe primero en la lista y le devuelve la llamada. Si el agua sube o huele a gas, cuelgue y llame al 911.">Got it: Sam Rivera, 619-555-0147, burst pipe in El Cajon. The owner gets this at the top of the list and calls you back. If water is rising or you smell gas, hang up and call 911.</span></li>
+    </ol>
+    <p class="honest-tag" data-en="Illustrative example — fictional caller, fictional shop, 555 number. Sunny never quotes a price and never promises a time; the owner confirms and calls back." data-es="Ejemplo ilustrativo: cliente ficticio, negocio ficticio, número 555. Sunny nunca da precios ni promete horarios; el dueño confirma y devuelve la llamada.">Illustrative example — fictional caller, fictional shop, 555 number. Sunny never quotes a price and never promises a time; the owner confirms and calls back.</p>
+  </div>
+</section>
+
+<!-- ============ OWNER POLL ============ -->
+<section class="poll" id="poll" aria-labelledby="pollH">
+  <h2 id="pollH" data-en="We're asking owners first." data-es="Primero les preguntamos a los dueños.">We're asking owners first.</h2>
+  <p data-en="No prices on this page, on purpose: we're setting them from what local owners tell us, not from a boardroom. Four taps, no typing unless you want to. Nothing is sent or saved by this page — at the end, you can choose to email us your answers yourself." data-es="No hay precios en esta página, a propósito: los vamos a fijar según lo que nos digan los dueños locales, no desde una oficina. Cuatro toques, sin escribir nada si no quieres. Esta página no envía ni guarda nada; al final, tú decides si nos mandas tus respuestas por correo.">No prices on this page, on purpose: we're setting them from what local owners tell us, not from a boardroom. Four taps, no typing unless you want to. Nothing is sent or saved by this page — at the end, you can choose to email us your answers yourself.</p>
+  <p class="poll-progress" id="pollProgress" role="status" data-en="Question 1 of 4" data-es="Pregunta 1 de 4">Question 1 of 4</p>
+
+  <fieldset class="poll-step" data-step="1">
+    <legend data-en="What's your trade?" data-es="¿Cuál es tu oficio?">What's your trade?</legend>
+    <div class="chips" role="group">
+      <button type="button" class="chip" data-q="trade" data-v="Plumbing" data-en="Plumbing" data-es="Plomería">Plumbing</button>
+      <button type="button" class="chip" data-q="trade" data-v="Electrical" data-en="Electrical" data-es="Electricidad">Electrical</button>
+      <button type="button" class="chip" data-q="trade" data-v="HVAC" data-en="HVAC" data-es="HVAC / aire">HVAC</button>
+      <button type="button" class="chip" data-q="trade" data-v="Auto" data-en="Auto shop" data-es="Taller de autos">Auto shop</button>
+      <button type="button" class="chip" data-q="trade" data-v="Other" data-en="Other shop" data-es="Otro negocio">Other shop</button>
+    </div>
+  </fieldset>
+
+  <fieldset class="poll-step" data-step="2" hidden>
+    <legend data-en="In a normal week, how many customer calls go unanswered at your shop?" data-es="En una semana normal, ¿cuántas llamadas de clientes quedan sin contestar en tu negocio?">In a normal week, how many customer calls go unanswered at your shop?</legend>
+    <div class="chips" role="group">
+      <button type="button" class="chip" data-q="missed" data-v="0" data-en="0 — we catch them all" data-es="0 — las contestamos todas">0 — we catch them all</button>
+      <button type="button" class="chip" data-q="missed" data-v="1-3">1–3</button>
+      <button type="button" class="chip" data-q="missed" data-v="4-10">4–10</button>
+      <button type="button" class="chip" data-q="missed" data-v="10+" data-en="More than 10" data-es="Más de 10">More than 10</button>
+    </div>
+  </fieldset>
+
+  <fieldset class="poll-step" data-step="3" hidden>
+    <legend data-en="Which missed call hurts more?" data-es="¿Qué llamada perdida duele más?">Which missed call hurts more?</legend>
+    <div class="chips" role="group">
+      <button type="button" class="chip" data-q="when" data-v="During a job" data-en="While I'm on a job" data-es="Mientras estoy en un trabajo">While I'm on a job</button>
+      <button type="button" class="chip" data-q="when" data-v="After hours" data-en="After hours" data-es="Fuera de horario">After hours</button>
+      <button type="button" class="chip" data-q="when" data-v="Both" data-en="Both, honestly" data-es="Las dos, la verdad">Both, honestly</button>
+    </div>
+  </fieldset>
+
+  <fieldset class="poll-step" data-step="4" hidden>
+    <legend data-en="What would you hand off first?" data-es="¿Qué entregarías primero?">What would you hand off first?</legend>
+    <p class="poll-note" data-en="And if you pick phones or the Google profile: is that about more customers — or about not losing the ones who already call? Either answer teaches us something real." data-es="Y si eliges el teléfono o el perfil de Google: ¿es por más clientes, o por no perder a los que ya llaman? Cualquier respuesta nos enseña algo real.">And if you pick phones or the Google profile: is that about more customers — or about not losing the ones who already call? Either answer teaches us something real.</p>
+    <div class="chips" role="group">
+      <button type="button" class="chip" data-q="handoff" data-v="Answered phones" data-en="Answered phones" data-es="Que contesten el teléfono">Answered phones</button>
+      <button type="button" class="chip" data-q="handoff" data-v="Google profile and reviews" data-en="Google profile + reviews fixed" data-es="Perfil de Google y reseñas">Google profile + reviews fixed</button>
+      <button type="button" class="chip" data-q="handoff" data-v="Calendar booking" data-en="Booking appointments" data-es="Agendar citas">Booking appointments</button>
+      <button type="button" class="chip" data-q="handoff" data-v="Website" data-en="My website fixed" data-es="Que arreglen mi sitio web">My website fixed</button>
+    </div>
+  </fieldset>
+
+  <div class="poll-done" id="pollDone" hidden>
+    <h3 data-en="That's it — thank you." data-es="Eso es todo. Gracias.">That's it — thank you.</h3>
+    <p id="pollSummary"></p>
+    <label class="poll-open">
+      <span data-en="Optional — the one front-desk thing you'd hand off tomorrow, in your words:" data-es="Opcional: lo primero que entregarías mañana, con tus palabras:">Optional — the one front-desk thing you'd hand off tomorrow, in your words:</span>
+      <textarea id="pollOpen" rows="2" maxlength="280"></textarea>
+    </label>
+    <label class="poll-terms">
+      <span data-en="Terms that suit you (tap one, optional):" data-es="Condiciones que te convienen (toca una, opcional):">Terms that suit you (tap one, optional):</span>
+    </label>
+    <div class="chips" role="group" aria-label="Terms preference">
+      <button type="button" class="chip chip-small" data-q="terms" data-v="Month-to-month" data-en="Month-to-month, cancel anytime" data-es="Mes a mes, cancela cuando quieras">Month-to-month, cancel anytime</button>
+      <button type="button" class="chip chip-small" data-q="terms" data-v="Cheaper annual" data-en="Cheaper if I pay for a year" data-es="Más barato pagando el año">Cheaper if I pay for a year</button>
+    </div>
+    <p>
+      <a class="btn btn-green" id="pollSend" href="mailto:hello@ringandrespond.com?subject=Owner%20poll%20answers" data-en="Email my answers to hello@ringandrespond.com" data-es="Enviar mis respuestas a hello@ringandrespond.com">Email my answers to hello@ringandrespond.com</a>
+    </p>
+    <p class="honest-tag" data-en="The button opens your own email app with the answers written in — nothing leaves your phone until you press send there. Prefer to just talk? Email us the same address, any time." data-es="El botón abre tu propio correo con las respuestas ya escritas; nada sale de tu teléfono hasta que tú le des enviar. ¿Prefieres platicar? Escríbenos a la misma dirección cuando quieras.">The button opens your own email app with the answers written in — nothing leaves your phone until you press send there. Prefer to just talk? Email us the same address, any time.</p>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS WE HEAR (SD-ISSUES SLOT) ============ -->
+<section class="problems" id="problems" aria-labelledby="probH">
+  <!-- SD-ISSUES FOLDED IN 2026-10-31: mapped to the top-5 of
+       ~/workspace/new-journey/SD-BUSINESS-ISSUES-20261031.md (EDC/SBDC survey,
+       BBB customer reviews, El Cajon market evidence). Angles only; no
+       invented stats; the file's locally-UNPROVEN items stay in question
+       form on the page (the poll asks, the site does not assert). -->
+  <h2 id="probH">The problems we're building for</h2>
+  <p class="section-lede">Not features looking for a buyer — the problems San Diego owners actually name. In the San Diego Regional EDC and SBDC small-business survey, the loudest stated challenge was sales and attracting customers. Our read of that, after studying how local shops lose the customers they already get: <strong>the customers are already calling — the leak is what happens next.</strong> Paraphrased from published San Diego survey work (EDC/SBDC), Better Business Bureau customer reviews of local shops, and national owner research, in plain words:</p>
+  <div class="problem-grid">
+    <article class="problem-card">
+      <h3>The phone rings while your hands are busy</h3>
+      <p>You're mid-job — under a sink, in an attic, under a lift — and the phone is in the truck, or ringing in an empty office. The biggest leak owners describe isn't only after hours; it's daytime, while the work is happening.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> she can ring you first, and take the call herself only when nobody picks up — overflow cover, not a replacement for you.</p>
+    </article>
+    <article class="problem-card">
+      <h3>A missed caller rarely leaves a message</h3>
+      <p>Owners tell researchers the same story: the caller just tries the next shop on Google. And slow follow-up after a message does get left loses the rest. What they ask for isn't magic — it's a fast, clear next step.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> every call becomes a written list — name, number, reason — the moment it ends, so the first callback you make is the right one.</p>
+    </article>
+    <article class="problem-card">
+      <h3>Coverage without a hire</h3>
+      <p>Hiring and keeping good people is a top challenge in San Diego's own owner surveys — and a front-desk seat is the hardest one to justify at three to fifteen people. So the owner becomes the front desk, the tech, and the callback list, all at once.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> she covers the answering and the writing-down around the clock — the seat you don't have to recruit, train, or replace — and you stay the person who decides, quotes, and calls back.</p>
+    </article>
+    <article class="problem-card">
+      <h3>One wrong promise can cost the whole relationship</h3>
+      <p>An invented time slot or a made-up price is the fastest way to lose a customer's trust. Owners are right to be wary of anything that talks to their customers unsupervised.</p>
+      <p class="solves"><strong>How Sunny answers it:</strong> she never quotes a price and never invents a slot. She captures, flags, and hands over — you confirm everything.</p>
+    </article>
+    <article class="problem-card">
+      <h3>Your Google front door works against you</h3>
+      <p>An unclaimed profile, wrong hours, a handful of old reviews nobody answered — that's the shop window most callers see first, and for many small shops it's quietly out of date.</p>
+      <p class="solves"><strong>How the wider build answers it:</strong> the front-door work pairs answering with claiming and fixing the Google profile and a legal, ask-everyone reviews habit — no shortcuts, no bought reviews.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ THREE CALLS ============ -->
+<section class="calls" aria-labelledby="callsH">
+  <h2 id="callsH">Three kinds of calls she takes</h2>
+  <p class="section-lede">Every example below is fictional and labelled so. This is the shape of the work — the real recordings come from real shops.</p>
+  <div class="call-grid">
+    <article class="call-card">
+      <p class="call-tag urgent-tag">Emergency, flagged</p>
+      <h3>The burst pipe, 11 p.m.</h3>
+      <p class="call-line"><strong>Caller:</strong> "Water's coming through the kitchen ceiling."</p>
+      <p class="call-line"><strong>Sunny:</strong> takes the name, the callback number and the address area, marks it urgent, and puts it at the top of your list — and tells the caller to hang up and dial 911 if anyone is in danger.</p>
+    </article>
+    <article class="call-card">
+      <p class="call-tag">English · Español</p>
+      <h3>The no-cool call, in Spanish</h3>
+      <p class="call-line"><strong>Caller:</strong> "Se descompuso el aire y hay un bebé en casa."</p>
+      <p class="call-line"><strong>Sunny:</strong> answers in Spanish, captures the same details the same way, and your list shows the call in English with the language noted — nothing gets lost between languages.</p>
+    </article>
+    <article class="call-card">
+      <p class="call-tag">No prices, ever</p>
+      <h3>The price-shopper, auto shop</h3>
+      <p class="call-line"><strong>Caller:</strong> "How much for brakes on a 2016 Tacoma?"</p>
+      <p class="call-line"><strong>Sunny:</strong> "I can't quote prices — but I'll take your name and number and the owner will call you back with one." Captured, not guessed.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ NIGHT SHIFT CHAPTER ============ -->
+<section class="night" aria-labelledby="nightH">
+  <h2 id="nightH">It's 2 a.m. Your phone just rang. Sunny got it.</h2>
+  <p class="section-lede pale">Your customers should never hear silence — not at 2 p.m., not at 2 a.m. Read the customer reviews of San Diego shops and the angriest ones aren't about the repair; they're about the no-show, the missing update, the call nobody returned. Tap an hour: this is what happens at a small shop while the owner is off the clock — an illustration of the working pattern, not a log of real calls.</p>
+  <div class="timeline" role="group" aria-label="Night timeline">
+    <button type="button" class="hour" data-hour="17">5 PM</button>
+    <button type="button" class="hour" data-hour="19">7 PM</button>
+    <button type="button" class="hour" data-hour="21">9 PM</button>
+    <button type="button" class="hour" data-hour="0">12 AM</button>
+    <button type="button" class="hour hour-hot" data-hour="2">2 AM</button>
+    <button type="button" class="hour" data-hour="6">6 AM</button>
+  </div>
+  <div class="night-panel" id="nightPanel" role="status">
+    <h3 id="nightTitle">2:00 AM — the burst pipe</h3>
+    <p id="nightText">A homeowner finds water through the ceiling. Sunny answers on the second ring, says she's the shop's automated assistant, flags it urgent, and captures the callback number digit by digit. The owner wakes to one clear message instead of a voicemail they'll hear at nine — if the caller left one at all.</p>
+  </div>
+  <p class="honest-tag pale-tag">Illustrative pattern. Sunny always identifies herself as an AI, and true emergencies are pointed to 911 first.</p>
+</section>
+
+<!-- ============ WHAT SHE WRITES DOWN ============ -->
+<section class="bento-wrap" aria-labelledby="bentoH">
+  <h2 id="bentoH">What she writes down</h2>
+  <div class="bento">
+    <article class="cell cell-big">
+      <h3>The message you wake up to</h3>
+      <div class="sms-card">
+        <p class="sms-from">Sunny · 2:04 AM</p>
+        <p>URGENT — burst pipe, El Cajon. Sam Rivera, 619-555-0147. Shut-off valve closed, water stopped. Call back first.</p>
+        <p class="sms-note">Illustrative example message — fictional caller and 555 number.</p>
+      </div>
+    </article>
+    <article class="cell"><h3>Name</h3><p>Who called, spelled back to them.</p></article>
+    <article class="cell"><h3>Callback number</h3><p>Taken digit by digit and read back — a wrong number is a lost job.</p></article>
+    <article class="cell"><h3>Reason</h3><p>The job, in the caller's own words, short and plain.</p></article>
+    <article class="cell"><h3>Urgent flag</h3><p>Emergencies jump the list. Danger means 911 first, always.</p></article>
+    <article class="cell"><h3>Language</h3><p>English or Spanish today, noted on every call.</p></article>
+    <article class="cell"><h3>Yours, always</h3><p>Your number, your Google profile, your reviews stay in your name — never ours. Owners here get robocalls threatening their listing and offers to sell them back their own free profile; the defence is that it was never handed over. No contract, no cancellation maze.</p></article>
+    <article class="cell"><h3>Junk calls</h3><p>Robocalls and "your listing will be removed" scams get sorted into the record as junk — not forwarded to your phone, and never treated as real calls.</p></article>
+  </div>
+</section>
+
+<!-- ============ HONEST CALCULATOR ============ -->
+<section class="calc-wrap" aria-labelledby="calcH">
+  <h2 id="calcH">Do your own math</h2>
+  <p class="section-lede">The customers are already calling; the leak is what happens next. No scare numbers from us, though: move the sliders with <em>your</em> numbers — we will never supply the missed-call count for you. This is plain arithmetic, and nothing here is sent anywhere or saved.</p>
+  <div class="calc">
+    <label>Calls that go unanswered each week: <output id="cMissedOut" for="cMissed">4</output>
+      <input type="range" id="cMissed" min="0" max="30" step="1" value="4">
+    </label>
+    <label>Share of those callers who might have booked, if someone had answered: <output id="cShareOut" for="cShare">25%</output>
+      <input type="range" id="cShare" min="0" max="100" step="5" value="25">
+    </label>
+    <label>Your average job, in dollars: <output id="cValueOut" for="cValue">450</output>
+      <input type="range" id="cValue" min="50" max="3000" step="50" value="450">
+    </label>
+    <p class="calc-formula">The math: unanswered calls × share who might book × average job × 52 weeks.</p>
+    <p class="calc-result">About <strong id="calcOut">23,400</strong> dollars a year in work is calling and not reaching you — <em>an estimate from your numbers, not a promise.</em> We make no claim here about how much of it Sunny would recover. That is what hearing her, and the first real shops, are for.</p>
+  </div>
+</section>
+
+<!-- ============ BUILT CAREFULLY ============ -->
+<section class="careful" aria-labelledby="careH">
+  <h2 id="careH">Built carefully — including this page</h2>
+  <p class="section-lede">We study how other people's websites go wrong, and we build against the list. You can check every line of this on the page you're reading:</p>
+  <ul class="care-list">
+    <li><strong>No trackers, no cookies, no external fonts phoning home.</strong> The words on this page are set in font files served from this site alone.</li>
+    <li><strong>Nothing typed here is collected.</strong> The poll and the calculator run entirely in your browser until you choose to send something yourself.</li>
+    <li><strong>Readable on purpose.</strong> Every text colour on this page was checked by arithmetic against its background for strong contrast, links and buttons work from a keyboard, and motion calms down if your device asks it to.</li>
+    <li><strong>No secrets in the page.</strong> There is no sign-in, no account, and nothing hidden in the code that shouldn't be public — a static page should carry nothing worth stealing.</li>
+    <li><strong>Honest labels everywhere.</strong> Examples are marked fictional, estimates show their math, and there is not a single review, rating, or customer story on this page — because the first shops haven't happened yet. When they do, they'll be real, named, and asked for properly.</li>
+    <li><strong>Email that can prove it's us.</strong> Our domain's mail carries published anti-spoofing records (the technical names are SPF, DKIM and DMARC), so a message from hello@ can be checked — and an imitation can be caught.</li>
+  </ul>
+</section>
+
+<!-- ============ LANGUAGES ============ -->
+<section class="langs" aria-labelledby="langH">
+  <h2 id="langH">English. Español. Honest about the rest.</h2>
+  <p class="section-lede">East County calls in more than one language — shops on Jamacha Road advertise multilingual staff on their own signs, because it's true of the neighbourhood. This page switches between English and Spanish at the top, and Sunny answers in both. San Diego also speaks Vietnamese, Tagalog, Arabic, Chinese, Korean and Farsi, and we won't pretend otherwise: Arabic and Farsi are in testing with real speakers, and a language only gets offered when it has passed them. A language we can't answer well in is worse than none.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" aria-labelledby="faqH">
+  <h2 id="faqH">Straight answers</h2>
+  <details>
+    <summary>Is Sunny a robot?</summary>
+    <p>Yes — she's an AI receptionist, and she says so in the first line of every call. California law asks for that honesty, and so do we: your customers will never be tricked.</p>
+  </details>
+  <details>
+    <summary>What does she actually do on a call?</summary>
+    <p>Answers in your shop's name, takes the caller's name, callback number and reason, flags what's urgent, and gives you the list. She captures and flags — you confirm, quote, and call back.</p>
+  </details>
+  <details>
+    <summary>Does she book jobs into my calendar?</summary>
+    <p>Not yet, and we won't claim it until it's proven. Booking is being built carefully, because one invented time slot can cost a customer. Today the promise is capture — the lead is never lost.</p>
+  </details>
+  <details>
+    <summary>What does it cost?</summary>
+    <p>Prices aren't published yet, on purpose. We're asking owners first — that's the poll at the top of this page — and prices get set after the first shops have lived with Sunny for a month. If someone shows you our price today, they're guessing.</p>
+  </details>
+  <details>
+    <summary>Who reads my email if I write?</summary>
+    <p>A person. Email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> — it's the one way to reach us right now, and it goes to the Ring &amp; Respond team, not a ticket machine.</p>
+  </details>
+  <details>
+    <summary>¿Habla español?</summary>
+    <p>Sí. Sunny contesta en inglés y en español, y esta página también cambia de idioma con el botón EN | ES de arriba.</p>
+  </details>
+</section>
+</main>
+
+<footer class="footer">
+  <p class="footer-brand">Ring <span class="amp">&amp;</span> Respond</p>
+  <p class="slogan">Answered with a smile.</p>
+  <p>Sunny is being built in Southern California, for Southern California shops. This site is a build in progress — the product is in testing with its first shops being chosen by the owners who answer the poll.</p>
+  <p>One way to reach us: <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
+  <p class="footer-fine">© 2026 Ring &amp; Respond. No prices are published yet — anyone quoting you one in our name is guessing.</p>
+</footer>
+
+<nav class="stickybar" aria-label="Quick actions">
+  <a class="sticky-btn sticky-play" href="#demo">▶ <span data-en="Hear the concept call" data-es="Escuchar la llamada">Hear the concept call</span></a>
+  <a class="sticky-btn sticky-poll" href="#poll"><span data-en="Take the owner poll" data-es="Hacer la encuesta">Take the owner poll</span></a>
+</nav>
+
+<script src="/assets/app.js" defer></script>
 </body>
 </html>
