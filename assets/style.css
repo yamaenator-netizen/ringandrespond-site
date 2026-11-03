@@ -193,3 +193,17 @@ section[data-num]::before{content:attr(data-num);position:absolute;top:.4rem;rig
   .rail-link:hover{background:rgba(245,243,240,.15)}
   .btn:hover{filter:brightness(1.07)}
 }
+
+/* ============ WEBSITES SHOWCASE PAGE (ws-) — staging addition 2026-11-03.
+   Merge note: everything below is new and showcase-only; no existing rule above is altered. ============ */
+.ws-hero{padding-top:2.4rem}
+.ws-grid{display:grid;gap:2rem;grid-template-columns:1fr;margin-top:1.6rem}
+.ws-card{background:var(--white);border:3px solid var(--ink);border-radius:18px;box-shadow:10px 10px 0 var(--gold);overflow:hidden}
+.ws-shot{display:block;width:100%;height:auto;border-bottom:3px solid var(--ink)}
+.ws-card-body{padding:1.2rem 1.2rem 1.4rem}
+.ws-card-body h3{font-size:1.45rem;color:var(--green);margin-top:.7rem}
+.ws-concept{font-size:.92rem;border-left:4px solid var(--amber);padding-left:.7em;margin:1rem 0 0}
+.ws-band{background:var(--white);max-width:none}
+.ws-band>*{max-width:1060px;margin-left:auto;margin-right:auto}
+.ws-cta-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1.6rem}
+.ws-crosslink{margin-top:2.2rem;font-size:1.05rem}
