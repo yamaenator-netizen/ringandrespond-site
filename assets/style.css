@@ -13,9 +13,9 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;padding-bottom:76px}
 h1,h2,h3{font-family:var(--serif);line-height:1.12;color:var(--ink)}
-h1{font-size:clamp(2.4rem,7.5vw,4.4rem);margin:.2em 0 .3em}
-h2{font-size:clamp(1.7rem,5vw,2.6rem);margin:0 0 .5em}
-h3{font-size:1.25rem;margin:.2em 0 .4em}
+h1{font-size:clamp(2.9rem,10.5vw,7rem);line-height:1.02;letter-spacing:-.01em;margin:.15em 0 .3em}
+h2{font-size:clamp(2rem,6vw,3.6rem);line-height:1.05;margin:0 0 .5em}
+h3{font-size:1.35rem;margin:.2em 0 .4em}
 a{color:var(--green);text-decoration-thickness:2px}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
 .night a:focus-visible,.night button:focus-visible,.night input:focus-visible,.night textarea:focus-visible,.night summary:focus-visible,.footer a:focus-visible,.footer button:focus-visible,.stickybar a:not(.sticky-play):focus-visible{outline-color:var(--gold)}
@@ -29,9 +29,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .amp{color:var(--amber)}
 .lang-toggle{background:var(--white);border:2px solid var(--green);color:var(--ink);border-radius:999px;padding:.45em 1em;font:700 1rem var(--sans);cursor:pointer;min-height:48px}
 .lang-alt{color:var(--green)}
-main section{padding:3.2rem 1.1rem;max-width:1060px;margin:0 auto}
-.kicker{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);font-size:.85rem}
-.lede{font-size:1.2rem;max-width:44em}
+main section{padding:clamp(4.2rem,9vw,6.8rem) 1.1rem;max-width:1060px;margin:0 auto}
+.kicker{font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-size:.9rem}
+.lede{font-size:1.25rem;max-width:44em}
 .slogan{font-family:var(--serif);font-style:italic;font-weight:700;color:var(--amber);font-size:1.3rem}
 .demo-card{background:var(--white);border:3px solid var(--ink);border-radius:18px;box-shadow:10px 10px 0 var(--gold);padding:1.2rem;margin-top:1.6rem}
 .demo-head{display:flex;gap:1rem;align-items:flex-start}
@@ -52,7 +52,7 @@ main section{padding:3.2rem 1.1rem;max-width:1060px;margin:0 auto}
 .poll-progress{font-weight:700;color:var(--green)}
 .poll-note{max-width:44em;font-size:.98rem}
 fieldset{border:0;padding:0;margin:1.2rem auto}
-legend{font-family:var(--serif);font-size:1.35rem;font-weight:700;padding:0;margin-bottom:.7rem}
+legend{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;padding:0;margin-bottom:.7rem}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem}
 .chip{background:var(--cream);border:2.5px solid var(--green);color:var(--ink);border-radius:999px;padding:.7em 1.2em;font:700 1rem var(--sans);cursor:pointer;min-height:52px}
 .chip[aria-pressed="true"]{background:var(--green);color:var(--white)}
@@ -123,11 +123,11 @@ legend{font-family:var(--serif);font-size:1.35rem;font-weight:700;padding:0;marg
 .night .room-label{color:var(--mint)}
 .band{max-width:none}
 .band>*{max-width:1060px;margin-left:auto;margin-right:auto}
-.room-part{margin-top:2.6rem}
+.room-part{margin-top:3.4rem}
 .room-frontdesk{background:var(--white)}
 .room-workshop{background-image:radial-gradient(rgba(11,20,37,.055) 2px,transparent 2.6px);background-size:30px 30px}
 .room-floorplan{background:var(--white)}
-.doorway-fig{margin:1.8rem auto 0;max-width:330px}
+.doorway-fig{margin:1.8rem auto 0;max-width:400px}
 .doorway-fig svg{width:100%;height:auto;display:block}
 .plan-fig{margin:1.4rem auto 0}
 .plan-svg{width:100%;height:auto;display:block}
@@ -154,4 +154,42 @@ legend{font-family:var(--serif);font-size:1.35rem;font-weight:700;padding:0;marg
 .reveal.revealed{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1!important;transform:none!important}
+}
+
+/* ============ AWSMD-STANDARD PASS (2026-11-03): numbered chapters,
+   oversized type, slogan marquee, honest big numbers, magazine rhythm ============ */
+/* Hairline rules between chapters (the night chapter gets a light rule) */
+main section+section,.marquee+section{border-top:1px solid rgba(11,20,37,.16)}
+.night{border-top:1px solid rgba(237,234,229,.22)}
+/* Numbered kickers read bigger and wider-tracked */
+.room-label{font-size:.88rem;letter-spacing:.18em}
+/* Big pale chapter numbers: pure decoration (CSS-generated, aria-hidden
+   by construction — the numbered kicker carries the text for everyone) */
+section[data-num]{position:relative}
+section[data-num]::before{content:attr(data-num);position:absolute;top:.4rem;right:.8rem;font-family:var(--serif);font-weight:700;font-size:clamp(5.5rem,16vw,10.5rem);line-height:1;color:rgba(11,20,37,.07);pointer-events:none}
+.night[data-num]::before{color:rgba(192,154,104,.14)}
+.poll[data-num]::before{color:rgba(11,20,37,.05)}
+/* Slogan marquee */
+.marquee{background:var(--green);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);overflow:hidden;padding:.85rem 0}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+.marquee-set{display:flex;flex:none;align-items:center}
+.marquee-item{display:flex;align-items:center;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3.4vw,1.9rem);color:var(--white);white-space:nowrap}
+.marquee-item::after{content:"·";color:var(--mint);font-style:normal;font-size:1.3em;margin:0 1.1rem}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* Honest big-number band */
+.stat-band{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 1.2rem;margin:3.2rem 0 .5rem;padding:1.9rem 0;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+@media(min-width:760px){.stat-band{grid-template-columns:repeat(4,1fr)}}
+.stat-num{font-family:var(--serif);font-weight:700;font-size:clamp(2.7rem,7vw,4.4rem);line-height:1;color:var(--green);margin:0}
+.stat-label{margin:.5em 0 0;font-size:.95rem;max-width:16em}
+/* Refined hover states (pointer devices only; transitions already
+   switch off under prefers-reduced-motion via the global rule) */
+.problem-card,.call-card,.cell{transition:transform .25s ease,box-shadow .25s ease}
+.demo-card{transition:box-shadow .25s ease}
+@media(hover:hover){
+  .problem-card:hover,.call-card:hover,.cell:hover{transform:translateY(-4px);box-shadow:7px 7px 0 rgba(164,124,82,.4)}
+  .demo-card:hover{box-shadow:14px 14px 0 var(--gold)}
+  .chip:hover{background:var(--pale)}
+  .hour:hover{border-color:var(--gold);color:var(--white)}
+  .rail-link:hover{background:rgba(245,243,240,.15)}
+  .btn:hover{filter:brightness(1.07)}
 }
