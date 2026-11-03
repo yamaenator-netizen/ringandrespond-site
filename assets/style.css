@@ -127,8 +127,6 @@ legend{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2rem);font-weight:7
 .room-frontdesk{background:var(--white)}
 .room-workshop{background-image:radial-gradient(rgba(11,20,37,.055) 2px,transparent 2.6px);background-size:30px 30px}
 .room-floorplan{background:var(--white)}
-.doorway-fig{margin:1.8rem auto 0;max-width:400px}
-.doorway-fig svg{width:100%;height:auto;display:block}
 .plan-fig{margin:1.4rem auto 0}
 .plan-svg{width:100%;height:auto;display:block}
 .plan-label{font:700 16px var(--serif);fill:var(--ink);text-anchor:middle}
@@ -207,3 +205,31 @@ section[data-num]::before{content:attr(data-num);position:absolute;top:.4rem;rig
 .ws-band>*{max-width:1060px;margin-left:auto;margin-right:auto}
 .ws-cta-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1.6rem}
 .ws-crosslink{margin-top:2.2rem;font-size:1.05rem}
+
+/* ============ BRANDINGAI ART PASS (2026-11-03): the doorway becomes a
+   full-bleed dark hero built around one piece of generated art — a brass
+   mechanical sun with a telephone handset woven into its rays, on midnight
+   navy (the art's own background is our --night, so it bleeds edge to edge).
+   The art is pure decoration (alt="", aria-hidden): the section's navy
+   background plus a navy shade gradient carry the text, so the headline
+   reads perfectly with images off. Text sits on the LEFT — the art's dark
+   negative space — with the sun on the right. ============ */
+.room-doorway{max-width:none;padding:0;background:var(--night);background-image:none;overflow:hidden;display:flex;align-items:center;min-height:88svh}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:0}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,20,37,.94) 0%,rgba(11,20,37,.87) 34%,rgba(11,20,37,.5) 60%,rgba(11,20,37,.08) 84%,rgba(11,20,37,0) 94%)}
+.room-doorway[data-num]::before{z-index:2;color:rgba(192,154,104,.13)}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:1060px;margin:0 auto;padding:clamp(4.2rem,9vw,6.8rem) 1.1rem}
+.room-doorway .room-label{color:var(--mint)}
+.room-doorway .kicker{color:var(--mint)}
+.room-doorway h1{color:var(--pale);max-width:11ch}
+.room-doorway .lede{color:var(--pale);max-width:34em}
+.room-doorway .slogan{color:var(--mint)}
+@media(max-width:760px){
+  .room-doorway{min-height:92svh}
+  .hero-art{object-position:76% 50%}
+  .hero-shade{background:linear-gradient(168deg,rgba(11,20,37,.95) 26%,rgba(11,20,37,.85) 58%,rgba(11,20,37,.68) 100%)}
+}
+/* The artwork motif returns once, small, as a chapter plate in the night office */
+.night-art{margin:1.9rem auto 0;max-width:300px}
+.night-art img{display:block;width:100%;height:auto;border:2px solid var(--gold);border-radius:16px}
+@media(min-width:760px){.night-art{margin-left:auto;margin-right:0}}

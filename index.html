@@ -20,6 +20,7 @@
 <meta name="theme-color" content="#16283F">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="preload" href="/assets/noto-serif-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" imagesrcset="/assets/sunny-hero-art-960.webp 960w, /assets/sunny-hero-art-1680.webp 1680w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">
 {
@@ -91,35 +92,15 @@
 <main>
 <!-- ============ ROOM 1 · THE DOORWAY ============ -->
 <section class="room room-doorway hero" id="doorway" data-num="01" aria-labelledby="heroH">
+  <img class="hero-art" src="/assets/sunny-hero-art-1680.webp" srcset="/assets/sunny-hero-art-960.webp 960w, /assets/sunny-hero-art-1680.webp 1680w" sizes="100vw" width="1680" height="1120" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-inner">
   <p class="room-label" data-en="01 — The Doorway" data-es="01 — La Entrada">01 — The Doorway</p>
   <p class="kicker" data-en="For shops in East County &amp; San Diego" data-es="Para negocios del East County y San Diego">For shops in East County &amp; San Diego</p>
   <h1 id="heroH" data-en="Your phone, answered with a smile." data-es="Tu teléfono, contestado con una sonrisa.">Your phone, answered with a smile.</h1>
   <p class="lede" data-en="Sunny is an AI receptionist we're building for shops like yours — plumbing, electrical, HVAC, auto. When you're under a sink, on a roof, or home asleep, she answers in your shop's name, writes down who called and why, flags the emergencies, and hands you the list." data-es="Sunny es una recepcionista con IA que estamos creando para negocios como el tuyo: plomería, electricidad, HVAC, autos. Cuando estás bajo un fregadero, en un techo, o dormido en casa, ella contesta con el nombre de tu negocio, anota quién llamó y por qué, marca las emergencias y te entrega la lista.">Sunny is an AI receptionist we're building for shops like yours — plumbing, electrical, HVAC, auto. When you're under a sink, on a roof, or home asleep, she answers in your shop's name, writes down who called and why, flags the emergencies, and hands you the list.</p>
   <p class="slogan">Answered with a smile.</p>
-  <figure class="doorway-fig" aria-hidden="true">
-    <svg viewBox="0 0 340 240" focusable="false">
-      <defs>
-        <linearGradient id="doorGlow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#C09A68"/>
-          <stop offset="1" stop-color="#A47C52"/>
-        </linearGradient>
-      </defs>
-      <circle cx="170" cy="30" r="13" fill="#A47C52"/>
-      <g stroke="#A47C52" stroke-width="3" stroke-linecap="round">
-        <line x1="170" y1="6" x2="170" y2="12"/><line x1="146" y1="30" x2="152" y2="30"/>
-        <line x1="188" y1="30" x2="194" y2="30"/><line x1="153" y1="13" x2="157" y2="17"/>
-        <line x1="187" y1="13" x2="183" y2="17"/>
-      </g>
-      <circle cx="165.5" cy="28" r="1.7" fill="#0B1425"/><circle cx="174.5" cy="28" r="1.7" fill="#0B1425"/>
-      <path d="M164.5 33.5 Q170 38 175.5 33.5" fill="none" stroke="#0B1425" stroke-width="2" stroke-linecap="round"/>
-      <path d="M92 224 L92 106 A78 78 0 0 1 248 106 L248 224 L214 224 L214 110 A44 44 0 0 0 126 110 L126 224 Z" fill="#16283F"/>
-      <path d="M126 224 L126 110 A44 44 0 0 1 214 110 L214 224 Z" fill="url(#doorGlow)"/>
-      <path d="M126 224 L126 110 A44 44 0 0 1 170 66 L170 224 Z" fill="#0B1425" opacity=".9"/>
-      <line x1="130" y1="221" x2="210" y2="221" stroke="#C09A68" stroke-width="3" opacity=".85"/>
-      <polygon points="140,224 200,224 220,234 120,234" fill="#C09A68" opacity=".35"/>
-      <line x1="24" y1="224" x2="316" y2="224" stroke="#16283F" stroke-width="3"/>
-    </svg>
-  </figure>
+  </div>
 </section>
 
 <div class="marquee">
@@ -280,6 +261,9 @@
   <p class="room-label" data-en="04 — The Night Office" data-es="04 — La Oficina de Noche">04 — The Night Office</p>
   <h2 id="nightH">It's 2 a.m. Your phone just rang. Sunny got it.</h2>
   <p class="section-lede pale">Your customers should never hear silence — not at 2 p.m., not at 2 a.m. Read the customer reviews of San Diego shops and the angriest ones aren't about the repair; they're about the no-show, the missing update, the call nobody returned. Tap an hour: this is what happens at a small shop while the owner is off the clock — an illustration of the working pattern, not a log of real calls.</p>
+  <figure class="night-art" aria-hidden="true">
+    <img src="/assets/sunny-art-detail.webp" alt="" width="540" height="800" loading="lazy" decoding="async">
+  </figure>
   <div class="timeline" role="group" aria-label="Night timeline">
     <button type="button" class="hour" data-hour="17">5 PM</button>
     <button type="button" class="hour" data-hour="19">7 PM</button>
