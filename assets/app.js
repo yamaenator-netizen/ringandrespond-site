@@ -28,7 +28,7 @@ var playing = false, playTimer = null, phase = 0, lines = [], currentLine = -1;
 function drawSun(level) {
   var w = canvas.width, h = canvas.height, cx = w / 2, cy = h / 2 + 6, base = 34;
   ctx.clearRect(0, 0, w, h);
-  ctx.strokeStyle = "#B45309"; ctx.lineWidth = 5; ctx.lineCap = "round";
+  ctx.strokeStyle = "#66482A"; ctx.lineWidth = 5; ctx.lineCap = "round";
   for (var i = 0; i < 12; i++) {
     var a = (Math.PI * 2 * i) / 12 + (reduced ? 0 : phase * 0.15);
     var len = base + 10 + level * 26 * (0.5 + 0.5 * Math.sin(phase * 3 + i * 1.7));
@@ -37,13 +37,13 @@ function drawSun(level) {
     ctx.lineTo(cx + Math.cos(a) * (base + 8 + len * 0.45), cy + Math.sin(a) * (base + 8 + len * 0.45));
     ctx.stroke();
   }
-  ctx.beginPath(); ctx.arc(cx, cy, base, 0, Math.PI * 2); ctx.fillStyle = "#FFC61A"; ctx.fill();
-  ctx.fillStyle = "#0A2C21";
+  ctx.beginPath(); ctx.arc(cx, cy, base, 0, Math.PI * 2); ctx.fillStyle = "#C09A68"; ctx.fill();
+  ctx.fillStyle = "#0B1425";
   ctx.beginPath(); ctx.arc(cx - 11, cy - 5, 3.4, 0, Math.PI * 2); ctx.fill();
   ctx.beginPath(); ctx.arc(cx + 11, cy - 5, 3.4, 0, Math.PI * 2); ctx.fill();
   ctx.beginPath(); ctx.arc(cx, cy + 4, 13, 0.25 * Math.PI, 0.75 * Math.PI);
-  ctx.strokeStyle = "#0A2C21"; ctx.lineWidth = 3.4; ctx.stroke();
-  ctx.strokeStyle = "#0A604A"; ctx.lineWidth = 7;
+  ctx.strokeStyle = "#0B1425"; ctx.lineWidth = 3.4; ctx.stroke();
+  ctx.strokeStyle = "#16283F"; ctx.lineWidth = 7;
   ctx.beginPath(); ctx.arc(cx - 52, cy + 16, 17, -0.5, 1.5); ctx.stroke();
   ctx.beginPath(); ctx.arc(cx + 52, cy + 16, 17, Math.PI - 1.5, Math.PI + 0.5); ctx.stroke();
 }

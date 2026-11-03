@@ -3,9 +3,9 @@
 @font-face{font-family:"RR Sans";src:url("/assets/noto-sans-regular.woff2") format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"RR Sans";src:url("/assets/noto-sans-bold.woff2") format("woff2");font-weight:700;font-display:swap}
 :root{
-  --green:#0A604A; --ink:#0A2C21; --cream:#FFFBEB; --gold:#FFC61A; --amber:#B45309;
-  --night:#071F18; --night-surface:#0E3527; --mint:#3DDC97; --pale:#FFF6D6; --sage:#A8C3B8;
-  --coral-dark:#C2410C; --white:#FFFFFF;
+  --green:#16283F; --ink:#0B1425; --cream:#CAC7C4; --gold:#A47C52; --amber:#66482A;
+  --night:#0B1425; --night-surface:#16283F; --mint:#C09A68; --pale:#EDEAE5; --sage:#A8B0BF;
+  --coral-dark:#9A3B26; --white:#F5F3F0;
   --serif:"RR Serif",Georgia,"Times New Roman",serif;
   --sans:"RR Sans",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
@@ -69,8 +69,8 @@ legend{font-family:var(--serif);font-size:1.35rem;font-weight:700;padding:0;marg
 .call-tag{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;border-radius:999px;padding:.15em .8em;font-size:.85rem}
 .urgent-tag{background:var(--coral-dark);color:var(--white)}
 .call-line{margin:.5em 0}
-.night{background-color:var(--night);background-image:radial-gradient(rgba(61,220,151,.08) 2px,transparent 2.6px);background-size:36px 36px;color:var(--pale);max-width:none}
-.hero{background-image:radial-gradient(rgba(180,83,9,.07) 2px,transparent 2.6px);background-size:36px 36px}
+.night{background-color:var(--night);background-image:radial-gradient(rgba(192,154,104,.12) 2px,transparent 2.6px);background-size:36px 36px;color:var(--pale);max-width:none}
+.hero{background-image:radial-gradient(rgba(11,20,37,.07) 2px,transparent 2.6px);background-size:36px 36px}
 .night>*{max-width:1060px;margin-left:auto;margin-right:auto}
 .night h2{color:var(--pale)}
 .pale{color:var(--pale)}
@@ -99,10 +99,10 @@ legend{font-family:var(--serif);font-size:1.35rem;font-weight:700;padding:0;marg
 .faq details{background:var(--white);border:2px solid var(--green);border-radius:12px;padding:.8em 1.1em;margin:.6rem 0}
 .faq summary{font-family:var(--serif);font-weight:700;font-size:1.12rem;cursor:pointer;min-height:32px}
 .footer{background:var(--green);color:var(--white);padding:2.4rem 1.1rem 6.5rem;text-align:center}
-.footer a{color:var(--gold)}
-.footer .slogan{color:var(--gold)}
+.footer a{color:var(--mint)}
+.footer .slogan{color:var(--mint)}
 .footer-brand{font-family:var(--serif);font-weight:700;font-size:1.7rem;margin:0}
-.footer .amp{color:var(--gold)}
+.footer .amp{color:var(--mint)}
 .footer-fine{font-size:.88rem}
 .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:flex;background:var(--ink)}
 .sticky-btn{flex:1;text-align:center;color:var(--white);text-decoration:none;font-weight:700;padding:1rem .5rem;min-height:60px}
