@@ -144,6 +144,7 @@ legend{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2rem);font-weight:7
 .rail-link.active{background:var(--gold);color:var(--ink)}
 .rail-link:focus-visible{outline-color:var(--gold)}
 @media(max-width:1399px){body{padding-bottom:128px}}
+@media(max-width:1399px){.stickybar{height:60px}.sticky-btn{min-height:0;height:60px;padding:0 .4rem;display:flex;align-items:center;justify-content:center;line-height:1.15;font-size:.95rem}}
 @media(min-width:1400px){
   .roomrail{left:1rem;right:auto;bottom:auto;top:50%;transform:translateY(-50%);flex-direction:column;width:178px;border-radius:16px;padding:.6rem;overflow:visible}
   .rail-link{justify-content:flex-start;text-align:left}
@@ -217,7 +218,7 @@ section[data-num]::before{content:attr(data-num);position:absolute;top:.4rem;rig
 .room-doorway{max-width:none;padding:0;background:var(--night);background-image:none;overflow:hidden;display:flex;align-items:center;min-height:88svh}
 .hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:0}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%;z-index:0}
-@media(max-width:760px){.hero-video{object-position:76% 50%}}
+@media(max-width:760px){.hero-video{object-position:68% 50%}}
 @media (prefers-reduced-motion: reduce){.hero-video{display:none}}
 .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,20,37,.94) 0%,rgba(11,20,37,.87) 34%,rgba(11,20,37,.5) 60%,rgba(11,20,37,.08) 84%,rgba(11,20,37,0) 94%)}
 .room-doorway[data-num]::before{z-index:2;color:rgba(192,154,104,.13)}
@@ -229,8 +230,8 @@ section[data-num]::before{content:attr(data-num);position:absolute;top:.4rem;rig
 .room-doorway .slogan{color:var(--mint)}
 @media(max-width:760px){
   .room-doorway{min-height:92svh}
-  .hero-art{object-position:76% 50%}
-  .hero-shade{background:linear-gradient(168deg,rgba(11,20,37,.95) 26%,rgba(11,20,37,.85) 58%,rgba(11,20,37,.68) 100%)}
+  .hero-art{object-position:68% 50%}
+  .hero-shade{background:linear-gradient(168deg,rgba(11,20,37,.95) 26%,rgba(11,20,37,.85) 58%,rgba(11,20,37,.58) 100%)}
 }
 /* The artwork motif returns once, small, as a chapter plate in the night office */
 .night-art{margin:1.9rem auto 0;max-width:300px}
