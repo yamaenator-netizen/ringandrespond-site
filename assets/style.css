@@ -231,7 +231,11 @@ section[data-num]::before{content:attr(data-num);position:absolute;top:.4rem;rig
 @media(max-width:760px){
   .room-doorway{min-height:92svh}
   .hero-art{object-position:68% 50%}
-  .hero-shade{background:linear-gradient(168deg,rgba(11,20,37,.95) 26%,rgba(11,20,37,.85) 58%,rgba(11,20,37,.58) 100%)}
+  .hero-art{filter:brightness(1.14) saturate(1.05)}
+  .hero-video{filter:brightness(1.24) saturate(1.05)}
+  .hero-shade{background:linear-gradient(168deg,rgba(11,20,37,.93) 16%,rgba(11,20,37,.76) 44%,rgba(11,20,37,.40) 76%,rgba(11,20,37,.28) 100%)}
+  .roomrail{display:none}
+  .footer a{display:inline-block;padding:.45rem .2rem}
 }
 /* The artwork motif returns once, small, as a chapter plate in the night office */
 .night-art{margin:1.9rem auto 0;max-width:300px}
