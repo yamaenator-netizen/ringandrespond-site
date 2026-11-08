@@ -3,7 +3,7 @@
       /* sunny-chat-shell — deferred brain, external file (2026-10-29):
          the launcher button and the panel markup are static HTML -
          they render instantly with the page. Everything the chat
-         KNOWS (the 183-pair knowledge base, the answer engine, the
+         KNOWS (the FACTS-sourced knowledge base, the answer engine, the
          signup/callback flows) lives in ONE shared, cacheable file,
          /chat-brain.js (generated from chat-source/chat-brain.frag;
          the ?v= below is its content hash, stamped by sync-chat.py).
