@@ -266,6 +266,132 @@ body.es .lang-en-hero{display:none}
   *{animation:none !important;transition:none !important}
 }
 
+/* [GRAFT 1] Moments — compact rows (replaces .pair vignette cards in #day) */
+.mrows{max-width:880px;margin:28px auto 0;display:grid;gap:12px}
+.mrow{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px 20px;box-shadow:var(--shadow-sm)}
+.mrow-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
+.mtime{flex:none;font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink);background:var(--tag-bg);border-radius:999px;padding:4px 11px}
+.mrow-head h3{font-size:18.5px;margin:0}
+.mrow p{font-size:15.5px;line-height:1.55;margin:0 0 6px;color:var(--body)}
+.mrow p:last-child{margin-bottom:0}
+.manswer strong{color:var(--ink)}
+.day-more{max-width:880px;margin:20px auto 0;font-size:15.5px;color:var(--body)}
+@media (max-width:560px){.mrow{padding:15px 16px}}
+
+/* [GRAFT 2] Ledger — compact rows + warm-transfer choice card */
+.lgrid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:28px}
+@media (min-width:720px){.lgrid{grid-template-columns:1fr 1fr}}
+.lcol{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow-sm)}
+.lcol.live{border-top:3px solid var(--accent)}
+.lcol.coming{border-top:3px dashed rgba(154,106,20,.55)}
+.lcol>h3{margin-bottom:6px}
+.lrow{padding:10px 0}
+.lrow-head{font-size:15.5px;line-height:1.45;margin:0;color:var(--body)}
+.lrow-desc{font-size:15.5px;line-height:1.5;color:var(--body);margin:2px 0 0}
+.lrow .gate{display:block;margin-top:3px}
+.wt-card{margin-top:22px;max-width:none}
+.wt-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.wt-head h3{margin:0}
+.wt-lead{margin:0 0 14px;color:var(--body)}
+.wt-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:720px){.wt-grid{grid-template-columns:1fr 1fr}}
+.wt-opt{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 17px}
+.wt-opt.on{border-top:3px solid var(--accent)}
+.wt-switch{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 5px}
+.wt-opt p{font-size:15.5px;line-height:1.55;color:var(--body)}
+.wt-opt .wt-switch{color:var(--accent-ink)}
+.wt-note{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+@media (max-width:560px){.lcol{padding:19px}}
+
+/* [GRAFT 3] Pricing tail — closing trust band */
+.tband{margin-top:30px;text-align:left}
+.tband-intro{text-align:center;font-size:16.5px;color:var(--body);max-width:780px;margin:0 auto}
+.tband-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+@media (min-width:720px){.tband-grid{grid-template-columns:1fr 1fr 1fr}}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:19px 20px;box-shadow:var(--shadow-sm)}
+.tcard h3{font-size:17.5px;margin-bottom:6px}
+.tcard p{font-size:15px;line-height:1.55;margin:0;color:var(--body)}
+.tband-cta{text-align:center;margin-top:22px;font-size:16.5px;color:var(--body)}
+
+/* [GRAFT 4] Switching — connected stepper (replaces .steps cards) */
+.stepper{list-style:none;display:grid;grid-template-columns:1fr;gap:0;margin-top:34px;position:relative;padding:0}
+.stepper li{position:relative;padding:0 0 26px 52px;text-align:left}
+.stepper li:last-child{padding-bottom:0}
+.stepper::before{content:"";position:absolute;left:16px;top:18px;bottom:18px;width:2px;background:linear-gradient(180deg,var(--line),var(--accent),var(--line));opacity:.75}
+.step-node{position:absolute;left:0;top:0;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--panel);border:2px solid var(--accent);color:var(--accent-ink);font-weight:800;font-size:15px;z-index:1}
+.stepper h3{font-size:17.5px;margin:0 0 4px;padding-top:5px}
+.stepper p{font-size:15px;line-height:1.55;color:var(--body);margin:0}
+@media (min-width:720px){
+  .stepper{grid-template-columns:repeat(4,1fr);gap:22px}
+  .stepper::before{left:calc(12.5% - 8px);right:calc(12.5% - 8px);top:17px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--line),var(--accent),var(--line))}
+  .stepper li{padding:0;text-align:center}
+  .step-node{position:relative;left:auto;top:auto;margin:0 auto 11px}
+  .stepper h3{padding-top:0}
+}
+
+/* [GRAFT 5] Languages — statement band */
+.statement{background:var(--band);padding:104px 0;text-align:center}
+.statement-h{font-size:34px;line-height:1.12;letter-spacing:-.015em;margin-bottom:36px}
+@media (min-width:720px){.statement-h{font-size:40px}}
+.proof-cols{display:grid;grid-template-columns:1fr;gap:26px;max-width:920px;margin:0 auto;text-align:left}
+@media (min-width:720px){.proof-cols{grid-template-columns:1fr 1fr;gap:44px}}
+.proof-col h3{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px}
+.proof-col p{font-size:16px;line-height:1.65;color:var(--body);margin:0}
+
+/* [GRAFT 6] FAQ — accordion */
+.faq-list{max-width:880px;margin:26px auto 0;border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open ] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;font-size:15.5px;line-height:1.6;color:var(--body)}
+.faq-close{max-width:880px;margin:22px auto 0;text-align:center;font-size:16px;color:var(--body)}
+
+/* [GRAFT 7] Finale band + footer clusters */
+.finale{background:var(--ink);color:#fff;text-align:center;padding:88px 0}
+.finale h2{color:#fff;font-size:29px;margin-bottom:14px}
+@media (min-width:720px){.finale h2{font-size:36px}}
+.finale .finale-line{color:rgba(255,255,255,.86);max-width:660px;margin:0 auto 26px;font-size:17.5px;line-height:1.6}
+.finale-chips{list-style:none;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:28px auto 0;max-width:780px;padding:0}
+.finale-chips li{border:1px solid rgba(255,255,255,.30);border-radius:999px;padding:6px 14px;font-size:13.5px;color:rgba(255,255,255,.88)}
+.finale .finale-write{margin-top:24px;color:rgba(255,255,255,.75)}
+.finale-write a{color:#fff;text-decoration:underline}
+.finale .lang-es{background:var(--panel);border-radius:16px;padding:20px;margin:32px auto 0;text-align:left;max-width:680px}
+.finale .lang-es h3{margin-top:0}
+.foot-cols{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:18px;text-align:left}
+@media (min-width:720px){.foot-cols{grid-template-columns:1fr 1fr;gap:22px}}
+.foot-label{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 4px}
+.foot-col a{display:flex;padding:4px 0}
+
+.foot-col{display:block}
+</style>
+<style id="variant-css">
+
+/* === V3 BESIDE THE HEADLINE: right column = photo, then the card
+   docked below the photo, outside the frame, aligned to its left edge === */
+.stage-col{display:flex;flex-direction:column;min-width:0}
+.work-card.card-beside{position:relative;left:auto;right:auto;bottom:auto;top:auto;width:304px;max-width:100%;margin-top:14px;align-self:flex-start}
+@media(max-width:760px){
+  .stage-col{order:-1;width:100%}
+  .work-card.card-beside{width:100%;max-width:100%}
+}
+
+/* === ROTATING PROOF STRIP (identical in all variants) === */
+.ticker-track{position:relative;display:block;height:26px}
+.ticker-track span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.ticker-track span.on{opacity:1}
+@media (prefers-reduced-motion: reduce){.ticker-track span{transition:none}}
+
+/* === RING GLOW: soft light bloom over the ceiling ring in the hero photo.
+   Position: upper-center of the frame, over the ring in assets/hero-h.webp.
+   The frame (.video-frame) already clips: position:relative + overflow:hidden. */
+.hero-glow{position:absolute;left:50%;top:11%;width:46%;height:26%;transform:translateX(-50%) scale(1);background:radial-gradient(ellipse at center,rgba(140,220,255,.55) 0%,rgba(140,220,255,.20) 45%,transparent 72%);filter:blur(6px);mix-blend-mode:screen;pointer-events:none;opacity:.25;animation:heroGlow 6s ease-in-out infinite alternate}
+@keyframes heroGlow{from{opacity:.25;transform:translateX(-50%) scale(1)}to{opacity:.6;transform:translateX(-50%) scale(1.03)}}
+@media (prefers-reduced-motion: reduce){.hero-glow{animation:none;opacity:.25}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -400,12 +526,15 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <p>Llame como llamaría un paciente y escuche exactamente lo que escucharían sus pacientes.</p>
     </div>
     </div>
+    <div class="stage-col">
     <div class="stage">
       <div class="sun-glow" aria-hidden="true"></div>
       <div class="video-frame">
         <img src="assets/hero-h.webp" alt="A bright, modern dental reception — Sunny's daylight pod: a curved white desk, a smiling team member with a headset, and calm cyan light." width="1200" height="900">
+        <div class="hero-glow" aria-hidden="true"></div>
       </div>
-      <div class="work-card card-list" aria-hidden="true">
+    </div>
+      <div class="work-card card-beside" aria-hidden="true">
         <h4><span>Morning list — ready before you open</span><span class="badge badge-demo">Sample</span></h4>
         <ul class="checks">
           <li><span class="tick">✓</span><span>Urgent first — pain, callback this morning</span><span class="urgent-tag">URGENT</span></li>
@@ -445,55 +574,39 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     <h2>You know these moments. They happen every week.</h2>
     <p>Nothing below is a staffing failure. It is one front desk, one phone, and a day that keeps colliding with itself. One answer for each moment — working today. Everything in this section is LIVE today. Anything that is not live yet is in the Coming section below, labeled as coming, with the reason for the wait stated in plain words.</p>
 
-    <article class="pair">
-      <p class="time-stamp">9:14 a.m. — The Collision</p>
-      <div class="vignette" aria-hidden="true"><svg viewBox="0 0 320 90" width="320" height="90"><rect x="10" y="55" width="120" height="8" fill="#C4DDEA"/><circle cx="45" cy="38" r="10" fill="none" stroke="#A9CBDC" stroke-width="3"/><path d="M45 48 v14" stroke="#A9CBDC" stroke-width="3"/><rect x="215" y="40" width="42" height="26" rx="5" fill="none" stroke="#A9CBDC" stroke-width="3"/><path d="M272 30 a18 18 0 0 1 12 12 M280 20 a28 28 0 0 1 18 20" fill="none" stroke="#12A5D6" stroke-width="3"/></svg></div>
-      <h3>The Collision</h3>
-      <p>Line two rings while a patient is standing right in front of you at the counter. You can't be rude to the person in the room, and you can't reach the person on the phone — so the phone loses.</p>
-      <hr class="gold-rule">
-      <h3>Capture-it-right intake <span class="badge badge-live">LIVE TODAY</span></h3>
-      <p>When Sunny answers, she captures the call properly: the caller's name, the callback number read back digit-by-digit, whether they are a new or existing patient, and the callback window they prefer. No sticky notes, no half-heard numbers, nothing to decode later. Sunny also answers in your practice's name — after-hours calls, and — on the 24/7 plan — daytime overflow too, greeting callers in your practice's name. To the caller, the office picked up. Because it did.</p>
-    </article>
+    <div class="mrows">
+      <article class="mrow">
+        <div class="mrow-head"><span class="mtime">9:14 a.m.</span><h3>The Collision</h3></div>
+        <p class="mpain">Line two rings while a patient stands at the counter — you can't reach the person on the phone, so the phone loses.</p>
+        <p class="manswer"><strong>Capture-it-right intake</strong> <span class="badge badge-live">LIVE TODAY</span> — Sunny captures the call properly: caller's name, callback number read back digit-by-digit, new or existing patient, and the callback window they prefer.</p>
+      </article>
 
-    <article class="pair">
-      <p class="time-stamp">12:40 p.m. — The Lunch Gap, 12 to 2</p>
-      <div class="vignette" aria-hidden="true"><svg viewBox="0 0 320 90" width="320" height="90"><circle cx="70" cy="45" r="26" fill="none" stroke="#A9CBDC" stroke-width="3"/><path d="M70 45 L70 28 M70 45 L84 52" stroke="#A9CBDC" stroke-width="3"/><rect x="150" y="22" width="80" height="46" rx="4" fill="none" stroke="#A9CBDC" stroke-width="3"/><path d="M262 30 a18 18 0 0 1 12 12 M270 20 a28 28 0 0 1 18 20" fill="none" stroke="#12A5D6" stroke-width="3"/></svg></div>
-      <h3>The lunch gap, 12 to 2</h3>
-      <p>The phones go uncovered exactly when working patients finally have a free minute to call. Their lunch break is your lunch break, and the calls land in the gap.</p>
-      <hr class="gold-rule">
-      <h3>Never-a-voicemail nights <span class="badge badge-live">LIVE TODAY</span></h3>
-      <p>After hours, callers get a real conversation, not a beep. Sunny is honest that she is an AI assistant, calls are disclosed as recorded, and the caller still gets to say everything they called to say.</p>
-    </article>
+      <article class="mrow">
+        <div class="mrow-head"><span class="mtime">12:40 p.m.</span><h3>The lunch gap, 12 to 2</h3></div>
+        <p class="mpain">The phones go uncovered when working patients finally have a free minute to call — their lunch break is your lunch break.</p>
+        <p class="manswer"><strong>Never-a-voicemail nights</strong> <span class="badge badge-live">LIVE TODAY</span> — After hours, callers get a real conversation, not a beep. Sunny is honest that she is an AI assistant, and calls are disclosed as recorded.</p>
+      </article>
 
-    <article class="pair">
-      <p class="time-stamp">Monday 8:03 a.m. — The Monday Avalanche</p>
-      <div class="vignette" aria-hidden="true"><svg viewBox="0 0 320 90" width="320" height="90"><g fill="none" stroke="#A9CBDC" stroke-width="3"><rect x="60" y="14" width="90" height="16" transform="rotate(-5 105 22)"/><rect x="70" y="34" width="90" height="16" transform="rotate(3 115 42)"/><rect x="62" y="54" width="90" height="16" transform="rotate(-2 107 62)"/></g><path d="M200 68 h90 M245 68 v-22" stroke="#12A5D6" stroke-width="3"/></svg></div>
-      <h3>The Monday avalanche</h3>
-      <p>Everything from the weekend lands in Monday's first two hours. The line is already ringing before the door is unlocked, and the list never quite gets cleared.</p>
-      <hr class="gold-rule">
-      <h3>One morning callback list <span class="badge badge-live">LIVE TODAY</span></h3>
-      <p>Everything Sunny takes comes back as one morning callback list, urgencies first, ready before the office opens. Monday's avalanche arrives as a sorted list instead of a ringing line.</p>
-    </article>
+      <article class="mrow">
+        <div class="mrow-head"><span class="mtime">Monday 8:03 a.m.</span><h3>The Monday avalanche</h3></div>
+        <p class="mpain">Everything from the weekend lands in Monday's first two hours — the line is already ringing before the door is unlocked.</p>
+        <p class="manswer"><strong>One morning callback list</strong> <span class="badge badge-live">LIVE TODAY</span> — Everything Sunny takes comes back as one morning callback list, urgencies first, ready before the office opens.</p>
+      </article>
 
-    <article class="pair">
-      <p class="time-stamp">5:02 p.m. — The 5 P.M. Wall</p>
-      <div class="vignette" aria-hidden="true"><svg viewBox="0 0 320 90" width="320" height="90"><path d="M40 22 h70 M40 40 h70 M40 58 h48" stroke="#A9CBDC" stroke-width="3"/><path d="M160 8 v74" stroke="#12A5D6" stroke-width="4"/><path d="M196 62 q14-26 28 0 q14-26 28 0 q14-26 28 0" fill="none" stroke="#A9CBDC" stroke-width="3"/></svg></div>
-      <h3>The 5 p.m. wall</h3>
-      <p>Close-out has to balance, the day has to end, and that is exactly when the after-work wave of calls starts. The team is closing the office while patients are just getting off work.</p>
-      <hr class="gold-rule">
-      <h3>3-tier urgency sort <span class="badge badge-live">LIVE TODAY</span></h3>
-      <p>Every call is sorted by urgency. True emergencies are directed to 911 or urgent care, and your team gets an instant alert. Urgent calls sit at the top of the list, so the first callback your team makes is the one that matters most.</p>
-    </article>
+      <article class="mrow">
+        <div class="mrow-head"><span class="mtime">5:02 p.m.</span><h3>The 5 p.m. wall</h3></div>
+        <p class="mpain">Close-out has to balance and the day has to end — exactly when the after-work wave of calls starts.</p>
+        <p class="manswer"><strong>3-tier urgency sort</strong> <span class="badge badge-live">LIVE TODAY</span> — Every call is sorted by urgency — true emergencies are directed to 911 or urgent care, and your team gets an instant alert.</p>
+      </article>
 
-    <article class="pair">
-      <p class="time-stamp">All day — The Verification Grind</p>
-      <h3>The verification grind</h3>
-      <p>Tomorrow's insurance checks eat today's phone line. For context: a manual insurance eligibility check takes about 12 minutes and costs about $6.52 (CAQH Index 2024) — and every one of those minutes is a minute the phone isn't being answered.</p>
-      <hr class="gold-rule">
-      <h3>Insurance-question capture <span class="badge badge-live">LIVE TODAY</span></h3>
-      <p>When a caller has an insurance question, Sunny captures the carrier and the caller's exact question, word for word, for your team to answer. This is capture only — it is not insurance verification. Verification is in the Coming section below, labeled as such.</p>
-      <p>Two more moments from the same week: <strong>One sick call collapses the system</strong> — there is no bench; one person calls in sick and the manager becomes the front desk, the schedule slips, and the phones are the first thing to go unanswered. And <strong>recall lists never get worked</strong> and <strong>the no-show scramble</strong> — a slot cancels, there is an ASAP list somewhere, and the follow-up turns into voicemail tag. Sunny's answers for those two are in the Coming ledger below, labeled coming, because they are not live yet.</p>
-    </article>
+      <article class="mrow">
+        <div class="mrow-head"><span class="mtime">All day</span><h3>The verification grind</h3></div>
+        <p class="mpain">Tomorrow's insurance checks eat today's phone line — a manual eligibility check takes about 12 minutes and costs about $6.52 (CAQH Index 2024).</p>
+        <p class="manswer"><strong>Insurance-question capture</strong> <span class="badge badge-live">LIVE TODAY</span> — Sunny captures the carrier and the caller's exact question, word for word, for your team to answer — capture only, not insurance verification.</p>
+      </article>
+    </div>
+
+    <p class="day-more">Two more moments from the same week — <strong>one sick call collapses the system</strong>, <strong>recall lists never get worked</strong>, and <strong>the no-show scramble</strong> — have Sunny's answers in the Coming ledger below, labeled coming, because they are not live yet.</p>
   </div>
 </section>
 
@@ -562,41 +675,39 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   <div class="wrap">
     <h2>What else is live — and what's coming</h2>
     <p>We would rather tell you a service is coming than let you assume it is here. Each coming item says what it is waiting on, in plain words. Sunny does not book into your practice's schedule and never touches your patient database. Your team calls back — in control.</p>
-    <div class="ledger-cols">
-      <div class="ledger-col live">
+    <div class="lgrid">
+      <div class="lcol live">
         <h3>Live today</h3>
-        <ul>
-          <li><strong>Answers in your practice's name</strong> — after-hours and 24/7 overflow. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>Capture-it-right intake</strong> — name, callback number read back digit-by-digit, new/existing patient, preferred callback window. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>3-tier urgency sort</strong> — true emergencies directed to 911/urgent care, with an instant team alert. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>Never-a-voicemail nights</strong> — a real conversation, with honest AI and recording disclosure. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>Four languages</strong> — full conversations in English, Spanish, Arabic, and Farsi. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>Insurance-question capture</strong> — carrier plus the caller's exact question, word for word. Capture only, not verification. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>One morning callback list</strong> — urgencies first, ready before the office opens. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>Owner proof report</strong> — the week's calls, requests, and urgency mix. <span class="badge badge-live">LIVE TODAY</span></li>
-          <li><strong>The same Sunny at every location.</strong> <span class="badge badge-live">LIVE TODAY</span></li>
-        </ul>
+        <div class="lrow"><p class="lrow-head"><strong>Answers in your practice's name</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">After-hours and 24/7 overflow.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>Capture-it-right intake</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">Name, callback number read back digit-by-digit, new/existing patient, preferred callback window.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>3-tier urgency sort</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">True emergencies directed to 911/urgent care, with an instant team alert.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>Never-a-voicemail nights</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">A real conversation, with honest AI and recording disclosure.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>Four languages</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">Full conversations in English, Spanish, Arabic, and Farsi.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>Insurance-question capture</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">Carrier plus the caller's exact question, word for word. Capture only, not verification.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>One morning callback list</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">Urgencies first, ready before the office opens.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>Owner proof report</strong> <span class="badge badge-live">LIVE TODAY</span></p><p class="lrow-desc">The week's calls, requests, and urgency mix.</p></div>
+        <div class="lrow"><p class="lrow-head"><strong>The same Sunny at every location.</strong> <span class="badge badge-live">LIVE TODAY</span></p></div>
       </div>
-      <div class="ledger-col coming">
+      <div class="lcol coming">
         <h3>Coming — not live yet, and labeled that way</h3>
-        <ul>
-          <li><strong>Missed-call text-back</strong> — if a caller hangs up, a text follows up. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: carrier texting approval; resubmission Nov 13.</span></li>
-          <li><strong>Appointment confirmations and same-day backfill of cancelled slots</strong> — confirmations go out, and when a slot cancels, the ASAP list hears about it the same day. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: business texting approval, and the ability to read the schedule. This speaks to the no-show scramble.</span></li>
-          <li><strong>Recall and reactivation runs on your office's own list</strong> — Sunny works through the recall list your office provides, so it finally gets worked. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: still being built and proven; not available today. This speaks to recall lists never getting worked.</span></li>
-          <li><strong>Review requests by text</strong> — after a visit, a patient gets a text asking for a review. A QR-code version of a review request works today. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: business texting approval.</span></li>
-          <li><strong>Booking into Open Dental</strong> — Sunny would place an appointment directly in Open Dental instead of only capturing the request. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: developer access in progress. Until this is live and proven, Sunny books nothing — she captures, and your team books.</span></li>
-          <li><strong>Insurance eligibility verification</strong> — real verification of a patient's eligibility, not just capture of their question. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: works in a test environment today; production comes with a signed pilot office. This speaks to the verification grind.</span></li>
-          <li><strong>Caller recognition and intent</strong> — Sunny labels every call by what the caller wants, and remembers repeat callers. <span class="badge badge-coming">COMING</span><br><span class="gate">Phase 1 arrives with the office dashboard: an intent label on every call (book, reschedule, billing, insurance, emergency) drawn from the conversation itself, plus repeat-caller memory from Sunny's own call history. Phase 2, with the Open Dental connection: full patient match — a caller card with the patient's name, next appointment, and pending treatment. Neither phase is live today, and Sunny does not match patient records today.</span></li>
-          <li><strong>Patient billing portal</strong> — patients would pay the office directly through a portal. <span class="badge badge-coming">COMING</span><br><span class="gate">Gate: a later phase of the build, after the phone work above.</span></li>
-        </ul>
+        <div class="lrow"><p class="lrow-head"><strong>Missed-call text-back</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">If a caller hangs up, a text follows up.</p><span class="gate">Gate: carrier texting approval; resubmission Nov 13.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Appointment confirmations and same-day backfill of cancelled slots</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">Confirmations go out, and when a slot cancels, the ASAP list hears about it the same day.</p><span class="gate">Gate: business texting approval, and the ability to read the schedule. This speaks to the no-show scramble.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Recall and reactivation runs on your office's own list</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">Sunny works through the recall list your office provides, so it finally gets worked.</p><span class="gate">Gate: still being built and proven; not available today. This speaks to recall lists never get worked.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Review requests by text</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">After a visit, a patient gets a text asking for a review. A QR-code version of a review request works today.</p><span class="gate">Gate: business texting approval.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Booking into Open Dental</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">Sunny would place an appointment directly in Open Dental instead of only capturing the request.</p><span class="gate">Gate: developer access in progress. Until this is live and proven, Sunny books nothing — she captures, and your team books.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Insurance eligibility verification</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">Real verification of a patient's eligibility, not just capture of their question.</p><span class="gate">Gate: works in a test environment today; production comes with a signed pilot office. This speaks to the verification grind.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Caller recognition and intent</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">Sunny labels every call by what the caller wants, and remembers repeat callers.</p><span class="gate">Phase 1 arrives with the office dashboard: an intent label on every call (book, reschedule, billing, insurance, emergency) drawn from the conversation itself, plus repeat-caller memory from Sunny's own call history. Phase 2, with the Open Dental connection: full patient match — a caller card with the patient's name, next appointment, and pending treatment. Neither phase is live today, and Sunny does not match patient records today.</span></div>
+        <div class="lrow"><p class="lrow-head"><strong>Patient billing portal</strong> <span class="badge badge-coming">COMING</span></p><p class="lrow-desc">Patients would pay the office directly through a portal.</p><span class="gate">Gate: a later phase of the build, after the phone work above.</span></div>
       </div>
     </div>
-    <div class="note-box" style="margin-top:26px">
-      <h3>Warm transfer: your switch, your call. <span class="badge badge-option">OPTION — YOUR OFFICE CHOOSES</span></h3>
-      <p>Whether Sunny can connect a true emergency live to your on-call dentist is a toggle your office controls — ON or OFF, your choice.</p>
-      <div class="switch-row"><span class="switch" aria-hidden="true"></span><span><strong>Turn it ON:</strong> a true emergency can be connected live to the on-call dentist.</span></div>
-      <div class="switch-row"><span class="switch off" aria-hidden="true"></span><span><strong>Turn it OFF:</strong> Sunny captures the details, flags the call urgent, and alerts the team instead. Nothing is connected live.</span></div>
-      <p>This is an office-controlled option. It stays a spec item until the transfer path is built and tested end-to-end — we will tell you plainly when it has been.</p>
+    <div class="note-box wt-card">
+      <div class="wt-head"><h3>Warm transfer — your switch, your call.</h3><span class="badge badge-option">OPTION — YOUR OFFICE CHOOSES</span></div>
+      <p class="wt-lead">A true emergency calls at 2 a.m. Your office picks what Sunny does:</p>
+      <div class="wt-grid">
+        <div class="wt-opt on"><p class="wt-switch">Switch ON</p><p>Sunny connects the caller live to your on-call dentist.</p></div>
+        <div class="wt-opt off"><p class="wt-switch">Switch OFF</p><p>Sunny captures the details, flags it urgent, and alerts your team instantly — first call on the morning list.</p></div>
+      </div>
+      <p class="wt-note">This is an office-controlled option. It stays a spec item until the transfer path is built and tested end-to-end — we will tell you plainly when it has been.</p>
     </div>
   </div>
 </section>
@@ -631,13 +742,25 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <p>24/7 answering plus insurance eligibility checking — 500 minutes and 300 checks included each month. Sold only once its automated checking passes our own measured labor test; until then, not sold at any price.</p>
       </div>
     </div>
-    <p>Two plans are live today; Booked and the Complete System are priced in the open and labeled coming — never charged for before they exist. The full add-on card — text-back, confirmations, recall, review requests, and more, each priced and labeled — is <a href="pricing.html">on the Pricing page</a>.</p>
-    <div class="guarantee">
-      <h3>Paid 30-day pilot</h3>
-      <p>The first month is paid up front, with an <strong>unconditional money-back guarantee</strong> — email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> within 30 days.</p>
+    <div class="tband">
+      <p class="tband-intro">Two plans are live today; Booked and the Complete System are priced in the open and labeled coming — never charged for before they exist.</p>
+      <div class="tband-grid">
+        <div class="tcard">
+          <h3>Paid 30-day pilot</h3>
+          <p>The first month is paid up front, with an <strong>unconditional money-back guarantee</strong> — email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> within 30 days.</p>
+        </div>
+        <div class="tcard">
+          <h3>Privacy, signed first</h3>
+          <p>Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny.</p>
+        </div>
+        <div class="tcard">
+          <h3>The full picture</h3>
+          <p>Full plan comparison, pilot terms, and the complete add-on card — text-back, confirmations, recall, review requests, and more, each priced and labeled. <a href="pricing.html">See the Pricing page</a></p>
+        </div>
+      </div>
+      <p class="tband-cta">Ready to talk? Call the demo line first — <a href="tel:+16192021085">(619) 202-1085</a> — then write to <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a>.</p>
     </div>
-    <p class="baa">Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny.</p>
-    <p>Full comparison and pilot terms: <a href="pricing.html">see the Pricing page for the full plan comparison and pilot terms</a>. Ready to talk? Call the demo line first — <a href="tel:+16192021085">(619) 202-1085</a> — then write to <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a>.</p>
+
     <div class="lang-es" lang="es" style="text-align:left;max-width:680px;margin:24px auto 0">
       <h3>Dos planes. Sin costo de instalación. Un piloto que puede deshacer.</h3>
       <ul>
@@ -658,11 +781,11 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   <div class="aurora" aria-hidden="true"><i class="o1"></i></div>
   <div class="wrap">
     <h2>Switching takes four steps — and nothing gets replaced.</h2>
-    <ol class="steps">
-      <li><p class="step-num">1</p><h3>A short setup call</h3><p>Your hours, your services, your urgent rules — Sunny is set up the way your office actually runs.</p></li>
-      <li><p class="step-num">2</p><h3>Keep your number</h3><p>Your phones, your carrier, and your system stay exactly where they are. Nothing is ported and no new hardware arrives.</p></li>
-      <li><p class="step-num">3</p><h3>Turn on forwarding</h3><p>Overflow and after-hours calls come to Sunny. Your team keeps answering everything it can — Sunny only gets what would otherwise ring out.</p></li>
-      <li><p class="step-num">4</p><h3>Change your mind anytime</h3><p>Turn forwarding off and your phone rings exactly like it used to. That is the whole cancellation process.</p></li>
+    <ol class="stepper">
+      <li><span class="step-node">1</span><h3>A short setup call</h3><p>Your hours, your services, your urgent rules — Sunny is set up the way your office actually runs.</p></li>
+      <li><span class="step-node">2</span><h3>Keep your number</h3><p>Your phones, carrier, and system stay where they are. Nothing ported, no new hardware.</p></li>
+      <li><span class="step-node">3</span><h3>Turn on forwarding</h3><p>Overflow and after-hours calls come to Sunny; your team keeps answering everything it can.</p></li>
+      <li><span class="step-node">4</span><h3>Change your mind anytime</h3><p>Turn forwarding off and your phone rings like it used to. That's the whole cancellation process.</p></li>
     </ol>
     <p style="margin-top:16px;color:#33566B">Live in days, not weeks. No porting, no new hardware, no IT project. The full walk-through is on the <a href="how-it-works.html" style="color:#0B7FA8">How It Works page — the four steps, forwarding explained, and what Sunny does not do today</a>.</p>
     <div class="lang-es" lang="es">
@@ -679,11 +802,19 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 </section>
 
 <!-- 9. Languages + proof -->
-<section class="lang-proof">
+<section class="lang-proof statement">
   <div class="wrap">
-    <h2>Four languages. Proof you can see.</h2>
-    <p>Full conversations in English, Spanish, Arabic, and Farsi. A caller who is more comfortable in one of those languages gets the whole conversation in it — not a translation of part of it.</p>
-    <p><strong>Owner proof report:</strong> the week's calls, requests, and urgency mix — so you see what Sunny caught. The calls that used to disappear are now on paper, where you can see them. The same Sunny answers at every location, the same way, with the same capture and the same sorting.</p>
+    <h2 class="statement-h">Four languages.<br><span class="grad">Proof you can see.</span></h2>
+    <div class="proof-cols">
+      <div class="proof-col">
+        <h3>Four languages</h3>
+        <p>Full conversations in English, Spanish, Arabic, and Farsi. A caller who is more comfortable in one of those languages gets the whole conversation in it — not a translation of part of it.</p>
+      </div>
+      <div class="proof-col">
+        <h3>Proof report</h3>
+        <p><strong>Owner proof report:</strong> the week's calls, requests, and urgency mix — so you see what Sunny caught. The calls that used to disappear are now on paper, where you can see them. The same Sunny answers at every location, the same way, with the same capture and the same sorting.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -691,24 +822,63 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <section id="faq">
   <div class="wrap">
     <h2>Questions offices ask first</h2>
-    <div class="faq-item"><h3>Does Sunny book appointments?</h3><p>Not today — and we say so plainly. Sunny captures the caller's name, callback number, whether they are a new or existing patient, their preferred callback window, and what they are asking for. Your team calls back and books, in control of the schedule. Booking into Open Dental is coming; it is waiting on developer access, and nothing is booked by Sunny until it is live and proven.</p></div>
-    <div class="faq-item"><h3>How do HIPAA and a BAA work with Sunny?</h3><p>Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny. That agreement comes before the pilot starts carrying real patient calls — not after, and not on request later.</p></div>
-    <div class="faq-item"><h3>What languages does Sunny speak?</h3><p>Full conversations in English, Spanish, Arabic, and Farsi — the whole call, in the caller's language, including the capture and the read-back of their callback number.</p></div>
-    <div class="faq-item"><h3>We already have voicemail. Why is this different?</h3><p>Voicemail asks a caller to talk to a beep, and most hang up instead — in Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations (vendor platform data), 31 of every 100 callers hung up before reaching anyone. Sunny is a real conversation: the caller says what they need, Sunny captures it properly and sorts it by urgency, and true emergencies are directed to 911 or urgent care with an instant alert to your team. Your team opens to a sorted callback list, not a stack of half-finished messages.</p></div>
-    <div class="faq-item"><h3>Do we keep our phone number?</h3><p>Yes. Your number, your phones, and your carrier stay put. Sunny sits behind call forwarding — overflow and after-hours — so callers keep dialing the number they already know.</p></div>
-    <div class="faq-item"><h3>Can we cancel anytime?</h3><p>Yes. The plans are month-to-month, and the pilot carries an unconditional money-back guarantee: email hello@ringandrespond.com within 30 days. Practically, stopping is even simpler — turn forwarding off and your phone rings exactly like it did before Sunny.</p></div>
-    <div class="faq-item"><h3>We have more than one location. Does Sunny cover all of them?</h3><p>Yes. The same Sunny answers at every location, with the same capture and the same urgency sorting, so a patient gets the same experience whichever office they call.</p></div>
-    <div class="faq-item"><h3>What exactly does Sunny capture on a call?</h3><p>The caller's name, their callback number — read back digit-by-digit so it is right — whether they are a new or existing patient, the callback window they prefer, and the reason they called. If they have an insurance question, Sunny also captures the carrier and their exact question, word for word, for your team to answer.</p></div>
+    <div class="faq-list">
+      <details class="faq-acc" open>
+        <summary><h3>Does Sunny book appointments?</h3></summary>
+        <div class="faq-a"><p>Not today — and we say so plainly: Sunny captures the caller's name, callback number, whether they are a new or existing patient, their preferred callback window, and what they are asking for — your team calls back and books, in control of the schedule. Booking into Open Dental is coming, and nothing is booked by Sunny until it is live and proven.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>How do HIPAA and a BAA work with Sunny?</h3></summary>
+        <div class="faq-a"><p>Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny. That agreement comes before the pilot starts carrying real patient calls — not after, and not on request later.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>What languages does Sunny speak?</h3></summary>
+        <div class="faq-a"><p>Full conversations in English, Spanish, Arabic, and Farsi — the whole call, in the caller's language, including the capture and the read-back of their callback number.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>We already have voicemail. Why is this different?</h3></summary>
+        <div class="faq-a"><p>Voicemail asks a caller to talk to a beep, and most hang up instead — in Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations (vendor platform data), 31 of every 100 callers hung up before reaching anyone. Sunny is a real conversation: the caller says what they need, Sunny captures it properly and sorts it by urgency, and true emergencies are directed to 911 or urgent care with an instant alert to your team. Your team opens to a sorted callback list, not a stack of half-finished messages.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>Do we keep our phone number?</h3></summary>
+        <div class="faq-a"><p>Yes — your number, your phones, and your carrier stay put. Sunny sits behind call forwarding — overflow and after-hours — so callers keep dialing the number they already know.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>Can we cancel anytime?</h3></summary>
+        <div class="faq-a"><p>Yes — the plans are month-to-month, and the pilot carries an unconditional money-back guarantee: email hello@ringandrespond.com within 30 days. Stopping is even simpler: turn forwarding off and your phone rings exactly like it did before Sunny.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>We have more than one location. Does Sunny cover all of them?</h3></summary>
+        <div class="faq-a"><p>Yes — the same Sunny answers at every location, with the same capture and the same urgency sorting, so a patient gets the same experience whichever office they call.</p></div>
+      </details>
+      <details class="faq-acc">
+        <summary><h3>What exactly does Sunny capture on a call?</h3></summary>
+        <div class="faq-a"><p>The caller's name, their callback number — read back digit-by-digit so it is right — whether they are a new or existing patient, the callback window they prefer, and the reason they called. If they have an insurance question, Sunny also captures the carrier and their exact question, word for word, for your team to answer.</p></div>
+      </details>
+    </div>
+    <p class="faq-close">Anything else? Ask in the chat on this page — or hear her live at <a href="tel:+16192021085">(619) 202-1085</a>.</p>
   </div>
 </section>
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 
 <!-- 10. Footer CTA -->
-<section class="footer-cta">
+<section class="footer-cta finale">
   <div class="wrap">
-    <h2>Hear her before you decide anything.</h2>
-    <p>Call (619) 202-1085 — that is Sunny, live, answering right now. Call as a patient would, and hear exactly what your callers would hear. If she sounds like a fit, the pilot is $199 or $299 for the first month, $0 setup, with an unconditional money-back guarantee — and the BAA is signed before any patient information flows.</p>
+    <h2>Hear her the way your patients will.</h2>
+    <p class="finale-line">Call (619) 202-1085 — that's Sunny, live, answering right now. Call as a patient would, and hear exactly what your callers would hear.</p>
     <p><a class="btn" href="tel:+16192021085">Call Sunny now: (619) 202-1085</a></p>
-    <p>Prefer to write? <a href="mailto:hello@ringandrespond.com" style="color:#0B7FA8">hello@ringandrespond.com</a></p>
+    <ul class="finale-chips">
+      <li>$199 or $299 for the first month</li>
+      <li>$0 setup</li>
+      <li>Unconditional money-back guarantee — and the BAA is signed before any patient information flows</li>
+    </ul>
+    <p class="finale-write">Prefer to write? <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
     <div class="lang-es" lang="es">
       <h3 >Escúchela antes de decidir nada.</h3>
       <p>Llame al (619) 202-1085 — es Sunny, en vivo, contestando ahora mismo. Si le parece adecuada, el piloto cuesta $199 o $299 el primer mes, con instalación de $0 y garantía incondicional de devolución del dinero, y el acuerdo BAA se firma antes de que fluya cualquier información de pacientes.</p>
@@ -719,14 +889,20 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 
 <footer>
   <div class="wrap">
-    <nav aria-label="Footer">
-      <a href="index.html">Home — Sunny, AI receptionist for dental offices</a>
-      <a href="pricing.html">Pricing — dental answering service cost</a>
-      <a href="how-it-works.html">How It Works — after hours answering service for dentists</a>
-      <a href="https://ringandrespond.com/websites">Websites — website design for local businesses</a>
-      <a href="https://app.ringandrespond.com">Office dashboard — app.ringandrespond.com (in build)</a>
-      <a href="poll.html">One question for shop owners</a>
-    </nav>
+    <div class="foot-cols">
+      <nav class="foot-col" aria-label="Sunny">
+        <p class="foot-label">Sunny</p>
+        <a href="index.html">Home — Sunny, AI receptionist for dental offices</a>
+        <a href="pricing.html">Pricing — dental answering service cost</a>
+        <a href="how-it-works.html">How It Works — after hours answering service for dentists</a>
+      </nav>
+      <nav class="foot-col" aria-label="More">
+        <p class="foot-label">More</p>
+        <a href="https://ringandrespond.com/websites">Websites — website design for local businesses</a>
+        <a href="https://app.ringandrespond.com">Office dashboard — app.ringandrespond.com (in build)</a>
+        <a href="poll.html">One question for shop owners</a>
+      </nav>
+    </div>
     <p>Ring &amp; Respond · Sunny by Ring &amp; Respond · Answered with a smile. · <a href="tel:+16192021085">(619) 202-1085</a> · <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
     <p>Updated November 2026</p>
   </div>
@@ -871,5 +1047,42 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       else window.addEventListener('load', armIdleWake);
     }());
   </script>
+
+<script>
+/* Rotating proof strip: calm crossfade, one line at a time.
+   Hold 3.5s, fade 600ms. Reduced-motion = static first line.
+   Pauses on hover/focus. Fixed-height track = no layout shift. */
+(function () {
+  var track = document.querySelector('.ticker-track');
+  if (!track) return;
+  var lines = track.querySelectorAll('span');
+  if (!lines.length) return;
+  var i = 0;
+  lines[0].classList.add('on');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduce.matches) return;
+  var timer = null;
+  function step() {
+    lines[i].classList.remove('on');
+    i = (i + 1) % lines.length;
+    lines[i].classList.add('on');
+  }
+  function start() { if (!timer) timer = setInterval(step, 3500); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  start();
+  var t = document.querySelector('.ticker');
+  if (t) {
+    t.addEventListener('mouseenter', stop);
+    t.addEventListener('mouseleave', start);
+    t.addEventListener('focusin', stop);
+    t.addEventListener('focusout', start);
+  }
+  if (reduce.addEventListener) reduce.addEventListener('change', function (e) {
+    if (e.matches) { stop(); lines.forEach(function (s) { s.classList.remove('on'); }); i = 0; lines[0].classList.add('on'); }
+    else start();
+  });
+})();
+</script>
+
 </body>
 </html>
