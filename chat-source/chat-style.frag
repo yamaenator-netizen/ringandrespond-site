@@ -5,7 +5,7 @@
     .skip { position: absolute; left: 8px; top: 8px; z-index: 100; transform: translateY(-180%); background: var(--surface); padding: 10px 14px; }
     .skip:focus { transform: translateY(0); }
     .chat-launcher {
-      position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 50;
+      position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 80;
       min-height: 52px; padding: 0 19px; border: 1.5px solid var(--line); border-radius: 999px;
       display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
       background: var(--surface); color: var(--ink); box-shadow: 0 10px 30px rgba(12,80,110,.22), 0 0 22px rgba(53,196,243,.25); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3);
@@ -14,7 +14,7 @@
     .chat-launcher svg { width: 19px; height: 19px; }
     .chat-launcher[aria-expanded="true"] { background: var(--surface-2); }
     .chat-panel {
-      position: fixed; right: 22px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 49;
+      position: fixed; right: 22px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 79;
       width: min(380px, calc(100vw - 28px)); max-height: min(590px, calc(100dvh - 110px));
       display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; padding: 0;
       overflow: hidden; border: 1px solid var(--line); border-radius: 22px;
