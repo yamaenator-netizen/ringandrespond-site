@@ -3,7 +3,7 @@
     <span>Ask a question</span>
   </button>
 
-  <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Front-Desk OS quick answers" hidden>
+  <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Sunny quick answers" hidden>
     <div class="chat-header">
       <div><strong>Your pilot guide</strong><span>Questions, signup, and checkout</span></div>
       <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">
@@ -18,15 +18,15 @@
         <button class="starter-chip" type="button">How does buying work?</button>
         <button class="starter-chip" type="button">What does it cost?</button>
         <button class="starter-chip" type="button">Hear the demo</button>
-        <button class="starter-chip" type="button">Have Yama call me</button>
+        <button class="starter-chip" type="button">Request a callback</button>
       </div>
     </div>
     <form class="chat-form" id="chatForm">
-      <label class="skip" for="chatInput">Ask about Front-Desk OS</label>
+      <label class="skip" for="chatInput">Ask about Sunny</label>
       <input id="chatInput" name="question" type="text" maxlength="180" autocomplete="off" placeholder="Type your question…" required />
       <button class="chat-send" type="submit" aria-label="Send question">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
       </button>
     </form>
-    <p class="chat-footnote">You’re chatting with an automated assistant, not a person — California law asks us to say so plainly. For a human, email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> or type ‘call me’ here and Yama will call you.</p>
+    <p class="chat-footnote">You’re chatting with an automated assistant, not a person — California law asks us to say so plainly. For a human, email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> or type ‘call me’ here and we’ll call you.</p>
   </section>
