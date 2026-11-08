@@ -11,9 +11,24 @@ first wake (visitor intent, or the post-load idle wake):
   wake triggers, first-action queueing, and the loader for the brain
   file. Its `/chat-brain.js?v=…` is stamped by the sync with the
   brain's content hash — never edit the stamp by hand.
-- `chat-brain.frag` — the brain itself (183-pair knowledge base,
-  answer engine, signup and callback flows). The sync generates
+- `chat-brain.frag` — the brain itself (knowledge base, answer
+  engine, signup and callback flows). The sync generates
   `/chat-brain.js` at the repo root from this fragment.
+
+## Knowledge discipline (2026-11-07 rebuild)
+
+The brain answers ONLY from the Layer-1 truth source,
+`~/workspace/website-rebuild-20261107/FACTS.md`. If a fact isn't in
+FACTS.md, it doesn't go in the brain — no exceptions for "we've always
+said it." The 2026-11-07 rewire replaced the old 183-pair base
+(written for the retired shops-era offer, carrying uncited stats and
+a team member's personal phone number) with a 61-pair FACTS-only
+base plus FACTS-checked engine answers. When a fact changes: edit
+FACTS.md first, then the fragments, re-run the sync, and re-run the
+forbidden sweep (test number, retired stats, free-trial
+claims, per-minute-fee claims, open-ended minute claims, personal
+names/numbers) before
+anything ships.
 - `chat-style.frag` — the standalone chat `<style>` block used by the
   17 template pages (index.html keeps its chat styles in its own
   stylesheets and is not style-synced)
