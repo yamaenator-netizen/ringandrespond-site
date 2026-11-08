@@ -1,8 +1,4 @@
-# AI answer engines are welcome to read and quote this site (AEO):
-# GPTBot, ClaudeBot, PerplexityBot and Google-Extended all fall under the
-# wildcard allow below. No path here holds anything private.
 User-agent: *
 Allow: /
-Disallow: /404.html
 
 Sitemap: https://ringandrespond.com/sitemap.xml
