@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Websites by Ring & Respond">
 <meta name="twitter:description" content="Websites for local shops, built to the same standard as this site — fast, accessible, honest.">
-<meta name="theme-color" content="#16283F">
+<meta name="theme-color" content="#0C2B3E">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="preload" href="/assets/noto-serif-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
@@ -59,6 +59,69 @@
  ]
 }
 </script>
+<style>
+/* Daylight Pod (Concept H) skin for /websites — page-local rules only.
+   The shared assets/style.css (also used by poll/404) is NOT edited. That
+   sheet predates this page's markup: 31 of its 37 classes were undefined in
+   it and its .hero/.lede rules painted this page's hero for a dark design,
+   so the live page rendered with an unsized logo and white-on-light hero
+   text. These rules retoken the sheet's variables to the H palette for this
+   page and define the page's real classes in the H system. Content, the
+   sample cards, and the data-en/data-es + ws-toggle.js mechanism are
+   untouched. */
+:root{--navy:#0C2B3E;--pearl:#F2F8FC;--gold:#0E9BC9;--gold-ink:#0B7FA8}
+body{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;background:#F2F8FC;background-image:radial-gradient(1100px 480px at 85% -60px,rgba(53,196,243,.14),transparent 60%),radial-gradient(900px 420px at -10% 240px,rgba(53,196,243,.08),transparent 60%);color:#33566B}
+.skip{position:absolute;left:-999px;top:0;background:#0E9BC9;color:#fff;padding:10px 16px;z-index:100;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;background:rgba(255,255,255,.94);border-bottom:1px solid #CFE6F0;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{color:#0C2B3E}
+.brand .mark{width:44px;height:44px;flex:none}
+.wordmark{font-family:Georgia,'Times New Roman',serif;font-size:19px;color:#0C2B3E}
+.wordmark .amp,.footer-brand .amp{color:#0B7FA8}
+.lang-toggle{border:1px solid #CFE6F0;border-radius:999px;background:#fff;color:#0C2B3E;min-height:44px;min-width:44px;padding:8px 16px;font-size:14px;font-weight:700;cursor:pointer}
+.lang-toggle .lang-alt{color:#0B7FA8}
+.room{max-width:1140px;margin:0 auto;padding:64px 20px}
+.room-label{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0B7FA8;margin-bottom:10px}
+.kicker{font-size:15px;color:#6E8FA3;margin-bottom:14px}
+.hero{background:transparent;color:#33566B}
+.ws-hero{padding-top:52px;background:linear-gradient(180deg,#FFFFFF,rgba(242,248,252,0) 90%)}
+.ws-hero h1{font-size:32px;line-height:1.13;letter-spacing:-.01em;max-width:780px;color:#0C2B3E;margin-bottom:14px}
+.lede{color:#33566B;font-size:18.5px;max-width:720px}
+.honest-tag{border:1px solid #CFE6F0;border-left:4px solid #12A5D6;background:#EFF7FB;border-radius:14px;padding:13px 17px;max-width:720px;font-size:15.5px;margin-top:18px}
+.room h2{font-size:30px;color:#0C2B3E;letter-spacing:-.01em;margin-bottom:10px}
+.section-lede{max-width:720px}
+.ws-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:26px}
+.ws-card{border:1px solid #CFE6F0;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 2px 14px rgba(12,80,110,.07)}
+.ws-shot{width:100%;height:auto;display:block}
+.ws-card-body{padding:20px 22px}
+.call-tag{display:inline-block;background:#E3F2F9;color:#0B7FA8;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 12px}
+.ws-card h3{margin:10px 0 8px;color:#0C2B3E;font-size:20px}
+.ws-concept{font-size:14px;color:#6E8FA3;margin-top:10px}
+.ws-band{background:#E8F4FA;border-top:1px solid #CFE6F0;border-bottom:1px solid #CFE6F0;max-width:none;padding-left:max(20px,calc((100% - 1100px)/2));padding-right:max(20px,calc((100% - 1100px)/2))}
+.care-list{list-style:none;max-width:760px;margin-top:16px}
+.care-list li{position:relative;padding:9px 0 9px 30px}
+.care-list li::before{content:"\2713";position:absolute;left:0;color:#12A5D6;font-weight:900}
+.plan-flow{list-style:none;counter-reset:step;margin-top:18px;display:grid;gap:14px;max-width:760px}
+.plan-flow li{counter-increment:step;border:1px solid #CFE6F0;border-radius:16px;padding:16px 20px 16px 64px;background:#fff;font-size:16px;box-shadow:0 2px 14px rgba(12,80,110,.06);position:relative}
+.plan-flow li::before{content:counter(step);position:absolute;left:20px;top:14px;font-size:24px;font-weight:800;color:#12A5D6}
+.ws-cta-row{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-gold{background:#0E9BC9;color:#fff;box-shadow:0 2px 14px rgba(12,80,110,.07)}
+.ws-crosslink{margin-top:18px;color:#6E8FA3}
+.ws-crosslink a{color:#0B7FA8}
+h1,h2,h3{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif}
+footer.footer{background:#EAF4F9;border-top:1px solid #CFE6F0;color:#6E8FA3;padding:36px 20px 110px}
+.footer-brand{font-family:Georgia,'Times New Roman',serif;font-size:20px;color:#0C2B3E}
+.slogan{color:#0B7FA8}
+.footer-fine{font-size:13px}
+footer.footer a{color:#0B7FA8}
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);border-top:1px solid #CFE6F0;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.sticky-btn{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px}
+.sticky-play{background:#0E9BC9;color:#fff}
+.sticky-poll{background:#fff;color:#0B7FA8;border:1px solid #CFE6F0}
+:focus-visible{outline:3px solid #12A5D6;outline-offset:2px}
+@media(min-width:720px){.ws-hero h1{font-size:42px}.stickybar{display:none}footer.footer{padding-bottom:36px}}
+@media(min-width:900px){.ws-grid{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
 <a class="skip" href="#samples" data-en="Skip to the samples" data-es="Saltar a las muestras">Skip to the samples</a>
@@ -73,8 +136,8 @@
       <circle cx="32" cy="30" r="12" fill="#A47C52"/>
       <circle cx="27.5" cy="28" r="1.8" fill="#0B1425"/><circle cx="36.5" cy="28" r="1.8" fill="#0B1425"/>
       <path d="M26 34 Q32 39 38 34" fill="none" stroke="#0B1425" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M14 22 Q10 44 26 54 L30 48 Q18 41 19 26 Z" fill="#16283F"/>
-      <path d="M50 22 Q54 44 38 54 L34 48 Q46 41 45 26 Z" fill="#16283F"/>
+      <path d="M14 22 Q10 44 26 54 L30 48 Q18 41 19 26 Z" fill="#0C2B3E"/>
+      <path d="M50 22 Q54 44 38 54 L34 48 Q46 41 45 26 Z" fill="#0C2B3E"/>
     </svg>
     <span class="wordmark">Ring <span class="amp">&amp;</span> Respond</span>
   </a>
