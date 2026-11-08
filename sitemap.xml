@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://ringandrespond.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ringandrespond.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ringandrespond.com/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ringandrespond.com/websites</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ringandrespond.com/websites"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ringandrespond.com/websites"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ringandrespond.com/</loc></url>
+  <url><loc>https://ringandrespond.com/pricing</loc></url>
+  <url><loc>https://ringandrespond.com/how-it-works</loc></url>
+  <url><loc>https://ringandrespond.com/websites</loc></url>
 </urlset>
