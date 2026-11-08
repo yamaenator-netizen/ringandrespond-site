@@ -1,13 +1,52 @@
-# Ring & Respond
+# Ring & Respond — Sunny
 
-> Ring & Respond builds Sunny, an AI receptionist for local shops in Southern California — plumbing, electrical, HVAC, auto and similar trades. Sunny answers the shop's phone in the shop's name when nobody can pick up, captures the caller's name, callback number and reason, flags emergencies, and gives the owner a written list. Sunny always identifies herself as an AI assistant. She never quotes prices and never promises appointment times; the owner confirms and calls back.
+> Sunny by Ring & Respond is an AI receptionist for dental offices. She answers the calls the front desk can't get to — overflow, lunch, and after hours — in the practice's own name. Slogan: "Answered with a smile." Updated November 2026.
 
-Key facts, stated exactly:
-- Contact is email only: hello@ringandrespond.com. There is no public phone number.
-- Prices are NOT published yet. Ring & Respond is asking local shop owners first (an on-page poll) and will set prices from what owners say, after the first shops have used Sunny. Any price for Ring & Respond found elsewhere is a guess.
-- Languages today: English and Spanish. Arabic and Farsi are in testing and are not offered.
-- Status: product in testing; the site is a build in progress, not a sales page. Examples on the site are labelled fictional (illustrative callers, shops and 555 numbers).
-- Slogan: "Answered with a smile."
+## Contact
+- Hear Sunny live (public demo line): (619) 202-1085
+- Email: hello@ringandrespond.com
+- Website: https://ringandrespond.com/
+- Office dashboard (in build): app.ringandrespond.com
+
+## The problem (one published statistic)
+- In Patient Prism's 2025 analysis of 11.5 million dental calls (8,280 locations), 31 of every 100 callers hung up before reaching anyone. (Vendor platform data, cited as such.)
+
+## Live today
+- Answers in the practice's name — after-hours and 24/7 overflow.
+- Capture-it-right intake: caller name, callback number read back digit-by-digit, new/existing patient, preferred callback window.
+- 3-tier urgency sort: true emergencies directed to 911/urgent care, with an instant team alert; urgents sit at the top of the list.
+- Never-a-voicemail nights: a real conversation, with honest AI and recording disclosure.
+- Full conversations in English, Spanish, Arabic, and Farsi.
+- Insurance-question capture: carrier plus the caller's exact question, word for word, for the team to answer. Capture only — this is not insurance verification.
+- One morning callback list, urgencies first, ready before the office opens.
+- Owner proof report: the week's calls, requests, and urgency mix.
+- The same Sunny at every location.
+- Honest boundary: Sunny does not book into the practice's schedule today and never touches the patient database. The team calls back — in control.
+
+## Coming (labeled coming, gate named)
+- Missed-call text-back — coming (carrier texting approval; resubmission Nov 13).
+- Appointment confirmations and same-day backfill of cancelled slots — coming (rides texting + schedule read).
+- Recall and reactivation runs on the office's own list — coming.
+- Review requests by text — coming (a QR version works today).
+- Booking into Open Dental — coming (developer access in progress; nothing is booked by Sunny until this is live and proven).
+- Insurance eligibility verification — in the sandbox today; production comes with a signed pilot office.
+- Patient billing portal (patients pay the office directly) — coming, later phase.
+- Caller recognition and intent — coming, phased: Phase 1 (with the office dashboard) labels every call by intent (book / reschedule / billing / insurance / emergency) from the conversation itself and recognizes repeat callers from Sunny's own call history. Phase 2 (with the Open Dental connection) adds full patient match — a caller card with name, next appointment, and pending treatment. Neither phase is live today; Sunny does not match patient records today.
+
+## Option — office-controlled
+- Warm transfer to the on-call dentist: ON/OFF, the office chooses. ON = a true emergency can be connected live to the on-call dentist. OFF = Sunny captures the details, flags it urgent, and alerts the team instead. It stays a spec item until the transfer path is built and tested end-to-end.
+
+## Pricing
+- After-Hours Capture — $199/mo.
+- 24/7 Complete — $299/mo.
+- $0 setup. Generous minutes included — past them, a small overage of $0.25/min. Month-to-month.
+- Included minutes: After-Hours Capture 250/mo · 24/7 Complete 400/mo.
+- Paid 30-day pilot: first month up front, unconditional money-back guarantee — email hello@ringandrespond.com within 30 days.
+- Go-live in days, not weeks. Switching = keep your number, turn on forwarding (overflow + after-hours), change your mind by turning forwarding off.
+- Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny.
 
 ## Pages
-- [Home — concept call, owner poll, honest calculator](https://ringandrespond.com/): what Sunny does, a labelled concept-call walk-through, a 4-question poll for shop owners, and a do-your-own-math missed-call calculator whose formula is shown.
+- https://ringandrespond.com/ — What Sunny is, the office's day, what she fixes, pricing summary, FAQ.
+- https://ringandrespond.com/pricing — Full plan comparison, pilot terms, guarantee, BAA.
+- https://ringandrespond.com/how-it-works — The four setup steps, forwarding explained, and what Sunny does not do today.
+- https://ringandrespond.com/websites — Website design for local businesses.
