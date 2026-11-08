@@ -1,14 +1,14 @@
 <style>
 /* Sunny site chat — identical to the homepage chat (panel, knowledge base, signup + callback). */
-:root{--paper:#06170E;--surface:rgba(9,29,19,.94);--surface-2:#173D2A;--muted:#8FAE9B;--teal-dark:#F5C66B;--shadow:0 24px 70px rgba(0,0,0,.55)}
-    .chat-launcher,.chat-panel{--ink:#EDF5EF;--line:rgba(214,240,224,.20);--teal:#E8A33D}
+:root{--paper:#EFF7FB;--surface:rgba(255,255,255,.97);--surface-2:#EFF7FB;--muted:#6E8FA3;--teal-dark:#0B7FA8;--shadow:0 24px 70px rgba(12,80,110,.25)}
+    .chat-launcher,.chat-panel{--ink:#0C2B3E;--line:rgba(12,43,62,.16);--teal:#0E9BC9}
     .skip { position: absolute; left: 8px; top: 8px; z-index: 100; transform: translateY(-180%); background: var(--surface); padding: 10px 14px; }
     .skip:focus { transform: translateY(0); }
     .chat-launcher {
       position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 50;
       min-height: 52px; padding: 0 19px; border: 1.5px solid var(--line); border-radius: 999px;
       display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
-      background: var(--surface); color: var(--ink); box-shadow: 0 10px 30px rgba(0, 0, 0, .5), 0 0 22px rgba(232, 163, 61, .16); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3);
+      background: var(--surface); color: var(--ink); box-shadow: 0 10px 30px rgba(12,80,110,.22), 0 0 22px rgba(53,196,243,.25); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3);
       font: 700 14px "DM Sans", sans-serif;
     }
     .chat-launcher svg { width: 19px; height: 19px; }
@@ -18,7 +18,7 @@
       width: min(380px, calc(100vw - 28px)); max-height: min(590px, calc(100dvh - 110px));
       display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; padding: 0;
       overflow: hidden; border: 1px solid var(--line); border-radius: 22px;
-      background: var(--surface); box-shadow: 0 24px 70px rgba(0, 0, 0, .6), 0 0 44px rgba(21, 185, 129, .10); backdrop-filter: blur(18px) saturate(1.35); -webkit-backdrop-filter: blur(18px) saturate(1.35);
+      background: var(--surface); box-shadow: 0 24px 70px rgba(12,80,110,.28), 0 0 44px rgba(53,196,243,.14); backdrop-filter: blur(18px) saturate(1.35); -webkit-backdrop-filter: blur(18px) saturate(1.35);
     }
     .chat-panel[hidden] { display: none; }
     .chat-header { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 18px 15px; border-bottom: 1px solid var(--line); }
@@ -29,7 +29,7 @@
     .chat-log { min-height: 220px; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 11px; overscroll-behavior: contain; }
     .message { max-width: 88%; padding: 11px 13px; border-radius: 15px; font-size: 14px; line-height: 1.45; }
     .message.assistant { align-self: flex-start; background: var(--surface-2); color: var(--ink); border-bottom-left-radius: 5px; }
-    .message.visitor { align-self: flex-end; background: linear-gradient(135deg, #F5C66B, #E8A33D); color: #221300; border-bottom-right-radius: 5px; }
+    .message.visitor { align-self: flex-end; background: linear-gradient(135deg, #35C4F3, #0E9BC9); color: #FFFFFF; border-bottom-right-radius: 5px; }
     .message a { color: var(--teal-dark); font-weight: 700; }
     .starter-chips { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 2px; }
     .starter-chip { border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; cursor: pointer; background: var(--surface); color: var(--ink); font: 600 12px "DM Sans", sans-serif; }
@@ -39,7 +39,7 @@
     .chat-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 12px; border-top: 1px solid var(--line); background: var(--surface); }
     .chat-form input { min-width: 0; height: 44px; border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; background: var(--paper); color: var(--ink); font: 500 14px "DM Sans", sans-serif; }
     .chat-form input:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
-    .chat-send { width: 44px; height: 44px; border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; background: var(--teal); color: #221300; }
+    .chat-send { width: 44px; height: 44px; border: 0; border-radius: 50%; display: grid; place-items: center; cursor: pointer; background: var(--teal); color: #FFFFFF; }
     .chat-send svg { width: 18px; height: 18px; }
     .signup-card {
       align-self: stretch; padding: 15px; border: 1px solid var(--line); border-radius: 15px;
@@ -58,9 +58,9 @@
     .checkout-button { width: 100%; margin-top: 11px; border: 0; cursor: pointer; }
     .checkout-button:disabled { cursor: not-allowed; opacity: .48; transform: none; }
     .checkout-note { margin: 9px 0 0 !important; font-size: 11px !important; text-align: center; }
-    .placeholder-label { display: inline-flex; margin-top: 8px; padding: 4px 7px; border-radius: 6px; background: rgba(232,163,61,.14); color: var(--teal-dark); font-size: 10px; font-weight: 800; letter-spacing: .02em; }
+    .placeholder-label { display: inline-flex; margin-top: 8px; padding: 4px 7px; border-radius: 6px; background: rgba(18,165,214,.12); color: var(--teal-dark); font-size: 10px; font-weight: 800; letter-spacing: .02em; }
     .restart-signup { margin-top: 8px; border: 0; padding: 0; background: transparent; color: var(--teal-dark); font: 700 12px "DM Sans", sans-serif; cursor: pointer; text-decoration: underline; }
-.chat-form input::placeholder { color: #8FAE9B; }
+.chat-form input::placeholder { color: #6E8FA3; }
 @media (max-width: 560px) {
       .chat-launcher { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); min-height: 48px; padding-inline: 16px; }
       .chat-panel { right: 14px; bottom: calc(74px + env(safe-area-inset-bottom)); width: calc(100vw - 28px); max-height: calc(100dvh - 94px); }
