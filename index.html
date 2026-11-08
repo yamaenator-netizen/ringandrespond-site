@@ -389,9 +389,13 @@ body.es .lang-en-hero{display:none}
 /* === RING GLOW: soft light bloom over the ceiling ring in the hero photo.
    Position: upper-center of the frame, over the ring in assets/hero-h.webp.
    The frame (.video-frame) already clips: position:relative + overflow:hidden. */
-.hero-glow{position:absolute;left:50%;top:11%;width:46%;height:26%;transform:translateX(-50%) scale(1);background:radial-gradient(ellipse at center,rgba(140,220,255,.55) 0%,rgba(140,220,255,.20) 45%,transparent 72%);filter:blur(6px);mix-blend-mode:screen;pointer-events:none;opacity:.25;animation:heroGlow 6s ease-in-out infinite alternate}
-@keyframes heroGlow{from{opacity:.25;transform:translateX(-50%) scale(1)}to{opacity:.6;transform:translateX(-50%) scale(1.03)}}
-@media (prefers-reduced-motion: reduce){.hero-glow{animation:none;opacity:.25}}
+.hero-glow{position:absolute;left:50%;top:11%;width:46%;height:26%;transform:translateX(-50%) scale(1);background:radial-gradient(ellipse at center,rgba(170,232,255,.85) 0%,rgba(140,220,255,.35) 45%,transparent 72%);filter:blur(6px);mix-blend-mode:screen;pointer-events:none;opacity:.35;animation:heroGlow 6s ease-in-out infinite alternate}
+@keyframes heroGlow{from{opacity:.35;transform:translateX(-50%) scale(1)}to{opacity:.95;transform:translateX(-50%) scale(1.04)}}
+.hero-glow-tint{position:absolute;left:50%;top:11%;width:46%;height:26%;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(18,165,214,.34) 0%,rgba(18,165,214,.12) 50%,transparent 72%);mix-blend-mode:multiply;pointer-events:none;opacity:.25;animation:heroTint 6s ease-in-out infinite alternate}
+@keyframes heroTint{from{opacity:.25}to{opacity:.9}}
+.hero-glow-arc{position:absolute;left:50%;top:11%;width:46%;height:26%;transform:translateX(-50%);background:conic-gradient(from 0deg,transparent 0deg,rgba(190,240,255,.95) 42deg,transparent 96deg);-webkit-mask:radial-gradient(ellipse at center,transparent 56%,#000 63%,#000 71%,transparent 79%);mask:radial-gradient(ellipse at center,transparent 56%,#000 63%,#000 71%,transparent 79%);mix-blend-mode:screen;filter:blur(2px);pointer-events:none;animation:heroArc 9s linear infinite}
+@keyframes heroArc{from{transform:translateX(-50%) rotate(0deg)}to{transform:translateX(-50%) rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.hero-glow{animation:none;opacity:.35}.hero-glow-tint{animation:none;opacity:.25}.hero-glow-arc{animation:none;opacity:0}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -532,6 +536,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <div class="video-frame">
         <img src="assets/hero-h.webp" alt="A bright, modern dental reception — Sunny's daylight pod: a curved white desk, a smiling team member with a headset, and calm cyan light." width="1200" height="900">
         <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-glow-tint" aria-hidden="true"></div>
+        <div class="hero-glow-arc" aria-hidden="true"></div>
       </div>
     </div>
       <div class="work-card card-beside" aria-hidden="true">
