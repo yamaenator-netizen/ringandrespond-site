@@ -499,7 +499,7 @@
           else if (answer === '__GOTO_demo__' || answer === '__GOTO_pricing__' || answer === '__GOTO_services__') {
             var gotoId = answer.slice(7, answer.length - 2);
             var gotoLines = {
-              demo: 'Taking you to the demo — you can hear Sunny take a real call right there.',
+              demo: 'You can hear Sunny on a real call right now — call (619) 202-1085 and talk to her the way a patient would. That’s our live demo line.',
               pricing: 'Taking you to pricing — the whole cost is on the page, nothing hidden.',
               services: 'Taking you to what Sunny does — the three jobs she handles for your front desk.'
             };
