@@ -2,6 +2,9 @@
 
 > Sunny by Ring & Respond is an AI receptionist for dental offices. She answers the calls the front desk can't get to — overflow, lunch, and after hours — in the practice's own name. Slogan: "Answered with a smile." Updated November 2026.
 
+## In one sentence
+Sunny turns every missed call into a name, a number, and a next step — sorted before you open.
+
 ## Contact
 - Hear Sunny live (public demo line): (619) 202-1085
 - Email: hello@ringandrespond.com
@@ -34,7 +37,7 @@
 - Caller recognition and intent — coming, phased: Phase 1 (with the office dashboard) labels every call by intent (book / reschedule / billing / insurance / emergency) from the conversation itself and recognizes repeat callers from Sunny's own call history. Phase 2 (with the Open Dental connection) adds full patient match — a caller card with name, next appointment, and pending treatment. Neither phase is live today; Sunny does not match patient records today.
 
 ## Option — office-controlled
-- Warm transfer to the on-call dentist: ON/OFF, the office chooses. ON = a true emergency can be connected live to the on-call dentist. OFF = Sunny captures the details, flags it urgent, and alerts the team instead. It stays a spec item until the transfer path is built and tested end-to-end.
+- Warm transfer to the on-call dentist: NOT AVAILABLE YET — a spec item until the transfer path is built and tested end-to-end. When it ships, it is an office-controlled ON/OFF option: ON = a true emergency can be connected live to the on-call dentist. OFF = Sunny captures the details, flags it urgent, and alerts the team instead.
 
 ## Pricing
 - After-Hours Capture — $199/mo.

@@ -395,6 +395,71 @@ body.es .lang-en-hero{display:none}
 
 
 
+/* [GRAFT 8] Sample C rollout (2026-11-08, boss: "Put Sample C on the website")
+   — Morning List artifact (full list, continuous scroll) + comparison table */
+/* Morning List artifact */
+.ml-lede{max-width:760px}
+.one-line{margin:20px 0 4px;background:var(--ink);color:#EAF6FB;border-radius:14px;padding:16px 20px;font-size:16.5px;max-width:880px}
+.one-line strong{color:#fff}
+.ml-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden;max-width:880px;margin:24px 0 0;text-align:left}
+.ml-card-head{background:var(--ink);color:#D9EEF7;padding:16px 22px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.ml-card-head .t{font-size:17.5px;font-weight:800;color:#fff}
+.ml-card-head .s{font-size:13.5px;color:#9FC6DA}
+.ml-sample{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.1em;background:#24425A;color:#CFE9F5;padding:4px 10px;border-radius:999px}
+.ml-scroll{overflow:hidden;position:relative}
+.ml-track{animation:mlScroll 30s linear infinite}
+.ml-scroll:hover .ml-track,.ml-scroll:focus-within .ml-track{animation-play-state:paused}
+@keyframes mlScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.ml-row{display:grid;grid-template-columns:118px 1fr;gap:4px 16px;padding:15px 22px;border-top:1px solid var(--line)}
+.ml-set .ml-row:first-child{border-top:none}
+.ml-row .when{font-size:13px;color:var(--muted);font-weight:700;padding-top:2px}
+.ml-row .what{font-size:15.5px;color:var(--body)}
+.ml-row .what b{color:var(--ink)}
+.ml-row .how{grid-column:2;font-size:13.5px;color:var(--muted)}
+.ml-row .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.ml-chip{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--tag-bg);color:var(--tag-ink);white-space:nowrap}
+.ml-foot{background:var(--band);padding:13px 22px;font-size:14.5px;color:var(--body)}
+.ml-foot b{color:var(--accent-ink)}
+.ml-steps-h{font-size:23px;margin-top:46px}
+.ml-sub{color:var(--muted);margin-bottom:4px}
+.ml-steps{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px;max-width:880px}
+@media(min-width:720px){.ml-steps{grid-template-columns:1fr 1fr 1fr}}
+.ml-step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.ml-step .n{font-size:12.5px;font-weight:800;letter-spacing:.12em;color:var(--accent-ink)}
+.ml-step h3{font-size:17px;margin:4px 0}
+.ml-step p{font-size:14.5px;margin:0;color:var(--body)}
+.ml-boundary{max-width:880px;margin-top:18px}
+@media(max-width:640px){.ml-row{grid-template-columns:1fr}.ml-row .how{grid-column:1}}
+@media (prefers-reduced-motion: reduce){.ml-track{animation:none}}
+
+/* Pricing comparison table (VERDICTS §3 format) */
+.pt-wrap{overflow-x:auto;margin-top:22px;padding-bottom:6px;text-align:left}
+.ptable{display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));min-width:800px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.pcol{padding:0 0 20px;position:relative}
+.pcol + .pcol{border-left:1px solid var(--line)}
+.pcol .rule{height:6px}
+.pcol.c1 .rule{background:var(--muted)}.pcol.c2 .rule{background:var(--accent)}.pcol.c3 .rule{background:#A47C52}.pcol.c4 .rule{background:var(--ink)}
+.pcol .pop{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.04em;padding:7px 18px;border-radius:0 0 12px 12px;white-space:nowrap;z-index:1}
+.pcol h3{text-align:center;font-size:20px;margin:36px 12px 2px}
+.pcol.c2 h3{margin-top:46px}
+.pcol .tag{text-align:center;font-size:13px;color:var(--muted);padding:0 14px;min-height:38px;margin:0}
+.pill{margin:10px auto 4px;width:fit-content;color:#fff;font-weight:800;font-size:26px;padding:9px 24px;border-radius:999px;line-height:1.2}
+.pill small{font-size:13px;font-weight:600;opacity:.85}
+.pcol.c1 .pill{background:var(--muted)}.pcol.c2 .pill{background:var(--accent)}.pcol.c3 .pill{background:#A47C52}.pcol.c4 .pill{background:var(--ink)}
+.pstatus{text-align:center;margin:8px 0 12px}
+.prow{display:flex;gap:9px;align-items:flex-start;padding:11px 16px;font-size:13.8px;min-height:66px;color:var(--body);margin:0}
+.prow.alt{background:#F4FAFD}
+.prow .mk{font-weight:900;font-size:15px;line-height:1.35;flex:none}
+.prow.yes .mk{color:var(--accent-ink)}
+.pcol.c3 .prow.yes .mk{color:#8A5A14}
+.pcol.c4 .prow.yes .mk{color:var(--ink)}
+.prow.no{color:#A9BEC9}.prow.no .mk{color:#C4D6DF}
+.prow.txt{justify-content:center;font-weight:800;color:var(--ink);font-size:15.5px;align-items:center;text-align:center}
+.pbtn{display:block;margin:14px 16px 0;text-align:center;border:2px solid var(--ink);color:var(--ink);font-weight:700;padding:11px 10px;border-radius:999px;font-size:15px;background:#fff;cursor:pointer;width:calc(100% - 32px);font-family:inherit;text-decoration:none}
+.pcol.c2 .pbtn{background:var(--accent);border-color:var(--accent);color:#fff}
+.pbtn.soon{border-color:var(--line);color:var(--muted)}
+.pgate{font-size:12.3px;color:var(--coming-ink);padding:10px 16px 0;text-align:center;margin:0}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -573,7 +638,96 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <!-- 4. The Day — cause to solution pairs -->
 <section class="day" id="day">
   <div class="wrap">
-    <h2>You know these moments. They happen every week.</h2>
+    <h2>Don't buy a feature list. Buy <span class="grad">this</span> — on your counter, every morning.</h2>
+    <p class="ml-lede">Sunny is the AI receptionist who answers the calls your front desk can't get to — overflow, lunch, after hours — in your practice's own name. What you actually get for that is below: the morning callback list, urgencies first. Everything after it is just how it gets there.</p>
+    <div class="one-line">The one-sentence version: <strong>Sunny turns every missed call into a name, a number, and a next step — sorted before you open.</strong></div>
+
+    <div class="ml-card" role="img" aria-label="A sample morning callback list as Sunny delivers it">
+      <div class="ml-card-head">
+        <span class="t">Morning callback list — Your Dental Practice</span>
+        <span class="s">Ready before you open · urgencies first</span>
+        <span class="ml-sample">SAMPLE</span>
+      </div>
+      <div class="ml-scroll" id="mlScroll"><div class="ml-track">
+        <div class="ml-set">
+          <div class="ml-row">
+            <div class="when">9:47 p.m.</div>
+            <div class="what"><div class="tags"><span class="urgent-tag">URGENT</span></div><b>Caller in pain.</b> Directed to call 911 / urgent care right away; your team alerted instantly. Callback first this morning.</div>
+            <div class="how">Answered after hours — no voicemail. Name and number captured, read back digit-by-digit.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">12:41 p.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">New patient</span></div><b>Cleaning request.</b> Called during lunch; prefers morning appointments; asked to be called back before noon.</div>
+            <div class="how">Answered during the lunch gap and flagged NEW PATIENT — the callers worth the most don't blend in.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">7:52 a.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Existing patient</span></div><b>Needs to move Thursday's appointment.</b> Number confirmed digit-by-digit.</div>
+            <div class="how">Answered on line two while your desk was with the patient at the counter.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">10:05 a.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Spanish</span></div><b>Full conversation held in Spanish.</b> Toothache since Sunday; wants the first available slot.</div>
+            <div class="how">Sunny speaks English, Spanish, Arabic, and Farsi — the whole call, not a phrase book.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">3:12 p.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Insurance question</span></div><b>Carrier noted; the caller's exact question saved word-for-word</b> for your team to answer.</div>
+            <div class="how">Sunny never guesses at coverage — she captures the question exactly, and your team answers it right.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">4:48 p.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Billing question</span></div><b>“What do I owe and why?”</b> — exact words saved, validated callback number attached.</div>
+            <div class="how">The patient hears “the office will call you with the exact answer” — never a guessed balance.</div>
+          </div>
+        </div>
+        <div class="ml-set" aria-hidden="true">
+          <div class="ml-row">
+            <div class="when">9:47 p.m.</div>
+            <div class="what"><div class="tags"><span class="urgent-tag">URGENT</span></div><b>Caller in pain.</b> Directed to call 911 / urgent care right away; your team alerted instantly. Callback first this morning.</div>
+            <div class="how">Answered after hours — no voicemail. Name and number captured, read back digit-by-digit.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">12:41 p.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">New patient</span></div><b>Cleaning request.</b> Called during lunch; prefers morning appointments; asked to be called back before noon.</div>
+            <div class="how">Answered during the lunch gap and flagged NEW PATIENT — the callers worth the most don't blend in.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">7:52 a.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Existing patient</span></div><b>Needs to move Thursday's appointment.</b> Number confirmed digit-by-digit.</div>
+            <div class="how">Answered on line two while your desk was with the patient at the counter.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">10:05 a.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Spanish</span></div><b>Full conversation held in Spanish.</b> Toothache since Sunday; wants the first available slot.</div>
+            <div class="how">Sunny speaks English, Spanish, Arabic, and Farsi — the whole call, not a phrase book.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">3:12 p.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Insurance question</span></div><b>Carrier noted; the caller's exact question saved word-for-word</b> for your team to answer.</div>
+            <div class="how">Sunny never guesses at coverage — she captures the question exactly, and your team answers it right.</div>
+          </div>
+          <div class="ml-row">
+            <div class="when">4:48 p.m.</div>
+            <div class="what"><div class="tags"><span class="ml-chip">Billing question</span></div><b>“What do I owe and why?”</b> — exact words saved, validated callback number attached.</div>
+            <div class="how">The patient hears “the office will call you with the exact answer” — never a guessed balance.</div>
+          </div>
+        </div>
+      </div></div>
+      <div class="ml-foot"><b>Owner's copy:</b> the week's proof report — every call, every request, the urgency mix. What happens on your phones stops being a rumor.</div>
+    </div>
+
+    <h3 class="ml-steps-h">How a row gets on the list</h3>
+    <p class="ml-sub">Three steps, all live today.</p>
+    <div class="ml-steps">
+      <div class="ml-step"><div class="n">STEP 1</div><h3>She answers in your name</h3><p>Overflow, lunch, after hours — the calls your desk can't reach get a real conversation, on the first ring she can take. She says she's an AI, and the call is recorded — honestly, out loud.</p></div>
+      <div class="ml-step"><div class="n">STEP 2</div><h3>She captures it right</h3><p>Name, callback number read back digit-by-digit (so the callback actually connects), new or existing patient, preferred callback window, and the exact words for anything she shouldn't answer herself.</p></div>
+      <div class="ml-step"><div class="n">STEP 3</div><h3>She sorts by urgency</h3><p>Three tiers, on the spot. True emergencies are directed to 911 or urgent care with an instant alert to your team. Urgents sit on top of the morning list. Everything else, in order.</p></div>
+    </div>
+
+    <div class="boundary ml-boundary"><strong>The honest line — what Sunny never does.</strong> Sunny does <strong>not</strong> book into your schedule and never touches your patient database. The list is hers; the callbacks — and the control — stay yours. Groups get the same Sunny, same discipline, at every location.</div>
+
+    <h2 style="margin-top:56px">You know these moments. They happen every week.</h2>
     <p>Nothing below is a staffing failure. It is one front desk, one phone, and a day that keeps colliding with itself. One answer for each moment — working today. Everything in this section is LIVE today. Anything that is not live yet is in the Coming section below, labeled as coming, with the reason for the wait stated in plain words.</p>
 
     <div class="mrows">
@@ -703,8 +857,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       </div>
     </div>
     <div class="note-box wt-card">
-      <div class="wt-head"><h3>Warm transfer — your switch, your call.</h3><span class="badge badge-option">OPTION — YOUR OFFICE CHOOSES</span></div>
-      <p class="wt-lead">A true emergency calls at 2 a.m. Your office picks what Sunny does:</p>
+      <div class="wt-head"><h3>Warm transfer — your switch, your call.</h3><span class="badge badge-coming">COMING — NOT AVAILABLE YET</span></div>
+      <p class="wt-lead">A true emergency calls at 2 a.m. When warm transfer ships, your office picks what Sunny does:</p>
       <div class="wt-grid">
         <div class="wt-opt on"><p class="wt-switch">Switch ON</p><p>Sunny connects the caller live to your on-call dentist.</p></div>
         <div class="wt-opt off"><p class="wt-switch">Switch OFF</p><p>Sunny captures the details, flags it urgent, and alerts your team instantly — first call on the morning list.</p></div>
@@ -718,32 +872,60 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <section id="pricing">
   <div class="aurora" aria-hidden="true"><i class="o2"></i></div>
   <div class="wrap center">
-    <h2>Two plans. No setup fee. A pilot you can undo.</h2>
-    <div class="price-cards">
-      <div class="price-card">
-        <h3>After-Hours Capture</h3>
-        <p class="price">$199/mo</p>
-        <p>For offices whose days are covered but whose nights, evenings, and lunch hours are not. Sunny answers after hours in your practice's name, captures every caller properly, sorts by urgency, and leaves one morning callback list.</p>
+    <h2>What it costs — every plan, side by side</h2>
+    <p style="max-width:760px;margin:0 auto">$0 setup. Month-to-month. Generous minutes included — past them, a small overage of $0.25 a minute. Go-live in days, not weeks.</p>
+    <div class="pt-wrap"><div class="ptable">
+      <div class="pcol c1"><div class="rule"></div><h3>After-Hours Capture</h3><p class="tag">Your nights &amp; weekends, covered</p><div class="pill">$199 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-live">LIVE TODAY</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
+        <div class="prow no alt"><span class="mk">✕</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>English · Spanish · Arabic · Farsi</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Weekly proof report for the owner</span></div>
+        <div class="prow txt alt"><span>250 talk minutes included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
+        <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
+        <button type="button" class="pbtn" data-start-signup>Get This Plan</button>
       </div>
-      <div class="price-card featured">
-        <h3>24/7 Complete</h3>
-        <p class="price">$299/mo</p>
-        <p>Everything in After-Hours Capture, around the clock: daytime overflow, the lunch gap, and the Monday avalanche included. Whenever the front desk can't pick up, Sunny does.</p>
+      <div class="pcol c2"><div class="pop">Most Popular</div><div class="rule"></div><h3>24/7 Complete</h3><p class="tag">The full day — overflow, lunch, after hours</p><div class="pill">$299 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-live">LIVE TODAY</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>English · Spanish · Arabic · Farsi</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Weekly proof report for the owner</span></div>
+        <div class="prow txt alt"><span>400 talk minutes included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
+        <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
+        <button type="button" class="pbtn" data-start-signup>Get This Plan</button>
       </div>
-    </div>
-    <p><strong>$0 setup.</strong> Generous minutes included — past them, a small overage of $0.25 a minute. Month-to-month. Go-live in days, not weeks.</p>
-    <div class="price-cards">
-      <div class="price-card" style="border-style:dashed">
-        <h3>Booked <span class="badge badge-coming">COMING</span></h3>
-        <p class="price">$449/mo</p>
-        <p>Sunny booking directly into your practice's system — Open Dental first. It starts when direct booking is live and proven; until then she captures, and your team books. Already a Capture or Complete customer on a supported system? You keep your introductory price when Booked launches.</p>
+      <div class="pcol c3"><div class="rule"></div><h3>Booked</h3><p class="tag">The list starts booking itself</p><div class="pill">$449 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>English · Spanish · Arabic · Farsi</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Weekly proof report for the owner</span></div>
+        <div class="prow txt alt"><span>400 talk minutes included</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Books into your system (Open Dental first)</span></div>
+        <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
+        <a class="pbtn soon" href="mailto:hello@ringandrespond.com?subject=Join%20the%20list%20—%20Booked">Coming — join the list</a>
+        <p class="pgate">Not sold today. Existing customers on a supported system keep their introductory price when it launches.</p>
       </div>
-      <div class="price-card" style="border-style:dashed">
-        <h3>Complete System <span class="badge badge-coming">COMING</span></h3>
-        <p class="price">$549/mo</p>
-        <p>24/7 answering plus insurance eligibility checking — 500 minutes and 300 checks included each month. Sold only once its automated checking passes our own measured labor test; until then, not sold at any price.</p>
+      <div class="pcol c4"><div class="rule"></div><h3>Complete System</h3><p class="tag">Answering + insurance checks</p><div class="pill">$549 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>English · Spanish · Arabic · Farsi</span></div>
+        <div class="prow yes"><span class="mk">✓</span><span>Weekly proof report for the owner</span></div>
+        <div class="prow txt alt"><span>500 talk minutes included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>Insurance eligibility checks — 300/mo included</span></div>
+        <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
+        <a class="pbtn soon" href="mailto:hello@ringandrespond.com?subject=Join%20the%20list%20—%20Complete%20System">Coming — join the list</a>
+        <p class="pgate">Sold only once its automated checking passes our measured labor test — until then, not sold at any price.</p>
       </div>
-    </div>
+    </div></div>
     <div class="tband">
       <p class="tband-intro">Two plans are live today; Booked and the Complete System are priced in the open and labeled coming — never charged for before they exist.</p>
       <div class="tband-grid">
@@ -965,7 +1147,7 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
          taps). Anything that happens while the file is in flight is
          queued here and replayed by the brain the moment it
          initializes - no lost first message, no dead first click. */
-      var BRAIN_URL = '/chat-brain.js?v=072b2f0d12';
+      var BRAIN_URL = '/chat-brain.js?v=b59bc05eb3';
       var shellLauncher = document.getElementById('chatLauncher');
       var shellForm = document.getElementById('chatForm');
       var shellInput = document.getElementById('chatInput');
@@ -1050,6 +1232,16 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
       else window.addEventListener('load', armIdleWake);
     }());
   </script>
+
+<script>
+/* Morning List viewport fit: the scroll window is exactly one set tall,
+   so the duplicated set loops seamlessly. Refit on resize + load. */
+(function () {
+  var v = document.getElementById('mlScroll'); if (!v) return;
+  function fit() { var set = v.querySelector('.ml-set'); if (set) v.style.height = set.offsetHeight + 'px'; }
+  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+})();
+</script>
 
 <script>
 /* Rotating proof strip: calm crossfade, one line at a time.
