@@ -42,8 +42,8 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 ## Pricing
 - After-Hours Capture — $199/mo.
 - 24/7 Complete — $299/mo.
-- $0 setup. Generous minutes included — past them, a small overage of $0.25/min. Month-to-month.
-- Included minutes: After-Hours Capture 250/mo · 24/7 Complete 400/mo.
+- $0 setup. Minutes included: 500 a month on After-Hours Capture, 1,000 on 24/7 Complete — past them, a small overage of $0.25/min. Month-to-month.
+- Included minutes: After-Hours Capture 500/mo · 24/7 Complete 1,000/mo · Booked 1,000/mo · Complete System 1,500/mo.
 - Paid 30-day pilot: first month up front, unconditional money-back guarantee — email hello@ringandrespond.com within 30 days.
 - Go-live in days, not weeks. Switching = keep your number, turn on forwarding (overflow + after-hours), change your mind by turning forwarding off.
 - Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny.
