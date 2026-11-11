@@ -312,6 +312,7 @@ body.es .lang-en-hero{display:none}
 .tcard h3{font-size:17.5px;margin-bottom:6px}
 .tcard p{font-size:15px;line-height:1.55;margin:0;color:var(--body)}
 .tband-cta{text-align:center;margin-top:22px;font-size:16.5px;color:var(--body)}
+.tband-cta a{color:#096E94} /* 5.34:1 on the page ground; --accent-ink measured 4.25:1 there (pricing sample fix) */
 
 /* [GRAFT 4] Switching — connected stepper (replaces .steps cards) */
 .stepper{list-style:none;display:grid;grid-template-columns:1fr;gap:0;margin-top:34px;position:relative;padding:0}
@@ -432,33 +433,78 @@ body.es .lang-en-hero{display:none}
 @media(max-width:640px){.ml-row{grid-template-columns:1fr}.ml-row .how{grid-column:1}}
 @media (prefers-reduced-motion: reduce){.ml-track{animation:none}}
 
-/* Pricing comparison table (VERDICTS §3 format) */
-.pt-wrap{overflow-x:auto;margin-top:22px;padding-bottom:6px;text-align:left}
-.ptable{display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));min-width:800px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm)}
-.pcol{padding:0 0 20px;position:relative}
-.pcol + .pcol{border-left:1px solid var(--line)}
-.pcol .rule{height:6px}
-.pcol.c1 .rule{background:var(--muted)}.pcol.c2 .rule{background:var(--accent)}.pcol.c3 .rule{background:#A47C52}.pcol.c4 .rule{background:var(--ink)}
-.pcol .pop{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.04em;padding:7px 18px;border-radius:0 0 12px 12px;white-space:nowrap;z-index:1}
-.pcol h3{text-align:center;font-size:20px;margin:36px 12px 2px}
-.pcol.c2 h3{margin-top:46px}
-.pcol .tag{text-align:center;font-size:13px;color:var(--muted);padding:0 14px;min-height:38px;margin:0}
-.pill{margin:10px auto 4px;width:fit-content;color:#fff;font-weight:800;font-size:26px;padding:9px 24px;border-radius:999px;line-height:1.2}
-.pill small{font-size:13px;font-weight:600;opacity:.85}
-.pcol.c1 .pill{background:var(--muted)}.pcol.c2 .pill{background:var(--accent)}.pcol.c3 .pill{background:#A47C52}.pcol.c4 .pill{background:var(--ink)}
-.pstatus{text-align:center;margin:8px 0 12px}
-.prow{display:flex;gap:9px;align-items:flex-start;padding:11px 16px;font-size:13.8px;min-height:66px;color:var(--body);margin:0}
+/* Pricing — Option C (T2 Two Families + broken gradient thread), ported from the
+   Brain-B-signed sample (design-team/pricing-sample-20261110/sample.html, 92/100).
+   Desktop: rows align across plans via subgrid. Phone: manual snap-scroll carousel,
+   user-driven only (no auto-advance). Mid widths (641-1023px): 2x2 natural flow. */
+.thread{display:grid;grid-template-columns:repeat(4,1fr);gap:0 16px;margin:30px 0 14px}
+.thread .t-live{grid-column:1/3;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--live-ink),var(--accent))}
+.thread .t-coming{grid-column:3/5;margin-left:26px;display:flex;gap:0}
+.thread .t-coming i{flex:1;height:6px}
+.thread .t-coming i:first-child{background:repeating-linear-gradient(90deg,#A47C52 0 14px,transparent 14px 24px)}
+.thread .t-coming i:last-child{background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 24px)}
+.ptable{display:grid;grid-template-columns:repeat(4,1fr);gap:0 16px;text-align:left;
+  grid-template-rows:36px auto minmax(40px,auto) minmax(58px,auto) 34px repeat(9,minmax(66px,auto)) auto}
+.pcol{display:grid;grid-template-rows:subgrid;grid-row:1/-1;border-radius:16px;overflow:hidden;
+  background:var(--panel);border:1.5px solid var(--line);box-shadow:var(--shadow-sm);position:relative;padding-bottom:20px}
+.pcol .rule{height:6px;background:var(--live-ink)}
+.pcol.featured{background:var(--panel2);border:2px solid var(--accent-ink);box-shadow:var(--shadow-lg)}
+.pcol.featured .rule{background:linear-gradient(90deg,var(--live-ink),var(--accent))}
+.pcol .pop{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--accent-ink);color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.04em;padding:7px 18px;border-radius:0 0 12px 12px;white-space:nowrap;z-index:1}
+.pcol.coming{background:var(--coming-bg);border:1.5px dashed var(--coming-ink)}
+.pcol h3{text-align:center;font-size:20px;margin:4px 12px 2px}
+.pcol .tag{text-align:center;font-size:13px;color:#4E7185;padding:0 14px;margin:0}
+.pillrow{display:flex;align-items:flex-start;justify-content:center}
+.pill{margin:6px auto 0;width:fit-content;color:#fff;font-weight:800;font-size:26px;padding:9px 24px;border-radius:999px;line-height:1.2;white-space:nowrap}
+.pill small{font-size:13px;font-weight:600}
+.pcol.c1 .pill{background:#4E7185}
+.pcol.featured .pill{background:var(--accent-ink)}
+.pcol.coming .pill{background:transparent;color:var(--ink);border:2px dashed var(--coming-ink)}
+.pstatus{text-align:center;margin:6px 0 2px}
+.ptable .badge-coming{background:#fff;color:#7A520E;border:1.5px dashed var(--coming-ink)}
+.prow{display:flex;gap:9px;align-items:flex-start;padding:11px 16px;font-size:13.8px;color:var(--body);margin:0}
 .prow.alt{background:#F4FAFD}
+.pcol.coming .prow.alt{background:transparent;box-shadow:inset 0 1px 0 rgba(164,124,82,.18),inset 0 -1px 0 rgba(164,124,82,.18)}
 .prow .mk{font-weight:900;font-size:15px;line-height:1.35;flex:none}
 .prow.yes .mk{color:var(--accent-ink)}
-.pcol.c3 .prow.yes .mk{color:#8A5A14}
-.pcol.c4 .prow.yes .mk{color:var(--ink)}
-.prow.no{color:#A9BEC9}.prow.no .mk{color:#C4D6DF}
+.pcol.coming .prow.yes .mk{color:#8A5A14}
+.prow.no{color:var(--muted)}
+.prow.no .mk{color:var(--muted)}
 .prow.txt{justify-content:center;font-weight:800;color:var(--ink);font-size:15.5px;align-items:center;text-align:center}
-.pbtn{display:block;margin:14px 16px 0;text-align:center;border:2px solid var(--ink);color:var(--ink);font-weight:700;padding:11px 10px;border-radius:999px;font-size:15px;background:#fff;cursor:pointer;width:calc(100% - 32px);font-family:inherit;text-decoration:none}
-.pcol.c2 .pbtn{background:var(--accent);border-color:var(--accent);color:#fff}
-.pbtn.soon{border-color:var(--line);color:var(--muted)}
-.pgate{font-size:12.3px;color:var(--coming-ink);padding:10px 16px 0;text-align:center;margin:0}
+.action{padding:2px 16px 0;text-align:center}
+.pbtn{display:block;width:100%;text-align:center;border:2px solid var(--ink);color:var(--ink);font-weight:700;padding:11px 10px;border-radius:999px;font-size:15px;background:#fff;cursor:pointer;font-family:inherit;text-decoration:none}
+.pcol.featured .pbtn{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
+.joinlink{display:inline-block;margin-top:10px;padding:6px 4px;font-size:15px;font-weight:700;color:#7A520E;text-decoration:underline;text-underline-offset:4px}
+.action .soon-note{border-top:1.5px dashed var(--coming-ink);margin:0 4px;padding-top:12px;font-size:12.5px;color:#7A520E;font-weight:700;letter-spacing:.02em}
+.pgate{font-size:12.3px;color:#7A520E;padding:8px 10px 0;text-align:center;margin:0}
+.controls{display:none}
+@media(max-width:640px){
+  .ptable{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-20px;margin-right:-20px;padding:6px 20px 16px;scrollbar-width:none}
+  .ptable::-webkit-scrollbar{display:none}
+  .pcol{flex:0 0 84%;scroll-snap-align:center;display:flex;flex-direction:column}
+  .pcol.featured{padding-top:28px}
+  .pcol .prow{min-height:0}
+  .pcol .action{margin-top:auto}
+  .controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:2px}
+  .car-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:19px;font-weight:800;cursor:pointer;line-height:1;font-family:inherit}
+  .dots{display:flex;gap:10px}
+  .dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--accent-ink);background:transparent;cursor:pointer;padding:0}
+  .dot[aria-current="true"]{background:var(--accent-ink)}
+}
+@media(min-width:641px) and (max-width:1023px){
+  .ptable{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:18px}
+  .pcol{grid-row:auto;display:flex;flex-direction:column}
+  .pcol .action{margin-top:auto}
+  .pcol.featured{padding-top:28px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ptable{scroll-snap-type:none}
+}
+@media(max-width:640px) and (prefers-reduced-motion:reduce){
+  .ptable{display:block;overflow:visible;padding:0;margin-left:0;margin-right:0}
+  .pcol{width:100%;margin-bottom:16px}
+  .controls{display:none}
+}
 
 </style>
 <script type="application/ld+json">
@@ -1092,8 +1138,9 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   <div class="wrap center">
     <h2>What it costs — every plan, side by side</h2>
     <p style="max-width:760px;margin:0 auto">$0 setup. Month-to-month. 500 minutes included on Capture, 1,000 on Complete — past them, a small overage of $0.25 a minute. Go-live in days, not weeks.</p>
-    <div class="pt-wrap"><div class="ptable">
-      <div class="pcol c1"><div class="rule"></div><h3>After-Hours Capture</h3><p class="tag">Your nights &amp; weekends, covered</p><div class="pill">$199 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-live">LIVE TODAY</span></div>
+    <div class="thread" aria-hidden="true"><div class="t-live"></div><div class="t-coming"><i></i><i></i></div></div>
+    <div class="ptable" id="ptable" tabindex="0" aria-label="Plan comparison. On small screens, swipe or use the arrow buttons to move between plans.">
+      <div class="pcol c1"><div><div class="rule"></div></div><h3>After-Hours Capture</h3><p class="tag">Your nights &amp; weekends, covered</p><div class="pillrow"><div class="pill">$199 <small>/ Month</small></div></div><div class="pstatus"><span class="badge badge-live">LIVE TODAY</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
         <div class="prow no alt"><span class="mk">✕</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
@@ -1103,9 +1150,9 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
         <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
         <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
-        <button type="button" class="pbtn" data-start-signup>Get This Plan</button>
+        <div class="action"><button type="button" class="pbtn" data-start-signup>Get This Plan</button></div>
       </div>
-      <div class="pcol c2"><div class="pop">Most Popular</div><div class="rule"></div><h3>24/7 Complete</h3><p class="tag">The full day — overflow, lunch, after hours</p><div class="pill">$299 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-live">LIVE TODAY</span></div>
+      <div class="pcol c2 featured"><div><div class="rule"></div><div class="pop">Most Popular</div></div><h3>24/7 Complete</h3><p class="tag">The full day — overflow, lunch, after hours</p><div class="pillrow"><div class="pill">$299 <small>/ Month</small></div></div><div class="pstatus"><span class="badge badge-live">LIVE TODAY</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
         <div class="prow yes alt"><span class="mk">✓</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
@@ -1115,9 +1162,9 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
         <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
         <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
-        <button type="button" class="pbtn" data-start-signup>Get This Plan</button>
+        <div class="action"><button type="button" class="pbtn" data-start-signup>Get This Plan</button></div>
       </div>
-      <div class="pcol c3"><div class="rule"></div><h3>Booked</h3><p class="tag">The list starts booking itself</p><div class="pill">$449 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
+      <div class="pcol c3 coming"><div></div><h3>Booked</h3><p class="tag">The list starts booking itself</p><div class="pillrow"><div class="pill">$449 <small>/ Month</small></div></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
         <div class="prow yes alt"><span class="mk">✓</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
@@ -1127,10 +1174,9 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <div class="prow yes"><span class="mk">✓</span><span>Books into your system (Open Dental first)</span></div>
         <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
         <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
-        <a class="pbtn soon" href="mailto:hello@ringandrespond.com?subject=Join%20the%20list%20—%20Booked">Coming — join the list</a>
-        <p class="pgate">Not sold today. Existing customers on a supported system keep their introductory price when it launches.</p>
+        <div class="action"><p class="soon-note">NOT SOLD TODAY</p><a class="joinlink" href="mailto:hello@ringandrespond.com?subject=Join%20the%20list%20—%20Booked">Coming — join the list</a><p class="pgate">Not sold today — Sunny books nothing until direct booking into your system (Open Dental first) is live and proven. Existing customers on a supported system keep their introductory price when it launches.</p></div>
       </div>
-      <div class="pcol c4"><div class="rule"></div><h3>Complete System</h3><p class="tag">Answering + insurance checks</p><div class="pill">$549 <small>/ Month</small></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
+      <div class="pcol c4 coming"><div></div><h3>Complete System</h3><p class="tag">Answering + insurance checks</p><div class="pillrow"><div class="pill">$549 <small>/ Month</small></div></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
         <div class="prow yes alt"><span class="mk">✓</span><span>Daytime overflow &amp; lunch-hour answering (24/7)</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>Morning callback list — urgencies first</span></div>
@@ -1138,12 +1184,21 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <div class="prow yes"><span class="mk">✓</span><span>Weekly proof report for the owner</span></div>
         <div class="prow txt alt"><span>1,500 talk minutes included</span></div>
         <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
-        <div class="prow yes alt"><span class="mk">✓</span><span>Insurance eligibility checks — 300/mo included</span></div>
+        <div class="prow yes alt"><span class="mk">✓</span><span>Insurance eligibility checks — 300/mo included, $1.95/check past that</span></div>
         <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
-        <a class="pbtn soon" href="mailto:hello@ringandrespond.com?subject=Join%20the%20list%20—%20Complete%20System">Coming — join the list</a>
-        <p class="pgate">Sold only once its automated checking passes our measured labor test — until then, not sold at any price.</p>
+        <div class="action"><p class="soon-note">NOT SOLD TODAY</p><a class="joinlink" href="mailto:hello@ringandrespond.com?subject=Join%20the%20list%20—%20Complete%20System">Coming — join the list</a><p class="pgate">Sold only once its automated checking passes our measured labor test — until then, not sold at any price.</p></div>
       </div>
-    </div></div>
+    </div>
+    <div class="controls" id="carControls">
+      <button type="button" class="car-btn" id="carPrev" aria-label="Previous plan">‹</button>
+      <div class="dots" role="group" aria-label="Choose a plan to view">
+        <button type="button" class="dot" data-i="0" aria-label="Show After-Hours Capture" aria-current="true"></button>
+        <button type="button" class="dot" data-i="1" aria-label="Show 24/7 Complete" aria-current="false"></button>
+        <button type="button" class="dot" data-i="2" aria-label="Show Booked" aria-current="false"></button>
+        <button type="button" class="dot" data-i="3" aria-label="Show Complete System" aria-current="false"></button>
+      </div>
+      <button type="button" class="car-btn" id="carNext" aria-label="Next plan">›</button>
+    </div>
     <div class="tband">
       <p class="tband-intro">Two plans are live today; Booked and the Complete System are priced in the open and labeled coming — never charged for before they exist.</p>
       <div class="tband-grid">
@@ -1168,8 +1223,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <ul>
         <li><strong>Captura Fuera de Horario — $199/mes.</strong> Sunny contesta fuera del horario, en nombre de su consultorio, captura correctamente a cada persona que llama, ordena por urgencia y deja una sola lista matutina de llamadas por devolver.</li>
         <li><strong>Completo 24/7 — $299/mes.</strong> Todo lo anterior, a toda hora: también el desborde del día, la hora del almuerzo y la avalancha del lunes.</li>
-        <li><strong>Booked — $449/mes.</strong> Próximamente: Sunny agendando directamente en el sistema de su consultorio (primero Open Dental). Aún no se vende; si ya es cliente de Captura o Completo en un sistema compatible, conserva su precio introductorio cuando Booked llegue.</li>
-        <li><strong>Sistema Completo — $549/mes.</strong> Próximamente: contestación 24/7 más verificación de elegibilidad de seguros (1,500 minutos y 300 verificaciones incluidas). Se venderá solo cuando su revisión automática pase nuestra propia prueba medida de trabajo; hasta entonces no se vende a ningún precio.</li>
+        <li><strong>Booked — $449/mes.</strong> Próximamente. Aún no se vende: Sunny no agenda nada hasta que la reserva directa en el sistema de su consultorio (primero Open Dental) esté activa y probada; si ya es cliente de Captura o Completo en un sistema compatible, conserva su precio introductorio cuando Booked llegue.</li>
+        <li><strong>Sistema Completo — $549/mes.</strong> Próximamente: contestación 24/7 más verificación de elegibilidad de seguros (1,500 minutos y 300 verificaciones incluidas; $1.95 por cada verificación adicional). Se venderá solo cuando su revisión automática pase nuestra propia prueba medida de trabajo; hasta entonces no se vende a ningún precio.</li>
         <li><strong>Instalación: $0.</strong> Minutos generosos incluidos — después, un pequeño cargo adicional de $0.25 por minuto. Mes a mes. En funcionamiento en días, no en semanas.</li>
         <li><strong>Piloto pagado de 30 días:</strong> el primer mes se paga por adelantado, con <strong>garantía incondicional de devolución del dinero</strong> — escriba a hello@ringandrespond.com dentro de los 30 días.</li>
       </ul>
@@ -1458,6 +1513,41 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
   var v = document.getElementById('mlScroll'); if (!v) return;
   function fit() { var set = v.querySelector('.ml-set'); if (set) v.style.height = set.offsetHeight + 'px'; }
   fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+})();
+</script>
+
+<script>
+/* Pricing phone carousel: user-driven ONLY. No timers, no autoplay, no auto-advance of any kind.
+   Desktop and mid widths never engage it (the controls are phone-only CSS). */
+(function(){
+  var scroller=document.getElementById('ptable');
+  if(!scroller) return;
+  var dots=Array.prototype.slice.call(document.querySelectorAll('#pricing .dot'));
+  var panels=Array.prototype.slice.call(scroller.querySelectorAll('.pcol'));
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  function panelStep(){ return panels.length>1 ? (panels[1].offsetLeft-panels[0].offsetLeft) : scroller.clientWidth; }
+  function activeIndex(){
+    var step=panelStep(); if(!step) return 0;
+    var i=Math.round((scroller.scrollLeft-20)/step); // 20 = container left padding
+    return Math.max(0,Math.min(panels.length-1,i));
+  }
+  function syncDots(){
+    var i=activeIndex();
+    dots.forEach(function(d,j){ d.setAttribute('aria-current', j===i ? 'true':'false'); });
+  }
+  function goTo(i){
+    i=Math.max(0,Math.min(panels.length-1,i));
+    scroller.scrollTo({left: i*panelStep(), behavior: reduced.matches ? 'auto' : 'smooth'});
+  }
+  var ticking=false;
+  scroller.addEventListener('scroll',function(){
+    if(!ticking){ ticking=true; requestAnimationFrame(function(){ syncDots(); ticking=false; }); }
+  },{passive:true});
+  dots.forEach(function(d){ d.addEventListener('click',function(){ goTo(parseInt(d.getAttribute('data-i'),10)); }); });
+  var prev=document.getElementById('carPrev'), next=document.getElementById('carNext');
+  if(prev) prev.addEventListener('click',function(){ goTo(activeIndex()-1); });
+  if(next) next.addEventListener('click',function(){ goTo(activeIndex()+1); });
+  syncDots();
 })();
 </script>
 
