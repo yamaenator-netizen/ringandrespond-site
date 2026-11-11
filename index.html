@@ -829,31 +829,36 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <!-- 6. Live / Coming ledger -->
 <section class="ledger" id="ledger">
   <div class="wrap">
-    <h2>What else is live — and what's coming</h2>
+    <h2>Live today. Coming, and labeled like it.</h2>
     <p>We would rather tell you a service is coming than let you assume it is here. Each coming item says what it is waiting on, in plain words. Sunny does not book into your practice's schedule and never touches your patient database. Your team calls back — in control.</p>
     <style>
     /* Sunny hub — scoped styles (hub- prefix), Daylight Pod tokens */
     .hub-stage{margin:30px auto 4px;max-width:680px}
     .hub-center{position:relative;width:248px;height:248px;margin:0 auto 16px}
     .hub-ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(#D9971D 0 45%,#C9A25E 45% 53%,#22A06B 53% 100%)}
-    .hub-core{position:absolute;inset:11px;border-radius:50%;background:#0B1425;color:#EAF3FA;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9%;overflow:hidden}
+    .hub-core{position:absolute;inset:11px;border-radius:50%;background:#0B1425;color:#EAF3FA;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9%;overflow:hidden;font-size:16px}
+    .hub-core.hub-fit{padding:6.5%}
     .hub-core .hub-sun{width:34px;height:34px;flex:none}
     .hub-core .hub-name{font-weight:800;letter-spacing:.05em;font-size:17px;color:#fff;margin-top:2px}
     .hub-core .hub-tag{font-size:11.5px;color:#BFD9EA;line-height:1.4;margin-top:2px}
-    .hub-core .hub-st{font-size:9px;font-weight:800;letter-spacing:.08em;padding:3px 9px;border-radius:999px;margin-bottom:3px}
+    .hub-core .hub-st{font-size:.5625em;font-weight:800;letter-spacing:.08em;padding:3px 9px;border-radius:999px;margin-bottom:3px}
     .hub-core .hub-st.live{background:#123B2A;color:#5FD3A0}
     .hub-core .hub-st.coming{background:#3D2F0E;color:#E7BE6A}
-    .hub-core .hub-item{font-weight:700;font-size:15.5px;line-height:1.25;color:#fff}
-    .hub-core .hub-desc{font-size:11.8px;color:#BFD9EA;line-height:1.45;margin-top:4px}
-    .hub-core .hub-gate{font-size:10.8px;color:#E7BE6A;line-height:1.4;margin-top:4px;font-weight:600}
+    .hub-core .hub-item{font-weight:700;font-size:.96875em;line-height:1.25;color:#fff}
+    .hub-core .hub-desc{font-size:.7375em;color:#BFD9EA;line-height:1.45;margin-top:4px}
+    .hub-core .hub-gate{font-size:.675em;color:#E7BE6A;line-height:1.4;margin-top:4px;font-weight:600}
     .hub-orbit{display:none}
     .hub-dot{display:none}
-    .hub-grp{display:none;font-size:11px;font-weight:800;letter-spacing:.09em;margin:14px auto 2px;max-width:440px}
-    .hub-lbls{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
-    .hub-lbl{font-family:var(--font);font-weight:600;font-size:12.5px;line-height:1.25;color:var(--ink);background:#fff;border:1.6px solid #22A06B;border-radius:999px;padding:6px 12px;cursor:pointer;text-align:center;box-shadow:var(--shadow-sm)}
-    .hub-lbl.coming{border-color:#C07F14;border-style:dashed}
-    .hub-lbl:hover,.hub-lbl:focus-visible{box-shadow:var(--shadow-lg);outline:none}
-    .hub-lbl.on{box-shadow:var(--shadow-lg);background:var(--panel2)}
+    .hub-grp{font-size:11px;font-weight:800;letter-spacing:.09em;margin:16px auto 4px;max-width:680px}
+    .hub-list{list-style:none;margin:0 auto;padding:0;max-width:680px}
+    .hub-itemrow{display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-top:1px solid var(--line-soft)}
+    .hub-btn{font-family:var(--font);font-weight:600;font-size:12.5px;line-height:1.25;color:var(--ink);background:#fff;border:1.6px solid #22A06B;border-radius:999px;padding:6px 12px;cursor:pointer;text-align:center;box-shadow:var(--shadow-sm);flex:none;max-width:44%}
+    .hub-btn.coming{border-color:#C07F14;border-style:dashed}
+    .hub-btn:hover,.hub-btn:focus-visible{box-shadow:var(--shadow-lg);outline:none}
+    .hub-btn.on{box-shadow:var(--shadow-lg);background:var(--panel2)}
+    .hub-meta{font-size:13px;line-height:1.5;color:var(--body);padding-top:4px}
+    .hub-meta .hub-t{font-size:13.5px;color:var(--ink)}
+    .hub-meta .hub-g{display:block;font-size:12.3px;color:var(--coming-ink);margin-top:2px}
     .hub-legend{text-align:center;font-size:12px;color:var(--muted);margin-top:10px}
     /* Hover/tap effects: connection pulse + core arrival glow (JS-driven, WAAPI) */
     .hub-arrive{position:absolute;inset:-6px;border-radius:50%;border:2px solid transparent;opacity:0;pointer-events:none;z-index:2}
@@ -867,8 +872,10 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     .hub-on .hub-center{position:absolute;left:50%;top:50%;width:45%;height:45%;transform:translate(-50%,-50%);margin:0;z-index:1}
     .hub-on .hub-orbit{display:block;position:absolute;inset:9%;border:2px dashed #B9D2E4;border-radius:50%}
     .hub-on .hub-dot{display:block;position:absolute;width:11px;height:11px;border-radius:50%;transform:translate(-50%,-50%);z-index:2}
-    .hub-on .hub-lbls{display:contents}
-    .hub-on .hub-lbl{position:absolute;transform:translate(-50%,-50%);z-index:3;max-width:140px;font-size:11.8px}
+    .hub-on .hub-list,.hub-on .hub-itemrow{display:contents}
+    .hub-on .hub-btn{position:absolute;transform:translate(-50%,-50%);z-index:3;max-width:140px;font-size:11.8px}
+    .hub-on .hub-meta{display:none}
+    .hub-on .hub-grp{display:none}
     .hub-on .hub-legend{margin-top:2px}
     /* Entrance choreography — once, then settles */
     @keyframes hubOrbitIn{from{opacity:0;transform:scale(.84) rotate(-12deg)}to{opacity:1;transform:scale(1) rotate(0)}}
@@ -878,20 +885,20 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     @keyframes hubSway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
     @keyframes hubSunPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
     @media (prefers-reduced-motion: no-preference){
-      .hub-on .hub-lbl,.hub-on .hub-dot{opacity:0}
+      .hub-on .hub-btn,.hub-on .hub-dot{opacity:0}
       .hub-in .hub-orbit{animation:hubOrbitIn 1.1s cubic-bezier(.2,.8,.3,1) both}
       .hub-in .hub-center{animation:hubCoreIn .8s .15s cubic-bezier(.2,.8,.3,1) both}
-      .hub-in .hub-lbl{animation:hubPop .55s cubic-bezier(.2,.9,.3,1.35) both;animation-delay:var(--d,0s)}
+      .hub-in .hub-btn{animation:hubPop .55s cubic-bezier(.2,.9,.3,1.35) both;animation-delay:var(--d,0s)}
       .hub-in .hub-dot{animation:hubDotIn .4s ease both;animation-delay:var(--d,0s)}
       .hub-in .hub-ring{animation:hubSway 36s ease-in-out 2.4s infinite alternate}
       .hub-in .hub-sun{animation:hubSunPulse 3.4s ease-in-out infinite}
     }
     @media (prefers-reduced-motion: reduce){
-      .hub-on .hub-lbl,.hub-on .hub-dot{opacity:1}
+      .hub-on .hub-btn,.hub-on .hub-dot{opacity:1}
     }
     @media (max-width:900px) and (min-width:641px){
       .hub-on .hub-stage{width:min(600px,86vw)}
-      .hub-on .hub-lbl{max-width:128px;font-size:11px}
+      .hub-on .hub-btn{max-width:128px;font-size:11px}
     }
     /* Phone: circular form swaps to Variant F fallback (center screen on top, pills stacked) */
     @media (max-width:640px){
@@ -899,18 +906,14 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       .hub-on .hub-center{position:relative;left:auto;top:auto;transform:none;width:248px;height:248px;margin:0 auto 6px;animation:none}
       .hub-on .hub-orbit,.hub-on .hub-dot{display:none}
       .hub-on .hub-spoke,.hub-on .hub-pulse{display:none}
-      .hub-on .hub-lbls{display:block}
-      .hub-on .hub-lbl,.hub-lbl{position:static;transform:none;display:block;width:100%;max-width:440px;margin:6px auto;text-align:left;animation:none;opacity:1}
-      .hub-grp{display:block}
+      .hub-on .hub-list{display:block}
+      .hub-on .hub-itemrow{display:block;border-top:0;padding:0}
+      .hub-on .hub-btn{position:static;transform:none;display:block;width:100%;max-width:440px;margin:6px auto;text-align:left;animation:none;opacity:1}
+      .hub-on .hub-grp{display:block}
     }
-    /* Full list — plain-words copy of the hub (SEO / no-JS / read-everything) */
-    .hub-full{border-top:1px solid var(--line);margin-top:34px;padding-top:20px}
-    .hub-full h3{font-size:15px;color:var(--muted);letter-spacing:.02em;margin-bottom:12px}
-    .hub-full .hf-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 34px}
-    @media (max-width:640px){.hub-full .hf-grid{grid-template-columns:1fr}}
-    .hub-full .hf-item{font-size:13.5px;line-height:1.5;color:var(--body);padding:7px 0;border-top:1px solid var(--line-soft)}
-    .hub-full .hf-item strong{font-size:13.5px}
-    .hub-full .hf-item .gate{display:block;font-size:12.3px;color:var(--coming-ink);margin-top:2px}
+    /* Single source of truth: the 17 items live once, as the .hub-list markup
+       below. No-JS / crawler / screen-reader view = that list; JS enhances the
+       same elements into the circular hub. There is no second copy. */
     </style>
     <div class="hub-stage" id="hubStage">
       <div class="hub-orbit" aria-hidden="true"></div>
@@ -918,80 +921,77 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <div class="hub-pulse" id="hubPulse" aria-hidden="true"></div>
       <div class="hub-center">
         <div class="hub-ring" aria-hidden="true"></div>
-        <div class="hub-core" id="hubCore" aria-live="polite"></div>
+        <div class="hub-core" id="hubCore" aria-live="polite"><svg class="hub-sun" viewBox="0 0 24 24" fill="none" stroke="#C9A25E" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="#C9A25E" stroke="none"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5 5l1.8 1.8M17.2 17.2L19 19M19 5l-1.8 1.8M6.8 17.2L5 19"/></svg><div class="hub-name">SUNNY</div><div class="hub-tag">Answered with a smile.<br>Hover or tap any item &mdash; its story opens here.</div></div>
         <div class="hub-arrive" id="hubArrive" aria-hidden="true"></div>
       </div>
       <p class="hub-grp" style="color:var(--live-ink)">&#9679; LIVE TODAY</p>
-      <div class="hub-lbls" id="hubLive"></div>
+      <ul class="hub-list" id="hubLive">
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Answers in your name</button><span class="hub-meta"><strong class="hub-t">Answers in your practice's name</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">After-hours and 24/7 overflow.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Capture-it-right intake</button><span class="hub-meta"><strong class="hub-t">Capture-it-right intake</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">Name, callback number read back digit-by-digit, new/existing patient, preferred callback window.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">3-tier urgency sort</button><span class="hub-meta"><strong class="hub-t">3-tier urgency sort</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">True emergencies directed to 911/urgent care, with an instant team alert.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Never-a-voicemail nights</button><span class="hub-meta"><strong class="hub-t">Never-a-voicemail nights</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">A real conversation, with honest AI and recording disclosure.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Four languages</button><span class="hub-meta"><strong class="hub-t">Four languages</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">Full conversations in English, Spanish, Arabic, and Farsi.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Insurance-question capture</button><span class="hub-meta"><strong class="hub-t">Insurance-question capture</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">Carrier plus the caller's exact question, word for word. Capture only, not verification.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Morning callback list</button><span class="hub-meta"><strong class="hub-t">One morning callback list</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">Urgencies first, ready before the office opens.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Owner proof report</button><span class="hub-meta"><strong class="hub-t">Owner proof report</strong> <span class="badge badge-live">LIVE TODAY</span><br><span class="hub-d">The week's calls, requests, and urgency mix.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn">Same Sunny, every location</button><span class="hub-meta"><strong class="hub-t">The same Sunny at every location.</strong> <span class="badge badge-live">LIVE TODAY</span></span></li>
+      </ul>
       <p class="hub-grp" style="color:var(--coming-ink)">&#9679; COMING &mdash; NOT LIVE YET</p>
-      <div class="hub-lbls" id="hubSoon"></div>
+      <ul class="hub-list" id="hubSoon">
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Missed-call text-back</button><span class="hub-meta"><strong class="hub-t">Missed-call text-back</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">If a caller hangs up, a text follows up.</span><span class="hub-g">Gate: carrier texting approval; resubmission Nov 13.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Confirmations + backfill</button><span class="hub-meta"><strong class="hub-t">Appointment confirmations and same-day backfill of cancelled slots</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">Confirmations go out, and when a slot cancels, the ASAP list hears about it the same day.</span><span class="hub-g">Gate: business texting approval, and the ability to read the schedule. This speaks to the no-show scramble.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Recall &amp; reactivation</button><span class="hub-meta"><strong class="hub-t">Recall and reactivation runs on your office's own list</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">Sunny works through the recall list your office provides, so it finally gets worked.</span><span class="hub-g">Gate: still being built and proven; not available today. This speaks to recall lists never get worked.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Review requests by text</button><span class="hub-meta"><strong class="hub-t">Review requests by text</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">After a visit, a patient gets a text asking for a review. A QR-code version of a review request works today.</span><span class="hub-g">Gate: business texting approval.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Booking into Open Dental</button><span class="hub-meta"><strong class="hub-t">Booking into Open Dental</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">Sunny would place an appointment directly in Open Dental instead of only capturing the request.</span><span class="hub-g">Gate: developer access in progress. Until this is live and proven, Sunny books nothing &mdash; she captures, and your team books.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Insurance verification</button><span class="hub-meta"><strong class="hub-t">Insurance eligibility verification</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">Real verification of a patient's eligibility, not just capture of their question.</span><span class="hub-g">Gate: works in a test environment today; production comes with a signed pilot office. This speaks to the verification grind.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Caller recognition</button><span class="hub-meta"><strong class="hub-t">Caller recognition and intent</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">Sunny labels every call by what the caller wants, and remembers repeat callers.</span><span class="hub-g">Phase 1 arrives with the office dashboard: an intent label on every call (book, reschedule, billing, insurance, emergency) drawn from the conversation itself, plus repeat-caller memory from Sunny's own call history. Phase 2, with the Open Dental connection: full patient match &mdash; a caller card with the patient's name, next appointment, and pending treatment. Neither phase is live today, and Sunny does not match patient records today.</span></span></li>
+        <li class="hub-itemrow"><button type="button" class="hub-btn coming">Patient billing portal</button><span class="hub-meta"><strong class="hub-t">Patient billing portal</strong> <span class="badge badge-coming">COMING</span><br><span class="hub-d">Patients would pay the office directly through a portal.</span><span class="hub-g">Gate: a later phase of the build, after the phone work above.</span></span></li>
+      </ul>
     </div>
     <p class="hub-legend"><strong style="color:var(--live-ink)">Green = live today</strong> &middot; <strong style="color:var(--coming-ink)">Amber = coming</strong> &middot; hover or tap any item to read it in the center.</p>
-    <div class="hub-full">
-      <h3>Everything on the hub, in plain list form</h3>
-      <div class="hf-grid">
-        <div>
-          <div class="hf-item"><strong>Answers in your practice's name</strong> <span class="badge badge-live">LIVE TODAY</span><br>After-hours and 24/7 overflow.</div>
-          <div class="hf-item"><strong>Capture-it-right intake</strong> <span class="badge badge-live">LIVE TODAY</span><br>Name, callback number read back digit-by-digit, new/existing patient, preferred callback window.</div>
-          <div class="hf-item"><strong>3-tier urgency sort</strong> <span class="badge badge-live">LIVE TODAY</span><br>True emergencies directed to 911/urgent care, with an instant team alert.</div>
-          <div class="hf-item"><strong>Never-a-voicemail nights</strong> <span class="badge badge-live">LIVE TODAY</span><br>A real conversation, with honest AI and recording disclosure.</div>
-          <div class="hf-item"><strong>Four languages</strong> <span class="badge badge-live">LIVE TODAY</span><br>Full conversations in English, Spanish, Arabic, and Farsi.</div>
-          <div class="hf-item"><strong>Insurance-question capture</strong> <span class="badge badge-live">LIVE TODAY</span><br>Carrier plus the caller's exact question, word for word. Capture only, not verification.</div>
-          <div class="hf-item"><strong>One morning callback list</strong> <span class="badge badge-live">LIVE TODAY</span><br>Urgencies first, ready before the office opens.</div>
-          <div class="hf-item"><strong>Owner proof report</strong> <span class="badge badge-live">LIVE TODAY</span><br>The week's calls, requests, and urgency mix.</div>
-          <div class="hf-item"><strong>The same Sunny at every location.</strong> <span class="badge badge-live">LIVE TODAY</span></div>
-        </div>
-        <div>
-          <div class="hf-item"><strong>Missed-call text-back</strong> <span class="badge badge-coming">COMING</span><br>If a caller hangs up, a text follows up.<span class="gate">Gate: carrier texting approval; resubmission Nov 13.</span></div>
-          <div class="hf-item"><strong>Appointment confirmations and same-day backfill of cancelled slots</strong> <span class="badge badge-coming">COMING</span><br>Confirmations go out, and when a slot cancels, the ASAP list hears about it the same day.<span class="gate">Gate: business texting approval, and the ability to read the schedule. This speaks to the no-show scramble.</span></div>
-          <div class="hf-item"><strong>Recall and reactivation runs on your office's own list</strong> <span class="badge badge-coming">COMING</span><br>Sunny works through the recall list your office provides, so it finally gets worked.<span class="gate">Gate: still being built and proven; not available today. This speaks to recall lists never get worked.</span></div>
-          <div class="hf-item"><strong>Review requests by text</strong> <span class="badge badge-coming">COMING</span><br>After a visit, a patient gets a text asking for a review. A QR-code version of a review request works today.<span class="gate">Gate: business texting approval.</span></div>
-          <div class="hf-item"><strong>Booking into Open Dental</strong> <span class="badge badge-coming">COMING</span><br>Sunny would place an appointment directly in Open Dental instead of only capturing the request.<span class="gate">Gate: developer access in progress. Until this is live and proven, Sunny books nothing &mdash; she captures, and your team books.</span></div>
-          <div class="hf-item"><strong>Insurance eligibility verification</strong> <span class="badge badge-coming">COMING</span><br>Real verification of a patient's eligibility, not just capture of their question.<span class="gate">Gate: works in a test environment today; production comes with a signed pilot office. This speaks to the verification grind.</span></div>
-          <div class="hf-item"><strong>Caller recognition and intent</strong> <span class="badge badge-coming">COMING</span><br>Sunny labels every call by what the caller wants, and remembers repeat callers.<span class="gate">Phase 1 arrives with the office dashboard: an intent label on every call (book, reschedule, billing, insurance, emergency) drawn from the conversation itself, plus repeat-caller memory from Sunny's own call history. Phase 2, with the Open Dental connection: full patient match &mdash; a caller card with the patient's name, next appointment, and pending treatment. Neither phase is live today, and Sunny does not match patient records today.</span></div>
-          <div class="hf-item"><strong>Patient billing portal</strong> <span class="badge badge-coming">COMING</span><br>Patients would pay the office directly through a portal.<span class="gate">Gate: a later phase of the build, after the phone work above.</span></div>
-        </div>
-      </div>
-    </div>
     <script>
     (function(){
-      var LIVE=[
-        {p:"Answers in your name",t:"Answers in your practice's name",d:"After-hours and 24/7 overflow."},
-        {p:"Capture-it-right intake",t:"Capture-it-right intake",d:"Name, callback number read back digit-by-digit, new/existing patient, preferred callback window."},
-        {p:"3-tier urgency sort",t:"3-tier urgency sort",d:"True emergencies directed to 911/urgent care, with an instant team alert."},
-        {p:"Never-a-voicemail nights",t:"Never-a-voicemail nights",d:"A real conversation, with honest AI and recording disclosure."},
-        {p:"Four languages",t:"Four languages",d:"Full conversations in English, Spanish, Arabic, and Farsi."},
-        {p:"Insurance-question capture",t:"Insurance-question capture",d:"Carrier plus the caller's exact question, word for word. Capture only, not verification."},
-        {p:"Morning callback list",t:"One morning callback list",d:"Urgencies first, ready before the office opens."},
-        {p:"Owner proof report",t:"Owner proof report",d:"The week's calls, requests, and urgency mix."},
-        {p:"Same Sunny, every location",t:"The same Sunny at every location.",d:""}
-      ];
-      var SOON=[
-        {p:"Missed-call text-back",t:"Missed-call text-back",d:"If a caller hangs up, a text follows up.",g:"carrier texting approval; resubmission Nov 13."},
-        {p:"Confirmations + backfill",t:"Appointment confirmations and same-day backfill of cancelled slots",d:"Confirmations go out, and when a slot cancels, the ASAP list hears about it the same day.",g:"business texting approval, and the ability to read the schedule."},
-        {p:"Recall & reactivation",t:"Recall and reactivation runs on your office's own list",d:"Sunny works through the recall list your office provides, so it finally gets worked.",g:"still being built and proven; not available today."},
-        {p:"Review requests by text",t:"Review requests by text",d:"After a visit, a patient gets a text asking for a review. A QR-code version of a review request works today.",g:"business texting approval."},
-        {p:"Booking into Open Dental",t:"Booking into Open Dental",d:"Sunny would place an appointment directly in Open Dental instead of only capturing the request.",g:"developer access in progress. Until this is live and proven, Sunny books nothing \u2014 she captures, and your team books."},
-        {p:"Insurance verification",t:"Insurance eligibility verification",d:"Real verification of a patient's eligibility, not just capture of their question.",g:"works in a test environment today; production comes with a signed pilot office."},
-        {p:"Caller recognition",t:"Caller recognition and intent",d:"Sunny labels every call by what the caller wants, and remembers repeat callers.",g:"Phase 1, with the office dashboard: an intent label on every call (book, reschedule, billing, insurance, emergency) plus repeat-caller memory from Sunny's own call history. Phase 2, with the Open Dental connection: full patient match. Neither phase is live today, and Sunny does not match patient records today."},
-        {p:"Patient billing portal",t:"Patient billing portal",d:"Patients would pay the office directly through a portal.",g:"a later phase of the build, after the phone work above."}
-      ];
       var stage=document.getElementById('hubStage'),core=document.getElementById('hubCore');
       if(!stage||!core)return;
       var arrive=document.getElementById('hubArrive'),spoke=document.getElementById('hubSpoke'),pulse=document.getElementById('hubPulse');
       var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var SUN='<svg class="hub-sun" viewBox="0 0 24 24" fill="none" stroke="#C9A25E" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="#C9A25E" stroke="none"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5 5l1.8 1.8M17.2 17.2L19 19M19 5l-1.8 1.8M6.8 17.2L5 19"/></svg>';
+      var HOME=core.innerHTML;
       /* Core crossfade — phase-guarded so rapid hovering never queues fades: latest item wins */
-      var booted=false,phase='idle',pending=null,coreAnim=null;
-      function swap(html){
-        if(!booted){core.innerHTML=html;booted=true;return;}
-        if(reduced||!core.animate){core.innerHTML=html;return;}
-        if(phase==='out'){pending=html;return;}
-        phase='out';pending=html;
+      var booted=false,phase='idle',pending=null,pendingHome=false,coreAnim=null;
+      /* Fit the reveal inside the disc: step the core type down (reveal sizes are in em)
+         until no text line spills outside the circle. The home face is never scaled. */
+      function spilled(){
+        var c=stage.querySelector('.hub-center').getBoundingClientRect();
+        var cx=c.left+c.width/2,cy=c.top+c.height/2,R=c.width/2-4;
+        var w=document.createTreeWalker(core,NodeFilter.SHOW_TEXT),n,range=document.createRange();
+        while(n=w.nextNode()){
+          range.selectNodeContents(n);
+          var rs=range.getClientRects();
+          for(var i=0;i<rs.length;i++){
+            var r=rs[i];if(!r.width)continue;
+            var pts=[[r.left,r.top],[r.right,r.top],[r.left,r.bottom],[r.right,r.bottom]];
+            for(var j=0;j<4;j++){var dx=pts[j][0]-cx,dy=pts[j][1]-cy;if(dx*dx+dy*dy>R*R)return true;}
+          }
+        }
+        return false;
+      }
+      function fit(isHome){
+        if(isHome){core.classList.remove('hub-fit');core.style.fontSize='';return;}
+        core.classList.add('hub-fit');
+        var s=16;core.style.fontSize=s+'px';
+        var n=0;
+        while((core.scrollHeight>core.clientHeight||spilled())&&s>9&&n<16){s-=0.5;core.style.fontSize=s+'px';n++;}
+      }
+      function apply(html,isHome){core.innerHTML=html;fit(isHome);}
+      function swap(html,isHome){
+        if(!booted){apply(html,isHome);booted=true;return;}
+        if(reduced||!core.animate){apply(html,isHome);return;}
+        if(phase==='out'){pending=html;pendingHome=!!isHome;return;}
+        phase='out';pending=html;pendingHome=!!isHome;
         if(coreAnim)coreAnim.cancel();
         coreAnim=core.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(5px)'}],{duration:110,easing:'ease-in',fill:'forwards'});
         coreAnim.onfinish=function(){
-          core.innerHTML=pending;pending=null;phase='in';
+          apply(pending,pendingHome);pending=null;phase='in';
           coreAnim=core.animate([{opacity:0,transform:'translateY(-5px)'},{opacity:1,transform:'translateY(0)'}],{duration:150,easing:'ease-out',fill:'forwards'});
           coreAnim.onfinish=function(){phase='idle';if(coreAnim)coreAnim.cancel();};
         };
@@ -1038,27 +1038,33 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
           pulseAnim.onfinish=function(){if(pulseAnim)pulseAnim.cancel();};
         }
       }
-      function home(){swap(SUN+'<div class="hub-name">SUNNY</div><div class="hub-tag">Answered with a smile.<br>Hover or tap any item &mdash; its story opens here.</div>');}
-      function show(it,live,btn){swap('<span class="hub-st '+(live?'live">LIVE TODAY':'coming">COMING')+'</span><div class="hub-item">'+it.t+'</div>'+(it.d?'<div class="hub-desc">'+it.d+'</div>':'')+(it.g?'<div class="hub-gate">Gate: '+it.g+'</div>':''));fx(live,btn);}
-      function build(id,arr,live,start,end,base){
-        var box=document.getElementById(id);
-        arr.forEach(function(it,i){
-          var t=arr.length===1?0.5:i/(arr.length-1);t=t+0.3*Math.sin(2*Math.PI*t)/(2*Math.PI);var ang=(start+(end-start)*t)*Math.PI/180,dx=Math.cos(ang),dy=Math.sin(ang),delay=(base+i*0.11).toFixed(2)+'s';
+      function home(){swap(HOME,true);}
+      function show(live,btn){
+        var meta=btn.parentNode.querySelector('.hub-meta');
+        var t=meta.querySelector('.hub-t').textContent;
+        var dEl=meta.querySelector('.hub-d'),gEl=meta.querySelector('.hub-g');
+        var d=dEl?dEl.textContent:'';
+        var g=gEl?gEl.textContent.replace(/^Gate:\s*/,''):'';
+        swap('<span class="hub-st '+(live?'live">LIVE TODAY':'coming">COMING')+'</span><div class="hub-item">'+t+'</div>'+(d?'<div class="hub-desc">'+d+'</div>':'')+(g?'<div class="hub-gate">Gate: '+g+'</div>':''));
+        fx(live,btn);
+      }
+      function enhance(id,live,start,end,base){
+        var btns=[].slice.call(document.querySelectorAll('#'+id+' .hub-btn'));
+        btns.forEach(function(b,i){
+          var t=btns.length===1?0.5:i/(btns.length-1);t=t+0.3*Math.sin(2*Math.PI*t)/(2*Math.PI);var ang=(start+(end-start)*t)*Math.PI/180,dx=Math.cos(ang),dy=Math.sin(ang),delay=(base+i*0.11).toFixed(2)+'s';
           var dot=document.createElement('span');dot.className='hub-dot';dot.setAttribute('aria-hidden','true');
           dot.style.background=live?'#22A06B':'#D9971D';dot.style.left=(50+41*dx)+'%';dot.style.top=(50+41*dy)+'%';dot.style.setProperty('--d',delay);
           stage.appendChild(dot);
-          var b=document.createElement('button');b.type='button';b.className='hub-lbl'+(live?'':' coming');b.textContent=it.p;
           b.style.left=(50+50.5*dx)+'%';b.style.top=(50+50.5*dy)+'%';b.style.setProperty('--d',(base+i*0.11+0.07).toFixed(2)+'s');
           b._dot=dot;b._dx=dx;b._dy=dy;
-          b.addEventListener('mouseenter',function(){show(it,live,b);});
-          b.addEventListener('focus',function(){show(it,live,b);});
-          b.addEventListener('click',function(){show(it,live,b);var prev=stage.querySelector('.hub-lbl.on');if(prev)prev.classList.remove('on');b.classList.add('on');});
-          box.appendChild(b);
+          b.addEventListener('mouseenter',function(){show(live,b);});
+          b.addEventListener('focus',function(){show(live,b);});
+          b.addEventListener('click',function(){show(live,b);var prev=stage.querySelector('.hub-btn.on');if(prev)prev.classList.remove('on');b.classList.add('on');});
         });
       }
-      build('hubLive',LIVE,true,104,256,0.55);
-      build('hubSoon',SOON,false,-76,76,1.65);
-      stage.addEventListener('mouseleave',function(){home();clearFx();var prev=stage.querySelector('.hub-lbl.on');if(prev)prev.classList.remove('on');});
+      enhance('hubLive',true,104,256,0.55);
+      enhance('hubSoon',false,-76,76,1.65);
+      stage.addEventListener('mouseleave',function(){home();clearFx();var prev=stage.querySelector('.hub-btn.on');if(prev)prev.classList.remove('on');});
       home();
       document.getElementById('ledger').classList.add('hub-on');
       if(reduced||!('IntersectionObserver' in window)){stage.classList.add('hub-in');}
