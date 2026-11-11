@@ -284,6 +284,15 @@
         if (includesAny(q, ['what can sunny do', 'what does sunny do', 'what can she do', 'what does she do', 'capabilities', 'abilities', 'features', 'everything', 'what do you offer', 'what does it include', 'services include', 'full list'])) {
           return 'Here’s Sunny in one breath: she answers every call your office misses — nights, weekends, lunch, busy hours — on your own number. She holds a natural conversation, captures the name, validated callback number, new-or-existing status, reason, and preferred time, sorts urgency into tiers (true emergencies are directed to 911 or urgent care, with an instant alert to your team), answers your approved FAQs, and hands your team a clean morning callback list. She never diagnoses and never pretends to book — your team confirms in your own system.';
         }
+        if (includesAny(q, ['cuesta', 'cuestan', 'costo', 'costos', 'precio', 'precios', 'paquetes', 'incluye', 'incluyen', 'cuanto', 'cu nto', 'planes'])) {
+          return 'Cuatro paquetes, etiquetados con honestidad. Disponibles hoy: Captura Fuera de Horario por $199/mes y Completo 24/7 por $299/mes — ambos con $0 de instalación y un piloto pagado de 30 días con garantía incondicional de devolución. Próximamente, con precio publicado y a la venta solo cuando sean reales: Booked por $449/mes y Sistema Completo por $549/mes. Nada de lo etiquetado como próximo se cobra antes de existir.';
+        }
+        if (includesAny(q, ['agendar', 'reservar', 'agenda citas', 'reserva citas'])) {
+          return 'No — Sunny no agenda citas en su sistema hoy. Captura el nombre, el número y la solicitud de quien llama, y su equipo lo confirma en su propio sistema por la mañana. La agenda directa en Open Dental está en desarrollo; Sunny no agendará nada hasta que esté activa y probada.';
+        }
+        if (includesAny(q, ['prueba gratuita', 'prueba gratis', 'gratis', 'gratuita', 'gratuito'])) {
+          return 'No ofrecemos una prueba gratuita. El primer mes es un piloto pagado ($199 o $299 según la cobertura) con garantía incondicional de devolución: si Sunny no se gana su lugar en 30 días, escriba a hello@ringandrespond.com y le devolvemos el mes.';
+        }
         var faqEarly = faqAnswer(q);
         if (faqEarly) return faqEarly;
         if (includesAny(q, ['sunny', 'glow', 'voice', 'receptionist', 'answer calls', 'phone'])) {

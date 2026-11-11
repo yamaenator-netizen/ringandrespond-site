@@ -24,12 +24,12 @@
    selectors as the Midnight Lab skin it replaces; content untouched. */
 :root{
   --bg:#F2F8FC;--panel:#FFFFFF;--panel2:#EFF7FB;--band:#E8F4FA;
-  --ink:#0C2B3E;--body:#33566B;--muted:#6E8FA3;
-  --accent:#12A5D6;--accent-ink:#0B7FA8;--cta:#0E9BC9;
+  --ink:#0C2B3E;--body:#33566B;--muted:#466E84;
+  --accent:#12A5D6;--accent-ink:#0B7FA8;--ink-link:#096E94;--cta:#0B7FA8;
   --line:#CFE6F0;--line-soft:rgba(12,43,62,.09);
   --tag-bg:#E3F2F9;--tag-ink:#0B7FA8;
   --live-bg:#DFF5E9;--live-ink:#177245;
-  --coming-bg:#FDF0DC;--coming-ink:#9A6A14;
+  --coming-bg:#FDF0DC;--coming-ink:#7A520E;
   --urgent-bg:#FDECEA;--urgent-ink:#B23A1D;--urgent-line:rgba(200,70,40,.35);
   --bar:rgba(255,255,255,.94);
   --shadow-sm:0 2px 14px rgba(12,80,110,.07);
@@ -54,7 +54,7 @@ strong{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 26px;border-radius:999px;background:var(--cta);color:#fff;font-weight:700;text-decoration:none;border:1px solid transparent;box-shadow:var(--shadow-sm)}
 .btn:hover{filter:brightness(1.06)}
 .btn-outline{background:rgba(255,255,255,.7);color:var(--accent-ink);border:1px solid #BFE0EE;box-shadow:none}
-.text-link{color:var(--accent-ink);font-weight:600;display:inline-flex;align-items:center;min-height:48px}
+.text-link{color:var(--ink-link);font-weight:600;display:inline-flex;align-items:center;min-height:48px}
 .badge{display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border-radius:999px;font-size:11.5px;font-weight:800;letter-spacing:.06em;vertical-align:middle;white-space:nowrap}
 .badge-live{background:var(--live-bg);color:var(--live-ink)}
 .badge-coming{background:var(--coming-bg);color:var(--coming-ink)}
@@ -89,12 +89,12 @@ strong{color:var(--ink)}
 .lang-toggle button[aria-pressed="true"]{background:var(--cta);color:#fff}
 /* Hero */
 .hero{position:relative;padding:52px 0 84px;overflow:hidden;background:linear-gradient(180deg,#FFFFFF,var(--bg) 88%)}
-.date-line{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:16px}
+.date-line{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-link);margin-bottom:16px}
 .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:16px}
 .hero h1{color:var(--ink)}
 .hero .sub{color:var(--body);font-size:18.5px;max-width:720px}
 .hero .sub strong{color:var(--ink)}
-.slogan{font-style:italic;color:var(--accent-ink);font-size:20px;font-weight:600}
+.slogan{font-style:italic;color:var(--ink-link);font-size:20px;font-weight:600}
 .boundary{border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel2);padding:13px 17px;border-radius:14px;color:var(--body);max-width:720px;margin:18px 0;font-size:15.5px}
 .demo-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
 .demo-chips span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 15px;font-size:14px;color:var(--body)}
@@ -161,7 +161,7 @@ strong{color:var(--ink)}
 .dash-panel li span:first-child{color:var(--body)}
 .dash-panel p{color:var(--body)}
 .tag-urgent{background:var(--urgent-bg);border:1px solid var(--urgent-line);color:var(--urgent-ink);font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap}
-.tag-std{background:var(--tag-bg);color:var(--tag-ink);font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.tag-std{background:var(--tag-bg);color:var(--ink-link);font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
 .big-count{font-size:19px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
 /* Switch graphic */
 .switch-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0;color:var(--body)}
@@ -287,7 +287,7 @@ body.es .lang-en-hero{display:none}
 .prow.yes .mk{color:var(--accent-ink)}
 .pcol.c3 .prow.yes .mk{color:#8A5A14}
 .pcol.c4 .prow.yes .mk{color:var(--ink)}
-.prow.no{color:#A9BEC9}.prow.no .mk{color:#C4D6DF}
+.prow.no{color:#466E84}.prow.no .mk{color:#466E84}
 .prow.txt{justify-content:center;font-weight:800;color:var(--ink);font-size:15.5px;align-items:center;text-align:center}
 .pbtn{display:block;margin:14px 16px 0;text-align:center;border:2px solid var(--ink);color:var(--ink);font-weight:700;padding:11px 10px;border-radius:999px;font-size:15px;background:#fff;cursor:pointer;width:calc(100% - 32px);font-family:inherit;text-decoration:none}
 .pcol.c2 .pbtn{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -538,6 +538,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <a href="https://ringandrespond.com/websites">Websites — website design for local businesses</a>
       <a href="https://app.ringandrespond.com">Office dashboard — app.ringandrespond.com (in build)</a>
       <a href="poll.html">One question for shop owners</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
     </nav>
     <p>Ring &amp; Respond · Sunny by Ring &amp; Respond · Answered with a smile. · <a href="tel:+16192021085">(619) 202-1085</a> · <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
     <p>Updated November 2026</p>

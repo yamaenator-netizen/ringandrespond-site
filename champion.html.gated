@@ -713,9 +713,9 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
           body: JSON.stringify({ name: done.name, phone: done.phone, time: done.time })
         }).then(function (r) {
           if (!r.ok) throw new Error('callback send failed');
-          appendMessage('You’re booked in, ' + done.name + ' — Yama will call ' + done.phone + ' (' + done.time + '). If it’s urgent before then, his direct line is (619) 366-2218.', 'assistant');
+          appendMessage('You’re booked in, ' + done.name + ' — Yama will call ' + done.phone + ' (' + done.time + '). If it’s urgent before then, his direct line is (619) 202-1085.', 'assistant');
         }).catch(function () {
-          appendMessage('I couldn’t send that just now — please email us at ' + contact + ' or call (619) 366-2218 and ask for Yama. The demo line is (619) 202-1085 if you’d like to hear Sunny meanwhile.', 'assistant');
+          appendMessage('I couldn’t send that just now — please email us at ' + contact + ' or call (619) 202-1085 and ask for Yama. The demo line is (619) 202-1085 if you’d like to hear Sunny meanwhile.', 'assistant');
         });
       }
 
