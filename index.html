@@ -513,6 +513,7 @@ html.cfx .cfcontrols{display:flex;align-items:center;justify-content:center;gap:
 .joinlink{display:inline-block;margin-top:10px;padding:6px 4px;font-size:15px;font-weight:700;color:#7A520E;text-decoration:underline;text-underline-offset:4px}
 .action .soon-note{border-top:1.5px dashed var(--coming-ink);margin:0 4px;padding-top:12px;font-size:12.5px;color:#7A520E;font-weight:700;letter-spacing:.02em}
 .pgate{font-size:12.3px;color:#7A520E;padding:8px 10px 0;text-align:center;margin:0}
+.pnote{font-size:13px;color:var(--live-ink);font-weight:600;text-align:center;padding:10px 12px 0;margin:0}
 .controls{display:none}
 @media(max-width:640px){
   .ptable{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-20px;margin-right:-20px;padding:6px 20px 16px;scrollbar-width:none}
@@ -663,16 +664,16 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <p class="sub">The rest of the day sounds the same. 12:40 p.m., the lunch gap. 6:15 p.m., a toothache calling after close. Monday, the whole weekend at once. Sunny answers every one of those calls in your practice's own name — a real conversation in English, Spanish, Arabic, or Farsi, never a voicemail. A true emergency is directed to 911 or urgent care, and your team is alerted instantly. Everything else is waiting on one morning list, urgencies first — and the week's proof report shows the owner exactly what she caught.</p>
       <p class="slogan">Answered with a smile.</p>
       <p><a class="btn" href="tel:+16192021085">Hear Sunny live — call (619) 202-1085</a></p>
+      <p class="boundary">And she'll tell you exactly what she can't do yet — it's printed on the pricing page, next to the prices: Sunny does not book into your practice's schedule today, and she never touches your patient database.</p>
       <p>Call as a patient would. That is Sunny, answering right now, and it is exactly what your callers would hear.</p>
       <p>Questions first? Write to <a class="text-link" href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
       <p><a class="text-link" href="#day">See a day with Sunny ↓</a></p>
-      <p class="boundary">Sunny does not book into your practice's schedule today, and she never touches your patient database.</p>
     </div>
     <div class="lang-es" lang="es">
       <p class="es-h1" role="heading" aria-level="1">7:52 a.m. — suena la segunda línea, el mostrador está lleno, y Sunny ya contestó.</p>
       <p class="sub">El resto del día suena igual. 12:40 p.m., la hora del almuerzo. 6:15 p.m., un dolor de muelas que llama después de cerrar. El lunes, todo el fin de semana de golpe. Sunny contesta cada una de esas llamadas en nombre de su propio consultorio — una conversación real en Inglés, Español, Árabe o Farsi, nunca un buzón de voz. Una emergencia verdadera se dirige al 911 o a urgencias, y su equipo recibe una alerta al instante. Todo lo demás le espera en una sola lista matutina, lo urgente primero — y el reporte semanal de prueba muestra al propietario exactamente lo que ella atendió.</p>
-      <p class="boundary">Hoy Sunny no agenda citas en el horario de su consultorio y nunca toca su base de datos de pacientes.</p>
       <p><a class="btn" href="tel:+16192021085">Escuche a Sunny en vivo — llame al (619) 202-1085</a></p>
+      <p class="boundary">Y le dirá exactamente lo que aún no puede hacer — está impreso en la página de precios, junto a los precios: hoy Sunny no agenda citas en el horario de su consultorio y nunca toca su base de datos de pacientes.</p>
       <p>Llame como llamaría un paciente y escuche exactamente lo que escucharían sus pacientes.</p>
     </div>
     </div>
@@ -1328,7 +1329,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <div class="prow no"><span class="mk">✕</span><span>Books into your system (Open Dental first)</span></div>
         <div class="prow no alt"><span class="mk">✕</span><span>Insurance eligibility checks — 300/mo included</span></div>
         <div class="prow no"><span class="mk">✕</span><span>Patient payment portal</span></div>
-        <div class="action"><button type="button" class="pbtn" data-start-signup>Get This Plan</button></div>
+        <div class="action"><button type="button" class="pbtn" data-start-signup>Get This Plan</button><p class="pnote">1,000 minutes — real minutes, not credits. Month-to-month.</p></div>
       </div>
       <div class="pcol c3 coming"><div></div><h3>Booked</h3><p class="tag">The list starts booking itself</p><div class="pillrow"><div class="pill">$449 <small>/ Month</small></div></div><div class="pstatus"><span class="badge badge-coming">COMING</span></div>
         <div class="prow yes"><span class="mk">✓</span><span>After-hours answering — nights &amp; weekends</span></div>
