@@ -266,17 +266,53 @@ body.es .lang-en-hero{display:none}
   *{animation:none !important;transition:none !important}
 }
 
-/* [GRAFT 1] Moments — compact rows (replaces .pair vignette cards in #day) */
-.mrows{max-width:880px;margin:28px auto 0;display:grid;gap:12px}
-.mrow{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px 20px;box-shadow:var(--shadow-sm)}
-.mrow-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px}
-.mtime{flex:none;font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-link);background:var(--tag-bg);border-radius:999px;padding:4px 11px}
-.mrow-head h3{font-size:18.5px;margin:0}
-.mrow p{font-size:15.5px;line-height:1.55;margin:0 0 6px;color:var(--body)}
-.mrow p:last-child{margin-bottom:0}
-.manswer strong{color:var(--ink)}
+/* [GRAFT 1] Moments — coverflow (boss pick 2026-11-10; replaces .mrows stack in #day; scoped cf- classes) */
+#day{overflow-x:clip}
+.cfstage{position:relative;margin-top:26px}
+.cfgiant{position:absolute;inset:0;display:none;align-items:center;justify-content:center;pointer-events:none;z-index:0;font-weight:800;font-size:clamp(90px,17vw,220px);letter-spacing:-.02em;color:rgba(12,43,62,.055);white-space:nowrap;line-height:1}
+.cfcard{background:var(--panel);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow-lg);padding:28px 30px 30px;display:flex;flex-direction:column;gap:0}
+.cftime{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);background:var(--band);border-radius:999px;padding:5px 14px;margin-bottom:14px;align-self:flex-start}
+.cfcard h3{font-size:23px;margin-bottom:10px}
+.cfpain{color:var(--body);margin-bottom:16px}
+.cfrule{height:1px;background:var(--line);margin:0 0 16px}
+.cfanswer{color:var(--body)}
+.cfanswer strong{font-size:17.5px}
+/* Default / no-JS / reduced-motion: honest stacked list */
+.cfstream{position:relative;z-index:1;display:flex;flex-direction:column;gap:18px;max-width:680px;margin:0 auto}
+.cfcontrols{display:none}
+.cfrmnote{display:none}
+/* Enhanced coverflow (JS + motion OK) */
+html.cfx .cfgiant{display:flex}
+html.cfx .cfstream{display:block;max-width:none;margin:0;height:488px}
+html.cfx .cfcard{position:absolute;left:50%;top:50%;width:400px;max-width:86vw;min-height:412px;transform:translate(-50%,-50%);opacity:0;visibility:hidden;will-change:transform,filter,opacity}
+html.cfx .cfstream.go .cfcard{transition:transform .72s cubic-bezier(.22,.9,.28,1),filter .72s ease,opacity .55s ease,visibility 0s}
+html.cfx .cfcontrols{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px;flex-wrap:wrap}
+.cfbtn{min-height:48px;min-width:48px;padding:12px 22px;border-radius:999px;border:1px solid #BFE0EE;cursor:pointer;background:rgba(255,255,255,.85);color:var(--accent-ink);font-family:var(--font);font-size:15px;font-weight:700;box-shadow:var(--shadow-sm)}
+.cfbtn:hover{filter:brightness(1.04)}
+.cfbtn:focus-visible,.cfdot:focus-visible,.cfstage:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.cfbtn.cfnext{background:var(--cta);color:#fff;border-color:transparent}
+.cfdots{display:flex;gap:2px;align-items:center}
+.cfdots .cfdot{width:48px;height:48px;border-radius:50%;border:0;background:transparent;cursor:pointer;padding:0;display:grid;place-items:center}
+.cfdots .cfdot i{width:13px;height:13px;border-radius:50%;border:2px solid var(--accent-ink);display:block}
+.cfdots .cfdot[aria-current="true"] i{background:var(--accent-ink)}
+.cfcount{font-size:14px;color:var(--muted);font-weight:600;min-width:104px;text-align:center}
+.cfnote{text-align:center;color:var(--muted);font-size:14px;margin-top:12px}
 .day-more{max-width:880px;margin:20px auto 0;font-size:15.5px;color:var(--body)}
-@media (max-width:560px){.mrow{padding:15px 16px}}
+@media (max-width:640px){
+  html.cfx .cfstream{height:566px}
+  html.cfx .cfcard{width:80vw;padding:24px 22px 26px;min-height:470px}
+  .cfcard h3{font-size:21px}
+  .cfcount{min-width:0}
+}
+/* Reduced motion: force the stack even if JS ran */
+@media (prefers-reduced-motion: reduce){
+  .cfgiant{display:none!important}
+  .cfstream{display:flex!important;flex-direction:column;gap:18px;max-width:680px;margin:0 auto;height:auto!important}
+  .cfcard{position:static!important;transform:none!important;filter:none!important;opacity:1!important;visibility:visible!important;width:auto!important;max-width:none;min-height:0!important}
+  .cfcontrols{display:none!important}
+  .cfnote{display:none}
+  .cfrmnote{display:block;text-align:center;color:var(--muted);font-size:14px;margin-top:16px}
+}
 
 /* [GRAFT 2] Ledger — compact rows + warm-transfer choice card */
 .lgrid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:28px}
@@ -776,37 +812,167 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     <h2 style="margin-top:56px">You know these moments. They happen every week.</h2>
     <p>Nothing below is a staffing failure. It is one front desk, one phone, and a day that keeps colliding with itself. One answer for each moment — working today. Everything in this section is LIVE today. Anything that is not live yet is in the Coming section below, labeled as coming, with the reason for the wait stated in plain words.</p>
 
-    <div class="mrows">
-      <article class="mrow">
-        <div class="mrow-head"><span class="mtime">9:14 a.m.</span><h3>The Collision</h3></div>
-        <p class="mpain">Line two rings while a patient stands at the counter — you can't reach the person on the phone, so the phone loses.</p>
-        <p class="manswer"><strong>Capture-it-right intake</strong> <span class="badge badge-live">LIVE TODAY</span> — Sunny captures the call properly: caller's name, callback number read back digit-by-digit, new or existing patient, and the callback window they prefer.</p>
-      </article>
+    <div class="cfstage" id="cfStage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Five moments from a dental office day">
+      <div class="cfgiant" aria-hidden="true">ONE DAY</div>
+      <div class="cfstream" id="cfStream">
+        <article class="cfcard" data-i="0">
+          <span class="cftime">9:14 a.m.</span>
+          <h3>The Collision</h3>
+          <p class="cfpain">Line two rings while a patient stands at the counter — you can't reach the person on the phone, so the phone loses.</p>
+          <div class="cfrule"></div>
+          <p class="cfanswer"><strong>Capture-it-right intake</strong> <span class="badge badge-live">LIVE TODAY</span> — Sunny captures the call properly: caller's name, callback number read back digit-by-digit, new or existing patient, and the callback window they prefer.</p>
+        </article>
+        <article class="cfcard" data-i="1">
+          <span class="cftime">12:40 p.m.</span>
+          <h3>The lunch gap, 12 to 2</h3>
+          <p class="cfpain">The phones go uncovered when working patients finally have a free minute to call — their lunch break is your lunch break.</p>
+          <div class="cfrule"></div>
+          <p class="cfanswer"><strong>Never-a-voicemail nights</strong> <span class="badge badge-live">LIVE TODAY</span> — After hours, callers get a real conversation, not a beep. Sunny is honest that she is an AI assistant, and calls are disclosed as recorded.</p>
+        </article>
+        <article class="cfcard" data-i="2">
+          <span class="cftime">Monday 8:03 a.m.</span>
+          <h3>The Monday avalanche</h3>
+          <p class="cfpain">Everything from the weekend lands in Monday's first two hours — the line is already ringing before the door is unlocked.</p>
+          <div class="cfrule"></div>
+          <p class="cfanswer"><strong>One morning callback list</strong> <span class="badge badge-live">LIVE TODAY</span> — Everything Sunny takes comes back as one morning callback list, urgencies first, ready before the office opens.</p>
+        </article>
+        <article class="cfcard" data-i="3">
+          <span class="cftime">5:02 p.m.</span>
+          <h3>The 5 p.m. wall</h3>
+          <p class="cfpain">Close-out has to balance and the day has to end — exactly when the after-work wave of calls starts.</p>
+          <div class="cfrule"></div>
+          <p class="cfanswer"><strong>3-tier urgency sort</strong> <span class="badge badge-live">LIVE TODAY</span> — Every call is sorted by urgency — true emergencies are directed to 911 or urgent care, and your team gets an instant alert.</p>
+        </article>
+        <article class="cfcard" data-i="4">
+          <span class="cftime">All day</span>
+          <h3>The verification grind</h3>
+          <p class="cfpain">Tomorrow's insurance checks eat today's phone line — a manual eligibility check takes about 12 minutes and costs about $6.52 (CAQH Index 2024).</p>
+          <div class="cfrule"></div>
+          <p class="cfanswer"><strong>Insurance-question capture</strong> <span class="badge badge-live">LIVE TODAY</span> — Sunny captures the carrier and the caller's exact question, word for word, for your team to answer — capture only, not insurance verification.</p>
+        </article>
+      </div>
 
-      <article class="mrow">
-        <div class="mrow-head"><span class="mtime">12:40 p.m.</span><h3>The lunch gap, 12 to 2</h3></div>
-        <p class="mpain">The phones go uncovered when working patients finally have a free minute to call — their lunch break is your lunch break.</p>
-        <p class="manswer"><strong>Never-a-voicemail nights</strong> <span class="badge badge-live">LIVE TODAY</span> — After hours, callers get a real conversation, not a beep. Sunny is honest that she is an AI assistant, and calls are disclosed as recorded.</p>
-      </article>
-
-      <article class="mrow">
-        <div class="mrow-head"><span class="mtime">Monday 8:03 a.m.</span><h3>The Monday avalanche</h3></div>
-        <p class="mpain">Everything from the weekend lands in Monday's first two hours — the line is already ringing before the door is unlocked.</p>
-        <p class="manswer"><strong>One morning callback list</strong> <span class="badge badge-live">LIVE TODAY</span> — Everything Sunny takes comes back as one morning callback list, urgencies first, ready before the office opens.</p>
-      </article>
-
-      <article class="mrow">
-        <div class="mrow-head"><span class="mtime">5:02 p.m.</span><h3>The 5 p.m. wall</h3></div>
-        <p class="mpain">Close-out has to balance and the day has to end — exactly when the after-work wave of calls starts.</p>
-        <p class="manswer"><strong>3-tier urgency sort</strong> <span class="badge badge-live">LIVE TODAY</span> — Every call is sorted by urgency — true emergencies are directed to 911 or urgent care, and your team gets an instant alert.</p>
-      </article>
-
-      <article class="mrow">
-        <div class="mrow-head"><span class="mtime">All day</span><h3>The verification grind</h3></div>
-        <p class="mpain">Tomorrow's insurance checks eat today's phone line — a manual eligibility check takes about 12 minutes and costs about $6.52 (CAQH Index 2024).</p>
-        <p class="manswer"><strong>Insurance-question capture</strong> <span class="badge badge-live">LIVE TODAY</span> — Sunny captures the carrier and the caller's exact question, word for word, for your team to answer — capture only, not insurance verification.</p>
-      </article>
+      <div class="cfcontrols" aria-label="Carousel controls">
+        <button type="button" class="cfbtn cfprev" id="cfPrev">← Back</button>
+        <div class="cfdots" id="cfDots" aria-label="Choose a moment"></div>
+        <span class="cfcount" id="cfCount" aria-live="polite">Moment 1 of 5</span>
+        <button type="button" class="cfbtn cfnext" id="cfNext">Next →</button>
+      </div>
+      <p class="cfnote">Plays once through the day, then settles. Hover pauses it; buttons, dots, swipe, or arrow keys take over.</p>
+      <p class="cfrmnote">Motion reduced — all five moments shown in full.</p>
     </div>
+    <script>
+    (function(){
+      "use strict";
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (reduce.matches) return;               // static stack is the complete version
+      document.documentElement.classList.add("cfx");
+
+      var stage = document.getElementById("cfStage"),
+          stream = document.getElementById("cfStream"),
+          cards = Array.prototype.slice.call(stream.querySelectorAll(".cfcard")),
+          dotsWrap = document.getElementById("cfDots"),
+          count = document.getElementById("cfCount"),
+          N = cards.length, active = 0,
+          auto = { armed:false, done:false, userTook:false, hover:false, inView:false, timer:null },
+          PASS = [1,2,3,4,0], passStep = 0, DWELL = 2900;
+
+      cards.forEach(function(card, i){
+        var d = document.createElement("button");
+        d.type = "button"; d.className = "cfdot";
+        d.innerHTML = "<i></i>";
+        d.setAttribute("aria-label","Moment " + (i+1) + " of " + N);
+        d.addEventListener("click", function(){ takeOver(); goTo(i); });
+        dotsWrap.appendChild(d);
+      });
+      var dots = Array.prototype.slice.call(dotsWrap.children);
+
+      function stepPx(){
+        var w = stream.clientWidth;
+        return w < 640 ? w * 0.60 : 308;
+      }
+      function layout(){
+        var s = stepPx();
+        cards.forEach(function(card, i){
+          var d = i - active, a = Math.abs(d),
+              scale = a === 0 ? 1 : a === 1 ? 0.84 : 0.70,
+              blur  = a === 0 ? 0 : a === 1 ? 2.5 : 5,
+              op    = a === 0 ? 1 : a === 1 ? 0.55 : a === 2 ? 0.30 : 0;
+          card.style.transform = "translate(-50%,-50%) translateX(" + (d * s) + "px) scale(" + scale + ")";
+          card.style.filter = blur ? "blur(" + blur + "px)" : "none";
+          card.style.opacity = op;
+          card.style.zIndex = 20 - a;
+          card.style.visibility = a > 2 ? "hidden" : "visible";
+          card.style.pointerEvents = a === 0 ? "auto" : "none";
+          card.setAttribute("aria-hidden", a === 0 ? "false" : "true");
+        });
+        dots.forEach(function(d, i){ d.setAttribute("aria-current", i === active ? "true" : "false"); });
+        count.textContent = "Moment " + (active + 1) + " of " + N;
+      }
+      function goTo(i){
+        active = Math.max(0, Math.min(N - 1, i));
+        layout();
+      }
+      function clearTimer(){ if (auto.timer){ clearTimeout(auto.timer); auto.timer = null; } }
+      function schedule(){
+        clearTimer();
+        if (!auto.armed || auto.done || auto.userTook || auto.hover || !auto.inView || document.hidden) return;
+        auto.timer = setTimeout(function(){
+          if (passStep < PASS.length){
+            goTo(PASS[passStep]); passStep++;
+            if (passStep >= PASS.length){ auto.done = true; clearTimer(); return; }
+            schedule();
+          }
+        }, DWELL);
+      }
+      function takeOver(){ auto.userTook = true; clearTimer(); }
+
+      document.getElementById("cfNext").addEventListener("click", function(){ takeOver(); goTo(active + 1); });
+      document.getElementById("cfPrev").addEventListener("click", function(){ takeOver(); goTo(active - 1); });
+      stage.addEventListener("mouseenter", function(){ auto.hover = true; clearTimer(); });
+      stage.addEventListener("mouseleave", function(){ auto.hover = false; schedule(); });
+      stage.addEventListener("focusin", takeOver);
+      stage.addEventListener("keydown", function(e){
+        if (e.key === "ArrowRight"){ takeOver(); goTo(active + 1); }
+        if (e.key === "ArrowLeft"){ takeOver(); goTo(active - 1); }
+      });
+      /* swipe */
+      var sx = null;
+      stage.addEventListener("pointerdown", function(e){ sx = e.clientX; });
+      stage.addEventListener("pointerup", function(e){
+        if (sx === null) return;
+        var dx = e.clientX - sx; sx = null;
+        if (Math.abs(dx) > 42){ takeOver(); goTo(active + (dx < 0 ? 1 : -1)); }
+      });
+      document.addEventListener("visibilitychange", function(){ if (document.hidden) clearTimer(); else schedule(); });
+      window.addEventListener("resize", layout);
+
+      layout();
+      /* Entrance: cards fly in from their offsets once the section is seen, then the single pass begins. */
+      cards.forEach(function(card, i){
+        card.style.transform += " translateY(30px)";
+        card.style.transitionDelay = (i * 90) + "ms";
+      });
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          auto.inView = en.isIntersecting;
+          if (en.isIntersecting && !auto.armed){
+            auto.armed = true;
+            requestAnimationFrame(function(){
+              stream.classList.add("go");
+              layout();
+              setTimeout(function(){
+                cards.forEach(function(c){ c.style.transitionDelay = "0ms"; });
+                schedule();
+              }, 950);
+            });
+          }
+          if (!en.isIntersecting) clearTimer(); else schedule();
+        });
+      }, { threshold: 0.35 });
+      io.observe(stage);
+    })();
+    </script>
 
     <p class="day-more">Two more moments from the same week — <strong>one sick call collapses the system</strong>, <strong>recall lists never get worked</strong>, and <strong>the no-show scramble</strong> — have Sunny's answers in the Coming ledger below, labeled coming, because they are not live yet.</p>
   </div>
@@ -1352,7 +1518,7 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
         <p class="foot-label">Sunny</p>
         <a href="index.html">Home — Sunny, AI receptionist for dental offices</a>
         <a href="pricing.html">Pricing — dental answering service cost</a>
-        <a href="how-it-works.html">How It Works — after hours answering service for dentists</a>
+        <a href="how-it-works.html">How It Works — how Sunny works, step by step</a>
       </nav>
       <nav class="foot-col" aria-label="More">
         <p class="foot-label">More</p>
@@ -1422,7 +1588,7 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
          taps). Anything that happens while the file is in flight is
          queued here and replayed by the brain the moment it
          initializes - no lost first message, no dead first click. */
-      var BRAIN_URL = '/chat-brain.js?v=383dbca47c';
+      var BRAIN_URL = '/chat-brain.js?v=86eb7276ab';
       var shellLauncher = document.getElementById('chatLauncher');
       var shellForm = document.getElementById('chatForm');
       var shellInput = document.getElementById('chatInput');

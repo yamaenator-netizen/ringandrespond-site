@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How Sunny Works — After Hours Answering Service for Dentists | Ring &amp; Respond</title>
+<title>How Sunny Works, Step by Step — After Hours Answering Service for Dentists | Ring &amp; Respond</title>
 <meta name="description" content="The four steps to switch on Sunny: a short setup call, keep your number, turn on forwarding for overflow and after-hours calls, and turn it off anytime. Plus what Sunny does not do today, stated plainly.">
 <link rel="canonical" href="https://ringandrespond.com/how-it-works">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ring &amp; Respond">
-<meta property="og:title" content="How Sunny Works — After Hours Answering Service for Dentists | Ring &amp; Respond">
+<meta property="og:title" content="How Sunny Works, Step by Step — After Hours Answering Service for Dentists | Ring &amp; Respond">
 <meta property="og:description" content="The four steps to switch on Sunny: a short setup call, keep your number, turn on forwarding for overflow and after-hours calls, and turn it off anytime.">
 <meta property="og:url" content="https://ringandrespond.com/how-it-works">
 <meta property="og:image" content="https://ringandrespond.com/assets/og.jpg">
@@ -267,6 +267,45 @@ body.es .lang-en-hero{display:none}
 }
 
 </style>
+<style>
+/* Step Zero numbered path (how-it-works) — ported from the boss-approved sample 2026-11-10.
+   Rail fix vs the sample: the rail is drawn per item (circle-center to next circle-center)
+   and the payoff item carries no rail, so the line terminates exactly at the payoff
+   circle instead of hanging a tail below the payoff card. */
+.path-section{padding:8px 0 76px;background:linear-gradient(180deg,var(--bg),#fff 90%)}
+.path-intro{max-width:720px;margin:0 auto 8px;text-align:left}
+.path-wrap{position:relative;max-width:760px;margin:26px auto 0;padding-left:64px}
+.path-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.path-item{position:relative}
+.path-list .path-item::before{content:"";position:absolute;left:-42px;top:41px;bottom:-57px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--accent),var(--line))}
+.path-num{position:absolute;left:-64px;top:18px;width:46px;height:46px;border-radius:50%;background:var(--panel);border:2px solid var(--accent);color:var(--accent-ink);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);z-index:1}
+.path-num small{font-size:9px;letter-spacing:.04em;display:block;line-height:1}
+.path-num-zero{flex-direction:column;gap:1px;background:var(--cta);border-color:var(--cta);color:#fff}
+.path-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm);color:var(--body)}
+.path-card h3{margin-top:0}
+.path-card p{margin-bottom:0}
+.path-kicker{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px}
+.step-zero-card{border:2px solid var(--accent);box-shadow:var(--shadow-lg)}
+.step-zero-card .btn{margin-top:14px}
+.go-live{max-width:760px;margin:18px auto 0;padding-left:64px;font-size:17px}
+.payoff-wrap{position:relative;margin-top:16px}
+.payoff-num{background:var(--live-bg);border-color:var(--live-ink);color:var(--live-ink);font-size:20px}
+.payoff-card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow-lg);color:var(--body)}
+.payoff-card h3{margin-top:0}
+.payoff-note{font-size:13.5px;color:var(--muted);margin-top:12px;margin-bottom:0}
+.payoff-list{list-style:none;margin-top:12px}
+.payoff-list li{padding:11px 0;border-bottom:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:15.5px}
+.payoff-list li:last-child{border-bottom:0}
+@media(max-width:560px){
+  .path-wrap{padding-left:52px}
+  .path-list .path-item::before{left:-34px;top:35px;bottom:-51px}
+  .path-num{left:-52px;width:38px;height:38px;font-size:16px;top:16px}
+  .path-num-zero small{display:none}
+  .go-live{padding-left:52px}
+  .path-card,.payoff-card{padding:18px}
+  .payoff-list li{font-size:14.5px}
+}
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://ringandrespond.com/#org","name":"Ring & Respond","alternateName":"Ring and Respond","url":"https://ringandrespond.com/","logo":"https://ringandrespond.com/assets/mark.jpg","email":"hello@ringandrespond.com","telephone":"+1-619-202-1085","slogan":"Answered with a smile.","sameAs":["https://www.instagram.com/ringandrespond/"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@ringandrespond.com","telephone":"+1-619-202-1085","areaServed":"US","availableLanguage":["English","Spanish","Arabic","Persian"]}},
@@ -368,23 +407,72 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   <div class="gridlines" aria-hidden="true"></div>
   <div class="wrap">
     <p class="date-line">Updated November 2026</p>
-    <h1>How an after hours answering service for dentists works, step by step</h1>
-    <p class="sub">No porting, no new hardware, no IT project. Sunny sits behind the phones you already have, answers the calls your front desk can't get to — in your practice's name — and hands your team one sorted callback list. Hear her before you read another word: <a href="tel:+16192021085" style="color:#0B7FA8">(619) 202-1085</a>.</p>
+    <h1>How Sunny works, step by step</h1>
+    <p class="sub">No porting, no new hardware, no IT project. Sunny works through the phones you already have: when your front desk can't pick up — busy, closed for lunch, or after hours — she answers in your practice's name, and every other call lands on one morning callback list, urgencies first, for your team. Hear her before you read another word: <a href="tel:+16192021085" style="color:#0B7FA8">(619) 202-1085</a>.</p>
   </div>
 </section>
 
-<section>
+<section class="path-section" aria-labelledby="path-heading">
   <div class="wrap">
-    <h2>The four steps, expanded</h2>
-    <h3>Step 1 — A short setup call</h3>
-    <p>We set Sunny up the way your office actually runs: your hours, your services, how your office wants new and existing patients handled, and your urgent rules — what counts as a true emergency, what is urgent, and what can wait for the morning list. This is also where the paperwork order is fixed: the signed BAA comes before any patient information flows, as part of setup.</p>
-    <h3>Step 2 — Keep your number</h3>
-    <p>Your number does not move. Your phones, your carrier, and your practice system stay exactly where they are, and patients keep dialing the number they already know. If the office in the example is Your Dental Practice, callers still call Your Dental Practice's number — Sunny answers in that name, behind it.</p>
-    <h3>Step 3 — Turn on forwarding</h3>
-    <p>You switch on call forwarding for the calls your team can't take: overflow — when the line is busy or the desk is with a patient — and after hours, including the lunch gap if your office closes for it. From that moment, a call that would have rung out is answered by Sunny instead. The next section explains forwarding itself, in plain terms.</p>
-    <h3>Step 4 — Change your mind anytime</h3>
-    <p>There is no step four project. Turn forwarding off and your phone rings exactly like it used to — that is the whole cancellation process, and it works from the first day of the pilot. Plans are month-to-month, and the pilot's first month carries an unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> within 30 days.</p>
-    <p><strong>Go-live takes days, not weeks.</strong></p>
+    <div class="path-intro">
+      <h2 id="path-heading">Hear her first, then the four steps</h2>
+      <p>Step zero is an invitation, not a setup step. The four steps after it are the whole switch-on.</p>
+    </div>
+    <div class="path-wrap">
+      <ol class="path-list">
+        <li class="path-item">
+          <span class="path-num path-num-zero" aria-hidden="true"><small>STEP</small>0</span>
+          <div class="path-card step-zero-card">
+            <p class="path-kicker">Step zero — before step 1</p>
+            <h3>Hear her first.</h3>
+            <p>Call the demo line and hear Sunny answer a sample call.</p>
+            <a class="btn" href="tel:+16192021085">(619) 202-1085</a>
+          </div>
+        </li>
+        <li class="path-item">
+          <span class="path-num" aria-hidden="true">1</span>
+          <div class="path-card">
+            <h3>A short setup call</h3>
+            <p>We set Sunny up the way your office actually runs: your hours, your services, how new and existing patients are handled, and your urgent rules — and the signed BAA comes before any patient information flows.</p>
+          </div>
+        </li>
+        <li class="path-item">
+          <span class="path-num" aria-hidden="true">2</span>
+          <div class="path-card">
+            <h3>Keep your number</h3>
+            <p>Your number does not move. Your phones, your carrier, and your system stay exactly where they are.</p>
+          </div>
+        </li>
+        <li class="path-item">
+          <span class="path-num" aria-hidden="true">3</span>
+          <div class="path-card">
+            <h3>Turn on forwarding</h3>
+            <p>Forward the calls your team can't take — overflow and after hours, including the lunch gap if your office closes for it. A call that would have rung out is answered by Sunny instead.</p>
+          </div>
+        </li>
+        <li class="path-item">
+          <span class="path-num" aria-hidden="true">4</span>
+          <div class="path-card">
+            <h3>Change your mind anytime</h3>
+            <p>Turn forwarding off and your phone rings exactly like it used to. Month-to-month, and the pilot's first month carries an unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a> within 30 days.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="payoff-wrap path-item">
+        <span class="path-num payoff-num" aria-hidden="true">✓</span>
+        <div class="payoff-card" aria-labelledby="payoff-heading">
+          <p class="path-kicker">One sorted callback list</p>
+          <h3 id="payoff-heading">Your morning callback list — urgencies first</h3>
+          <ul class="payoff-list">
+            <li><span>Urgent — pain, needs a callback first</span><span class="tag-urgent">URGENT</span></li>
+            <li><span>New patient — cleaning request</span><span class="tag-std">TODAY</span></li>
+            <li><span>Existing patient — insurance question captured</span><span class="tag-std">TODAY</span></li>
+          </ul>
+          <p class="payoff-note">Example list — shown so you can see the format your team receives.</p>
+        </div>
+      </div>
+    </div>
+    <p class="go-live"><strong>Go-live takes days, not weeks.</strong></p>
   </div>
 </section>
 
@@ -456,7 +544,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     <nav aria-label="Footer">
       <a href="index.html">Home — Sunny, AI receptionist for dental offices</a>
       <a href="pricing.html">Pricing — dental answering service cost</a>
-      <a href="how-it-works.html">How It Works — after hours answering service for dentists</a>
+      <a href="how-it-works.html">How It Works — how Sunny works, step by step</a>
       <a href="https://ringandrespond.com/websites">Websites — website design for local businesses</a>
       <a href="https://app.ringandrespond.com">Office dashboard — app.ringandrespond.com (in build)</a>
       <a href="poll.html">One question for shop owners</a>
@@ -521,7 +609,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
          taps). Anything that happens while the file is in flight is
          queued here and replayed by the brain the moment it
          initializes - no lost first message, no dead first click. */
-      var BRAIN_URL = '/chat-brain.js?v=383dbca47c';
+      var BRAIN_URL = '/chat-brain.js?v=86eb7276ab';
       var shellLauncher = document.getElementById('chatLauncher');
       var shellForm = document.getElementById('chatForm');
       var shellInput = document.getElementById('chatInput');
