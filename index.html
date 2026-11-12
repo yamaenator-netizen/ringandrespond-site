@@ -434,29 +434,82 @@ html.cfx .cfcontrols{display:flex;align-items:center;justify-content:center;gap:
 
 /* [GRAFT 8] Sample C rollout (2026-11-08, boss: "Put Sample C on the website")
    — Morning List artifact (full list, continuous scroll) + comparison table */
-/* Morning List artifact */
 .ml-lede{max-width:760px}
 .one-line{margin:20px 0 4px;background:var(--ink);color:#EAF6FB;border-radius:14px;padding:16px 20px;font-size:16.5px;max-width:880px}
 .one-line strong{color:#fff}
-.ml-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden;max-width:880px;margin:24px 0 0;text-align:left}
-.ml-card-head{background:var(--ink);color:#D9EEF7;padding:16px 22px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
-.ml-card-head .t{font-size:17.5px;font-weight:800;color:#fff}
-.ml-card-head .s{font-size:13.5px;color:#9FC6DA}
-.ml-sample{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.1em;background:#24425A;color:#CFE9F5;padding:4px 10px;border-radius:999px}
-.ml-scroll{overflow:hidden;position:relative}
-.ml-track{animation:mlScroll 30s linear infinite}
-.ml-scroll:hover .ml-track,.ml-scroll:focus-within .ml-track{animation-play-state:paused}
-@keyframes mlScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-.ml-row{display:grid;grid-template-columns:118px 1fr;gap:4px 16px;padding:15px 22px;border-top:1px solid var(--line)}
-.ml-set .ml-row:first-child{border-top:none}
-.ml-row .when{font-size:13px;color:var(--muted);font-weight:700;padding-top:2px}
-.ml-row .what{font-size:15.5px;color:var(--body)}
-.ml-row .what b{color:var(--ink)}
-.ml-row .how{grid-column:2;font-size:13.5px;color:var(--muted)}
-.ml-row .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
-.ml-chip{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--tag-bg);color:var(--ink-link);white-space:nowrap}
-.ml-foot{background:var(--band);padding:13px 22px;font-size:14.5px;color:var(--body)}
-.ml-foot b{color:var(--accent-ink)}
+/* Morning List artifact — phone-notification scene (v2 port, boss-approved
+   2026-11-11 "ship it"; design-team/morning-list-notification-20261111/v2,
+   96/100, cold-verified SIGN). Replaces the 2026-11-08 continuous-scroll list;
+   content (six callers, urgencies first, owner's-copy foot) unchanged.
+   Template-matched light color world is scoped to .mln-stage via local tokens —
+   the Daylight Pod :root above is untouched. Measured tempo (v2): entrance
+   stagger 1.40s, card entrance .65s, banner 3.4s @ .3s, drift 44.92 px/s
+   (26s half-track after 8.5s delay), full cycle 34.5s. */
+.mln-stage{--bg:#E9EBED;--panel:#FFFFFF;--panel2:#EFF1F3;--band:#E9EBED;--ink:#17191B;--body:#2E3338;--muted:#5F676E;--accent:#454C52;--accent-ink:#2F353B;--ink-link:#33393F;--line:#D4D8DC;--line-soft:rgba(23,25,27,.09);--tag-bg:#E7E9EB;--tag-ink:#33393F;--live-bg:#DFF5E9;--live-ink:#177245;--urgent-bg:#FDECEA;--urgent-ink:#B23A1D;--urgent-line:rgba(200,70,40,.35);--shadow-sm:0 2px 14px rgba(31,35,39,.08);--shadow-lg:0 18px 50px rgba(31,35,39,.14);--ease-out:cubic-bezier(.22,.9,.28,1);
+  display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap;max-width:880px;margin:24px 0 0;text-align:left}
+.mln-phone{flex:0 0 auto;width:378px;max-width:92vw;margin:0 auto;background:#141619;border-radius:52px;padding:11px;box-shadow:0 34px 80px rgba(23,25,27,.32),0 4px 18px rgba(23,25,27,.20)}
+.mln-screen{position:relative;border-radius:42px;overflow:hidden;height:760px;background:radial-gradient(120% 90% at 50% 34%,#F4F5F6 0%,#E9EBED 58%,#DFE2E5 100%)}
+.mln-screen::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 300px at 50% -40px,rgba(255,255,255,.70),transparent 62%),radial-gradient(300px 260px at -60px 78%,rgba(255,255,255,.35),transparent 60%)}
+.mln-island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:104px;height:27px;border-radius:999px;background:#04141D;z-index:6}
+.mln-statusbar{position:relative;z-index:5;display:flex;justify-content:space-between;padding:13px 30px 0;color:#2B2F33;font-size:13.5px;font-weight:600}
+.mln-statusbar .mln-sicons{letter-spacing:2px;font-size:12px}
+.mln-lockhead{position:relative;z-index:4;text-align:center;padding-top:20px;color:#1C1F22;opacity:0;animation:mlnLockReveal .7s var(--ease-out) 2.6s both}
+@keyframes mlnLockReveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mln-lockdate{font-size:15.5px;font-weight:600;color:#5F676E}
+.mln-clock{font-size:86px;font-weight:200;line-height:1.04;letter-spacing:.01em}
+.mln-locksub{font-size:14px;color:#767E85;margin-top:2px}
+.mln-locktitle{margin-top:12px;font-size:16.5px;font-weight:800;color:#17191B}
+.mln-locktitle .s{font-weight:600;color:#5F676E;font-size:13px}
+.mln-banner{position:absolute;top:64px;left:12px;right:12px;z-index:7;display:flex;gap:11px;align-items:center;background:rgba(255,255,255,.94);border:1px solid rgba(23,25,27,.07);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-radius:24px;padding:11px 14px;box-shadow:0 14px 34px rgba(31,35,39,.20);transform:translateY(-150%);opacity:0;animation:mlnBannerIn 3.4s var(--ease-out) .3s both}
+.mln-banner .mln-bicon{flex:none;width:38px;height:38px;border-radius:50%;background:var(--live-ink);display:flex;align-items:center;justify-content:center}
+.mln-banner .mln-bicon svg{width:19px;height:19px;fill:#fff}
+.mln-banner .mln-bt{flex:1;min-width:0}
+.mln-banner .mln-bt b{display:block;font-size:14.5px;color:var(--ink);line-height:1.25}
+.mln-banner .mln-bt span{display:block;font-size:13px;color:var(--muted);line-height:1.3}
+.mln-banner .mln-btime{font-size:12px;color:var(--muted);align-self:flex-start}
+@keyframes mlnBannerIn{0%{transform:translateY(-150%);opacity:0}10%{transform:translateY(0);opacity:1}78%{transform:translateY(0);opacity:1}94%,100%{transform:translateY(-150%);opacity:0}}
+.mln-stackwrap{position:absolute;left:12px;right:12px;top:316px;bottom:44px;z-index:3;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18px,#000 calc(100% - 30px),transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 18px,#000 calc(100% - 30px),transparent 100%)}
+.mln-track{display:flex;flex-direction:column;gap:9px;padding-top:8px;animation:mlnDrift var(--drift-dur,26s) linear var(--drift-delay,8.5s) infinite}
+.mln-stackwrap:hover .mln-track,.mln-stackwrap:focus-within .mln-track{animation-play-state:paused}
+.mln-stackwrap:focus{outline:none}
+.mln-stackwrap:focus-visible{box-shadow:inset 0 0 0 2px rgba(23,25,27,.35)}
+@keyframes mlnDrift{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.mln-card{display:flex;gap:11px;background:rgba(255,255,255,.92);border:1px solid rgba(23,25,27,.08);-webkit-backdrop-filter:blur(16px) saturate(1.35);backdrop-filter:blur(16px) saturate(1.35);border-radius:22px;padding:11px 13px 12px;box-shadow:0 8px 24px rgba(31,35,39,.14),0 2px 6px rgba(31,35,39,.07);opacity:0;transform:translateY(46px);animation:mlnCardIn .65s var(--ease-out) both;animation-delay:var(--d,1s)}
+@keyframes mlnCardIn{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:translateY(0)}}
+.mln-card .mln-icon{flex:none;width:38px;height:38px;border-radius:10px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line-soft)}
+.mln-card .mln-icon img{width:100%;height:100%;object-fit:cover}
+.mln-card .mln-cbody{flex:1;min-width:0}
+.mln-card .mln-meta{display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:.07em;font-weight:700;color:#656D74;text-transform:uppercase}
+.mln-card .mln-meta .mln-time{letter-spacing:0;font-weight:600;text-transform:none;font-size:12px;color:#656D74;white-space:nowrap}
+.mln-card .mln-main{font-size:14.5px;line-height:1.36;color:var(--body);margin:1px 0 0}
+.mln-card .mln-main b{color:var(--ink)}
+.mln-card .mln-sub{font-size:13px;line-height:1.35;color:#5F676E;margin:2px 0 0}
+.mln-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.05em;padding:2px 8px;border-radius:999px;background:var(--tag-bg);color:var(--ink-link);vertical-align:2px;margin-right:5px;white-space:nowrap}
+.mln-tag.mln-urgent{background:var(--urgent-bg);color:var(--urgent-ink);box-shadow:inset 0 0 0 1px var(--urgent-line)}
+.mln-card.is-urgent{background:rgba(253,235,231,.96);box-shadow:0 8px 24px rgba(31,35,39,.14),0 2px 6px rgba(31,35,39,.07),inset 0 0 0 1.5px var(--urgent-line)}
+.mln-card.is-report{background:rgba(233,245,237,.90)}
+.mln-homebar{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:99px;background:rgba(23,25,27,.45);z-index:6}
+.mln-stacklabel{position:absolute;left:0;right:0;bottom:20px;z-index:4;text-align:center;font-size:12.5px;color:#565E64}
+.mln-static{display:none;flex:1 1 340px;max-width:880px;background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden;text-align:left}
+.mln-static .mln-sl-head{background:#EEF0F2;color:#5F676E;border-bottom:1px solid var(--line);padding:16px 22px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.mln-static .mln-sl-head .t{font-size:17.5px;font-weight:800;color:var(--ink)}
+.mln-static .mln-sl-head .s{font-size:13.5px;color:#5F676E}
+.mln-sl-sample{margin-left:auto;font-size:11px;font-weight:800;letter-spacing:.1em;background:#232629;color:#FFFFFF;padding:4px 10px;border-radius:999px}
+.mln-sl-row{display:grid;grid-template-columns:118px 1fr;gap:4px 16px;padding:15px 22px;border-top:1px solid var(--line)}
+.mln-sl-row:first-of-type{border-top:none}
+.mln-sl-row .mln-when{font-size:13px;color:var(--muted);font-weight:700;padding-top:2px}
+.mln-sl-row .mln-what{font-size:15.5px;color:var(--body)}
+.mln-sl-row .mln-what b{color:var(--ink)}
+.mln-sl-row .mln-how{grid-column:2;font-size:13.5px;color:var(--muted)}
+.mln-sl-foot{background:var(--band);padding:13px 22px;font-size:14.5px;color:var(--body)}
+.mln-sl-foot b{color:var(--accent-ink)}
+.mln-chip{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--tag-bg);color:var(--ink-link);white-space:nowrap;display:inline-block;margin-bottom:4px}
+.mln-urgent-tag{font-size:11px;font-weight:800;letter-spacing:.05em;padding:3px 9px;border-radius:999px;background:var(--urgent-bg);color:var(--urgent-ink);box-shadow:inset 0 0 0 1px var(--urgent-line);display:inline-block;margin-bottom:4px}
+.mln-stage.static .mln-phone{display:none}
+.mln-stage.static .mln-static{display:block}
+.mln-toggle{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--ink);color:var(--ink);font:700 14.5px var(--font);padding:11px 20px;border-radius:999px;cursor:pointer;margin-top:18px}
+.mln-toggle:hover{background:var(--panel2)}
+.mln-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .ml-steps-h{font-size:23px;margin-top:46px}
 .ml-sub{color:var(--muted);margin-bottom:4px}
 .ml-steps{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px;max-width:880px}
@@ -466,8 +519,9 @@ html.cfx .cfcontrols{display:flex;align-items:center;justify-content:center;gap:
 .ml-step h3{font-size:17px;margin:4px 0}
 .ml-step p{font-size:14.5px;margin:0;color:var(--body)}
 .ml-boundary{max-width:880px;margin-top:18px}
-@media(max-width:640px){.ml-row{grid-template-columns:1fr}.ml-row .how{grid-column:1}}
-@media (prefers-reduced-motion: reduce){.ml-track{animation:none}}
+@media(max-width:640px){.mln-sl-row{grid-template-columns:1fr}.mln-sl-row .mln-how{grid-column:1}}
+@media(max-width:560px){.mln-phone{width:340px}.mln-screen{height:700px}.mln-clock{font-size:74px}.mln-stackwrap{top:288px}}
+@media (prefers-reduced-motion: reduce){.mln-phone{display:none}.mln-static{display:block}.mln-toggle{display:none}}
 
 /* Pricing — Option C (T2 Two Families + broken gradient thread), ported from the
    Brain-B-signed sample (design-team/pricing-sample-20261110/sample.html, 92/100).
@@ -725,80 +779,44 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     <p class="ml-lede">Sunny is the AI receptionist who answers the calls your front desk can't get to — overflow, lunch, after hours — in your practice's own name. What you actually get for that is below: the morning callback list, urgencies first. Everything after it is just how it gets there.</p>
     <div class="one-line">The one-sentence version: <strong>Sunny turns every missed call into a name, a number, and a next step — sorted before you open.</strong></div>
 
-    <div class="ml-card" role="img" aria-label="A sample morning callback list as Sunny delivers it">
-      <div class="ml-card-head">
-        <span class="t">Morning callback list — Your Dental Practice</span>
-        <span class="s">Ready before you open · urgencies first</span>
-        <span class="ml-sample">SAMPLE</span>
+    <div class="mln-stage" id="mlnStage">
+      <div class="mln-phone" role="region" aria-label="Sample: Sunny's morning callback list shown as phone notifications on a 7:30 a.m. lock screen">
+        <div class="mln-screen">
+          <div class="mln-island" aria-hidden="true"></div>
+          <div class="mln-statusbar" aria-hidden="true"><span>7:30</span><span class="mln-sicons">▂▄▆ ▰</span></div>
+
+          <div class="mln-banner" aria-hidden="true">
+            <div class="mln-bicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></div>
+            <div class="mln-bt"><b>6 calls Sunny caught</b><span>Every one answered — no voicemail</span></div>
+            <div class="mln-btime">now</div>
+          </div>
+
+          <div class="mln-lockhead" aria-hidden="true">
+            <div class="mln-lockdate">This morning · before you open</div>
+            <div class="mln-clock">7:30</div>
+            <div class="mln-locksub">&nbsp;</div>
+            <div class="mln-locktitle">Morning callback list — Your Dental Practice<br><span class="s">Ready before you open · urgencies first</span></div>
+          </div>
+
+          <div class="mln-stackwrap" tabindex="0" aria-label="Sunny's callback notifications. Focus or hover pauses the scroll.">
+            <div class="mln-track" id="mlnTrack"><!-- sets injected by JS (two identical sets for the seamless drift) --></div>
+          </div>
+          <div class="mln-stacklabel" aria-hidden="true">Sample data</div>
+          <div class="mln-homebar" aria-hidden="true"></div>
+        </div>
       </div>
-      <div class="ml-scroll" id="mlScroll"><div class="ml-track">
-        <div class="ml-set">
-          <div class="ml-row">
-            <div class="when">9:47 p.m.</div>
-            <div class="what"><div class="tags"><span class="urgent-tag">URGENT</span></div><b>Caller in pain.</b> Directed to call 911 / urgent care right away; your team alerted instantly. Callback first this morning.</div>
-            <div class="how">Answered after hours — no voicemail. Name and number captured, read back digit-by-digit.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">12:41 p.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">New patient</span></div><b>Cleaning request.</b> Called during lunch; prefers morning appointments; asked to be called back before noon.</div>
-            <div class="how">Answered during the lunch gap and flagged NEW PATIENT — the callers worth the most don't blend in.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">7:52 a.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Existing patient</span></div><b>Needs to move Thursday's appointment.</b> Number confirmed digit-by-digit.</div>
-            <div class="how">Answered on line two while your desk was with the patient at the counter.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">10:05 a.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Spanish</span></div><b>Full conversation held in Spanish.</b> Toothache since Sunday; wants the first available slot.</div>
-            <div class="how">Sunny speaks English, Spanish, Arabic, and Farsi — the whole call, not a phrase book.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">3:12 p.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Insurance question</span></div><b>Carrier noted; the caller's exact question saved word-for-word</b> for your team to answer.</div>
-            <div class="how">Sunny never guesses at coverage — she captures the question exactly, and your team answers it right.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">4:48 p.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Billing question</span></div><b>“What do I owe and why?”</b> — exact words saved, validated callback number attached.</div>
-            <div class="how">The patient hears “the office will call you with the exact answer” — never a guessed balance.</div>
-          </div>
+
+      <div class="mln-static" role="region" aria-label="The same morning callback list as a static, fully readable list">
+        <div class="mln-sl-head">
+          <span class="t">Morning callback list — Your Dental Practice</span>
+          <span class="s">Ready before you open · urgencies first</span>
+          <span class="mln-sl-sample">SAMPLE</span>
         </div>
-        <div class="ml-set" aria-hidden="true">
-          <div class="ml-row">
-            <div class="when">9:47 p.m.</div>
-            <div class="what"><div class="tags"><span class="urgent-tag">URGENT</span></div><b>Caller in pain.</b> Directed to call 911 / urgent care right away; your team alerted instantly. Callback first this morning.</div>
-            <div class="how">Answered after hours — no voicemail. Name and number captured, read back digit-by-digit.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">12:41 p.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">New patient</span></div><b>Cleaning request.</b> Called during lunch; prefers morning appointments; asked to be called back before noon.</div>
-            <div class="how">Answered during the lunch gap and flagged NEW PATIENT — the callers worth the most don't blend in.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">7:52 a.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Existing patient</span></div><b>Needs to move Thursday's appointment.</b> Number confirmed digit-by-digit.</div>
-            <div class="how">Answered on line two while your desk was with the patient at the counter.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">10:05 a.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Spanish</span></div><b>Full conversation held in Spanish.</b> Toothache since Sunday; wants the first available slot.</div>
-            <div class="how">Sunny speaks English, Spanish, Arabic, and Farsi — the whole call, not a phrase book.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">3:12 p.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Insurance question</span></div><b>Carrier noted; the caller's exact question saved word-for-word</b> for your team to answer.</div>
-            <div class="how">Sunny never guesses at coverage — she captures the question exactly, and your team answers it right.</div>
-          </div>
-          <div class="ml-row">
-            <div class="when">4:48 p.m.</div>
-            <div class="what"><div class="tags"><span class="ml-chip">Billing question</span></div><b>“What do I owe and why?”</b> — exact words saved, validated callback number attached.</div>
-            <div class="how">The patient hears “the office will call you with the exact answer” — never a guessed balance.</div>
-          </div>
-        </div>
-      </div></div>
-      <div class="ml-foot"><b>Owner's copy:</b> the week's proof report — every call, every request, the urgency mix. What happens on your phones stops being a rumor.</div>
+        <div id="mlnSlRows"><!-- rows injected by JS from the same data --></div>
+        <div class="mln-sl-foot"><b>Owner's copy:</b> the week's proof report — every call, every request, the urgency mix. What happens on your phones stops being a rumor.</div>
+      </div>
     </div>
+    <button class="mln-toggle" id="mlnToggle" type="button" aria-pressed="false">View the static list (reduced-motion version)</button>
 
     <h3 class="ml-steps-h">How a row gets on the list</h3>
     <p class="ml-sub">Three steps, all live today.</p>
@@ -1676,12 +1694,66 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
   </script>
 
 <script>
-/* Morning List viewport fit: the scroll window is exactly one set tall,
-   so the duplicated set loops seamlessly. Refit on resize + load. */
+/* Morning List notification scene: the shipped list's six sample callers as
+   lock-screen notification cards (two identical sets for the seamless drift),
+   plus the static-list fallback rows — one data source, verbatim wording. */
 (function () {
-  var v = document.getElementById('mlScroll'); if (!v) return;
-  function fit() { var set = v.querySelector('.ml-set'); if (set) v.style.height = set.offsetHeight + 'px'; }
-  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  var CARDS = [
+    {time:"9:47 p.m.", tag:"URGENT", urgent:true,
+     main:"<b>Caller in pain.</b> Directed to call 911 / urgent care right away; your team alerted instantly. Callback first this morning.",
+     sub:"Answered after hours — no voicemail. Name and number captured, read back digit-by-digit."},
+    {time:"12:41 p.m.", tag:"New patient",
+     main:"<b>Cleaning request.</b> Called during lunch; prefers morning appointments; asked to be called back before noon.",
+     sub:"Answered during the lunch gap and flagged NEW PATIENT — the callers worth the most don't blend in."},
+    {time:"7:52 a.m.", tag:"Existing patient",
+     main:"<b>Needs to move Thursday's appointment.</b> Number confirmed digit-by-digit.",
+     sub:"Answered on line two while your desk was with the patient at the counter."},
+    {time:"10:05 a.m.", tag:"Spanish",
+     main:"<b>Full conversation held in Spanish.</b> Toothache since Sunday; wants the first available slot.",
+     sub:"Sunny speaks English, Spanish, Arabic, and Farsi — the whole call, not a phrase book."},
+    {time:"3:12 p.m.", tag:"Insurance question",
+     main:"<b>Carrier noted; the caller's exact question saved word-for-word</b> for your team to answer.",
+     sub:"Sunny never guesses at coverage — she captures the question exactly, and your team answers it right."},
+    {time:"4:48 p.m.", tag:"Billing question",
+     main:"<b>“What do I owe and why?”</b> — exact words saved, validated callback number attached.",
+     sub:"The patient hears “the office will call you with the exact answer” — never a guessed balance."},
+    {report:true, time:"Weekly",
+     main:"<b>Owner's copy: the week's proof report</b> — every call, every request, the urgency mix.",
+     sub:"What happens on your phones stops being a rumor."}
+  ];
+
+  function cardHTML(c, delay){
+    var tag = c.tag ? '<span class="mln-tag' + (c.urgent ? ' mln-urgent' : '') + '">' + c.tag + '</span>' : '';
+    return '<article class="mln-card' + (c.urgent ? ' is-urgent' : '') + (c.report ? ' is-report' : '') + '" style="--d:' + delay + 's">'
+      + '<div class="mln-icon"><img src="rr-mark.png" alt=""></div>'
+      + '<div class="mln-cbody"><div class="mln-meta"><span>Sunny</span><span class="mln-time">' + c.time + '</span></div>'
+      + '<p class="mln-main">' + tag + c.main + '</p>'
+      + '<p class="mln-sub">' + c.sub + '</p></div></article>';
+  }
+
+  var track = document.getElementById('mlnTrack');
+  if (!track) return;
+  var ENTER0 = 3.5, STEP = 1.4; /* first card lands after the banner clears and the clock settles in */
+  var setA = CARDS.map(function(c, i){ return cardHTML(c, (ENTER0 + i * STEP).toFixed(2)); }).join('');
+  var setB = CARDS.map(function(c){ return cardHTML(c, 0).replace('class="mln-card', 'aria-hidden="true" class="mln-card'); }).join('');
+  track.innerHTML = setA + setB;
+
+  /* Static fallback rows: full text, no clamping (mirrors the shipped list rows) */
+  var sl = document.getElementById('mlnSlRows');
+  sl.innerHTML = CARDS.slice(0, 6).map(function(c){
+    var tag = c.urgent ? '<span class="mln-urgent-tag">URGENT</span><br>' : '<span class="mln-chip">' + c.tag + '</span><br>';
+    return '<div class="mln-sl-row"><div class="mln-when">' + c.time + '</div>'
+      + '<div class="mln-what">' + tag + c.main + '</div>'
+      + '<div class="mln-how">' + c.sub + '</div></div>';
+  }).join('');
+
+  var stage = document.getElementById('mlnStage');
+  var btn = document.getElementById('mlnToggle');
+  btn.addEventListener('click', function(){
+    var on = stage.classList.toggle('static');
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? 'Back to the phone (motion version)' : 'View the static list (reduced-motion version)';
+  });
 })();
 </script>
 
