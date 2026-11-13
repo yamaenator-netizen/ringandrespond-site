@@ -181,8 +181,7 @@ strong{color:var(--ink)}
 .ledger-col li strong{color:var(--ink)}
 .ledger-col li:last-child{border-bottom:0}
 .gate{font-size:14px;color:var(--muted);font-style:italic}
-.note-box{border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel2);border-radius:16px;padding:22px;max-width:880px;color:var(--body)}
-.note-box h3{color:var(--ink)}
+
 /* Price */
 .price-cards{display:grid;grid-template-columns:1fr;gap:20px;max-width:780px;margin:24px auto}
 .price-card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;box-shadow:var(--shadow-sm)}
@@ -314,7 +313,7 @@ html.cfx .cfcontrols{display:flex;align-items:center;justify-content:center;gap:
   .cfrmnote{display:block;text-align:center;color:var(--muted);font-size:14px;margin-top:16px}
 }
 
-/* [GRAFT 2] Ledger — compact rows + warm-transfer choice card */
+/* [GRAFT 2] Ledger — compact rows */
 .lgrid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:28px}
 @media (min-width:720px){.lgrid{grid-template-columns:1fr 1fr}}
 .lcol{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow-sm)}
@@ -325,18 +324,6 @@ html.cfx .cfcontrols{display:flex;align-items:center;justify-content:center;gap:
 .lrow-head{font-size:15.5px;line-height:1.45;margin:0;color:var(--body)}
 .lrow-desc{font-size:15.5px;line-height:1.5;color:var(--body);margin:2px 0 0}
 .lrow .gate{display:block;margin-top:3px}
-.wt-card{margin-top:22px;max-width:none}
-.wt-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
-.wt-head h3{margin:0}
-.wt-lead{margin:0 0 14px;color:var(--body)}
-.wt-grid{display:grid;grid-template-columns:1fr;gap:12px}
-@media (min-width:720px){.wt-grid{grid-template-columns:1fr 1fr}}
-.wt-opt{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 17px}
-.wt-opt.on{border-top:3px solid var(--accent)}
-.wt-switch{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 5px}
-.wt-opt p{font-size:15.5px;line-height:1.55;color:var(--body)}
-.wt-opt .wt-switch{color:var(--accent-ink)}
-.wt-note{font-size:13.5px;color:var(--muted);margin:14px 0 0}
 @media (max-width:560px){.lcol{padding:19px}}
 
 /* [GRAFT 3] Pricing tail — closing trust band */
@@ -1028,7 +1015,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         </div>
         <div class="dash-panel">
           <h4>Settings — your office's toggles</h4>
-          <div class="switch-row"><span class="switch neutral" aria-hidden="true"></span><span><strong>Warm transfer</strong> — your office chooses (see the option below).</span></div>
+          <div class="switch-row"><span class="switch neutral" aria-hidden="true"></span><span><strong>Warm transfer</strong> — your office chooses.</span></div>
           <ul>
             <li><span>On-call number</span><span class="tag-std">SET BY OFFICE</span></li>
             <li><span>Languages</span><span class="tag-std">English · Spanish · Arabic · Farsi</span></li>
@@ -1301,15 +1288,6 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       }
     })();
     </script>
-    <div class="note-box wt-card">
-      <div class="wt-head"><h3>Warm transfer — your switch, your call.</h3><span class="badge badge-coming">COMING — NOT AVAILABLE YET</span></div>
-      <p class="wt-lead">A true emergency calls at 2 a.m. When it ships, your office picks what Sunny does:</p>
-      <div class="wt-grid">
-        <div class="wt-opt on"><p class="wt-switch">Switch ON</p><p>Sunny connects the caller live to your on-call dentist.</p></div>
-        <div class="wt-opt off"><p class="wt-switch">Switch OFF</p><p>Sunny captures the details, flags it urgent, and alerts your team — first on the morning list.</p></div>
-      </div>
-      <p class="wt-note">Not available yet — still being built and tested. We'll tell you plainly when it's ready.</p>
-    </div>
   </div>
 </section>
 
