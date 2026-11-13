@@ -102,8 +102,63 @@ body{font-family:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;background:
 .care-list li{position:relative;padding:9px 0 9px 30px}
 .care-list li::before{content:"\2713";position:absolute;left:0;color:#12A5D6;font-weight:900}
 .plan-flow{list-style:none;counter-reset:step;margin-top:18px;display:grid;gap:14px;max-width:760px}
-.plan-flow li{counter-increment:step;border:1px solid #CFE6F0;border-radius:16px;padding:16px 20px 16px 64px;background:#fff;font-size:16px;box-shadow:0 2px 14px rgba(12,80,110,.06);position:relative}
-.plan-flow li::before{content:counter(step);position:absolute;left:20px;top:14px;font-size:24px;font-weight:800;color:#12A5D6}
+.plan-flow>li{counter-increment:step;border:1px solid #CFE6F0;border-radius:16px;padding:16px 20px 16px 64px;background:#fff;font-size:16px;box-shadow:0 2px 14px rgba(12,80,110,.06);position:relative}
+.plan-flow>li::before{content:counter(step);position:absolute;left:20px;top:14px;font-size:24px;font-weight:800;color:#12A5D6}
+/* ============ FREE TEST AREA (Step 2) — design: design-team/free-test-sample-20261110 ============ */
+.ft{margin-top:16px;border-top:1px dashed #CFE6F0;padding-top:16px}
+.ft-title{font-weight:800;color:#0C2B3E;font-size:16.5px;margin-bottom:2px}
+.ft-sub{font-size:14.5px;color:#33566B;margin-bottom:14px}
+.ft-field{margin-bottom:12px}
+.ft-field label{display:block;font-weight:700;color:#0C2B3E;font-size:14.5px;margin-bottom:5px}
+.ft-field input{width:100%;min-height:52px;padding:12px 14px;font-size:16px;font-family:inherit;color:#0C2B3E;background:#fff;border:1.5px solid #B9D9E8;border-radius:12px}
+.ft-field input::placeholder{color:#6E8FA3}
+.ft-field input[aria-invalid="true"]{border-color:#B23A1D}
+.ft-error{display:none;margin-top:6px;font-size:14px;color:#B23A1D;font-weight:600}
+.ft-error.show{display:block}
+.ft-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.ft-consent{font-size:14.5px;color:#33566B;line-height:1.55;margin:4px 0 14px}
+.ft-btn{width:100%;background:#0E9BC9;border-color:#0E9BC9;color:#fff}
+.ft-btn:hover{background:#0B7FA8;border-color:#0B7FA8;color:#fff}
+@media(min-width:720px){.ft-btn{width:auto;padding-left:28px;padding-right:28px}}
+.ft-micro{font-size:13.5px;color:#33566B;margin-top:10px}
+.ft-run{display:none}
+.ft-run.show{display:block}
+.ft-run-head{font-weight:800;color:#0C2B3E;margin-bottom:10px}
+.ft-checks{list-style:none;display:grid;gap:7px;font-size:15px}
+.ft-checks li{display:flex;gap:10px;align-items:baseline;color:#6E8FA3}
+.ft-checks li .tick{flex:none;width:20px;text-align:center;font-weight:900}
+.ft-checks li.done{color:#33566B}
+.ft-checks li.done .tick{color:#177245}
+.ft-checks li.active{color:#0C2B3E}
+.ft-checks li.active .tick{color:#0B7FA8}
+.ft-spin{display:inline-block;width:13px;height:13px;border:2.5px solid #CFE6F0;border-top-color:#0B7FA8;border-radius:50%;vertical-align:-2px;animation:ftspin .8s linear infinite}
+@keyframes ftspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.ft-spin{animation:none}}
+.ft-results{display:none}
+.ft-results.show{display:block}
+.ft-res-head{font-weight:800;color:#0C2B3E;font-size:16.5px}
+.ft-res-url{color:#0B7FA8;font-weight:700;word-break:break-all}
+.ft-res-list{list-style:none;display:grid;gap:9px;margin-top:12px}
+.ft-res-list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;background:#F7FBFD;border:1px solid #E1EEF5;border-radius:12px;padding:10px 13px}
+.ft-chip{flex:none;font-size:11.5px;font-weight:800;letter-spacing:.05em;padding:3px 10px;border-radius:999px;margin-top:2px;white-space:nowrap}
+.ft-chip.pass{background:#DFF5E9;color:#177245}
+.ft-chip.look{background:#FDF0DC;color:#7A520E}
+.ft-chip.unknown{background:#E8EEF2;color:#466E84}
+.ft-res-list .why{color:#33566B}
+.ft-res-list .why b{color:#0C2B3E}
+.ft-again{margin-top:14px;font-size:14.5px}
+@media(max-width:480px){.ft-res-list li{flex-direction:column;gap:5px}.ft-chip{margin-top:0}}
+.ft-next{margin-top:16px;border:1px solid #CFE6F0;border-radius:12px;padding:14px 16px;background:#fff}
+.ft-next h4{color:#0C2B3E;font-size:15.5px;margin-bottom:6px}
+.ft-next ul{list-style:none;display:grid;gap:5px;font-size:14.5px}
+.ft-next ul li{padding-left:22px;position:relative}
+.ft-next ul li::before{content:"\2192";position:absolute;left:2px;color:#12A5D6;font-weight:900}
+.ft-next p{font-size:14.5px;margin-top:9px}
+.ft-audit-note{margin-top:14px;border-left:4px solid #C9A25E;background:#FDF8EE;border-radius:0 12px 12px 0;padding:11px 14px;font-size:14px;color:#33566B}
+.ft-audit-note b{color:#0C2B3E}
+.ft-fail{display:none;margin-top:14px;border:1px solid #E5C4B8;background:#FBEEE9;border-radius:12px;padding:12px 14px;font-size:14.5px;color:#7A2E18}
+.ft-fail.show{display:block}
+.ft-fail b{color:#5F2110}
 .ws-cta-row{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .btn-gold{background:#0B7FA8;color:#fff;box-shadow:0 2px 14px rgba(12,80,110,.07)}
 .ws-crosslink{margin-top:18px;color:#466E84}
@@ -222,7 +277,64 @@ footer.footer a{color:#0B7FA8}
   <h2 id="startH" data-en="Three steps, no pressure" data-es="Tres pasos, sin presión">Three steps, no pressure</h2>
   <ol class="plan-flow">
     <li data-en="Say hello — one email is enough to start." data-es="Di hola — un solo correo basta para empezar.">Say hello — one email is enough to start.</li>
-    <li data-en="We study your current site free — what's working, and what's costing you calls." data-es="Estudiamos tu sitio actual gratis — qué funciona y qué te está costando llamadas.">We study your current site free — what's working, and what's costing you calls.</li>
+    <li><span data-en="We study your current site free — what's working, and what's costing you calls." data-es="Estudiamos tu sitio actual gratis — qué funciona y qué te está costando llamadas.">We study your current site free — what's working, and what's costing you calls.</span>
+
+      <!-- ===== FREE TEST AREA ===== -->
+      <div class="ft" id="ftArea">
+        <div id="ftIntro">
+          <p class="ft-title" data-en="Start the free website test right here" data-es="Empieza aquí la prueba gratuita de tu sitio">Start the free website test right here</p>
+          <p class="ft-sub" data-en="Type your shop's website below. The quick test runs on the spot. Add your email and a person does the full study and emails it to you." data-es="Escribe abajo el sitio web de tu negocio. La prueba rápida corre al momento. Agrega tu correo y una persona hace el estudio completo y te lo envía.">Type your shop's website below. The quick test runs on the spot. Add your email and a person does the full study and emails it to you.</p>
+        </div>
+
+        <form id="ftForm" novalidate>
+          <div class="ft-field">
+            <label for="ftUrl" data-en="Your shop's website" data-es="El sitio web de tu negocio">Your shop's website</label>
+            <input id="ftUrl" name="url" type="url" inputmode="url" autocomplete="url" placeholder="yourshop.com" aria-describedby="ftUrlErr">
+            <p class="ft-error" id="ftUrlErr" role="alert" data-en="That doesn't look like a web address yet — try it like this: yourshop.com" data-es="Eso todavía no parece una dirección web: pruébala así: tunegocio.com">That doesn't look like a web address yet — try it like this: yourshop.com</p>
+          </div>
+          <div class="ft-field">
+            <label for="ftEmail" data-en="Email for the full study (optional)" data-es="Correo para el estudio completo (opcional)">Email for the full study (optional)</label>
+            <input id="ftEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@yourshop.com" aria-describedby="ftEmailErr">
+            <p class="ft-error" id="ftEmailErr" role="alert" data-en="That email looks incomplete — if you'd like the full study by email, it needs a working address. Or leave it empty and just run the quick test." data-es="Ese correo parece incompleto: si quieres el estudio completo por correo, necesita una dirección válida. O déjalo vacío y corre solo la prueba rápida.">That email looks incomplete — if you'd like the full study by email, it needs a working address. Or leave it empty and just run the quick test.</p>
+          </div>
+          <div class="ft-hp" aria-hidden="true">
+            <label>Company website<input id="ftHp" name="company_website" type="text" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <p class="ft-consent" data-en="We read only the public pages of the site you enter — the same pages anyone can open. If you add your email, we email the full study to that address within two business days. That's the only email this brings: no mailing list, and we never sell or share your details. This tests your website only — it never looks at your phone records." data-es="Leemos solo las páginas públicas del sitio que escribes: las mismas que cualquiera puede abrir. Si agregas tu correo, te enviamos el estudio completo a esa dirección en un plazo de dos días hábiles. Es el único correo que esto trae: sin listas de correo, y nunca vendemos ni compartimos tus datos. Esto prueba tu sitio web solamente: nunca revisa tus registros de llamadas.">We read only the public pages of the site you enter — the same pages anyone can open. If you add your email, we email the full study to that address within two business days. That's the only email this brings: no mailing list, and we never sell or share your details. This tests your website only — it never looks at your phone records.</p>
+          <button class="btn ft-btn" type="submit" data-en="Run my free test" data-es="Corre mi prueba gratuita">Run my free test</button>
+          <p class="ft-micro" data-en="Quick checks appear here in under a minute. Add your email and the full study — done by a person — lands in your inbox within two business days. Free, and it creates no obligation to buy anything." data-es="Las revisiones rápidas aparecen aquí en menos de un minuto. Agrega tu correo y el estudio completo — hecho por una persona — llega a tu bandeja en un plazo de dos días hábiles. Gratis y sin obligación de comprar nada.">Quick checks appear here in under a minute. Add your email and the full study — done by a person — lands in your inbox within two business days. Free, and it creates no obligation to buy anything.</p>
+          <div class="ft-fail" id="ftFail" role="alert"></div>
+        </form>
+
+        <div class="ft-run" id="ftRun" aria-live="polite">
+          <p class="ft-run-head" data-en="Reading your public pages…" data-es="Leyendo tus páginas públicas…">Reading your public pages…</p>
+          <ul class="ft-checks" id="ftChecks">
+            <li data-ftcheck="answers"><span class="tick"></span><span data-en="Opening the site at the address you gave us" data-es="Abriendo el sitio en la dirección que nos diste">Opening the site at the address you gave us</span></li>
+            <li data-ftcheck="https"><span class="tick"></span><span data-en="Checking the connection is secure (HTTPS)" data-es="Revisando que la conexión sea segura (HTTPS)">Checking the connection is secure (HTTPS)</span></li>
+            <li data-ftcheck="phone"><span class="tick"></span><span data-en="Looking for a phone number on the page" data-es="Buscando un número de teléfono en la página">Looking for a phone number on the page</span></li>
+            <li data-ftcheck="tel"><span class="tick"></span><span data-en="Checking the number is tap-to-call on a phone" data-es="Revisando que el número se pueda tocar para llamar">Checking the number is tap-to-call on a phone</span></li>
+            <li data-ftcheck="hours"><span class="tick"></span><span data-en="Looking for your opening hours on the page" data-es="Buscando tu horario en la página">Looking for your opening hours on the page</span></li>
+            <li data-ftcheck="contact"><span class="tick"></span><span data-en="Looking for a contact or booking path" data-es="Buscando una ruta de contacto o reserva">Looking for a contact or booking path</span></li>
+            <li data-ftcheck="reviews"><span class="tick"></span><span data-en="Looking for a link to your reviews" data-es="Buscando un enlace a tus reseñas">Looking for a link to your reviews</span></li>
+            <li data-ftcheck="viewport"><span class="tick"></span><span data-en="Checking the page is built for phone screens" data-es="Revisando que la página esté hecha para teléfonos">Checking the page is built for phone screens</span></li>
+            <li data-ftcheck="weight"><span class="tick"></span><span data-en="Weighing the first page — how much a phone has to load" data-es="Pesando la primera página: cuánto tiene que cargar un teléfono">Weighing the first page — how much a phone has to load</span></li>
+            <li data-ftcheck="links"><span class="tick"></span><span data-en="Following the first page's links (up to 25), checking none are broken" data-es="Siguiendo los enlaces de la primera página (hasta 25), revisando que ninguno esté roto">Following the first page's links (up to 25), checking none are broken</span></li>
+          </ul>
+        </div>
+
+        <div class="ft-results" id="ftResults" aria-live="polite">
+          <p class="ft-res-head"><span id="ftResHeadTxt">Quick test</span> <span class="ft-res-url" id="ftResUrl"></span></p>
+          <ul class="ft-res-list" id="ftResList"></ul>
+          <div class="ft-next" id="ftNext"></div>
+          <div class="ft-audit-note">
+            <b data-en="A different free study — not this form." data-es="Otro estudio gratuito: no es este formulario.">A different free study — not this form.</b>
+            <span data-en="We also study two weeks of a shop's phone calls: what got answered, what didn't, and when. That one starts with a conversation and the owner's signed okay — a typed web address can't run it, and this form never touches call records. If you'd like it, just say so when you reply to your website study." data-es="También estudiamos dos semanas de las llamadas de un negocio: qué se contestó, qué no, y cuándo. Ese empieza con una conversación y el sí firmado del dueño: una dirección web escrita no puede correrlo, y este formulario nunca toca registros de llamadas. Si lo quieres, dilo al responder a tu estudio del sitio.">We also study two weeks of a shop's phone calls: what got answered, what didn't, and when. That one starts with a conversation and the owner's signed okay — a typed web address can't run it, and this form never touches call records. If you'd like it, just say so when you reply to your website study.</span>
+          </div>
+          <p class="ft-again"><a href="#" id="ftAgain" data-en="Test a different site →" data-es="Probar otro sitio →">Test a different site →</a></p>
+        </div>
+      </div>
+      <!-- ===== /FREE TEST AREA ===== -->
+    </li>
     <li data-en="You see a sample of your own site before you pay anything." data-es="Ves una muestra de tu propio sitio antes de pagar nada.">You see a sample of your own site before you pay anything.</li>
   </ol>
   <div class="ws-cta-row">
@@ -247,5 +359,271 @@ footer.footer a{color:#0B7FA8}
 </nav>
 
 <script src="/assets/ws-toggle.js" defer></script>
+<script>
+(function(){
+  "use strict";
+  var ENDPOINT = "https://voice.ringandrespond.com:8449/free-test";
+  var form=document.getElementById('ftForm'),
+      urlIn=document.getElementById('ftUrl'),
+      emailIn=document.getElementById('ftEmail'),
+      hpIn=document.getElementById('ftHp'),
+      urlErr=document.getElementById('ftUrlErr'),
+      emailErr=document.getElementById('ftEmailErr'),
+      fail=document.getElementById('ftFail'),
+      run=document.getElementById('ftRun'),
+      results=document.getElementById('ftResults'),
+      intro=document.getElementById('ftIntro'),
+      again=document.getElementById('ftAgain'),
+      resUrl=document.getElementById('ftResUrl'),
+      resHeadTxt=document.getElementById('ftResHeadTxt'),
+      resList=document.getElementById('ftResList'),
+      nextBox=document.getElementById('ftNext'),
+      rows={};
+  Array.prototype.forEach.call(document.querySelectorAll('#ftChecks [data-ftcheck]'), function(li){
+    rows[li.getAttribute('data-ftcheck')]=li;
+  });
+  run.setAttribute('tabindex','-1'); results.setAttribute('tabindex','-1');
+
+  function lang(){ return document.documentElement.lang==='es' ? 'es' : 'en'; }
+
+  /* Result copy — written from what the checker actually measures.
+     Chips and bodies stay honest: a 403/429 is "couldn't confirm", never "broken". */
+  var COPY={
+    chip:{pass:{en:"Working",es:"Funciona"},look:{en:"Costs calls",es:"Cuesta llamadas"},unknown:{en:"Couldn't check",es:"Sin confirmar"}},
+    resHead:{en:"Quick test for",es:"Prueba rápida de"},
+    answers:{
+      pass:{en:["Your site answers.","The page loaded at the address you gave us."],es:["Tu sitio responde.","La página cargó en la dirección que nos diste."]},
+      look:{en:["Your site didn't answer.","Our checker couldn't load the page at that address — it may be down, or it may be blocking checkers like ours. The full study looks closer."],es:["Tu sitio no respondió.","Nuestro verificador no pudo cargar la página en esa dirección: puede estar caída o bloqueando verificadores como el nuestro. El estudio completo lo revisa de cerca."]}},
+    unknown:{en:["Couldn't check.","The site didn't answer, so this check couldn't run."],es:["No se pudo revisar.","El sitio no respondió, así que esta revisión no pudo hacerse."]},
+    https:{
+      pass:{en:["Secure connection.","Your site loads over HTTPS, so visitors' browsers show it as safe."],es:["Conexión segura.","Tu sitio carga por HTTPS, así que el navegador de tus visitas lo muestra como seguro."]},
+      look:{en:["Not on a secure connection.","The page we reached loads over plain HTTP, not HTTPS — browsers mark that \u201CNot secure,\u201D and some visitors turn back."],es:["Sin conexión segura.","La página que alcanzamos carga por HTTP simple, no HTTPS: el navegador lo marca como «No seguro» y algunas visitas se van."]}},
+    phone:{
+      pass:{en:["Phone number on the page.","{number} shows on the page."],es:["Teléfono en la página.","{number} aparece en la página."]},
+      look:{en:["No phone number found on the page.","A visitor who lands here has to hunt for a way to call you — many won't."],es:["No encontramos un teléfono en la página.","Quien llega aquí tiene que buscar cómo llamarte, y muchos no lo harán."]}},
+    tel:{
+      pass:{en:["Tap-to-call works.","The number is a tap-to-call link, so a phone visitor calls with one tap."],es:["Llamada con un toque.","El número es un enlace de llamada: quien visita desde su teléfono llama con un toque."]},
+      look:{en:["The number isn't tap-to-call.","On a phone it's plain text — a visitor has to copy it or memorise it instead of tapping. Fixing it is one small change."],es:["El número no es de un toque.","En el teléfono es texto simple: la visita tiene que copiarlo o memorizarlo en vez de tocarlo. Arreglarlo es un cambio pequeño."]}},
+    hours:{
+      pass:{en:["Hours are on the page.","Your opening hours are printed. (The full study checks them against your Google listing — that's where stale hours get caught.)"],es:["Horario en la página.","Tu horario está publicado. (El estudio completo lo compara con tu ficha de Google: ahí se descubren los horarios viejos.)"]},
+      look:{en:["No opening hours found.","Nothing on the page says when you're open — after-hours visitors can't tell whether calling is worth it."],es:["No encontramos el horario.","Nada en la página dice cuándo abres: quien llega fuera de horario no sabe si vale la pena llamar."]}},
+    contact:{
+      pass:{en:["A way to reach you exists.","We found a contact or booking path. The full study walks it the way a customer would, to see it actually works end to end."],es:["Hay una forma de contactarte.","Encontramos una ruta de contacto o reserva. El estudio completo la recorre como lo haría un cliente, para ver si funciona de principio a fin."]},
+      look:{en:["No contact or booking path found.","No form, no contact page, no booking link that our checker could find — a visitor who won't phone has nowhere to go."],es:["No encontramos ruta de contacto ni de reserva.","Ni formulario, ni página de contacto, ni enlace de reserva que nuestro verificador pudiera encontrar: quien no quiere llamar no tiene a dónde ir."]}},
+    reviews:{
+      pass:{en:["Reviews are linked.","Your page links visitors to your reviews, so the proof you've earned is working for you."],es:["Reseñas enlazadas.","Tu página lleva a tus visitas a tus reseñas: la prueba que ya ganaste está trabajando por ti."]},
+      look:{en:["No link to your reviews.","Your reviews aren't linked anywhere on the page, so the proof you've earned is doing no work here."],es:["Sin enlace a tus reseñas.","Tus reseñas no están enlazadas en ninguna parte de la página: la prueba que ya ganaste no está haciendo ningún trabajo aquí."]}},
+    viewport:{
+      pass:{en:["Built for phone screens.","Your page carries the phone-layout instruction, so phones lay it out at a readable size instead of shrinking the desktop page."],es:["Hecha para pantallas de teléfono.","Tu página trae la instrucción de diseño para teléfono, así que se ve en un tamaño legible en vez de encoger la página de escritorio."]},
+      look:{en:["Not set up for phone screens.","The page is missing the phone-layout instruction, so phones shrink the desktop page down — small text, pinching and zooming."],es:["No está preparada para teléfonos.","A la página le falta la instrucción de diseño para teléfono: el teléfono encoge la página de escritorio, con texto pequeño y zoom a pellizcos."]}},
+    weight:{
+      pass:{en:["First page: {sizePhrase}.","That's everything a phone has to download before the page is whole. What it means for your loading speed is measured properly in the full study."],es:["Primera página: {sizePhrase}.","Eso es todo lo que un teléfono tiene que descargar para que la página esté completa. Qué significa para tu velocidad de carga se mide bien en el estudio completo."]},
+      look:{en:["Heavy first page — {sizePhrase}.","That's everything a phone has to download before the page is whole. What it means for your loading speed is measured properly in the full study."],es:["Primera página pesada: {sizePhrase}.","Eso es todo lo que un teléfono tiene que descargar para que la página esté completa. Qué significa para tu velocidad de carga se mide bien en el estudio completo."]}},
+    links:{
+      pass:{en:["No broken links found","among the first {checked} links on the page — none returned an error to our checker."],es:["Ningún enlace roto","entre los primeros {checked} enlaces de la página: ninguno devolvió un error a nuestro verificador."]},
+      look:{en:["{errors} of the first {checked} links returned an error","to our checker. A visitor who taps one of those hits a dead end."],es:["{errors} de los primeros {checked} enlaces devolvieron un error","a nuestro verificador. Quien toca uno de esos llega a un callejón sin salida."]},
+      unknown:{en:["Link check couldn't be confirmed.","Our checker was blocked from following the page's links, so it can't honestly call them sound or broken."],es:["La revisión de enlaces no se pudo confirmar.","A nuestro verificador le bloquearon seguir los enlaces de la página, así que no puede decir con honestidad si están bien o rotos."]}},
+    nextHead:{en:"What happens next — the full study, free",es:"Qué sigue: el estudio completo, gratis"},
+    nextItems:{
+      en:["A person walks your contact and booking path end to end, like a customer","Your site's hours checked against your Google listing","Your name, address, and phone matched across your site and your listing","Your review count and rating read from the listing and cross-checked","Phone loading speed measured properly, and your services read for clarity","Anything on the site that can't be proven gets flagged — never carried as fact","A 100-point score for your site's front door, so you can see where it stands"],
+      es:["Una persona recorre tu ruta de contacto y reserva de principio a fin, como un cliente","El horario de tu sitio comparado con tu ficha de Google","Tu nombre, dirección y teléfono comparados entre tu sitio y tu ficha","Tu número de reseñas y tu calificación leídos de la ficha y verificados","La velocidad de carga en teléfono medida bien, y tus servicios leídos con ojo claro","Todo lo que no se pueda probar en el sitio se marca: nunca se presenta como hecho","Una puntuación de 100 puntos para la puerta de entrada de tu sitio, para que veas dónde estás"]},
+    nextWithEmail:{en:"It arrives at {email} within two business days, with before-pictures of your site and an honest list of anything we couldn't verify. Free — no obligation, and a no is final.",es:"Llega a {email} en un plazo de dos días hábiles, con fotos del antes de tu sitio y una lista honesta de lo que no pudimos verificar. Gratis, sin obligación, y un no es final."},
+    nextNoEmail:{en:"The full study is done by a person, and it needs an address to land. Email hello@ringandrespond.com with your site's address and ask for the full study — we'll run it free.",es:"El estudio completo lo hace una persona y necesita una dirección a dónde llegar. Escribe a hello@ringandrespond.com con la dirección de tu sitio y pide el estudio completo: lo hacemos gratis."},
+    failRun:{en:["The test couldn't run just now.","Try again in a moment — or email hello@ringandrespond.com and we'll run it for you."],es:["La prueba no pudo correr ahora.","Inténtalo de nuevo en un momento, o escribe a hello@ringandrespond.com y la corremos por ti."]},
+    failRate:{en:["A test for that site just ran.","Give it a minute and try again."],es:["Una prueba de ese sitio acaba de correr.","Espera un minuto e inténtalo de nuevo."]},
+    blockedUrl:{en:"That address can't be tested — enter your shop's public website address.",es:"Esa dirección no se puede probar: escribe la dirección pública del sitio de tu negocio."}
+  };
+
+  var lastRun=null; /* {url, email, results:[...]} for re-render on language toggle */
+
+  function sizePhrase(bytes, capped){
+    var size;
+    if(bytes>=1000000) size=(bytes/1000000).toFixed(1).replace(/\.0$/,'')+" MB";
+    else if(bytes>=1000) size=Math.round(bytes/1000)+" KB";
+    else size=bytes+" bytes";
+    if(lang()==='es') return (capped?"más de ":"unos ")+size;
+    return (capped?"more than ":"about ")+size;
+  }
+  function fill(tpl, data){
+    return tpl.replace(/\{(\w+)\}/g, function(_,k){ return data[k]!=null?data[k]:""; });
+  }
+  function copyFor(ev){
+    var table=COPY[ev.id];
+    if(ev.status==='unknown') return (table&&table.unknown)||COPY.unknown;
+    return table[ev.status]||table.pass;
+  }
+
+  function renderResults(){
+    if(!lastRun) return;
+    var L=lang();
+    resHeadTxt.textContent=COPY.resHead[L];
+    resUrl.textContent=lastRun.finalUrl||lastRun.url;
+    resList.innerHTML='';
+    lastRun.results.forEach(function(ev){
+      var pair=copyFor(ev)[L];
+      var data=Object.assign({}, ev.data||{});
+      if(ev.id==='weight') data.sizePhrase=sizePhrase(data.bytes||0, !!data.capped);
+      var li=document.createElement('li');
+      var chip=document.createElement('span');
+      chip.className='ft-chip '+ev.status;
+      chip.textContent=COPY.chip[ev.status][L];
+      var why=document.createElement('span');
+      why.className='why';
+      var b=document.createElement('b');
+      b.textContent=fill(pair[0], data);
+      why.appendChild(b);
+      why.appendChild(document.createTextNode(' '+fill(pair[1], data)));
+      li.appendChild(chip); li.appendChild(why);
+      resList.appendChild(li);
+    });
+    nextBox.innerHTML='';
+    var h=document.createElement('h4'); h.textContent=COPY.nextHead[L]; nextBox.appendChild(h);
+    var ul=document.createElement('ul');
+    COPY.nextItems[L].forEach(function(t){ var li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
+    nextBox.appendChild(ul);
+    var p=document.createElement('p');
+    p.textContent= lastRun.email ? fill(COPY.nextWithEmail[L], {email:lastRun.email}) : COPY.nextNoEmail[L];
+    nextBox.appendChild(p);
+  }
+
+  function setRow(id, state){
+    var li=rows[id]; if(!li) return;
+    var tick=li.querySelector('.tick');
+    li.classList.remove('active','done');
+    if(state==='active'){ li.classList.add('active'); tick.innerHTML='<span class="ft-spin" aria-hidden="true"></span>'; }
+    else if(state==='done'){ li.classList.add('done'); tick.textContent='✓'; }
+    else { tick.textContent=''; }
+  }
+  var ORDER=['answers','https','phone','tel','hours','contact','reviews','viewport','weight','links'];
+  function resetRows(){ ORDER.forEach(function(id){ setRow(id,''); }); }
+  function markActiveUpTo(id){
+    var idx=ORDER.indexOf(id);
+    ORDER.forEach(function(oid,i){ if(i<idx && rows[oid] && !rows[oid].classList.contains('done')) setRow(oid,'done'); });
+    setRow(id,'active');
+  }
+
+  function showFail(kind){
+    var L=lang();
+    var pair= kind==='rate' ? COPY.failRate[L] : COPY.failRun[L];
+    fail.innerHTML='';
+    var b=document.createElement('b'); b.textContent=pair[0];
+    fail.appendChild(b);
+    fail.appendChild(document.createTextNode(' '+pair[1]));
+    fail.classList.add('show');
+  }
+  function hideFail(){ fail.classList.remove('show'); fail.innerHTML=''; }
+
+  function validUrl(v){
+    v=(v||'').trim(); if(!v) return false;
+    if(!/^https?:\/\//i.test(v)) v='https://'+v;
+    try{ var u=new URL(v); return u.hostname.indexOf('.')>0; }catch(e){ return false; }
+  }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((v||'').trim()); }
+  function mark(input,err,bad){
+    input.setAttribute('aria-invalid', bad?'true':'false');
+    err.classList.toggle('show', !!bad);
+    return !bad;
+  }
+
+  function backToForm(){
+    run.classList.remove('show'); results.classList.remove('show');
+    intro.style.display=''; form.style.display='';
+  }
+
+  function startRun(url, email){
+    hideFail();
+    form.style.display='none'; intro.style.display='none';
+    results.classList.remove('show'); run.classList.add('show');
+    resetRows();
+    run.focus({preventScroll:true});
+    lastRun={url:url, email:email, results:[], finalUrl:''};
+    var gotDone=false, gotError=null;
+    fetch(ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({url:url, email:email, lang:lang(), company_website: hpIn.value})
+    }).then(function(resp){
+      if(resp.status===429){ gotError='rate'; throw new Error('rate'); }
+      if(!resp.ok){ throw new Error('http '+resp.status); }
+      var reader=resp.body.getReader();
+      var dec=new TextDecoder(); var buf='';
+      function pump(){
+        return reader.read().then(function(r){
+          if(r.done) return;
+          buf+=dec.decode(r.value, {stream:true});
+          var lines=buf.split('\n'); buf=lines.pop();
+          lines.forEach(function(line){
+            line=line.trim(); if(!line) return;
+            var ev; try{ ev=JSON.parse(line); }catch(e){ return; }
+            if(ev.type==='check'){
+              lastRun.results.push(ev);
+              markActiveUpTo(ev.id);
+              setRow(ev.id,'done');
+              var idx=ORDER.indexOf(ev.id);
+              if(idx>=0 && idx<ORDER.length-1) setRow(ORDER[idx+1],'active');
+            }else if(ev.type==='done'){
+              gotDone=true;
+              lastRun.finalUrl=ev.final_url||'';
+            }else if(ev.type==='error'){
+              gotError=ev.error||'run';
+            }
+          });
+          return pump();
+        });
+      }
+      return pump();
+    }).then(function(){
+      if(gotError==='blocked_host'){
+        backToForm();
+        urlErr.textContent=COPY.blockedUrl[lang()];
+        mark(urlIn,urlErr,true); urlIn.focus();
+        return;
+      }
+      if(gotError==='rate' || (gotError && !gotDone && lastRun.results.length===0)){
+        backToForm(); showFail(gotError==='rate'?'rate':'run');
+        return;
+      }
+      if(!gotDone){ backToForm(); showFail('run'); return; }
+      ORDER.forEach(function(id){ setRow(id,'done'); });
+      run.classList.remove('show');
+      renderResults();
+      results.classList.add('show');
+      results.scrollIntoView({block:'nearest',behavior:'smooth'});
+      results.focus({preventScroll:true});
+    }).catch(function(){
+      backToForm();
+      showFail(gotError==='rate'?'rate':'run');
+    });
+  }
+
+  again.addEventListener('click', function(e){
+    e.preventDefault();
+    results.classList.remove('show'); run.classList.remove('show');
+    intro.style.display=''; form.style.display='';
+    urlIn.value=''; emailIn.value='';
+    mark(urlIn,urlErr,false); mark(emailIn,emailErr,false);
+    hideFail(); lastRun=null;
+    urlIn.focus();
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    urlErr.textContent = lang()==='es'
+      ? "Eso todavía no parece una dirección web: pruébala así: tunegocio.com"
+      : "That doesn't look like a web address yet — try it like this: yourshop.com";
+    var okU=mark(urlIn,urlErr,!validUrl(urlIn.value));
+    var emailVal=emailIn.value.trim();
+    var okE=mark(emailIn,emailErr, emailVal!=='' && !validEmail(emailVal));
+    if(!okU){ urlIn.focus(); return; }
+    if(!okE){ emailIn.focus(); return; }
+    startRun(urlIn.value.trim(), emailVal);
+  });
+
+  /* The page toggle swaps [data-en] strings itself; our JS-rendered results
+     re-render in the new language when <html lang> flips. */
+  new MutationObserver(function(){
+    if(lastRun && results.classList.contains('show')) renderResults();
+  }).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
+})();
+</script>
 </body>
 </html>
