@@ -18,7 +18,7 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 - Answers in the practice's name — after-hours and 24/7 overflow.
 - Capture-it-right intake: caller name, callback number read back digit-by-digit, new/existing patient, preferred callback window.
 - 3-tier urgency sort: true emergencies directed to 911/urgent care, with an instant team alert; urgents sit at the top of the list.
-- Never-a-voicemail nights: a real conversation, with honest AI and recording disclosure.
+- Callers talk to Sunny, not a voicemail box: a real conversation, with honest AI and recording disclosure.
 - Full conversations in English, Spanish, Arabic, and Farsi.
 - Insurance-question capture: carrier plus the caller's exact question, word for word, for the team to answer. Capture only — this is not insurance verification.
 - One morning callback list, urgencies first, ready before the office opens.
