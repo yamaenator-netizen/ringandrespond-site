@@ -27,7 +27,7 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 - Honest boundary: Sunny does not book into the practice's schedule today and never touches the patient database. The team calls back — in control.
 
 ## Coming (labeled coming, gate named)
-- Missed-call text-back — coming (carrier texting approval; resubmission Nov 13).
+- Missed-call text-back — coming (carrier texting approval; resubmission pending).
 - Appointment confirmations and same-day backfill of cancelled slots — coming (rides texting + schedule read).
 - Recall and reactivation runs on the office's own list — coming.
 - Review requests by text — coming (a QR version works today).
