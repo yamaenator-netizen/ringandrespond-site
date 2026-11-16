@@ -69,6 +69,13 @@
   .summary dd{font-weight:500}
   .done-check{width:72px;height:72px;border-radius:50%;background:var(--mint);color:var(--teal-dark);
     display:flex;align-items:center;justify-content:center;margin:8px auto;font-size:34px;font-weight:700}
+  .terms{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;font-size:14.5px;align-self:stretch;max-width:100%}
+  .terms h3{font-family:"Archivo",sans-serif;font-size:15px;margin-bottom:10px;color:var(--teal-dark)}
+  .terms ul{margin:0 0 12px;padding-left:20px;line-height:1.55}
+  .terms label{display:flex;gap:10px;align-items:flex-start;font-weight:600;cursor:pointer;line-height:1.45}
+  .terms input[type=checkbox]{width:19px;height:19px;margin-top:2px;accent-color:var(--teal);flex:0 0 auto}
+  .terms .btn{margin-top:14px;width:100%}
 </style>
 </head>
 <body>
@@ -176,7 +183,11 @@ async function run(){
   setProgress(0.02);
   await botSay("Hi! I'm Sunny's setup assistant. I'll get your AI receptionist configured in about 5 minutes. Let's start simple -");
   await botSay("Quick note: this form is for <b>your office's</b> details only - please don't enter any patient names, health info, or appointment details here.");
+  await botSay("And how this works: your pilot is already paid, and this setup is the last step. <b>Sunny switches on once this onboarding is complete</b> - including accepting the pilot terms at the end.");
   answers.practice = await askText("What's your practice's name?", "Your Dental Practice");
+  answers.location = await askText("What city and state is the practice in?", "San Diego, CA");
+  answers.contactName = await askText("Who should we work with on setup?", "Your name");
+  answers.contactPhone = await askText("What's the best callback number for you?", "(619) 555-0100", "tel");
   setProgress(0.1);
   answers.address = await askText("And the office address?", "123 Main St, San Diego, CA");
   setProgress(0.18);
@@ -192,6 +203,7 @@ async function run(){
   answers.services = await askPills("Which services should Sunny mention? Tap all that apply.", SERVICES, true);
   setProgress(0.62);
   answers.newPatients = await askPills("Are you accepting new patients?", ["Yes, accepting", "Waitlist only", "Referrals only", "Not right now"]);
+  answers.coverage = await askPills("Where do you need the most help?", ["After-hours calls", "Overflow calls", "Both"]);
   setProgress(0.7);
   await botSay("Almost done - now the important part: how Sunny handles your after-hours calls.");
   answers.callHandling = await askPills("When someone calls after hours, Sunny should...", [
@@ -222,9 +234,10 @@ async function run(){
   if(!answers.integrations) answers.integrations = "-";
   setProgress(0.95);
   const rows = [
-    ["Practice", answers.practice], ["Address", answers.address], ["Phone", answers.phone],
+    ["Practice", answers.practice], ["City / State", answers.location], ["Contact", answers.contactName],
+    ["Callback #", answers.contactPhone], ["Address", answers.address], ["Phone", answers.phone],
     ["Mon-Fri", answers.weekdayHours], ["Saturday", answers.satHours], ["Sunday", answers.sunHours],
-    ["Services", answers.services], ["New patients", answers.newPatients],
+    ["Services", answers.services], ["New patients", answers.newPatients], ["Coverage", answers.coverage],
     ["Call handling", answers.callHandling],
     ...(answers.oncallNumber ? [["On-call #", answers.oncallNumber]] : []),
     ["Emergencies", answers.emergency], ["Never do", answers.donts],
@@ -246,6 +259,30 @@ async function run(){
     inputwrap.appendChild(box); scroll();
   });
   if(!ok){ location.reload(); return; }
+  await botSay("Last step - the pilot terms. Give them a quick read, then accept to finish:");
+  const tcard = document.createElement('div'); tcard.className = 'terms';
+  const tlist = [
+      "Your first month is the pilot. It’s paid up front on your card — $199 (After-Hours Capture) or $299 (24/7 Complete) for this location.",
+      "Setup is free. We build Sunny around your office — done-for-you — and you approve test calls before she ever talks to a real patient.",
+      "If Sunny doesn’t earn her keep in the first 30 days, email hello@ringandrespond.com and the month comes straight back. Unconditional — no forms, no exit interview.",
+      "Every week you get the owner proof report: the calls Sunny caught, what callers requested, and the urgency mix.",
+      "After the pilot, your plan continues month-to-month at the same rate unless you cancel by email. No contract, no exit fee, ever.",
+      "Sunny captures requests; your team confirms appointments in your own system. No real patient calls happen before your practice’s privacy agreement (BAA) is signed.",
+      "Your patients’ information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny.",
+      "Minutes included each month: 500 on After-Hours Capture, 1,000 on 24/7 Complete. Generous minutes included — past them, a small overage of $0.25 a minute."
+    ];
+  tcard.innerHTML = '<h3>Your pilot terms</h3><ul>' + tlist.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>'
+    + '<label><input type="checkbox" id="terms-ok"> I have authority for this practice and accept the pilot terms above.</label>'
+    + '<button type="button" class="btn" id="terms-accept" disabled>Accept &amp; finish</button>';
+  chat.appendChild(tcard); scroll();
+  await new Promise(res => {
+    const box = document.getElementById('terms-ok');
+    const btn = document.getElementById('terms-accept');
+    box.addEventListener('change', () => { btn.disabled = !box.checked; });
+    btn.addEventListener('click', () => { userSay("I accept the pilot terms"); res(); });
+  });
+  answers.termsAccepted = true;
+  answers.termsAcceptedAt = new Date().toISOString();
   await botSay("Perfect - sending this off now...");
   clearInput();
   inputwrap.innerHTML = '<p class="hint">Finishing up...</p>';
@@ -266,7 +303,7 @@ async function run(){
     const a = document.createElement('a');
     a.className = 'btn'; a.style.display = 'block'; a.style.textAlign = 'center'; a.style.textDecoration = 'none';
     a.href = 'mailto:hello@ringandrespond.com?subject=' + encodeURIComponent('New Sunny setup: ' + answers.practice)
-      + '&body=' + encodeURIComponent(rows.map(function(r){ return r[0] + ': ' + r[1]; }).join('\n'));
+      + '&body=' + encodeURIComponent(rows.map(function(r){ return r[0] + ': ' + r[1]; }).join('\n') + '\nPilot terms: accepted ' + (answers.termsAcceptedAt || ''));
     a.textContent = 'Email my answers';
     inputwrap.appendChild(a);
   }

@@ -283,18 +283,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       var chips = document.getElementById('starterChips');
       var contact = 'hello@ringandrespond.com';
 
-      /* OWNER: Stripe Payment Links, one per plan. The signup sends each
-         office to the link for the coverage it picked; when the coverage
-         answer is unclear, the office goes to the plan-picker page. */
+      /* OWNER: Stripe Payment Links, one per plan. RETIRED 2026-11-16:
+         keyword plan-picking (the CP-2 trap) was removed repo-wide. This
+         archived page's signup no longer routes anyone to a checkout or
+         a plan-picker page; the live chat hands both direct plan links. */
       var STRIPE_LINK_AFTER_HOURS = 'https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01';
       var STRIPE_LINK_COMPLETE = 'https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02';
-      var PILOT_PAGE_URL = 'https://www.ringandrespond.com/pilot.html';
-      function signupCheckoutLink() {
-        var cov = (signup.values.coverage || '').toLowerCase();
-        if (cov.indexOf('both') !== -1 || cov.indexOf('overflow') !== -1 || cov.indexOf('complete') !== -1 || cov.indexOf('24/7') !== -1 || cov.indexOf('24-7') !== -1 || cov.indexOf('daytime') !== -1 || cov.indexOf('lunch') !== -1) return STRIPE_LINK_COMPLETE;
-        if (cov.indexOf('after') !== -1 || cov.indexOf('night') !== -1 || cov.indexOf('weekend') !== -1) return STRIPE_LINK_AFTER_HOURS;
-        return PILOT_PAGE_URL;
-      }
+      function retiredCheckoutLink() { return ''; }
 
       var signup = { active: false, step: 0, values: {} };
       var callback = { active: false, step: 0, values: {} };
@@ -628,7 +623,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         checkout.disabled = true;
         card.appendChild(checkout);
 
-        var checkoutLink = signupCheckoutLink();
+        var checkoutLink = retiredCheckoutLink();
         if (!checkoutLink) {
           var placeholder = document.createElement('span');
           placeholder.className = 'placeholder-label';

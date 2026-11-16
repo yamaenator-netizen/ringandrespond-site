@@ -284,6 +284,7 @@ body.es .lang-en-hero{display:none}
 .hero .lang-es .sub{font-size:16.5px}
 .finale .lang-es{background:var(--panel);color:var(--body);border-radius:16px;padding:20px;margin:32px auto 0;text-align:left;max-width:680px}
 .finale .lang-es h3{color:var(--ink);margin-bottom:8px}
+.finale .lang-es .finale-start{color:var(--ink)}.finale .lang-es .finale-start a{color:var(--cta)}
 .es-block{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:20px 22px;margin-top:24px;box-shadow:var(--shadow-sm);text-align:left}
 .es-block h3{font-size:19px;margin-bottom:8px;color:var(--ink)}
 .es-block p,.es-block li{font-size:15.5px;line-height:1.6}
@@ -335,6 +336,45 @@ body.es .lang-en-hero{display:none}
   .dash-grid{grid-template-columns:1fr}
   .finale h2{font-size:27px}
   footer .wrap{flex-direction:column;align-items:flex-start}
+}
+/* Combined deploy 2026-11-16: buy-path buttons, monitor frame, calm coming panel */
+.buy-bar a{flex:1 1 0;min-width:0;font-size:14px;padding:0 6px;white-space:nowrap}.buy-bar{display:none}.buy-bar.show{display:flex !important;gap:8px}@media(min-width:720px){.buy-bar.show{display:none !important}}.buy-bar .bb1{background:var(--cta)}.buy-bar .bb2{background:var(--ink)}.hero-start{margin:0 0 14px;font-weight:700}.hero-start a{color:var(--cta);text-decoration:underline}.textlink{background:none;border:0;color:var(--cta);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:0}
+.finale-start{margin:20px 0 0;font-weight:700;color:#fff}.finale-start a{color:#8FD8F2;text-decoration:underline}
+.monitor{position:relative;max-width:984px;margin:36px auto 0}
+.monitor-bezel{position:relative;background:linear-gradient(180deg,#1D3648,#0D2231);padding:13px;border-radius:26px;box-shadow:0 24px 55px rgba(12,80,110,.22),0 4px 14px rgba(12,43,62,.20)}
+.monitor-cam{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:#050B10;box-shadow:0 0 0 1.5px rgba(255,255,255,.07);z-index:4}
+.monitor-screen{position:relative;background:var(--panel);border-radius:13px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(12,43,62,.05),inset 0 2px 14px rgba(12,43,62,.05)}
+.monitor-screen::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,0) 34%);pointer-events:none}
+.monitor .dash-mock{background:transparent;border:0;border-radius:0;box-shadow:none;max-width:none;margin:0;padding:24px}
+.monitor .dash-badge{top:-14px;right:30px;z-index:5;box-shadow:0 4px 12px rgba(12,43,62,.22)}
+.monitor-stand{display:flex;flex-direction:column;align-items:center}
+.stand-neck{width:132px;height:36px;background:linear-gradient(180deg,#182F42,#0B1F2E);clip-path:polygon(16% 0,84% 0,100% 100%,0 100%)}
+.stand-base{width:268px;height:13px;background:linear-gradient(180deg,#243C52,#0F1F2C);border-radius:6px 6px 12px 12px}
+.stand-shadow{width:52%;height:20px;margin-top:9px;background:radial-gradient(ellipse at center,rgba(12,60,90,.30),rgba(12,60,90,0) 68%);filter:blur(3px)}
+.calm-panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-sm);padding:28px 36px 12px;margin-top:18px}
+.calm-group{padding:4px 0 8px}
+.calm-group + .calm-group{border-top:1px solid var(--line-soft);padding-top:20px;margin-top:10px}
+.calm-sub{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.calm-item{border-bottom:1px solid var(--line-soft)}
+.calm-group .calm-item:last-of-type{border-bottom:none}
+.calm-item summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;cursor:pointer;list-style:none;padding:13px 2px;font-size:17px;line-height:1.4}
+.calm-item summary::-webkit-details-marker{display:none}
+.calm-name{font-weight:700;color:var(--ink)}
+.calm-sep{color:var(--muted)}
+.calm-status{color:var(--coming-ink);font-weight:600}
+.calm-chev{margin-left:auto;color:var(--muted);font-size:18px;line-height:1;padding-left:14px}
+.calm-gate{padding:1px 2px 15px;font-size:15.5px;line-height:1.55;color:var(--body);max-width:70ch}
+@media(max-width:560px){
+  .monitor{margin-top:32px}
+  .monitor-bezel{padding:10px;border-radius:22px;box-shadow:0 14px 34px rgba(12,80,110,.20),0 3px 10px rgba(12,43,62,.18)}
+  .monitor-cam{top:3px;width:4px;height:4px;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+  .monitor-screen{border-radius:12px;box-shadow:inset 0 0 0 1px rgba(12,43,62,.05),inset 0 2px 12px rgba(12,43,62,.05)}
+  .monitor .dash-mock{padding:18px 16px}
+  .monitor .dash-badge{top:-13px;right:18px}
+  .monitor-stand{display:none}
+  .calm-panel{padding:20px 20px 6px}
+  .calm-item summary{font-size:16px;padding:12px 0}
+  .calm-gate{font-size:15px}
 }
 </style>
 <script type="application/ld+json">
@@ -425,6 +465,7 @@ body.es .lang-en-hero{display:none}
 }
 .chat-launcher { transition: opacity .25s ease, transform .25s ease; }
 body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: translateY(10px); }
+.signup-card a.checkout-button{display:block;text-align:center;text-decoration:none}
 </style>
 <style>
 /* Port cascade guard: the chat stylesheet above (verbatim) also declares a
@@ -461,13 +502,15 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <p class="sub">Sunny answers the calls your desk can't get to — <strong>overflow, lunch, and after hours</strong> — in your practice's name. A real conversation, not voicemail.</p>
       <p class="slogan">Answered with a smile.</p>
       <p class="price-line">$199/mo for after hours · $299/mo for around the clock · <strong>$0 setup</strong> · month-to-month</p>
-      <p class="hero-ctas"><a class="btn" href="tel:+16192021085">Hear Sunny live — (619) 202-1085</a> <a class="btn btn-outline" href="#pricing">See the plans</a></p>
+      <div class="hero-ctas"><div class="hero-start"><span>Ready now?</span> <a href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01" target="_blank" rel="noopener">Start $199 after-hours</a> · <a href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02" target="_blank" rel="noopener">Start $299 24/7</a></div>
+        <a class="btn" href="tel:+16192021085">Hear Sunny live — (619) 202-1085</a> <a class="btn btn-outline" href="#pricing">See the plans</a></div>
     </div>
     <div class="lang-es" lang="es">
       <p class="es-h1" role="heading" aria-level="1">Suena la segunda línea. El mostrador está lleno. Sunny ya contestó.</p>
       <p class="sub">Sunny contesta las llamadas que su recepción no puede atender — desborde, almuerzo y fuera de horario — en nombre de su consultorio. Una conversación real, no un buzón de voz.</p>
       <p class="slogan">Answered with a smile.</p>
       <p class="price-line">$199/mes fuera de horario · $299/mes a toda hora · <strong>Instalación: $0</strong> · mes a mes</p>
+      <div class="hero-start"><span>¿Listo ahora?</span> <a href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01" target="_blank" rel="noopener">Empezar mi piloto — $199/mes</a> · <a href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02" target="_blank" rel="noopener">Empezar mi piloto — $299/mes</a></div>
       <p><a class="btn" href="tel:+16192021085">Escuche a Sunny en vivo — llame al (619) 202-1085</a> <a class="btn btn-outline" href="#pricing">Ver los planes</a></p>
     </div>
     </div>
@@ -569,7 +612,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
           <li class="n alt">Insurance checks — 300/mo</li>
           <li class="n">Patient payment portal</li>
         </ul>
-        <div class="paction"><button type="button" class="pbtn" data-start-signup>Get This Plan</button></div>
+        <div class="paction"><a class="pbtn" href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01" target="_blank" rel="noopener">Start my pilot — $199/mo</a><p class="pnote">First month up front · $0 setup · money-back guarantee. <button type="button" class="textlink" data-start-signup>Questions first? Ask the pilot guide</button></p></div>
       </div>
       <div class="pcol featured">
         <div class="rule"></div><div class="pop">Most Popular</div>
@@ -587,7 +630,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
           <li class="n alt">Insurance checks — 300/mo</li>
           <li class="n">Patient payment portal</li>
         </ul>
-        <div class="paction"><button type="button" class="pbtn" data-start-signup>Get This Plan</button><p class="pnote">1,000 minutes — real minutes, not credits. Month-to-month.</p></div>
+        <div class="paction"><a class="pbtn" href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02" target="_blank" rel="noopener">Start my pilot — $299/mo</a><p class="pnote">First month up front · $0 setup · money-back guarantee. <button type="button" class="textlink" data-start-signup>Questions first? Ask the pilot guide</button></p><p class="pnote">1,000 minutes — real minutes, not credits. Month-to-month.</p></div>
       </div>
       <div class="pcol coming">
         <h3>Booked</h3><p class="tag">The list starts booking itself</p>
@@ -621,7 +664,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
           <li class="y alt">Insurance checks — 300/mo, then $1.95/check</li>
           <li class="n">Patient payment portal</li>
         </ul>
-        <div class="paction"><p class="soon-note">NOT SOLD TODAY</p><p class="pgate">Sold only once automated checking passes our own measured labor test.</p></div>
+        <div class="paction"><p class="soon-note">NOT SOLD TODAY</p><p class="pgate">Sold only once its automated checking passes our measured labor test — until then, not sold at any price.</p></div>
       </div>
     </div>
     <div class="tband-grid">
@@ -675,7 +718,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <article class="mcard"><div class="ph"><img src="assets/moment-lunch.webp" alt="A desk phone sitting unanswered on an empty office desk"><span class="mtime">12–2 P.M.</span></div><div class="mb"><h3>The lunch gap</h3><p>Patients call on their break — your phones uncovered. Sunny covers it.</p></div></article>
       <article class="mcard"><div class="ph"><img src="assets/moment-monday.webp" alt="A busy dental reception on a Monday morning"><span class="mtime">MONDAY 8:03 A.M.</span></div><div class="mb"><h3>The Monday avalanche</h3><p>The weekend lands in the first two hours — Sunny hands you one sorted list by 7:30.</p></div></article>
       <article class="mcard"><div class="ph"><img src="assets/moment-wall.webp" alt="A patient checking in at a dental reception counter in the late afternoon"><span class="mtime">5:02 P.M.</span></div><div class="mb"><h3>The 5 p.m. wall</h3><p>Close-out must balance as the after-work wave starts — urgents flagged, rest listed.</p></div></article>
-      <article class="mcard mcard-wide"><div class="ph ph-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="mtime">ANY MORNING</span></div><div class="mb"><h3>One sick call collapses the system</h3><p>No bench — the manager becomes the desk. Sunny holds the phones.</p></div></article>
+      <article class="mcard mcard-wide"><div class="ph ph-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="mtime">ANY MORNING</span></div><div class="mb"><h3>Your front desk calls in sick. The phones don’t.</h3><p>No bench — the manager becomes the desk. Sunny holds the phones.</p></div></article>
     </div>
     <div class="lang-es es-block" lang="es">
       <h3>Usted conoce estos momentos.</h3>
@@ -684,7 +727,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
         <li><strong>La pausa del almuerzo (12–2 p.m.).</strong> Los pacientes llaman en su descanso — sus teléfonos sin cobertura. Sunny la cubre.</li>
         <li><strong>La avalancha del lunes (lunes 8:03 a.m.).</strong> El fin de semana cae en las primeras dos horas — Sunny le entrega una sola lista ordenada a las 7:30.</li>
         <li><strong>La pared de las 5 p.m.</strong> El cierre debe cuadrar justo cuando empieza la oleada después del trabajo — lo urgente marcado, el resto en la lista.</li>
-        <li><strong>Una llamada por enfermedad colapsa el sistema (cualquier mañana).</strong> Sin refuerzos — la gerente se convierte en la recepción. Sunny sostiene los teléfonos.</li>
+        <li><strong>Su recepción se reporta enferma. Los teléfonos no.</strong> Sin refuerzos — la gerente se convierte en la recepción. Sunny sostiene los teléfonos.</li>
       </ul>
     </div>
   </div>
@@ -721,32 +764,105 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <div class="htile"><span class="dot"></span>Same Sunny, every location</div>
     </div>
     <p class="hub-grp coming">● Coming — not live yet</p>
-    <div class="hub-grid">
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Missed-call text-back</span><span class="gate-note">Gate: carrier texting approval — the A2P registration was rejected; resubmission is pending the EIN confirmation.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Confirmations + backfill</span><span class="gate-note">Gate: business texting approval, and a read-only look at the schedule — she could spot a cancelled slot, but she still books nothing; your team books.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Recall &amp; reactivation</span><span class="gate-note">Gate: still being built and proven; not available today — recall lists never get worked.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Review requests by text</span><span class="gate-note">Gate: business texting approval. A QR-code version works today.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Booking into Open Dental</span><span class="gate-note">Gate: developer access in progress. Until this is live and proven, Sunny books nothing — she captures, and your team books.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Insurance verification</span><span class="gate-note">Gate: works in a test environment today; production comes with a signed pilot office — the verification grind.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Caller recognition + intent</span><span class="gate-note">Gate: Phase 1 arrives with the office dashboard. Phase 2, with the Open Dental connection: full patient match — a caller card with the patient's name, next appointment, and pending treatment. Neither phase is live today, and Sunny does not match patient records today.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Patient billing portal</span><span class="gate-note">Gate: a later phase of the build, after the phone work above.</span></div>
-      <div class="htile coming tile-col"><span class="tile-row"><span class="dot"></span>Warm transfer — office ON/OFF option</span><span class="gate-note">Gate: office-controlled ON/OFF option — spec item until the transfer path is built and tested end-to-end.</span></div>
+    <div class="calm-panel">
+      <div class="calm-group">
+        <h3 class="calm-sub">Texting</h3>
+        <details class="calm-item">
+          <summary><span class="calm-name">Missed-call text-back</span><span class="calm-sep">—</span><span class="calm-status">waiting on carrier texting approval</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: carrier texting approval — the A2P registration was rejected; resubmission is pending the EIN confirmation.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Confirmations + backfill</span><span class="calm-sep">—</span><span class="calm-status">needs texting approval · books nothing</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: business texting approval, and a read-only look at the schedule — she could spot a cancelled slot, but she still books nothing; your team books.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Review requests by text</span><span class="calm-sep">—</span><span class="calm-status">needs texting approval · QR works today</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: business texting approval. A QR-code version works today.</p>
+        </details>
+      </div>
+      <div class="calm-group">
+        <h3 class="calm-sub">Booking &amp; records</h3>
+        <details class="calm-item">
+          <summary><span class="calm-name">Booking into Open Dental</span><span class="calm-sep">—</span><span class="calm-status">developer access in progress · books nothing</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: developer access in progress. Until this is live and proven, Sunny books nothing — she captures, and your team books.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Insurance verification</span><span class="calm-sep">—</span><span class="calm-status">in test today · pilot office needed</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: works in a test environment today; production comes with a signed pilot office — the verification grind.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Caller recognition + intent</span><span class="calm-sep">—</span><span class="calm-status">not live today · two phases planned</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: Phase 1 arrives with the office dashboard. Phase 2, with the Open Dental connection: full patient match — a caller card with the patient's name, next appointment, and pending treatment. Neither phase is live today, and Sunny does not match patient records today.</p>
+        </details>
+      </div>
+      <div class="calm-group">
+        <h3 class="calm-sub">Later</h3>
+        <details class="calm-item">
+          <summary><span class="calm-name">Recall &amp; reactivation</span><span class="calm-sep">—</span><span class="calm-status">still being built and proven</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: still being built and proven; not available today — recall lists never get worked.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Patient billing portal</span><span class="calm-sep">—</span><span class="calm-status">a later phase of the build</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: a later phase of the build, after the phone work above.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Warm transfer — office ON/OFF option</span><span class="calm-sep">—</span><span class="calm-status">spec item · transfer path not built</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Gate: office-controlled ON/OFF option — spec item until the transfer path is built and tested end-to-end.</p>
+        </details>
+      </div>
     </div>
     <div class="lang-es es-block" lang="es">
       <h3>En vivo hoy. Próximamente — y etiquetado como tal.</h3>
       <p><strong>En vivo hoy:</strong> contesta en nombre de su consultorio · captura correcta de datos · orden por urgencia en 3 niveles · conversación real, con IA y grabación divulgadas · cuatro idiomas · captura de preguntas de seguros (≈12 minutos y ≈$6.52 — el costo de una verificación manual de elegibilidad, CAQH Index 2024; Sunny solo captura la pregunta) · lista matutina de devoluciones · informe de prueba para el propietario · la misma Sunny en cada ubicación.</p>
       <p><strong>Próximamente — aún no en vivo:</strong></p>
-      <ul>
-        <li><strong>Mensaje de texto tras llamada perdida.</strong> Requisito: aprobación de mensajería del operador — el registro A2P fue rechazado; el reenvío está pendiente de la confirmación del EIN.</li>
-        <li><strong>Confirmaciones y relleno de huecos.</strong> Requisito: aprobación de mensajería comercial y una vista de solo lectura del horario — ella podría detectar un hueco cancelado, pero aún no agenda nada; su equipo agenda.</li>
-        <li><strong>Recuperación y reactivación.</strong> Requisito: aún se está construyendo y probando; no disponible hoy.</li>
-        <li><strong>Solicitudes de reseñas por texto.</strong> Requisito: aprobación de mensajería comercial. Una versión con código QR ya funciona hoy.</li>
-        <li><strong>Reserva en Open Dental.</strong> Requisito: acceso de desarrollador en curso. Hasta que esté activo y probado, Sunny no agenda nada — captura, y su equipo agenda.</li>
-        <li><strong>Verificación de seguros.</strong> Requisito: funciona hoy en un entorno de prueba; la producción llega con un consultorio piloto firmado.</li>
-        <li><strong>Reconocimiento de quien llama e intención.</strong> Requisito: la Fase 1 llega con el panel del consultorio. La Fase 2, con la conexión a Open Dental: coincidencia completa del paciente — una tarjeta con el nombre del paciente, su próxima cita y el tratamiento pendiente. Ninguna fase está en vivo hoy, y Sunny no compara registros de pacientes hoy.</li>
-        <li><strong>Portal de pagos para pacientes.</strong> Requisito: una fase posterior de la construcción, después del trabajo telefónico anterior.</li>
-        <li><strong>Transferencia en vivo — opción ON/OFF del consultorio.</strong> Requisito: elemento de especificación hasta que la ruta de transferencia esté construida y probada de principio a fin.</li>
-      </ul>
+      <div class="calm-panel">
+      <div class="calm-group">
+        <h3 class="calm-sub">Mensajería</h3>
+        <details class="calm-item">
+          <summary><span class="calm-name">Mensaje de texto tras llamada perdida.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: aprobación de mensajería del operador — el registro A2P fue rechazado; el reenvío está pendiente de la confirmación del EIN.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Confirmaciones y relleno de huecos.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: aprobación de mensajería comercial y una vista de solo lectura del horario — ella podría detectar un hueco cancelado, pero aún no agenda nada; su equipo agenda.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Solicitudes de reseñas por texto.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: aprobación de mensajería comercial. Una versión con código QR ya funciona hoy.</p>
+        </details>
+      </div>
+      <div class="calm-group">
+        <h3 class="calm-sub">Reservas y registros</h3>
+        <details class="calm-item">
+          <summary><span class="calm-name">Reserva en Open Dental.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: acceso de desarrollador en curso. Hasta que esté activo y probado, Sunny no agenda nada — captura, y su equipo agenda.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Verificación de seguros.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: funciona hoy en un entorno de prueba; la producción llega con un consultorio piloto firmado.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Reconocimiento de quien llama e intención.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: la Fase 1 llega con el panel del consultorio. La Fase 2, con la conexión a Open Dental: coincidencia completa del paciente — una tarjeta con el nombre del paciente, su próxima cita y el tratamiento pendiente. Ninguna fase está en vivo hoy, y Sunny no compara registros de pacientes hoy.</p>
+        </details>
+      </div>
+      <div class="calm-group">
+        <h3 class="calm-sub">Más adelante</h3>
+        <details class="calm-item">
+          <summary><span class="calm-name">Recuperación y reactivación.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: aún se está construyendo y probando; no disponible hoy.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Portal de pagos para pacientes.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: una fase posterior de la construcción, después del trabajo telefónico anterior.</p>
+        </details>
+        <details class="calm-item">
+          <summary><span class="calm-name">Transferencia en vivo — opción ON/OFF del consultorio.</span><span class="calm-chev" aria-hidden="true">⌄</span></summary>
+          <p class="calm-gate">Requisito: elemento de especificación hasta que la ruta de transferencia esté construida y probada de principio a fin.</p>
+        </details>
+      </div>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -755,9 +871,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
   <div class="wrap">
     <h2>One place to see everything Sunny caught. <span class="badge badge-live" style="background:var(--band);color:var(--link)">IN BUILD</span></h2>
     <p style="max-width:700px">Today's calls, the callback list, the proof report, and your settings. <strong>In build</strong> at app.ringandrespond.com; your list and report reach you without it today.</p>
-    <div class="dash-mock">
+    <div class="monitor">
       <span class="dash-badge">IN BUILD — app.ringandrespond.com</span>
-      <h3>Your Dental Practice — Dashboard</h3>
+      <div class="monitor-bezel">
+        <span class="monitor-cam" aria-hidden="true"></span>
+        <div class="monitor-screen">
+          <div class="dash-mock">
+            <h3>Your Dental Practice — Dashboard</h3>
       <div class="dash-grid">
         <div class="dash-panel"><h3>Callback list — urgencies first</h3><ul>
           <li><span>Pain — callback first · intent: emergency</span><span class="tag-urgent">URGENT</span></li>
@@ -781,6 +901,14 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
           <li><span><strong>Phase 1:</strong> intent labels + repeat-caller memory from Sunny's own history.</span><span class="tag-std">PHASE 1</span></li>
           <li><span><strong>Phase 2:</strong> full patient match on a caller card — with Open Dental.</span><span class="tag-std">PHASE 2</span></li>
         </ul><p style="margin-top:8px">Neither phase is live today.</p></div>
+      </div>
+          </div>
+        </div>
+      </div>
+      <div class="monitor-stand" aria-hidden="true">
+        <div class="stand-neck"></div>
+        <div class="stand-base"></div>
+        <div class="stand-shadow"></div>
       </div>
     </div>
     <div class="lang-es es-block" lang="es">
@@ -844,10 +972,12 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
       <li>Unconditional money-back guarantee</li>
       <li>BAA signed before any patient information flows</li>
     </ul>
+    <p class="finale-start"><span>Ready now?</span> <a href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01" target="_blank" rel="noopener">Start $199 after-hours</a> · <a href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02" target="_blank" rel="noopener">Start $299 24/7</a></p>
     <p class="finale-write">Prefer to write? <a href="mailto:hello@ringandrespond.com">hello@ringandrespond.com</a></p>
     <div class="lang-es" lang="es">
       <h3>Escúchela antes de decidir nada.</h3>
       <p>Llame al (619) 202-1085 — es Sunny, en vivo, contestando ahora mismo. Si le parece adecuada, el piloto cuesta $199 o $299 el primer mes, con instalación de $0 y garantía incondicional de devolución del dinero, y el acuerdo BAA se firma antes de que fluya cualquier información de pacientes.</p>
+      <p class="finale-start"><span>¿Listo ahora?</span> <a href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01" target="_blank" rel="noopener">Empezar mi piloto — $199/mes</a> · <a href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02" target="_blank" rel="noopener">Empezar mi piloto — $299/mes</a></p>
       <p>(619) 202-1085 · hello@ringandrespond.com</p>
     </div>
   </div>
@@ -859,8 +989,9 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
     <span><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></span>
   </div>
 </footer>
-<div class="call-bar" id="call-bar"><a href="tel:+16192021085">Hear Sunny Live — (619) 202-1085</a></div>
+<div class="call-bar buy-bar" id="call-bar"><a class="bb1" href="https://buy.stripe.com/aFa00c2jjaiygee5lHdQQ01" target="_blank" rel="noopener">Start pilot — $199/mo</a><a class="bb2" href="https://buy.stripe.com/8x29AM6zz76mbXYaG1dQQ02" target="_blank" rel="noopener">$299/mo 24/7</a></div>
 <script src="assets/site.js"></script>
+<script>(function(){var b=document.getElementById("call-bar");if(!b)return;var f=function(){document.body.classList.toggle("bar-on",b.classList.contains("show"));};new MutationObserver(f).observe(b,{attributes:true,attributeFilter:["class"]});f();})();</script>
 <button class="chat-launcher" id="chatLauncher" type="button" aria-expanded="false" aria-controls="chatPanel">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
     <span>Ask a question</span>
@@ -868,13 +999,13 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
 
   <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Sunny quick answers" hidden>
     <div class="chat-header">
-      <div><strong>Your pilot guide</strong><span>Questions, signup, and checkout</span></div>
+      <div><strong>Your pilot guide</strong><span>Questions about Sunny and the pilot</span></div>
       <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
       </button>
     </div>
     <div class="chat-log" id="chatLog" aria-live="polite" aria-relevant="additions">
-      <div class="message assistant">Hi! I’m an automated assistant. Ask me about Sunny, what the pilot costs, how buying works, finding your way around the site — or I can guide you through signup right here.</div>
+      <div class="message assistant">Hi! I’m an automated assistant. Ask me about Sunny, what the pilot costs, how buying works, finding your way around the site — or tap Start my pilot to go straight to checkout.</div>
       <div class="starter-chips" id="starterChips" aria-label="Suggested questions">
         <button class="starter-chip" type="button" data-start-signup>Start my pilot</button>
         <button class="starter-chip" type="button">What can Sunny do?</button>
@@ -913,7 +1044,7 @@ document.querySelectorAll('.faq-acc').forEach(function (d) {
          taps). Anything that happens while the file is in flight is
          queued here and replayed by the brain the moment it
          initializes - no lost first message, no dead first click. */
-      var BRAIN_URL = '/chat-brain.js?v=ee59d344fd';
+      var BRAIN_URL = '/chat-brain.js?v=c5a9505efe';
       var shellLauncher = document.getElementById('chatLauncher');
       var shellForm = document.getElementById('chatForm');
       var shellInput = document.getElementById('chatInput');
