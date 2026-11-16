@@ -47,6 +47,17 @@ h3{font-size:20px;margin:22px 0 10px}
 p{margin-bottom:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -175,48 +186,98 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <div class="card">
 <ul class="ticks">
 <li><strong>Monday mornings</strong> — the weekend's voicemails plus new-week callers, all at 9 AM.</li>
-<li><strong>Lunch hour</strong> — the desk is empty right when working patients call on their break.</li>
+<li><strong>Lunch hour</strong> — the desk is empty when working patients call on their break.</li>
 <li><strong>Late afternoons</strong> — the after-school appointment rush, while staff are wrapping the day.</li>
 <li><strong>Post-holiday reopenings</strong> — three days of backlog in the first hour.</li>
 <li><strong>Marketing spikes</strong> — a good Google profile or a campaign works <em>too</em> well, and the phones prove it.</li>
 </ul>
 </div>
-<p>In Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations, <a href="/dental-missed-calls-cost">31 of every 100 callers hung up before reaching anyone</a> — and most of those misses happen during business hours, not after. Your busiest hours are your leakiest hours.</p>
+<p>In Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations, <a href="/dental-missed-calls-cost">31 of every 100 callers hung up before reaching anyone</a> — and most misses happen during business hours, not after. Your busiest hours are your leakiest hours.</p>
 </section>
 
 <section>
 <h2>How overflow routing works</h2>
-<p>It's a phone-system setting, not a project. Your office number forwards unanswered or busy calls to Sunny after 3–4 rings. Your team answers everything they can; whatever rings past them is caught automatically — answered in your practice's name, captured per your rules, logged for your team.</p>
-<p>No new number. No new hardware. No behavior change for your staff — they just stop hearing the phone ring unanswered while they're with a patient. And because Sunny takes simultaneous calls — each caller in their own conversation — a five-caller rush means five answered calls, not a hold queue.</p>
+<p>It's a phone-system setting, not a project. Your office number forwards unanswered or busy calls to Sunny after 3–4 rings. Your team answers what it can; whatever rings past them is caught automatically — answered in your practice's name, captured per your rules, logged for your team.</p>
+<p>No behavior change for your staff. And because Sunny takes simultaneous calls — each caller in their own conversation — a five-caller rush means five answered calls, not a hold queue.</p>
 </section>
 
 <section>
 <h2>Overflow vs. voicemail: the real comparison</h2>
-<p>Voicemail <em>catches</em> the call; overflow handling <em>resolves</em> it. A voicemail is a callback your team owes tomorrow morning — to a patient who, per the data, probably didn't leave one and already called the next practice. An overflow-answered call is a request captured at 10:15 AM while your team was checking someone in.</p>
-<p>The cost difference: $0 for voicemail, $299/month — minutes included, then $0.25/min — for overflow handling that also covers your <a href="/after-hours-dental-answering">after-hours calls</a>. One recovered new patient a month pays for it several times over.</p>
+<p>Voicemail <em>catches</em> the call; overflow handling <em>resolves</em> it. A voicemail is a callback your team owes tomorrow morning — to a patient who, per the data, probably didn't leave one and already called the next practice. An overflow-answered call is a request captured at 10:15 AM while your team checks someone in.</p>
+<p>One recovered new patient a month pays for it several times over.</p>
 </section>
 
 <div class="pricing">
 <h2>Every rush, answered — one monthly rate</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>Daytime overflow, lunch coverage, and after-hours answering included.<br/>30-day pilot — money back if Sunny doesn't earn her keep.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>Overflow call handling FAQs</h2>
-<div class="faq"><h3>What is overflow call handling for a dental office?</h3><p>Overflow call handling answers the calls your front desk can't get to — when both lines are busy, the team is with patients, or it's lunch hour. Instead of ringing out or hitting hold, the extra calls route to Sunny, who answers, captures, and logs everything.</p></div>
-<div class="faq"><h3>When do dental offices get the most overflow calls?</h3><p>Monday mornings (weekend backlog), lunch hours (staff away from desks), late afternoons (after-school appointment rush), post-holiday reopenings, and any time a marketing campaign or Google profile update drives a spike.</p></div>
-<div class="faq"><h3>How does overflow routing work technically?</h3><p>Your phone system forwards unanswered or busy calls to Sunny after a set number of rings — typically 3–4. Your team answers what they can; everything else is caught automatically. No new number, no new hardware.</p></div>
-<div class="faq"><h3>Does overflow handling work during office hours?</h3><p>That's exactly what it's for. After-hours coverage is a separate schedule; overflow handling runs during the day, catching whatever rings past your team — including the lunch hour when the desk is empty.</p></div>
-<div class="faq"><h3>Will callers notice they've been routed?</h3><p>They'll notice someone picked up on the fourth ring instead of the tenth — and that's the whole point. Sunny answers in your practice's name, handles the call, and your team sees the request or summary.</p></div>
-<div class="faq"><h3>Can overflow handle multiple simultaneous calls?</h3><p>Yes — Sunny takes simultaneous calls, each caller in their own conversation, with no hold queue. A Monday-morning rush with five callers at once means five answered calls, not four people on hold and one hang-up.</p></div>
-<div class="faq"><h3>What does overflow call handling cost?</h3><p>It's included in Ring &amp; Respond's 24/7 Complete plan at $299/month ($0 setup) — daytime overflow, lunch coverage, and after-hours answering all in one rate. Your 1,000 included minutes cover the month; past them, a small overage of $0.25 a minute — so a rush hour is answered the same way as a quiet one.</p></div>
-<div class="faq"><h3>How is this different from just letting voicemail catch it?</h3><p>Voicemail catches the call; overflow handling resolves it. A voicemail is a callback your team owes tomorrow. An overflow-answered call is a request already captured — industry data shows only ~14% of new patients leave voicemails anyway.</p></div>
-<div class="faq"><h3>Who answers dental office phones at lunch?</h3><p>At most practices, nobody — the desk is empty right when working patients use their own lunch break to call. Overflow coverage answers lunch-hour calls live, captures the request, and hands your team a summary when they're back.</p></div>
-<div class="faq"><h3>Can overflow coverage run only during peak hours?</h3><p>Yes. You control the forwarding rules, so overflow can catch calls only at lunch, only on Monday mornings, or whenever lines are busy or unanswered. Most practices end up running it all day once they see the call log.</p></div>
-<div class="faq"><h3>Does overflow handling also cover weekends?</h3><p>It can. Weekend calls are usually new patients and emergencies — the two categories you least want in voicemail. The same forwarding setup that catches a Tuesday lunch rush can catch a Saturday morning toothache.</p></div>
-<div class="faq"><h3>What information does the front desk get after an overflow call?</h3><p>A summary for every call: who called, their callback number, what they need, and the appointment window they asked for. Your team confirms the booking in your own system — nothing is left as a sticky note or a half-heard message.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>What is overflow call handling for a dental office?</h3></summary>
+<div class="faq-a"><p>Overflow call handling answers the calls your front desk can't get to — when both lines are busy, the team is with patients, or it's lunch hour. Instead of ringing out or hitting hold, the extra calls route to Sunny, who answers, captures, and logs everything.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>When do dental offices get the most overflow calls?</h3></summary>
+<div class="faq-a"><p>Monday mornings (weekend backlog), lunch hours (staff away from desks), late afternoons (after-school appointment rush), post-holiday reopenings, and any time a marketing campaign or Google profile update drives a spike.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How does overflow routing work technically?</h3></summary>
+<div class="faq-a"><p>Your phone system forwards unanswered or busy calls to Sunny after a set number of rings — typically 3–4. Your team answers what they can; everything else is caught automatically. No new number, no new hardware.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does overflow handling work during office hours?</h3></summary>
+<div class="faq-a"><p>That's exactly what it's for. After-hours coverage is a separate schedule; overflow handling runs during the day, catching whatever rings past your team — including the lunch hour when the desk is empty.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Will callers notice they've been routed?</h3></summary>
+<div class="faq-a"><p>They'll notice someone picked up on the fourth ring instead of the tenth — and that's the whole point. Sunny answers in your practice's name, handles the call, and your team sees the request or summary.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can overflow handle multiple simultaneous calls?</h3></summary>
+<div class="faq-a"><p>Yes — Sunny takes simultaneous calls, each caller in their own conversation, with no hold queue. A Monday-morning rush with five callers at once means five answered calls, not four people on hold and one hang-up.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What does overflow call handling cost?</h3></summary>
+<div class="faq-a"><p>It's included in Ring &amp; Respond's 24/7 Complete plan at $299/month ($0 setup) — daytime overflow, lunch coverage, and after-hours answering all in one rate. Your 1,000 included minutes cover the month; past them, a small overage of $0.25 a minute — so a rush hour is answered the same way as a quiet one.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How is this different from just letting voicemail catch it?</h3></summary>
+<div class="faq-a"><p>Voicemail catches the call; overflow handling resolves it. A voicemail is a callback your team owes tomorrow. An overflow-answered call is a request already captured — industry data shows only ~14% of new patients leave voicemails anyway.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Who answers dental office phones at lunch?</h3></summary>
+<div class="faq-a"><p>At most practices, nobody — the desk is empty right when working patients use their own lunch break to call. Overflow coverage answers lunch-hour calls live, captures the request, and hands your team a summary when they're back.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can overflow coverage run only during peak hours?</h3></summary>
+<div class="faq-a"><p>Yes. You control the forwarding rules, so overflow can catch calls only at lunch, only on Monday mornings, or whenever lines are busy or unanswered. Most practices end up running it all day once they see the call log.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does overflow handling also cover weekends?</h3></summary>
+<div class="faq-a"><p>It can. Weekend calls are usually new patients and emergencies — the two categories you least want in voicemail. The same forwarding setup that catches a Tuesday lunch rush can catch a Saturday morning toothache.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What information does the front desk get after an overflow call?</h3></summary>
+<div class="faq-a"><p>A summary for every call: who called, their callback number, what they need, and the appointment window they asked for. Your team confirms the booking in your own system — nothing is left as a sticky note or a half-heard message.</p></div>
+</details>
+</div>
 </section>
 
 <section>
@@ -483,5 +544,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>

@@ -50,6 +50,17 @@ table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--card);b
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--teal-d);color:#fff;font-family:"Archivo"}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -175,8 +186,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <div class="wrap">
 <section>
 <h2>What a virtual receptionist does for your practice</h2>
-<p>A virtual receptionist is a remote front desk for your phones: answering calls in your practice's name, taking appointment requests, answering routine questions (hours, location, insurance), taking detailed messages, and escalating urgent calls. Your in-office team stops splitting attention between the patient in the chair and the phone ringing — because the phone is already handled.</p>
-<p>There are two kinds: <strong>human</strong> virtual receptionists (remote agents working your account in shifts) and <strong>AI</strong> virtual receptionists (voice AI answering instantly, around the clock). Here's how they compare:</p>
+<p>A virtual receptionist is a remote front desk for your phones: answering calls in your practice's name, taking appointment requests, answering routine questions (hours, location, insurance), taking detailed messages, and escalating urgent calls. Your in-office team stops splitting attention between the patient in the chair and the phone — it's already handled.</p>
+<p>There are two kinds: <strong>human</strong> virtual receptionists (remote agents working your account in shifts) and <strong>AI</strong> virtual receptionists (voice AI answering instantly, around the clock):</p>
 <table>
 <tr><th></th><th>Human virtual receptionist</th><th>AI virtual receptionist (Sunny)</th></tr>
 <tr><td><strong>Availability</strong></td><td>Scheduled shifts; after-hours costs extra</td><td>24/7/365, one monthly rate</td></tr>
@@ -192,35 +203,85 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <h2>When each makes sense</h2>
 <div class="card">
 <ul class="ticks">
-<li><strong>Choose human</strong> if most of your calls are emotionally sensitive or complex, and you want a person making judgment calls on every one.</li>
+<li><strong>Choose human</strong> if most of your calls are emotionally sensitive or complex, and you want a person judging every one.</li>
 <li><strong>Choose AI</strong> if your volume is routine scheduling, after-hours coverage, and overflow — the calls where speed and consistency beat conversation.</li>
 <li><strong>Choose both</strong> the way most modern practices do: AI absorbs the volume (nights, weekends, lunch, rushes) and your in-office humans handle in-person care and judgment calls.</li>
 </ul>
 </div>
-<p>The practices getting the most from virtual reception aren't replacing anyone — they're covering the <a href="/dental-missed-calls-cost">calls that currently go unanswered</a>. In Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations, 31 of every 100 callers hung up before reaching anyone; a virtual receptionist turns those into captured requests.</p>
+<p>In Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations, 31 of every 100 callers hung up before reaching anyone; a virtual receptionist turns those into captured requests.</p>
 </section>
 
 <div class="pricing">
 <h2>A virtual front desk from $199/month</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>24/7 answering, detailed capture, urgent-call flagging. One monthly rate, generous minutes included — past them, $0.25 a minute. No annual contract.<br/>30-day pilot — money back if Sunny doesn't earn her keep.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>Virtual receptionist FAQs</h2>
-<div class="faq"><h3>What does a virtual receptionist do for a dental office?</h3><p>A virtual receptionist handles your practice's phone calls remotely — answering on your behalf, taking appointment requests and messages, and routing urgent calls. Human virtual receptionists work scheduled shifts; AI virtual receptionists like Sunny cover 24/7 without shifts, breaks, or sick days.</p></div>
-<div class="faq"><h3>How much does a virtual receptionist cost for a dental office?</h3><p>Human virtual receptionist services typically run $300–$1,000+/month depending on minutes and coverage hours. AI receptionists range from about $149 to $1,299/month. Ring &amp; Respond is $0 setup, then $199/month for After-Hours Capture or $299/month for 24/7 Complete. Generous minutes are included — 500 a month on Capture, 1,000 on Complete — and past them, a small overage of $0.25 a minute. No annual contract.</p></div>
-<div class="faq"><h3>Human virtual receptionist vs AI — which is better?</h3><p>Humans bring judgment and empathy to sensitive calls; AI brings instant pickup, simultaneous calls with no hold queue, and predictable monthly pricing. For routine scheduling and after-hours coverage, AI usually wins on cost and consistency. Many practices use AI for volume and keep humans for in-person care.</p></div>
-<div class="faq"><h3>Can a virtual receptionist book dental appointments?</h3><p>Sunny doesn't book directly — she captures the request live on the call: name, number, reason, and preferred time, following your scheduling rules (providers, new-patient blocks, emergency slots). Your team confirms it in your own system. Human virtual receptionists usually work through your PMS or a callback workflow instead.</p></div>
-<div class="faq"><h3>Does a virtual receptionist work after hours?</h3><p>AI virtual receptionists do — 24/7/365 at one monthly rate. Human services typically charge premium tiers for evenings, weekends, and holidays, or don't cover them at all.</p></div>
-<div class="faq"><h3>Do I keep my existing phone number?</h3><p>Yes. Your office number forwards to the virtual receptionist whenever you choose. Patients never dial anything new.</p></div>
-<div class="faq"><h3>Will patients know it's a virtual receptionist?</h3><p>Sunny introduces herself as your after-hours assistant and answers honestly if asked whether she's AI. Most callers just get their request captured and hang up — the experience feels like a good front desk, not a robot.</p></div>
-<div class="faq"><h3>How quickly can a virtual receptionist start?</h3><p>Ring &amp; Respond practices typically go live within days: a 5-minute onboarding captures your hours, services, emergency rules, and scheduling preferences, then you forward your line. Human services often need 1–2 weeks for agent training on your practice.</p></div>
-<div class="faq"><h3>What's the difference between a virtual receptionist and a remote front-desk employee?</h3><p>A remote employee is one person working set hours from home — they still get sick, take lunch, and can only take one call at a time. A virtual receptionist service covers the role itself: built to answer calls in your practice's name, evenings and weekends included, with no hiring or training.</p></div>
-<div class="faq"><h3>Can a virtual receptionist work with Dentrix, Eaglesoft, or Open Dental?</h3><p>Sunny captures the appointment request — patient, reason, preferred window — and delivers it to your team, who confirm it in Dentrix, Eaglesoft, Open Dental, or whatever you run. She doesn't write directly into your practice software, and any vendor who promises that on day one deserves a hard follow-up question.</p></div>
-<div class="faq"><h3>Does a virtual receptionist cover lunch breaks and days off?</h3><p>Yes — that's one of its main jobs. Lunch hour is when working patients call, and it's exactly when a small front desk is empty. Overflow coverage catches those calls the same way it catches after-hours calls.</p></div>
-<div class="faq"><h3>What does a virtual front desk actually include?</h3><p>Call answering in your practice's name, appointment-request capture, emergency flagging by your rules, and a morning summary of everything that came in. With Ring &amp; Respond it's $199/month for After-Hours Capture or $299/month for 24/7 Complete, with $0 setup — generous minutes included, past them $0.25 a minute.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>What does a virtual receptionist do for a dental office?</h3></summary>
+<div class="faq-a"><p>A virtual receptionist handles your practice's phone calls remotely — answering on your behalf, taking appointment requests and messages, and routing urgent calls. Human virtual receptionists work scheduled shifts; AI virtual receptionists like Sunny cover 24/7 without shifts, breaks, or sick days.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How much does a virtual receptionist cost for a dental office?</h3></summary>
+<div class="faq-a"><p>Human virtual receptionist services typically run $300–$1,000+/month depending on minutes and coverage hours. AI receptionists range from about $149 to $1,299/month. Ring &amp; Respond is $0 setup, then $199/month for After-Hours Capture or $299/month for 24/7 Complete. Generous minutes are included — 500 a month on Capture, 1,000 on Complete — and past them, a small overage of $0.25 a minute. No annual contract.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Human virtual receptionist vs AI — which is better?</h3></summary>
+<div class="faq-a"><p>Humans bring judgment and empathy to sensitive calls; AI brings instant pickup, simultaneous calls with no hold queue, and predictable monthly pricing. For routine scheduling and after-hours coverage, AI usually wins on cost and consistency. Many practices use AI for volume and keep humans for in-person care.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can a virtual receptionist book dental appointments?</h3></summary>
+<div class="faq-a"><p>Sunny doesn't book directly — she captures the request live on the call: name, number, reason, and preferred time, following your scheduling rules (providers, new-patient blocks, emergency slots). Your team confirms it in your own system. Human virtual receptionists usually work through your PMS or a callback workflow instead.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does a virtual receptionist work after hours?</h3></summary>
+<div class="faq-a"><p>AI virtual receptionists do — 24/7/365 at one monthly rate. Human services typically charge premium tiers for evenings, weekends, and holidays, or don't cover them at all.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Do I keep my existing phone number?</h3></summary>
+<div class="faq-a"><p>Yes. Your office number forwards to the virtual receptionist whenever you choose. Patients never dial anything new.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Will patients know it's a virtual receptionist?</h3></summary>
+<div class="faq-a"><p>Sunny introduces herself as your after-hours assistant and answers honestly if asked whether she's AI. Most callers just get their request captured and hang up — the experience feels like a good front desk, not a robot.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How quickly can a virtual receptionist start?</h3></summary>
+<div class="faq-a"><p>Ring &amp; Respond practices typically go live within days: a 5-minute onboarding captures your hours, services, emergency rules, and scheduling preferences, then you forward your line. Human services often need 1–2 weeks for agent training on your practice.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What's the difference between a virtual receptionist and a remote front-desk employee?</h3></summary>
+<div class="faq-a"><p>A remote employee is one person working set hours from home — they still get sick, take lunch, and can only take one call at a time. A virtual receptionist service covers the role itself: built to answer calls in your practice's name, evenings and weekends included, with no hiring or training.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can a virtual receptionist work with Dentrix, Eaglesoft, or Open Dental?</h3></summary>
+<div class="faq-a"><p>Sunny captures the appointment request — patient, reason, preferred window — and delivers it to your team, who confirm it in Dentrix, Eaglesoft, Open Dental, or whatever you run. She doesn't write directly into your practice software, and any vendor who promises that on day one deserves a hard follow-up question.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does a virtual receptionist cover lunch breaks and days off?</h3></summary>
+<div class="faq-a"><p>Yes — that's one of its main jobs. Lunch hour is when working patients call, and it's exactly when a small front desk is empty. Overflow coverage catches those calls the same way it catches after-hours calls.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What does a virtual front desk actually include?</h3></summary>
+<div class="faq-a"><p>Call answering in your practice's name, appointment-request capture, emergency flagging by your rules, and a morning summary of everything that came in. With Ring &amp; Respond it's $199/month for After-Hours Capture or $299/month for 24/7 Complete, with $0 setup — generous minutes included, past them $0.25 a minute.</p></div>
+</details>
+</div>
 </section>
 
 <section>
@@ -487,5 +548,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>

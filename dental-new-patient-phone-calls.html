@@ -54,6 +54,17 @@ table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--card);b
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--teal-d);color:#fff;font-family:"Archivo"}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -185,8 +196,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <div class="wrap">
 <section>
 <h2>The new patient's journey (and where it breaks)</h2>
-<p>She Googles "dentist near me" at 7:40 PM. She calls your office — voicemail. She calls the next listing — a human-sounding voice answers, asks about her insurance, and books her for Thursday. You never knew she existed. Your marketing worked; your <strong>coverage</strong> didn't.</p>
-<p>This is the most expensive missed call in dentistry. A new patient isn't one visit — it's the cleaning, the crown in two years, the kids, the referrals. Put your own number on a new patient's lifetime value; even a cautious one dwarfs a phone bill. And a single implant or Invisalign case is a multi-thousand-dollar treatment plan. Every one of those journeys starts with a phone call your office has to answer.</p>
+<p>She Googles "dentist near me" at 7:40 PM, calls your office — voicemail. She calls the next listing — a human-sounding voice answers, asks about her insurance, and books her for Thursday. You never knew she existed. Your marketing worked; your <strong>coverage</strong> didn't.</p>
+<p>This is the most expensive missed call in dentistry. A new patient isn't one visit — it's the cleaning, the crown in two years, the kids, the referrals. Put your own number on a new patient's lifetime value; even a cautious one dwarfs a phone bill. A single implant or Invisalign case is a multi-thousand-dollar treatment plan.</p>
 </section>
 
 <section>
@@ -206,37 +217,87 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <h2>How Sunny captures new patients</h2>
 <div class="card">
 <ol class="steps">
-<li><strong>Answers right away</strong> — before the caller can hang up and dial the next listing.</li>
-<li><strong>Answers the five questions</strong> — new-patient status, insurance, location, availability, cost guidance, all from answers you approve.</li>
-<li><strong>Captures the visit request live</strong> — new-patient blocks, provider rules, emergency slots, all per your scheduling preferences.</li>
+<li><strong>Answers right away</strong> — before the caller hangs up and dials the next listing.</li>
+<li><strong>Answers the five questions</strong> — all from your approved answers.</li>
+<li><strong>Captures the visit request live</strong> — new-patient blocks, provider rules, emergency slots, per your scheduling preferences.</li>
 <li><strong>Captures complete intake</strong> — name, callback number, reason for visit, and preferred time, so the request arrives ready.</li>
 <li><strong>Flags it in your morning summary</strong> — new patients highlighted, high-value inquiries (implants, ortho) flagged first.</li>
 </ol>
 </div>
-<p>Sunny is our <a href="/">AI receptionist for dental offices</a> — and new-patient capture is the job she was built for. Hear her handle one: <a href="tel:+16192021085">(619) 202-1085</a>.</p>
+<p>Hear her handle one: <a href="tel:+16192021085">(619) 202-1085</a>.</p>
 </section>
 
 <div class="pricing">
 <h2>One captured implant case pays for years</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>24/7 new-patient answering, detailed request capture.<br/>30-day pilot — money back if Sunny doesn't earn her keep.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>New patient call FAQs</h2>
-<div class="faq"><h3>How many new patients call after hours?</h3><p>In Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations, 31 of every 100 callers hung up before reaching anyone — and new patients disproportionately call in the evening, when they're off work and comparing practices. Those are the highest-intent callers you'll ever get, and they're calling when your office is dark.</p></div>
-<div class="faq"><h3>Do new patients leave voicemails?</h3><p>Only about 14% do. The rest hang up and call the next practice on their list. A new patient who reaches voicemail is not a callback for tomorrow — they're someone else's patient by tomorrow.</p></div>
-<div class="faq"><h3>What does a new patient ask on the first call?</h3><p>The same five things: Are you taking new patients? Do you take my insurance? Where are you located? When's your next opening? How much will it cost? Sunny answers all five from your approved answers, then captures the request — in one call.</p></div>
-<div class="faq"><h3>Can an AI book a new patient appointment?</h3><p>Not directly. Sunny captures new-patient requests live on the call, following your scheduling rules — providers, new-patient blocks, emergency slots. She collects the details your team needs (reason for visit, contact info, preferred time) so the request arrives complete for your team to confirm.</p></div>
-<div class="faq"><h3>What about high-value calls like implants or Invisalign?</h3><p>Those are exactly the calls you can't afford to miss — a single implant case is a multi-thousand-dollar treatment plan. Sunny treats every new-patient call as high priority: answered right away, captured with full detail, flagged in your morning summary.</p></div>
-<div class="faq"><h3>Will new patients trust an AI on the first call?</h3><p>New patients judge the call by one thing: did I get taken care of? Sunny introduces herself as your after-hours assistant, answers their questions, and captures their request and preferred time. Callers who get helped in 90 seconds don't ask about the technology — they're glad someone answered.</p></div>
-<div class="faq"><h3>How fast should a practice respond to a new patient inquiry?</h3><p>Immediately. Every minute of delay drops conversion — and voicemail is an infinite delay. Live answer is the only response time that consistently wins the patient.</p></div>
-<div class="faq"><h3>What does new-patient call coverage cost?</h3><p>Ring &amp; Respond is $0 setup plus $199/month for After-Hours Capture or $299/month for 24/7 Complete — generous minutes included (500/mo on Capture, 1,000/mo on Complete, then $0.25/min) — 24/7 answering, detailed capture, and new-patient intake included. One captured implant consultation can cover years of the service. The 30-day pilot is money-back.</p></div>
-<div class="faq"><h3>How do dental offices lose new patients on the phone?</h3><p>Three ways: the call isn't answered at all, it lands in voicemail (most callers who reach it hang up and call the next practice on their list), or it's answered rushed by a busy front desk. New patients judge the practice by that first call — a competitor who answers warmly wins the appointment.</p></div>
-<div class="faq"><h3>What information should be captured on a new patient call?</h3><p>Name, callback number, what they're calling about, and the appointment window they prefer. That's enough for your team to confirm the booking in the morning. Insurance IDs and dates of birth stay out of the first call — your office collects those through its own process.</p></div>
-<div class="faq"><h3>Are high-value calls like implants or Invisalign handled differently?</h3><p>They're captured with the same care and flagged in the summary, so your team sees 'implant consult request' at the top of the morning list, not buried in voicemail. One captured implant case can cover years of answering coverage.</p></div>
-<div class="faq"><h3>How quickly does the office see new patient calls?</h3><p>Every call is logged as it happens and summarized for your team, so the morning starts with a complete list — who called, what they need, and the number to reach them — instead of a voicemail box and guesswork.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>How many new patients call after hours?</h3></summary>
+<div class="faq-a"><p>In Patient Prism's 2025 analysis of 11.5 million dental calls across 8,280 locations, 31 of every 100 callers hung up before reaching anyone — and new patients disproportionately call in the evening, when they're off work and comparing practices. Those are the highest-intent callers you'll ever get, and they're calling when your office is dark.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Do new patients leave voicemails?</h3></summary>
+<div class="faq-a"><p>Only about 14% do. The rest hang up and call the next practice on their list. A new patient who reaches voicemail is not a callback for tomorrow — they're someone else's patient by tomorrow.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What does a new patient ask on the first call?</h3></summary>
+<div class="faq-a"><p>The same five things: Are you taking new patients? Do you take my insurance? Where are you located? When's your next opening? How much will it cost? Sunny answers all five from your approved answers, then captures the request — in one call.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can an AI book a new patient appointment?</h3></summary>
+<div class="faq-a"><p>Not directly. Sunny captures new-patient requests live on the call, following your scheduling rules — providers, new-patient blocks, emergency slots. She collects the details your team needs (reason for visit, contact info, preferred time) so the request arrives complete for your team to confirm.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What about high-value calls like implants or Invisalign?</h3></summary>
+<div class="faq-a"><p>Those are exactly the calls you can't afford to miss — a single implant case is a multi-thousand-dollar treatment plan. Sunny treats every new-patient call as high priority: answered right away, captured with full detail, flagged in your morning summary.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Will new patients trust an AI on the first call?</h3></summary>
+<div class="faq-a"><p>New patients judge the call by one thing: did I get taken care of? Sunny introduces herself as your after-hours assistant, answers their questions, and captures their request and preferred time. Callers who get helped in 90 seconds don't ask about the technology — they're glad someone answered.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How fast should a practice respond to a new patient inquiry?</h3></summary>
+<div class="faq-a"><p>Immediately. Every minute of delay drops conversion — and voicemail is an infinite delay. Live answer is the only response time that consistently wins the patient.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What does new-patient call coverage cost?</h3></summary>
+<div class="faq-a"><p>Ring &amp; Respond is $0 setup plus $199/month for After-Hours Capture or $299/month for 24/7 Complete — generous minutes included (500/mo on Capture, 1,000/mo on Complete, then $0.25/min) — 24/7 answering, detailed capture, and new-patient intake included. One captured implant consultation can cover years of the service. The 30-day pilot is money-back.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How do dental offices lose new patients on the phone?</h3></summary>
+<div class="faq-a"><p>Three ways: the call isn't answered at all, it lands in voicemail (most callers who reach it hang up and call the next practice on their list), or it's answered rushed by a busy front desk. New patients judge the practice by that first call — a competitor who answers warmly wins the appointment.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What information should be captured on a new patient call?</h3></summary>
+<div class="faq-a"><p>Name, callback number, what they're calling about, and the appointment window they prefer. That's enough for your team to confirm the booking in the morning. Insurance IDs and dates of birth stay out of the first call — your office collects those through its own process.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Are high-value calls like implants or Invisalign handled differently?</h3></summary>
+<div class="faq-a"><p>They're captured with the same care and flagged in the summary, so your team sees 'implant consult request' at the top of the morning list, not buried in voicemail. One captured implant case can cover years of answering coverage.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How quickly does the office see new patient calls?</h3></summary>
+<div class="faq-a"><p>Every call is logged as it happens and summarized for your team, so the morning starts with a complete list — who called, what they need, and the number to reach them — instead of a voicemail box and guesswork.</p></div>
+</details>
+</div>
 </section>
 
 <section>
@@ -503,5 +564,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>

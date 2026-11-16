@@ -58,6 +58,17 @@ table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--card);b
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
 th{background:var(--teal-d);color:#fff;font-family:"Archivo"}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px;cursor:default}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -184,23 +195,23 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <div class="wrap">
 <section>
 <h2>What happens to your after-hours calls right now</h2>
-<p>It's 8:40 PM. A new patient with a cracked molar calls your office. Your team went home at 5. The call rolls to voicemail — and industry data says most callers hang up without leaving one. By 9 PM they've booked with the practice down the street that picked up. That single missed call can represent thousands in lifetime value: the emergency visit, the crown, the cleanings, the family referrals.</p>
-<p>This isn't a marketing problem. It's a <strong>coverage</strong> problem. Your phones go dark for roughly 123 hours a week — nights, weekends, holidays — and that's exactly when working patients have time to call.</p>
+<p>It's 8:40 PM. A new patient with a cracked molar calls. Your team went home at 5; it rolls to voicemail — and industry data says most callers hang up without leaving one. By 9, they've booked with the practice down the street that picked up. That one call can represent thousands in lifetime value: the emergency visit, the crown, cleanings, family referrals.</p>
+<p>This isn't a marketing problem. It's a <strong>coverage</strong> problem. Your phones go dark roughly 123 hours a week — nights, weekends, holidays — exactly when working patients have time to call.</p>
 </section>
 
 <section>
 <h2>How Sunny covers your after-hours calls</h2>
 <div class="card">
 <ul class="ticks">
-<li><strong>Answers right away</strong> — nights, weekends, and holidays included.</li>
-<li><strong>Captures appointment requests</strong> — name, number, reason, and preferred time gathered on the call, using your rules for providers, emergency slots, and new vs. existing patients.</li>
-<li><strong>Emergencies handled your way</strong> — you define what counts as urgent. True emergencies are told to call 911 or urgent care first; everything else is captured for your team.</li>
-<li><strong>Answers routine questions</strong> — hours, location, services, insurance accepted, all from the answers you approve.</li>
-<li><strong>Morning summary</strong> — you walk in to a list of captured requests and a clean log, not a voicemail backlog.</li>
+<li><strong>Answers right away</strong> — nights, weekends, holidays.</li>
+<li><strong>Captures appointment requests</strong> — name, number, reason, and preferred time, gathered under your rules for providers, emergency slots, and new vs. existing patients.</li>
+<li><strong>Emergencies handled your way</strong> — you define what's urgent. True emergencies are told to call 911 or urgent care first; the rest is captured for your team.</li>
+<li><strong>Answers routine questions</strong> — hours, location, services, insurance accepted, all from your approved answers.</li>
+<li><strong>Morning summary</strong> — you walk in to captured requests and a clean log — no voicemail backlog.</li>
 </ul>
 </div>
 <h3>Your emergency protocol, followed exactly</h3>
-<p>Before you go live, you tell Sunny your rules: which symptoms page the on-call dentist, which number to call, what to say while the patient waits. She follows that protocol on every call — no operator judgment, no script drift. Test it yourself any time on the demo line: <a href="tel:+16192021085">(619) 202-1085</a>.</p>
+<p>Before go-live, tell Sunny your rules: which symptoms page the on-call dentist, which number to call, what to say while the patient waits. She follows that protocol on every call — no operator judgment, no script drift. Test it any time on the demo line: <a href="tel:+16192021085">(619) 202-1085</a>.</p>
 </section>
 
 <section>
@@ -212,30 +223,80 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <tr><td>Forward to your cell</td><td>Your sleep</td><td>You become the after-hours service</td></tr>
 <tr><td><strong>Sunny (Ring &amp; Respond)</strong></td><td><strong>$0 setup + $199–$299/mo</strong></td><td><strong>Calls answered, requests captured, urgent calls flagged — live</strong></td></tr>
 </table>
-<p>The difference that matters: an answering service <em>tells you who called</em>. Sunny <em>handles the call</em> — the request is already captured when you wake up.</p>
+<p>The difference: an answering service <em>tells you who called</em>. Sunny <em>handles the call</em> — the request is captured before you wake up.</p>
 </section>
 
 <div class="pricing">
 <h2>Simple pricing, money-back guarantee</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>Your first month is a paid 30-day pilot. If Sunny doesn't earn her keep in the 30 days, the month comes straight back.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>After-hours answering FAQs</h2>
-<div class="faq"><h3>What happens when someone calls my dental office after hours?</h3><p>With Ring &amp; Respond, your office line forwards to Sunny after hours. She answers right away, identifies the caller's need, captures appointment requests, answers common questions, and flags true emergencies as top priority for an immediate callback. You get a clean summary of every call in the morning.</p></div>
-<div class="faq"><h3>Do I need a new phone number?</h3><p>No. Your existing office number forwards to Sunny after hours. Daytime calls ring your team exactly like they do now. Patients never need to learn a new number.</p></div>
-<div class="faq"><h3>How does Sunny handle dental emergencies at night?</h3><p>You define what counts as an emergency — severe pain, swelling, trauma, uncontrolled bleeding. Sunny follows your emergency rules: she asks your screening questions, true emergencies are told to call 911 or urgent care first, and urgent callers are flagged top-priority on your callback list. Routine calls are captured without waking anyone.</p></div>
-<div class="faq"><h3>What does after-hours answering cost for a dental office?</h3><p>Ring &amp; Respond is $0 setup plus $199/month for After-Hours Capture or $299/month for 24/7 Complete, and your first month is a paid 30-day pilot with an unconditional money-back guarantee. Traditional answering services typically run $200–$600/month plus per-minute charges.</p></div>
-<div class="faq"><h3>Will patients know they're talking to an AI?</h3><p>Sunny introduces herself as your after-hours assistant and speaks naturally. If a patient asks directly whether she's AI, she answers honestly. Most callers simply get their request captured and hang up happy.</p></div>
-<div class="faq"><h3>Does Sunny replace my front-desk staff?</h3><p>No. Sunny covers the calls your team can't — evenings, weekends, lunch, and overflow when the desk is busy. Your staff stays focused on in-person patients while Sunny absorbs the phone volume.</p></div>
-<div class="faq"><h3>How fast can we go live?</h3><p>Most practices are live within days. We configure Sunny with your hours, services, emergency rules, and scheduling preferences in a 5-minute onboarding, then you forward your line after hours.</p></div>
-<div class="faq"><h3>What if Sunny can't handle a call?</h3><p>She takes a detailed message — name, callback number, and reason — and it's in your inbox before morning. Anything urgent follows your escalation rules immediately, not the next day.</p></div>
-<div class="faq"><h3>Does after-hours answering cover weekends and holidays?</h3><p>Yes. Sunny answers on the same schedule you set for weeknights — evenings, weekends, and holidays — whenever your office is closed. Most practices run her every closed hour, because weekend callers are often new patients with no loyalty to anyone yet.</p></div>
-<div class="faq"><h3>Who answers my dental office phones when we're closed?</h3><p>With Ring &amp; Respond, it's Sunny: she answers in your practice's name, captures the caller's name, number, reason for the call, and preferred appointment window, and flags anything urgent by your rules. Your team gets the summary in the morning and confirms appointments — nothing goes to voicemail.</p></div>
-<div class="faq"><h3>Can after-hours calls be forwarded from my existing office number?</h3><p>Yes. You keep your existing number and set it to forward to Sunny when you close — on a schedule, or with a manual toggle. Daytime calls ring your team exactly as they do now.</p></div>
-<div class="faq"><h3>What information does Sunny collect from after-hours callers?</h3><p>Name, callback number, the reason for the call, and the appointment window they'd prefer. She never collects dates of birth, insurance IDs, or Social Security numbers, and urgent callers are told to call 911 or go to urgent care first.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>What happens when someone calls my dental office after hours?</h3></summary>
+<div class="faq-a"><p>With Ring &amp; Respond, your office line forwards to Sunny after hours. She answers right away, identifies the caller's need, captures appointment requests, answers common questions, and flags true emergencies as top priority for an immediate callback. You get a clean summary of every call in the morning.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Do I need a new phone number?</h3></summary>
+<div class="faq-a"><p>No. Your existing office number forwards to Sunny after hours. Daytime calls ring your team exactly like they do now. Patients never need to learn a new number.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How does Sunny handle dental emergencies at night?</h3></summary>
+<div class="faq-a"><p>You define what counts as an emergency — severe pain, swelling, trauma, uncontrolled bleeding. Sunny follows your emergency rules: she asks your screening questions, true emergencies are told to call 911 or urgent care first, and urgent callers are flagged top-priority on your callback list. Routine calls are captured without waking anyone.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What does after-hours answering cost for a dental office?</h3></summary>
+<div class="faq-a"><p>Ring &amp; Respond is $0 setup plus $199/month for After-Hours Capture or $299/month for 24/7 Complete, and your first month is a paid 30-day pilot with an unconditional money-back guarantee. Traditional answering services typically run $200–$600/month plus per-minute charges.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Will patients know they're talking to an AI?</h3></summary>
+<div class="faq-a"><p>Sunny introduces herself as your after-hours assistant and speaks naturally. If a patient asks directly whether she's AI, she answers honestly. Most callers simply get their request captured and hang up happy.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does Sunny replace my front-desk staff?</h3></summary>
+<div class="faq-a"><p>No. Sunny covers the calls your team can't — evenings, weekends, lunch, and overflow when the desk is busy. Your staff stays focused on in-person patients while Sunny absorbs the phone volume.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How fast can we go live?</h3></summary>
+<div class="faq-a"><p>Most practices are live within days. We configure Sunny with your hours, services, emergency rules, and scheduling preferences in a 5-minute onboarding, then you forward your line after hours.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What if Sunny can't handle a call?</h3></summary>
+<div class="faq-a"><p>She takes a detailed message — name, callback number, and reason — and it's in your inbox before morning. Anything urgent follows your escalation rules immediately, not the next day.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does after-hours answering cover weekends and holidays?</h3></summary>
+<div class="faq-a"><p>Yes. Sunny answers on the same schedule you set for weeknights — evenings, weekends, and holidays — whenever your office is closed. Most practices run her every closed hour, because weekend callers are often new patients with no loyalty to anyone yet.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Who answers my dental office phones when we're closed?</h3></summary>
+<div class="faq-a"><p>With Ring &amp; Respond, it's Sunny: she answers in your practice's name, captures the caller's name, number, reason for the call, and preferred appointment window, and flags anything urgent by your rules. Your team gets the summary in the morning and confirms appointments — nothing goes to voicemail.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can after-hours calls be forwarded from my existing office number?</h3></summary>
+<div class="faq-a"><p>Yes. You keep your existing number and set it to forward to Sunny when you close — on a schedule, or with a manual toggle. Daytime calls ring your team exactly as they do now.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What information does Sunny collect from after-hours callers?</h3></summary>
+<div class="faq-a"><p>Name, callback number, the reason for the call, and the appointment window they'd prefer. She never collects dates of birth, insurance IDs, or Social Security numbers, and urgent callers are told to call 911 or go to urgent care first.</p></div>
+</details>
+</div>
 </section>
 
 <section>
@@ -502,5 +563,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>

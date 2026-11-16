@@ -47,6 +47,17 @@ h3{font-size:20px;margin:22px 0 10px}
 p{margin-bottom:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -177,14 +188,14 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <h2>A call, step by step</h2>
 <div class="card">
 <ol class="steps">
-<li><strong>The phone rings.</strong> Your office number forwards to Sunny — after hours, on overflow, or 24/7, your choice. Standard call forwarding; no new number, no new hardware.</li>
+<li><strong>The phone rings.</strong> Your number forwards to Sunny — after hours, overflow, or 24/7, your choice.</li>
 <li><strong>She answers right away,</strong> in your practice's name: "Hi, thanks for calling Your Dental Practice — I'm Sunny, the after-hours assistant..."</li>
-<li><strong>She listens and understands.</strong> New patient? Toothache? Reschedule? Insurance question? She identifies the need the way a trained receptionist would.</li>
+<li><strong>She listens and understands.</strong> New patient? Toothache? Reschedule? Insurance question? She identifies the need like a trained receptionist.</li>
 <li><strong>She acts.</strong> Appointment request? Captured live, per your rules. Emergency? Handled by your emergency rules — urgent callers flagged top-priority. Question? Answered from your approved answers.</li>
 <li><strong>You get the summary.</strong> Every call logged — who called, what they needed, what was captured or escalated. Morning brings a clean report, not a voicemail backlog.</li>
 </ol>
 </div>
-<p>The best way to understand it is to experience it: call <a href="tel:+16192021085">(619) 202-1085</a> and have a conversation. That's not a demo recording — it's Sunny, live.</p>
+<p>The best way to understand it: experience it — call <a href="tel:+16192021085">(619) 202-1085</a> and have a conversation. That's not a demo recording — it's Sunny, live.</p>
 </section>
 
 <section>
@@ -198,36 +209,86 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <li><strong>Your "never" list</strong> — anything she should never say, promise, or discuss.</li>
 <li><strong>Approved answers</strong> — insurance plans, pricing guidance, location details.</li>
 </ul>
-<p style="margin:14px 0 0">That's a 5-minute onboarding questionnaire. Most practices are live within days — then it's one call-forwarding setting with your carrier.</p>
+<p style="margin:14px 0 0">That's the 5-minute onboarding questionnaire. Most practices are live within days.</p>
 </div>
 </section>
 
 <section>
 <h2>What she won't do (on purpose)</h2>
-<p>Sunny doesn't give clinical advice, diagnose, or prescribe. She doesn't negotiate billing disputes or counsel distressed patients. When a call goes beyond her scope, she captures everything and routes it to your team with full context — or escalates immediately if it's urgent. Knowing what she <em>doesn't</em> know is a feature, not a gap. (For the compliance side, see <a href="/hipaa-ai-receptionist-dental">HIPAA and AI receptionists</a>.)</p>
+<p>Sunny doesn't give clinical advice, diagnose, or prescribe, and doesn't negotiate billing disputes or counsel distressed patients. When a call goes beyond her scope, she captures everything and routes it to your team with full context — or escalates immediately if it's urgent. Knowing what she <em>doesn't</em> know is a feature, not a gap. (For the compliance side, see <a href="/hipaa-ai-receptionist-dental">HIPAA and AI receptionists</a>.)</p>
 </section>
 
 <div class="pricing">
 <h2>Live within days, from $199/month</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>5-minute onboarding. No new number. No new hardware.<br/>30-day pilot — money back if Sunny doesn't earn her keep.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>How it works FAQs</h2>
-<div class="faq"><h3>How does an AI receptionist work for a dental office?</h3><p>Your office number forwards to Sunny when you choose — after hours, overflow, or 24/7. She answers in your practice's name, understands the caller's request, captures appointment requests per your rules, answers routine questions from your approved answers, follows your emergency rules for urgent calls, and sends you a summary of every call.</p></div>
-<div class="faq"><h3>Do I need a new phone number?</h3><p>No. Your existing number forwards to Sunny — a standard carrier feature that takes minutes to set up. Patients dial the same number they've always used.</p></div>
-<div class="faq"><h3>How long does setup take?</h3><p>Most practices go live within days. Onboarding is a 5-minute questionnaire: hours, services, new-patient policy, emergency rules, scheduling preferences, and anything Sunny should never say. Then you forward your line.</p></div>
-<div class="faq"><h3>How does Sunny handle appointment requests?</h3><p>She captures the request using your scheduling rules — which providers take new patients, where new-patient blocks go, how emergency slots work. She collects the details your team needs (name, number, reason for visit, preferred time) so every request arrives complete for your team to confirm.</p></div>
-<div class="faq"><h3>What happens when Sunny can't handle a call?</h3><p>She doesn't guess. Anything outside her scope — clinical questions, billing disputes, upset callers — becomes a detailed request with full context for your team, or an immediate escalation if it's urgent.</p></div>
-<div class="faq"><h3>Can I change what Sunny says?</h3><p>Yes. Your answers to hours, services, insurance, pricing guidance, and emergency rules are all configurable, and updates apply to future calls. Tell us what to change and it's done.</p></div>
-<div class="faq"><h3>Does it work with my practice management software?</h3><p>Sunny works from the scheduling rules you define, so she doesn't require PMS integration to start capturing requests correctly on day one. Tell us which software you run during onboarding and we'll configure the workflow around it.</p></div>
-<div class="faq"><h3>What can't an AI receptionist do?</h3><p>She won't give clinical advice, diagnose, prescribe, negotiate billing disputes, or counsel distressed patients — those go to your team with full context. She's built to know what she doesn't know.</p></div>
-<div class="faq"><h3>How do I forward my office phones to Sunny after hours?</h3><p>It's a setting on your existing phone system: forward unanswered or after-hours calls to Sunny on a schedule, or toggle forwarding when you close. Your number doesn't change, daytime calls ring your team as normal, and we test the routing with you before go-live.</p></div>
-<div class="faq"><h3>What training does Sunny need about my practice?</h3><p>Your hours, services, address, insurance approach, and the answers you approve to common questions — collected in a short setup, in your words. If a caller asks something outside the approved answers, Sunny captures the question for your team rather than inventing an answer.</p></div>
-<div class="faq"><h3>Can I hear Sunny before we set anything up?</h3><p>Yes — call (619) 202-1085 any time and put her through a normal patient call. Most owners test her with a made-up emergency first, which is exactly the call that matters at 9 PM.</p></div>
-<div class="faq"><h3>What happens if our office changes hours or services later?</h3><p>Tell us and the approved answers are updated — holiday hours, a new hygienist, a service you no longer offer. Your team isn't editing software; you send the change and it's reflected in what Sunny says.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>How does an AI receptionist work for a dental office?</h3></summary>
+<div class="faq-a"><p>Your office number forwards to Sunny when you choose — after hours, overflow, or 24/7. She answers in your practice's name, understands the caller's request, captures appointment requests per your rules, answers routine questions from your approved answers, follows your emergency rules for urgent calls, and sends you a summary of every call.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Do I need a new phone number?</h3></summary>
+<div class="faq-a"><p>No. Your existing number forwards to Sunny — a standard carrier feature that takes minutes to set up. Patients dial the same number they've always used.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How long does setup take?</h3></summary>
+<div class="faq-a"><p>Most practices go live within days. Onboarding is a 5-minute questionnaire: hours, services, new-patient policy, emergency rules, scheduling preferences, and anything Sunny should never say. Then you forward your line.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How does Sunny handle appointment requests?</h3></summary>
+<div class="faq-a"><p>She captures the request using your scheduling rules — which providers take new patients, where new-patient blocks go, how emergency slots work. She collects the details your team needs (name, number, reason for visit, preferred time) so every request arrives complete for your team to confirm.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What happens when Sunny can't handle a call?</h3></summary>
+<div class="faq-a"><p>She doesn't guess. Anything outside her scope — clinical questions, billing disputes, upset callers — becomes a detailed request with full context for your team, or an immediate escalation if it's urgent.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can I change what Sunny says?</h3></summary>
+<div class="faq-a"><p>Yes. Your answers to hours, services, insurance, pricing guidance, and emergency rules are all configurable, and updates apply to future calls. Tell us what to change and it's done.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does it work with my practice management software?</h3></summary>
+<div class="faq-a"><p>Sunny works from the scheduling rules you define, so she doesn't require PMS integration to start capturing requests correctly on day one. Tell us which software you run during onboarding and we'll configure the workflow around it.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What can't an AI receptionist do?</h3></summary>
+<div class="faq-a"><p>She won't give clinical advice, diagnose, prescribe, negotiate billing disputes, or counsel distressed patients — those go to your team with full context. She's built to know what she doesn't know.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How do I forward my office phones to Sunny after hours?</h3></summary>
+<div class="faq-a"><p>It's a setting on your existing phone system: forward unanswered or after-hours calls to Sunny on a schedule, or toggle forwarding when you close. Your number doesn't change, daytime calls ring your team as normal, and we test the routing with you before go-live.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What training does Sunny need about my practice?</h3></summary>
+<div class="faq-a"><p>Your hours, services, address, insurance approach, and the answers you approve to common questions — collected in a short setup, in your words. If a caller asks something outside the approved answers, Sunny captures the question for your team rather than inventing an answer.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can I hear Sunny before we set anything up?</h3></summary>
+<div class="faq-a"><p>Yes — call (619) 202-1085 any time and put her through a normal patient call. Most owners test her with a made-up emergency first, which is exactly the call that matters at 9 PM.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What happens if our office changes hours or services later?</h3></summary>
+<div class="faq-a"><p>Tell us and the approved answers are updated — holiday hours, a new hygienist, a service you no longer offer. Your team isn't editing software; you send the change and it's reflected in what Sunny says.</p></div>
+</details>
+</div>
 </section>
 
 <section>
@@ -494,5 +555,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>

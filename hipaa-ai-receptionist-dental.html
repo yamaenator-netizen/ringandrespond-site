@@ -47,6 +47,17 @@ h3{font-size:20px;margin:22px 0 10px}
 p{margin-bottom:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -163,7 +174,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 
 <div class="hero"><div class="wrap">
 <h1>HIPAA and AI Receptionists: What Dental Offices Should Know</h1>
-<p class="sub">"Is it HIPAA compliant?" is the wrong question — and any vendor who answers with just a badge should worry you. Here's what actually matters, and the questions to ask before any patient information flows.</p>
+<p class="sub">"Is it HIPAA compliant?" is the wrong question — and any vendor who answers with a badge should worry you. Here's what matters, and the questions to ask before any patient information flows.</p>
 <div class="cta-row">
 <a class="btn" href="https://www.ringandrespond.com/#pricing">Start Your 30-Day Pilot</a>
 <a class="btn ghost" href="tel:+16192021085">Hear Sunny: (619) 202-1085</a>
@@ -173,8 +184,8 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <div class="wrap">
 <section>
 <h2>Why "HIPAA compliant" is a red flag phrase</h2>
-<p>No product is HIPAA compliant by itself. HIPAA governs how <strong>your practice</strong> handles protected health information — including through vendors. A vendor's role is to give you the contracts and safeguards that make <em>your</em> compliance possible: a signed Business Associate Agreement, proper access controls, defined data retention, and no PHI in model training.</p>
-<p>So when a vendor's website just says "HIPAA Compliant" with a stock badge, that's marketing — not an answer. The serious vendors will talk about BAAs, sub-vendor agreements, data retention, and training-data policies. Ask for specifics, in writing.</p>
+<p>No product is HIPAA compliant by itself. HIPAA governs how <strong>your practice</strong> handles protected health information — including through vendors. A vendor's role: give you the contracts and safeguards that make <em>your</em> compliance possible: a signed Business Associate Agreement, access controls, defined data retention, and no PHI in model training.</p>
+<p>So when a vendor's website says "HIPAA Compliant" with a stock badge, that's marketing — not an answer. Ask for specifics, in writing.</p>
 </section>
 
 <section>
@@ -193,36 +204,86 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <section>
 <h2>Our answers, in writing</h2>
 <div class="card">
-<p><strong>BAA:</strong> We execute a Business Associate Agreement with every practice as part of onboarding — <strong>before any patient information flows</strong>. No PHI moves until it's signed. Hard rule.</p>
+<p><strong>BAA:</strong> We execute a Business Associate Agreement with every practice as part of onboarding — <strong>before any patient information flows</strong>. Hard rule.</p>
 <p><strong>Sub-vendors:</strong> Call handling runs through Retell, with whom we maintain a BAA. We'll name every sub-vendor that touches patient data in your agreement.</p>
 <p><strong>Training data:</strong> Patient call data is never used to train AI models — ours or our providers'. Contractual commitment.</p>
 <p><strong>Data scope:</strong> Sunny handles only what's needed for the call — name, callback number, appointment details, reason for visit. She doesn't access your PMS, billing, or clinical notes.</p>
-<p style="margin:0"><strong>Retention &amp; deletion:</strong> Governed by your BAA terms, including what happens if you cancel. We'll walk through your requirements during onboarding.</p>
+<p style="margin:0"><strong>Retention &amp; deletion:</strong> Governed by your BAA terms, including cancellation. We'll walk through your requirements during onboarding.</p>
 </div>
-<p>One more honest note: AI disclosure rules (like California's bot-disclosure law) vary by state. Sunny introduces herself as your after-hours assistant and answers honestly if asked whether she's AI — but confirm current requirements with your own attorney before scaling any automated system.</p>
+<p>Note: AI disclosure rules (like California's bot-disclosure law) vary by state. Sunny introduces herself as your after-hours assistant and answers honestly if asked whether she's AI — but confirm current requirements with your own attorney before scaling any automated system.</p>
 </section>
 
 <div class="pricing">
 <h2>Serious about compliance, serious about phones</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>BAA executed before any patient information flows.<br/>30-day pilot — money back if Sunny doesn't earn her keep.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>HIPAA and AI receptionist FAQs</h2>
-<div class="faq"><h3>Is an AI receptionist HIPAA compliant?</h3><p>No AI product is compliant by itself — HIPAA compliance depends on how it's deployed: a signed Business Associate Agreement, proper safeguards, and correct data handling. The right question isn't 'is it compliant' but 'will you sign a BAA, and what safeguards surround patient data?' Any vendor that answers with a badge instead of specifics should worry you.</p></div>
-<div class="faq"><h3>What is a BAA and why does my practice need one?</h3><p>A Business Associate Agreement is a HIPAA-required contract between your practice and any vendor that handles protected health information on your behalf — including whoever answers your phones. Without a signed BAA, letting a vendor handle patient calls is a compliance gap.</p></div>
-<div class="faq"><h3>Will Ring &amp; Respond sign a BAA with my practice?</h3><p>Yes. We execute a Business Associate Agreement with every practice as part of onboarding, before any patient information flows. No PHI moves until the BAA is signed — that's a hard rule, not a preference.</p></div>
-<div class="faq"><h3>What patient information does Sunny actually handle?</h3><p>Only what's needed to do the job: caller name, callback number, appointment details, and the reason for the call. She doesn't access your practice management system, billing records, or clinical notes.</p></div>
-<div class="faq"><h3>Is call audio stored, and where?</h3><p>Call handling runs through Retell, with whom we maintain a BAA. Recordings and transcripts are governed by your BAA terms, including retention and deletion. We can discuss your specific retention requirements during onboarding.</p></div>
-<div class="faq"><h3>Is patient data used to train AI models?</h3><p>No. Patient call data is never used to train models — not ours, not our providers'. This is a contractual commitment in our vendor agreements, not just a policy.</p></div>
-<div class="faq"><h3>What questions should I ask any AI receptionist vendor about HIPAA?</h3><p>Ask: (1) Will you sign a BAA before any PHI flows? (2) Which sub-vendors touch patient data, and do you have BAAs with them? (3) Is call data used for model training? (4) Where is data stored and how long is it retained? (5) What happens to data if we cancel? Get the answers in writing.</p></div>
-<div class="faq"><h3>Does the AI need to identify itself to callers?</h3><p>Disclosure rules vary by state — California, for example, has specific bot-disclosure requirements. Sunny introduces herself as your after-hours assistant and answers honestly if a caller asks whether she's AI. We recommend every practice confirm the current requirements with their own attorney.</p></div>
-<div class="faq"><h3>What should a BAA with an AI receptionist vendor cover?</h3><p>How patient information may be used and disclosed, the safeguards protecting it, breach reporting duties, what happens to data when the contract ends, and whether any subcontractors touch the data. If a vendor can't walk through each point in plain language, that's your answer.</p></div>
-<div class="faq"><h3>Is a dental answering service HIPAA compliant by default?</h3><p>No — no service is compliant by default. Handling patient calls in a HIPAA-aligned way requires a signed business associate agreement, defined safeguards, and disciplined data handling: what is collected, how long it's kept, and who can see it. Ask every vendor, including us, to show you the process rather than a badge.</p></div>
-<div class="faq"><h3>What patient information does Sunny never collect?</h3><p>Dates of birth, insurance ID numbers, and Social Security numbers. Sunny captures what's needed to help the caller — name, callback number, reason for the call, and preferred appointment window — and the office handles anything sensitive through its own channels.</p></div>
-<div class="faq"><h3>Who is responsible if patient data is mishandled?</h3><p>Responsibility is shared and it's spelled out in the BAA: your practice remains responsible for its patients' data, and the vendor is responsible for its handling as a business associate. That's exactly why the agreement and the safeguards behind it matter more than marketing claims.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>Is an AI receptionist HIPAA compliant?</h3></summary>
+<div class="faq-a"><p>No AI product is compliant by itself — HIPAA compliance depends on how it's deployed: a signed Business Associate Agreement, proper safeguards, and correct data handling. The right question isn't 'is it compliant' but 'will you sign a BAA, and what safeguards surround patient data?' Any vendor that answers with a badge instead of specifics should worry you.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What is a BAA and why does my practice need one?</h3></summary>
+<div class="faq-a"><p>A Business Associate Agreement is a HIPAA-required contract between your practice and any vendor that handles protected health information on your behalf — including whoever answers your phones. Without a signed BAA, letting a vendor handle patient calls is a compliance gap.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Will Ring &amp; Respond sign a BAA with my practice?</h3></summary>
+<div class="faq-a"><p>Yes. We execute a Business Associate Agreement with every practice as part of onboarding, before any patient information flows. No PHI moves until the BAA is signed — that's a hard rule, not a preference.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What patient information does Sunny actually handle?</h3></summary>
+<div class="faq-a"><p>Only what's needed to do the job: caller name, callback number, appointment details, and the reason for the call. She doesn't access your practice management system, billing records, or clinical notes.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Is call audio stored, and where?</h3></summary>
+<div class="faq-a"><p>Call handling runs through Retell, with whom we maintain a BAA. Recordings and transcripts are governed by your BAA terms, including retention and deletion. We can discuss your specific retention requirements during onboarding.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Is patient data used to train AI models?</h3></summary>
+<div class="faq-a"><p>No. Patient call data is never used to train models — not ours, not our providers'. This is a contractual commitment in our vendor agreements, not just a policy.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What questions should I ask any AI receptionist vendor about HIPAA?</h3></summary>
+<div class="faq-a"><p>Ask: (1) Will you sign a BAA before any PHI flows? (2) Which sub-vendors touch patient data, and do you have BAAs with them? (3) Is call data used for model training? (4) Where is data stored and how long is it retained? (5) What happens to data if we cancel? Get the answers in writing.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does the AI need to identify itself to callers?</h3></summary>
+<div class="faq-a"><p>Disclosure rules vary by state — California, for example, has specific bot-disclosure requirements. Sunny introduces herself as your after-hours assistant and answers honestly if a caller asks whether she's AI. We recommend every practice confirm the current requirements with their own attorney.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What should a BAA with an AI receptionist vendor cover?</h3></summary>
+<div class="faq-a"><p>How patient information may be used and disclosed, the safeguards protecting it, breach reporting duties, what happens to data when the contract ends, and whether any subcontractors touch the data. If a vendor can't walk through each point in plain language, that's your answer.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Is a dental answering service HIPAA compliant by default?</h3></summary>
+<div class="faq-a"><p>No — no service is compliant by default. Handling patient calls in a HIPAA-aligned way requires a signed business associate agreement, defined safeguards, and disciplined data handling: what is collected, how long it's kept, and who can see it. Ask every vendor, including us, to show you the process rather than a badge.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What patient information does Sunny never collect?</h3></summary>
+<div class="faq-a"><p>Dates of birth, insurance ID numbers, and Social Security numbers. Sunny captures what's needed to help the caller — name, callback number, reason for the call, and preferred appointment window — and the office handles anything sensitive through its own channels.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Who is responsible if patient data is mishandled?</h3></summary>
+<div class="faq-a"><p>Responsibility is shared and it's spelled out in the BAA: your practice remains responsible for its patients' data, and the vendor is responsible for its handling as a business associate. That's exactly why the agreement and the safeguards behind it matter more than marketing claims.</p></div>
+</details>
+</div>
 </section>
 
 <p class="disclaimer">This page is educational information about HIPAA considerations when evaluating phone vendors. It is not legal advice. Consult a qualified healthcare attorney for guidance specific to your practice.</p>
@@ -491,5 +552,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>

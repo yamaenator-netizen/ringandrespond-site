@@ -51,6 +51,17 @@ table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--card);b
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--teal-d);color:#fff;font-family:"Archivo"}
 .faq{border-bottom:1px solid var(--line);padding:16px 0}
+/* FAQ accordion — same component as the homepage */
+.faq-list{border-top:1px solid var(--line)}
+.faq-acc{border-bottom:1px solid var(--line)}
+.faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:14px;cursor:pointer;padding:13px 6px;list-style:none}
+.faq-acc summary::-webkit-details-marker{display:none}
+.faq-acc summary h3{font-size:17.5px;margin:0;color:var(--teal-d)}
+.faq-acc summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--teal-d);border-bottom:2px solid var(--teal-d);transform:rotate(45deg);transition:transform .25s ease;margin-right:5px}
+.faq-acc[open] summary::after{transform:rotate(225deg)}
+.faq-acc summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.faq-a{padding:0 6px 16px;max-width:740px}
+.faq-a p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.6}
 .faq h3{font-size:18px;margin:0 0 8px}
 .faq p{color:var(--mut);margin:0}
 .pricing{background:var(--teal-d);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:30px 0}
@@ -182,7 +193,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <p><strong>Page the on-call dentist:</strong> severe or worsening pain, facial swelling, knocked-out or broken tooth from trauma, uncontrolled bleeding, fever with tooth pain (possible infection).</p>
 <p style="margin:0"><strong>Capture for morning:</strong> lost filling or crown without pain, dull ache manageable with OTC pain relief, cosmetic chips, appointment questions.</p>
 </div>
-<p>The exact list is yours to define — every practice draws the line slightly differently. The key is having the line written down <em>before</em> the 2 AM call, and having whoever answers follow it exactly.</p>
+<p>The exact list is yours to define — every practice draws it slightly differently. The key: have it written down <em>before</em> the 2 AM call, and have whoever answers follow it exactly.</p>
 </section>
 
 <section>
@@ -202,44 +213,93 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
 <ol class="steps">
 <li><strong>Answers right away</strong> — no hold music at 11 PM.</li>
 <li><strong>Asks your screening questions</strong> — pain level, swelling, bleeding, trauma, fever. Calm, structured, exactly as you scripted.</li>
-<li><strong>Applies your protocol</strong> — true emergency: the caller is told to call 911 or urgent care first, and the call is flagged top-priority. Urgent-but-stable: flagged first on your callback list. Non-urgent: captured as a routine request.</li>
-<li><strong>Logs everything</strong> — the full call summary is in your inbox by morning, including what was asked and what was decided.</li>
+<li><strong>Applies your protocol</strong> — true emergency: the caller is told to call 911 or urgent care first, and flagged top-priority. Urgent-but-stable: flagged first on your callback list. Non-urgent: captured as a routine request.</li>
+<li><strong>Logs everything</strong> — the full summary is in your inbox by morning, including what was asked and decided.</li>
 </ol>
-<p style="margin:0">She never diagnoses, never prescribes, and never hands out your on-call number — urgent callers are flagged for your team instead, so your number stays private.</p>
+<p style="margin:0">She never diagnoses, never prescribes, and never hands out your on-call number — urgent callers are flagged for your team, so your number stays private.</p>
 </div>
 </section>
 
 <section>
 <h2>Built for the nights you actually dread</h2>
 <ul class="ticks">
-<li><strong>Weekends and holidays</strong> — same rules, whoever's on call that day. Holiday coverage configured per-date.</li>
-<li><strong>A Saturday-night toothache rush</strong> — callers reach Sunny in your practice's name instead of a ringing line.</li>
-<li><strong>Consistent every time</strong> — no operator judgment, no script drift. Your protocol, followed exactly, at 2 AM on a Sunday.</li>
+<li><strong>Weekends and holidays</strong> — same rules, whoever's on call; holiday coverage configured per-date.</li>
+<li><strong>A Saturday-night toothache rush</strong> — callers reach Sunny in your practice's name, not a ringing line.</li>
 </ul>
-<p>Test it yourself: call <a href="tel:+16192021085">(619) 202-1085</a>, describe an emergency, and hear how she handles it. That's Sunny, our <a href="/">AI receptionist for dental offices</a>, doing exactly what she'd do for your patients.</p>
+<p>Test it: call <a href="tel:+16192021085">(619) 202-1085</a>, describe an emergency, and hear how she handles it. That's Sunny, our <a href="/">AI receptionist for dental offices</a>.</p>
 </section>
 
 <div class="pricing">
 <h2>24/7 emergency handling, one monthly rate</h2>
 <div class="price">$199–$299 <span style="font-size:20px">/mo · $0 setup</span></div>
 <p>One monthly rate, generous minutes included — past them, $0.25 a minute. No holiday surcharges. No annual contract.<br/>30-day pilot — money back if Sunny doesn't earn her keep.</p>
+<p>Paid 30-day pilot — unconditional money-back guarantee: email <a href="mailto:hello@ringandrespond.com" style="color:#fff;text-decoration:underline">hello@ringandrespond.com</a> within 30 days.</p>
 <p style="margin-top:18px"><a class="btn" style="background:#fff;color:var(--teal-d)" href="https://www.ringandrespond.com/#pricing">Start Your Pilot</a></p>
 </div>
 
 <section>
+<h2>How it starts</h2>
+<div class="card">
+<ul class="ticks">
+<li><strong>Keep your number</strong> — your phones, your carrier, and your system stay exactly where they are.</li>
+<li><strong>Turn on forwarding</strong> — overflow + after-hours: forward the calls your team can't take, and a call that would have rung out is answered by Sunny instead.</li>
+<li><strong>Change your mind by turning forwarding off</strong> — your phone rings exactly like it used to. Month-to-month.</li>
+</ul>
+</div>
+</section>
+
+<section>
 <h2>Dental emergency after-hours FAQs</h2>
-<div class="faq"><h3>What counts as a dental emergency after hours?</h3><p>True after-hours emergencies: severe or worsening pain, facial swelling, trauma or knocked-out tooth, uncontrolled bleeding, signs of infection (fever with tooth pain). Lost fillings, dull aches, and cosmetic issues can almost always wait until morning. Your practice defines the exact list — Sunny follows it.</p></div>
-<div class="faq"><h3>Who should answer dental emergency calls at night?</h3><p>Every call should be answered — the question is by whom. Options: your cell (exhausting), a traditional answering service (message-taking with callback delay), or an AI receptionist like Sunny that applies your emergency rules on the spot and flags true emergencies as top priority for your team.</p></div>
-<div class="faq"><h3>How does Sunny handle a dental emergency?</h3><p>She asks your screening questions based on your protocol — pain level, swelling, bleeding, trauma — then follows your rules: true emergencies are told to call 911 or urgent care first, and urgent callers are flagged top-priority on your callback list for an immediate callback. Non-urgent callers are captured without waking anyone.</p></div>
-<div class="faq"><h3>Will Sunny wake me up for non-emergencies?</h3><p>No — that's the point of the protocol. You define what pages you and what doesn't. A lost crown at midnight is captured for a morning callback; a swollen face with fever is flagged top-priority for an immediate callback.</p></div>
-<div class="faq"><h3>Can patients reach the on-call dentist directly?</h3><p>Only through your escalation rules. Sunny never hands out the on-call number — she flags the urgent caller top-priority for an immediate callback herself, so your personal number stays private and only true emergencies come through.</p></div>
-<div class="faq"><h3>What happens with emergency calls on weekends and holidays?</h3><p>Same as weeknights: Sunny answers 24/7/365, follows your emergency rules, and flags true emergencies as top priority for whoever is on call that day. Your holiday coverage is configured per-date in onboarding.</p></div>
-<div class="faq"><h3>Does Sunny give medical advice?</h3><p>No. Sunny never diagnoses or prescribes — she gathers information, applies your emergency rules, and flags urgent callers for immediate callback. Anything clinical goes straight to your on-call dentist.</p></div>
-<div class="faq"><h3>How much does after-hours emergency coverage cost?</h3><p>Ring &amp; Respond is $0 setup, then $199/month for After-Hours Capture or $299/month for 24/7 Complete — 24/7/365 answering, emergency handling, and urgent-call flagging included. Generous minutes are included — 500 a month on Capture, 1,000 on Complete — and past them, a small overage of $0.25 a minute. No annual contract. No holiday surcharges. The 30-day pilot is money-back.</p></div>
-<div class="faq"><h3>What should a dental office's after-hours emergency protocol include?</h3><p>Four things: which symptoms count as urgent, what the caller is told first (life-threatening symptoms go to 911 or urgent care), how the on-call dentist is reached for true emergencies, and a written record of every call for the morning. Sunny follows the protocol you approve — she doesn't improvise it.</p></div>
-<div class="faq"><h3>How are emergency calls routed to the on-call dentist?</h3><p>By your rules. If a caller's situation matches your urgent criteria, Sunny flags it for the on-call route you've set and makes sure the caller knows the next step. Non-urgent callers are captured for a morning callback instead of waking anyone at 2 AM.</p></div>
-<div class="faq"><h3>What's the difference between an urgent and a non-urgent after-hours call?</h3><p>Urgent means uncontrolled bleeding, swelling that affects breathing or vision, trauma to the face or jaw, or pain that can't be managed — those need care now. A chipped tooth with no pain or a lost filling is usually a first-appointment-in-the-morning call. Your protocol draws the line; Sunny applies it consistently.</p></div>
-<div class="faq"><h3>Should emergency callers ever be told to call 911?</h3><p>Yes — for anything life-threatening, like swelling that is closing an airway or heavy bleeding that won't stop, the right instruction is 911 or urgent care immediately, not a callback queue. Sunny says exactly that, and still flags the call for your office.</p></div>
+<div class="faq-list">
+<details class="faq-acc" open>
+<summary><h3>What counts as a dental emergency after hours?</h3></summary>
+<div class="faq-a"><p>True after-hours emergencies: severe or worsening pain, facial swelling, trauma or knocked-out tooth, uncontrolled bleeding, signs of infection (fever with tooth pain). Lost fillings, dull aches, and cosmetic issues can almost always wait until morning. Your practice defines the exact list — Sunny follows it.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Who should answer dental emergency calls at night?</h3></summary>
+<div class="faq-a"><p>Every call should be answered — the question is by whom. Options: your cell (exhausting), a traditional answering service (message-taking with callback delay), or an AI receptionist like Sunny that applies your emergency rules on the spot and flags true emergencies as top priority for your team.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How does Sunny handle a dental emergency?</h3></summary>
+<div class="faq-a"><p>She asks your screening questions based on your protocol — pain level, swelling, bleeding, trauma — then follows your rules: true emergencies are told to call 911 or urgent care first, and urgent callers are flagged top-priority on your callback list for an immediate callback. Non-urgent callers are captured without waking anyone.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Will Sunny wake me up for non-emergencies?</h3></summary>
+<div class="faq-a"><p>No — that's the point of the protocol. You define what pages you and what doesn't. A lost crown at midnight is captured for a morning callback; a swollen face with fever is flagged top-priority for an immediate callback.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Can patients reach the on-call dentist directly?</h3></summary>
+<div class="faq-a"><p>Only through your escalation rules. Sunny never hands out the on-call number — she flags the urgent caller top-priority for an immediate callback herself, so your personal number stays private and only true emergencies come through.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What happens with emergency calls on weekends and holidays?</h3></summary>
+<div class="faq-a"><p>Same as weeknights: Sunny answers 24/7/365, follows your emergency rules, and flags true emergencies as top priority for whoever is on call that day. Your holiday coverage is configured per-date in onboarding.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Does Sunny give medical advice?</h3></summary>
+<div class="faq-a"><p>No. Sunny never diagnoses or prescribes — she gathers information, applies your emergency rules, and flags urgent callers for immediate callback. Anything clinical goes straight to your on-call dentist.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How much does after-hours emergency coverage cost?</h3></summary>
+<div class="faq-a"><p>Ring &amp; Respond is $0 setup, then $199/month for After-Hours Capture or $299/month for 24/7 Complete — 24/7/365 answering, emergency handling, and urgent-call flagging included. Generous minutes are included — 500 a month on Capture, 1,000 on Complete — and past them, a small overage of $0.25 a minute. No annual contract. No holiday surcharges. The 30-day pilot is money-back.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What should a dental office's after-hours emergency protocol include?</h3></summary>
+<div class="faq-a"><p>Four things: which symptoms count as urgent, what the caller is told first (life-threatening symptoms go to 911 or urgent care), how the on-call dentist is reached for true emergencies, and a written record of every call for the morning. Sunny follows the protocol you approve — she doesn't improvise it.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>How are emergency calls routed to the on-call dentist?</h3></summary>
+<div class="faq-a"><p>By your rules. If a caller's situation matches your urgent criteria, Sunny flags it for the on-call route you've set and makes sure the caller knows the next step. Non-urgent callers are captured for a morning callback instead of waking anyone at 2 AM.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>What's the difference between an urgent and a non-urgent after-hours call?</h3></summary>
+<div class="faq-a"><p>Urgent means uncontrolled bleeding, swelling that affects breathing or vision, trauma to the face or jaw, or pain that can't be managed — those need care now. A chipped tooth with no pain or a lost filling is usually a first-appointment-in-the-morning call. Your protocol draws the line; Sunny applies it consistently.</p></div>
+</details>
+<details class="faq-acc">
+<summary><h3>Should emergency callers ever be told to call 911?</h3></summary>
+<div class="faq-a"><p>Yes — for anything life-threatening, like swelling that is closing an airway or heavy bleeding that won't stop, the right instruction is 911 or urgent care immediately, not a callback queue. Sunny says exactly that, and still flags the call for your office.</p></div>
+</details>
+</div>
 </section>
 
 <section>
@@ -506,5 +566,13 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       })();
     }());
   </script>
+
+<script>
+document.querySelectorAll('.faq-acc').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq-acc').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>
