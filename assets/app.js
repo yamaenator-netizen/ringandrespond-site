@@ -150,7 +150,7 @@ var NIGHT = {
   "19": ["7:00 PM — dinner hour", "A homeowner's water heater quits. Not an emergency yet — Sunny captures the details and it waits, written down, for the morning list."],
   "21": ["9:00 PM — the quote question", "Someone planning tomorrow's panel upgrade calls late. No prices get quoted — the callback request is captured with the job written in the caller's words."],
   "0": ["12:00 AM — quiet hours", "Mostly quiet. A wrong number, a robocall — nothing reaches the owner's phone. The list stays clean."],
-  "2": ["2:00 AM — the burst pipe", "A homeowner finds water through the ceiling. Sunny answers on the second ring, says she's the shop's automated assistant, flags it urgent, and captures the callback number digit by digit. The owner wakes to one clear message instead of a voicemail they'll hear at nine — if the caller left one at all."],
+  "2": ["2:00 AM — the burst pipe", "A homeowner finds water through the ceiling. Sunny answers right away, says she's the shop's automated assistant, flags it urgent, and captures the callback number digit by digit. The owner wakes to one clear message instead of a voicemail they'll hear at nine — if the caller left one at all."],
   "6": ["6:00 AM — the morning list", "The owner opens one list: every call from the night, urgent first, each with a name, a number, and a reason. Callbacks start with the burst pipe."]
 };
 document.querySelectorAll(".hour").forEach(function (btn) {
