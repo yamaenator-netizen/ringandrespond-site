@@ -68,4 +68,5 @@
 }
 .chat-launcher { transition: opacity .25s ease, transform .25s ease; }
 body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: translateY(10px); }
+.signup-card a.checkout-button{display:block;text-align:center;text-decoration:none}
 </style>

@@ -5,13 +5,13 @@
 
   <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Sunny quick answers" hidden>
     <div class="chat-header">
-      <div><strong>Your pilot guide</strong><span>Questions, signup, and checkout</span></div>
+      <div><strong>Your pilot guide</strong><span>Questions about Sunny and the pilot</span></div>
       <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
       </button>
     </div>
     <div class="chat-log" id="chatLog" aria-live="polite" aria-relevant="additions">
-      <div class="message assistant">Hi! I’m an automated assistant. Ask me about Sunny, what the pilot costs, how buying works, finding your way around the site — or I can guide you through signup right here.</div>
+      <div class="message assistant">Hi! I’m an automated assistant. Ask me about Sunny, what the pilot costs, how buying works, finding your way around the site — or tap Start my pilot to go straight to checkout.</div>
       <div class="starter-chips" id="starterChips" aria-label="Suggested questions">
         <button class="starter-chip" type="button" data-start-signup>Start my pilot</button>
         <button class="starter-chip" type="button">What can Sunny do?</button>
