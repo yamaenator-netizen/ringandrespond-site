@@ -313,7 +313,7 @@ body.es .lang-en-hero{display:none}
 ]}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Service", "name": "Sunny — AI receptionist for dental offices", "provider": {"@type": "Organization", "name": "Ring & Respond"}, "serviceType": "AI receptionist for dental offices", "areaServed": "United States", "offers": [{"@type": "Offer", "name": "After-Hours Capture", "price": "199", "priceCurrency": "USD", "description": "Sunny answers after hours in your practice's name, captures every caller properly, sorts by urgency, and leaves one morning callback list. $0 setup, generous minutes included (500/mo, then $0.25/min), month-to-month."}, {"@type": "Offer", "name": "24/7 Complete", "price": "299", "priceCurrency": "USD", "description": "Everything in After-Hours Capture, around the clock: daytime overflow, the lunch gap, and the Monday avalanche included. $0 setup, generous minutes included (1,000/mo, then $0.25/min), month-to-month."}]}
+{"@context": "https://schema.org", "@type": "Service", "name": "Sunny — AI receptionist for dental offices", "provider": {"@type": "Organization", "name": "Ring & Respond"}, "serviceType": "AI receptionist for dental offices", "areaServed": "United States", "offers": [{"@type": "Offer", "name": "After-Hours Capture", "price": "199", "priceCurrency": "USD", "description": "Sunny answers after hours in your practice's name, captures each caller's name, callback number, and request, sorts by urgency, and leaves one morning callback list. $0 setup, generous minutes included (500/mo, then $0.25/min), month-to-month."}, {"@type": "Offer", "name": "24/7 Complete", "price": "299", "priceCurrency": "USD", "description": "Everything in After-Hours Capture, around the clock: daytime overflow, the lunch gap, and the Monday avalanche included. $0 setup, generous minutes included (1,000/mo, then $0.25/min), month-to-month."}]}
 </script>
 <link rel="icon" type="image/jpeg" href="assets/mark.jpg">
 <style>
@@ -529,7 +529,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
       <li><strong>She does not book into your practice's schedule.</strong> She captures the request properly — name, callback number, new or existing patient, preferred callback window — and your team books when it calls back. Booking into Open Dental is coming, waiting on developer access; until it is live and proven, Sunny books nothing.</li>
       <li><strong>She never touches your patient database.</strong> Not to read it, not to update it. The information she works with is what the caller tells her on that call.</li>
       <li><strong>She does not verify insurance eligibility.</strong> She captures the carrier and the caller's exact question for your team to answer. Verification works in a test environment today; production comes with a signed pilot office.</li>
-      <li><strong>She does not text callers back yet.</strong> Missed-call text-back is coming, waiting on carrier approval for business texting, with resubmission on November 13. The same wait applies to texted appointment confirmations, same-day backfill messages, and review requests by text — a QR-code version of a review request works today.</li>
+      <li><strong>She does not text callers back yet.</strong> Missed-call text-back is coming, waiting on carrier approval for business texting, with the resubmission pending. The same wait applies to texted appointment confirmations, same-day backfill messages, and review requests by text — a QR-code version of a review request works today.</li>
       <li><strong>She does not work recall lists yet.</strong> Recall and reactivation runs on your office's own list are coming, still being built and proven.</li>
       <li><strong>She does not take patient payments.</strong> A patient billing portal, where patients pay the office directly, is a later phase.</li>
       <li><strong>Warm transfer is an option, not a default behavior.</strong> It is your office's ON/OFF toggle, and it stays a spec item until the transfer path is built and tested end-to-end.</li>
@@ -609,7 +609,7 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
          taps). Anything that happens while the file is in flight is
          queued here and replayed by the brain the moment it
          initializes - no lost first message, no dead first click. */
-      var BRAIN_URL = '/chat-brain.js?v=528f36541c';
+      var BRAIN_URL = '/chat-brain.js?v=ee59d344fd';
       var shellLauncher = document.getElementById('chatLauncher');
       var shellForm = document.getElementById('chatForm');
       var shellInput = document.getElementById('chatInput');
