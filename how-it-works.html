@@ -305,6 +305,44 @@ body.es .lang-en-hero{display:none}
   .path-card,.payoff-card{padding:18px}
   .payoff-list li{font-size:14.5px}
 }
+/* how-it-starts — B-hybrid "Nothing Replaced, Shown" (data-variant b-hybrid) */
+.path-section{--nr-green:#0A604A;--nr-green-bg:#DFF5E9}
+.nr-promises{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+.nr-promises span{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--nr-green);color:var(--nr-green);font-weight:700;font-size:15px;padding:8px 16px;border-radius:999px;box-shadow:var(--shadow-sm)}
+.nr-promises svg{width:15px;height:15px;stroke:var(--nr-green);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.nr-diagram{display:grid;grid-template-columns:1fr 190px 1fr;gap:0;align-items:stretch;max-width:960px;margin:40px auto 0}
+.nr-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);padding:24px 24px 20px;position:relative}
+.nr-card .nr-tag{position:absolute;top:-13px;left:20px;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:999px}
+.nr-card.nr-office .nr-tag{background:var(--cta);color:#fff}
+.nr-card.nr-sunny{border-color:rgba(10,96,74,.4)}
+.nr-card.nr-sunny .nr-tag{background:var(--nr-green);color:#fff}
+.nr-card h3{font-size:19px;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.nr-card h3 img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 2px rgba(10,96,74,.35)}
+.nr-card ul{list-style:none}
+.nr-card li{display:flex;gap:9px;align-items:flex-start;font-size:15px;padding:5px 0}
+.nr-card li svg{width:17px;height:17px;flex:none;margin-top:4px;stroke:var(--nr-green);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.nr-card p{font-size:15px}
+.nr-arrow{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 10px;text-align:center}
+.nr-arrow .nr-lbl{font-size:13px;font-weight:700;color:var(--cta);line-height:1.35;max-width:170px}
+.nr-arrow svg{width:100%;max-width:150px;height:26px;stroke:var(--cta);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin:6px 0}
+.nr-arrow small{font-size:12.5px;color:var(--muted);line-height:1.4}
+.nr-bubble{background:var(--panel2);border:1px solid var(--line);border-radius:4px 14px 14px 14px;padding:12px 14px;margin:2px 0 12px}
+.nr-bubble .nr-time{display:inline-block;background:#fff;border:2px solid var(--nr-green);color:var(--nr-green);font-weight:700;font-size:12px;letter-spacing:.02em;border-radius:999px;padding:3px 10px;margin-bottom:8px}
+.nr-bubble .nr-quote{font-size:15.5px;line-height:1.45;color:var(--ink);font-weight:700}
+.nr-bubble .nr-disc{display:block;margin-top:7px;font-size:13px;line-height:1.45;color:var(--muted)}
+.nr-cta{margin-top:12px}
+.nr-cta a{color:var(--ink-link);font-weight:700;font-size:15px}
+.nr-returnflow{max-width:960px;margin:18px auto 0;display:flex;align-items:center;gap:12px;background:var(--nr-green-bg);border:1px solid rgba(10,96,74,.3);border-radius:14px;padding:13px 20px}
+.nr-returnflow svg{width:26px;height:26px;flex:none;stroke:var(--nr-green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nr-returnflow p{font-size:15px;color:var(--ink)}
+.nr-returnflow b{color:var(--nr-green)}
+@media (max-width:760px){
+  .nr-diagram{grid-template-columns:1fr;margin-top:34px}
+  .nr-arrow{padding:16px 0 12px}
+  .nr-arrow svg{display:none}
+  .nr-arrow::after{content:"↓";font-size:28px;font-weight:700;color:var(--cta);line-height:1;margin-top:6px}
+  .nr-arrow .nr-lbl{order:0}.nr-arrow small{order:1}.nr-arrow::after{order:2}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -419,6 +457,46 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
     <div class="path-intro">
       <h2 id="path-heading">Hear her first, then the four steps</h2>
       <p>Step zero is an invitation, not a setup step. The four steps after it are the whole switch-on.</p>
+    </div>
+    <div class="nr-promises">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No porting</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No hardware</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No IT project</span>
+    </div>
+
+    <div class="nr-diagram">
+      <div class="nr-card nr-office">
+        <span class="nr-tag">STAYS PUT</span>
+        <h3>Your office, exactly as it is</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Your number — the one patients already know</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Your phones and your carrier</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Your practice system, untouched</li>
+        </ul>
+      </div>
+
+      <div class="nr-arrow">
+        <span class="nr-lbl">Only the calls your team can’t get to</span>
+        <svg viewBox="0 0 150 26" aria-hidden="true"><path d="M4 13h138M132 4l10 9-10 9"/></svg>
+        <small>Overflow during the day · after-hours once you close</small>
+      </div>
+
+      <div class="nr-card nr-sunny">
+        <span class="nr-tag">THE ONLY NEW THING</span>
+        <h3><img src="assets/mark.webp" alt="Sunny"> Sunny answers</h3>
+        <div class="nr-bubble">
+          <span class="nr-time">6:03 PM</span>
+          <p class="nr-quote">“Thank you for calling Your Dental Practice — how can I help?”</p>
+          <span class="nr-disc">Sunny answers in your practice’s name — and says she’s an AI.</span>
+        </div>
+        <p>She takes the details and reads the callback number back. A real conversation — not a voicemail box.</p>
+        <p class="nr-cta"><a href="tel:+16192021085" data-cta-target="demo">▶ Hear her live — (619) 202-1085</a></p>
+      </div>
+    </div>
+
+    <div class="nr-returnflow">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h9a7 7 0 0 1 7 7v4"/></svg>
+      <p><b>Every morning, it flows back:</b> one callback list, urgencies first, ready before you open. Your team calls back — in control.</p>
     </div>
     <div class="path-wrap">
       <ol class="path-list">
