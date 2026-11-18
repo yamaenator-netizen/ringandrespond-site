@@ -425,7 +425,7 @@ body.es .lang-en-hero{display:none}
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://ringandrespond.com/#org","name":"Ring & Respond","alternateName":"Ring and Respond","url":"https://ringandrespond.com/","logo":"https://ringandrespond.com/assets/mark.jpg","email":"hello@ringandrespond.com","telephone":"+1-619-202-1085","slogan":"Answered with a smile.","sameAs":["https://www.instagram.com/ringandrespond/"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@ringandrespond.com","telephone":"+1-619-202-1085","areaServed":"US","availableLanguage":["English","Spanish","Arabic","Persian"]}},
 {"@type":"WebSite","@id":"https://ringandrespond.com/#site","name":"Ring & Respond","alternateName":"Ring and Respond","url":"https://ringandrespond.com/","publisher":{"@id":"https://ringandrespond.com/#org"}},
-{"@type":"Service","name":"Sunny — AI receptionist for dental offices","provider":{"@type":"Organization","name":"Ring & Respond"},"serviceType":"AI receptionist for dental offices","areaServed":"United States","offers":[{"@type":"Offer","name":"After-Hours Capture","price":"199","priceCurrency":"USD","description":"Sunny answers after hours in your practice's name, captures each caller's name, callback number, and request, sorts by urgency, and leaves one morning callback list. $0 setup, generous minutes included (500/mo, then $0.25/min), month-to-month."},{"@type":"Offer","name":"24/7 Complete","price":"299","priceCurrency":"USD","description":"Everything in After-Hours Capture, around the clock: daytime overflow, the lunch gap, and the Monday avalanche included. $0 setup, generous minutes included (1,000/mo, then $0.25/min), month-to-month."}]},
+{"@type":"Service","name":"Sunny — AI receptionist for dental offices","provider":{"@type":"Organization","name":"Ring & Respond"},"serviceType":"AI receptionist for dental offices","areaServed":"United States","offers":[{"@type":"Offer","name":"After-Hours Capture","price":"199","priceCurrency":"USD","description":"Sunny answers after hours in your practice's name, captures each caller's name, callback number, and request, sorts by urgency, and leaves one morning callback list. $0 setup, 500/mo included, then $0.25/min overage, month-to-month."},{"@type":"Offer","name":"24/7 Complete","price":"299","priceCurrency":"USD","description":"Everything in After-Hours Capture, around the clock: daytime overflow, the lunch gap, and the Monday avalanche included. $0 setup, 1,000/mo included, then $0.25/min overage, month-to-month."}]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Does Sunny book appointments?","acceptedAnswer":{"@type":"Answer","text":"Not today — and we say so plainly. Sunny captures the caller's name, callback number, whether they are a new or existing patient, their preferred callback window, and what they are asking for. Your team calls back and books, in control of the schedule. Booking into Open Dental is coming; it is waiting on developer access, and nothing is booked by Sunny until it is live and proven."}},
 {"@type":"Question","name":"How do HIPAA and a BAA work with Sunny?","acceptedAnswer":{"@type":"Answer","text":"Your patients' information is protected: a signed Business Associate Agreement (BAA) is in place before any patient information flows to Sunny. That agreement comes before the pilot starts carrying real patient calls — not after, and not on request later."}},
@@ -518,24 +518,116 @@ body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: transl
    their own muted, scoped to them exactly as they render on the live site. */
 :root{--muted:#466E84}
 .chat-launcher,.chat-panel{--muted:#6E8FA3}
+/* === Variant B header (hdrB-) — Logo only · Guides dropdown · static pill, evolved === */
+.hdrB-header{padding:0 16px;margin-top:12px;position:relative;z-index:40;background:transparent;border-bottom:0}
+.hdrB-pill{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;min-height:62px;background:rgba(255,255,255,.94);border:1px solid var(--line,#CFE6F0);border-radius:999px;padding:8px 10px 8px 18px;box-shadow:0 12px 34px rgba(12,80,110,.13)}
+.hdrB-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink,#0C2B3E);flex:none}
+.hdrB-brand img{width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(18,165,214,.35)}
+.hdrB-brand b{display:block;font-size:17px;line-height:1.12;white-space:nowrap}
+.hdrB-brand small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--link,#096E94);font-weight:700;white-space:nowrap}
+.hdrB-nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.hdrB-link{color:var(--body,#33566B);text-decoration:none;font-size:15px;font-weight:600;padding:10px 11px;white-space:nowrap;border-radius:999px}
+.hdrB-link:hover{color:var(--ink,#0C2B3E)}
+.hdrB-guides{position:relative}
+.hdrB-guides-btn{appearance:none;background:transparent;border:0;font-family:inherit;color:var(--body,#33566B);font-size:15px;font-weight:600;padding:10px 11px;cursor:pointer;white-space:nowrap;border-radius:999px;display:inline-flex;align-items:center;gap:5px;min-height:44px}
+.hdrB-guides-btn:hover{color:var(--ink,#0C2B3E)}
+.hdrB-guides-btn .hdrB-caret{font-size:11px;line-height:1}
+.hdrB-drop{position:absolute;top:calc(100% + 10px);left:auto;right:0;width:350px;max-width:calc(100vw - 32px);background:#fff;border:1px solid var(--line,#CFE6F0);border-radius:18px;box-shadow:0 18px 50px rgba(12,80,110,.16);padding:8px;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s ease,transform .15s ease,visibility .15s;z-index:60}
+.hdrB-guides.open .hdrB-drop,.hdrB-guides:focus-within .hdrB-drop{opacity:1;visibility:visible;transform:none}
+.hdrB-noanim .hdrB-drop{transition:none}
+@media(hover:hover) and (min-width:561px){.hdrB-guides:hover .hdrB-drop{opacity:1;visibility:visible;transform:none}}
+.hdrB-drop a{display:flex;align-items:center;min-height:44px;padding:11px 14px;color:var(--body,#33566B);text-decoration:none;font-size:14.5px;font-weight:600;border-radius:12px;line-height:1.3}
+.hdrB-drop a:hover,.hdrB-drop a:focus-visible{background:var(--panel2,#EFF7FB);color:var(--ink,#0C2B3E)}
+.hdrB-header .lang-toggle{flex:none}
+a.btn.hdrB-cta,.hdrB-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 20px;border-radius:999px;background:var(--cta,#0B7FA8);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 2px 14px rgba(12,80,110,.07);white-space:nowrap;flex:none;border:0}
+.hdrB-burger{display:none;appearance:none;background:transparent;border:1px solid var(--line,#CFE6F0);border-radius:999px;width:42px;height:42px;min-height:42px;font-size:19px;line-height:1;color:var(--ink,#0C2B3E);cursor:pointer;flex:none;align-items:center;justify-content:center;font-family:inherit}
+.hdrB-panel{display:none}
+.hdrB-subbar{padding:10px 16px 0;position:sticky;top:0;z-index:60;background:var(--bg,transparent)}
+.hdrB-subbar-in{max-width:1140px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:flex-end;background:rgba(255,255,255,.94);border:1px solid var(--line,#CFE6F0);border-radius:999px;padding:6px 8px;box-shadow:0 2px 14px rgba(12,80,110,.07)}
+/* Tablet band 561–900px: tighten, do not collapse */
+@media(max-width:900px) and (min-width:701px){
+  .hdrB-pill{gap:6px;padding:8px 8px 8px 14px}
+  .hdrB-brand{gap:8px}
+  .hdrB-link{padding:10px 7px;font-size:14.5px}
+  .hdrB-guides-btn{padding:10px 7px;font-size:14.5px}
+  .hdrB-header .lang-toggle button{min-width:38px;padding:8px 7px}
+  a.btn.hdrB-cta,.hdrB-cta{padding:10px 14px;font-size:14px}
+}
+/* Narrow tablet 561–700px: harder tightening (brand small line hides, as on phone) */
+@media(max-width:700px) and (min-width:561px){
+  .hdrB-header{padding:0 10px}
+  .hdrB-pill{gap:5px;padding:8px 6px 8px 12px}
+  .hdrB-brand{gap:6px}
+  .hdrB-brand img{width:36px;height:36px}
+  .hdrB-brand small{display:none}
+  .hdrB-link{padding:10px 5px;font-size:14px}
+  .hdrB-guides-btn{padding:10px 5px;font-size:14px}
+  .hdrB-header .lang-toggle{margin:0 2px}
+  .hdrB-header .lang-toggle button{min-width:32px;min-height:40px;padding:7px 5px;font-size:12.5px}
+  a.btn.hdrB-cta,.hdrB-cta{padding:9px 11px;font-size:13.5px;min-height:42px}
+}
+/* Phone ≤560px (site's existing header breakpoint) */
+@media(max-width:560px){
+  .hdrB-nav{display:none}
+  .hdrB-burger{display:inline-flex;width:40px}
+  .hdrB-pill{gap:4px;padding:6px 6px 6px 10px;min-height:56px}
+  .hdrB-brand{gap:6px}
+  .hdrB-brand small{display:none}
+  .hdrB-header .lang-toggle{margin:0}
+  .hdrB-header .lang-toggle button{min-width:36px;min-height:40px;padding:7px 6px;font-size:12.5px}
+  a.btn.hdrB-cta,.hdrB-cta{min-height:40px;padding:9px 11px;font-size:13.5px}
+  .hdrB-panel{max-width:1140px;margin:8px auto 0;background:#fff;border:1px solid var(--line,#CFE6F0);border-radius:20px;box-shadow:0 18px 50px rgba(12,80,110,.16);padding:8px}
+  .hdrB-panel.open{display:block}
+  .hdrB-panel a{display:flex;align-items:center;min-height:44px;padding:11px 14px;color:var(--body,#33566B);text-decoration:none;font-size:15px;font-weight:600;border-radius:12px}
+  .hdrB-panel a:hover,.hdrB-panel a:focus-visible{background:var(--panel2,#EFF7FB);color:var(--ink,#0C2B3E)}
+  .hdrB-panel .hdrB-group{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--link,#096E94);padding:12px 14px 4px}
+  .hdrB-panel a.hdrB-sub{padding-left:28px;font-size:14.5px}
+}
+@media(max-width:380px){
+  .hdrB-header{padding:0 10px}
+  .hdrB-pill{gap:5px;padding:6px 6px 6px 10px}
+  .hdrB-brand img{width:36px;height:36px}
+  .hdrB-brand b{font-size:16px}
+  .hdrB-header .lang-toggle button{min-width:32px;padding:6px 5px;font-size:12px}
+  a.btn.hdrB-cta,.hdrB-cta{padding:8px 10px;font-size:13px}
+  .hdrB-burger{width:38px;height:40px;min-height:40px}
+}
 </style>
 <script defer src="https://voice.ringandrespond.com:8449/analytics/script.js" data-website-id="e85deaf6-7d5b-4be7-9885-fb848e75a987" data-host-url="https://voice.ringandrespond.com:8449/analytics" data-domains="ringandrespond.com,www.ringandrespond.com"></script>
 </head>
 <body>
 <div class="topbar"><span class="chip"><span class="live-dot" aria-hidden="true"></span>Sunny is answering right now — hear her live at <strong>(619) 202-1085</strong></span></div>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/mark.webp" alt="Ring &amp; Respond handset-sun logo" width="42" height="42"><span><b>Sunny</b><small>by Ring &amp; Respond</small></span></a>
-    <nav class="header-nav" aria-label="Main">
-      <a href="pricing.html">Pricing</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="tel:+16192021085">(619) 202-1085</a>
+<header class="hdrB-header">
+  <div class="hdrB-pill">
+    <a class="hdrB-brand" href="/"><img src="assets/mark.webp" alt="Ring &amp; Respond handset-sun logo" width="42" height="42"><span><b>Sunny</b><small>by Ring &amp; Respond</small></span></a>
+    <nav class="hdrB-nav" aria-label="Main">
+      <a class="hdrB-link" href="/how-it-works">How it works</a>
+      <a class="hdrB-link" href="/pricing">Pricing</a>
+      <div class="hdrB-guides">
+        <button type="button" class="hdrB-guides-btn" id="hdrB-guides-btn" aria-haspopup="true" aria-expanded="false" aria-controls="hdrB-drop">Guides <span class="hdrB-caret" aria-hidden="true">▾</span></button>
+        <div class="hdrB-drop" id="hdrB-drop" role="menu" aria-label="Guides">
+          <a role="menuitem" href="/dental-answering-service">Buyer's Guide: Dental Answering Services</a>
+          <a role="menuitem" href="/hipaa-ai-receptionist-dental">HIPAA &amp; AI Receptionists</a>
+          <a role="menuitem" href="/ai-receptionist-vs-answering-service">AI vs. Answering Service</a>
+          <a role="menuitem" href="/dental-emergency-after-hours">After-Hours Emergencies</a>
+        </div>
+      </div>
+    </nav>
       <span class="lang-toggle" role="group" aria-label="Language">
         <button type="button" id="btn-en" aria-pressed="true">EN</button>
         <button type="button" id="btn-es" aria-pressed="false">ES</button>
       </span>
-      <a class="btn" href="tel:+16192021085">Hear Sunny Live</a>
-    </nav>
+      <a class="btn hdrB-cta" href="tel:+16192021085">Hear her live</a>
+      <button type="button" class="hdrB-burger" id="hdrB-burger" aria-label="Menu" aria-expanded="false" aria-controls="hdrB-panel">☰</button>
+  </div>
+  <div class="hdrB-panel" id="hdrB-panel">
+      <a href="/how-it-works">How it works</a>
+      <a href="/pricing">Pricing</a>
+      <div class="hdrB-group">Guides</div>
+      <a class="hdrB-sub" href="/dental-answering-service">Buyer's Guide: Dental Answering Services</a>
+      <a class="hdrB-sub" href="/hipaa-ai-receptionist-dental">HIPAA &amp; AI Receptionists</a>
+      <a class="hdrB-sub" href="/ai-receptionist-vs-answering-service">AI vs. Answering Service</a>
+      <a class="hdrB-sub" href="/dental-emergency-after-hours">After-Hours Emergencies</a>
   </div>
 </header>
 
@@ -1303,5 +1395,25 @@ document.addEventListener('DOMContentLoaded', function () {
   checkDepth();
 });
 </script>
+
+<script>
+/* Variant B header: Guides dropdown + mobile menu (vanilla). */
+(function(){
+  var guides=document.querySelector('.hdrB-guides');
+  var gBtn=document.getElementById('hdrB-guides-btn');
+  var drop=document.getElementById('hdrB-drop');
+  var burger=document.getElementById('hdrB-burger');
+  var panel=document.getElementById('hdrB-panel');
+  function setGuides(open){ if(!guides||!gBtn)return; guides.classList.toggle('open',open); gBtn.setAttribute('aria-expanded',open?'true':'false'); }
+  function setPanel(open){ if(!panel||!burger)return; panel.classList.toggle('open',open); burger.setAttribute('aria-expanded',open?'true':'false'); }
+  if(gBtn){ gBtn.addEventListener('click',function(e){ e.stopPropagation(); setGuides(!guides.classList.contains('open')); }); }
+  if(drop){ drop.addEventListener('click',function(e){ if(e.target.closest('a')) setGuides(false); }); }
+  document.addEventListener('click',function(e){ if(guides&&!guides.contains(e.target)) setGuides(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ setGuides(false); setPanel(false); if(gBtn) gBtn.focus(); } });
+  if(burger){ burger.addEventListener('click',function(){ setPanel(!panel.classList.contains('open')); }); }
+  if(panel){ panel.addEventListener('click',function(e){ if(e.target.closest('a')) setPanel(false); }); }
+})();
+</script>
+
 </body>
 </html>
