@@ -19,7 +19,7 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 - Capture-it-right intake: caller name, callback number read back digit-by-digit, new/existing patient, preferred callback window.
 - 3-tier urgency sort: true emergencies directed to 911/urgent care, with an instant team alert; urgents sit at the top of the list.
 - Callers talk to Sunny, not a voicemail box: a real conversation, with honest AI and recording disclosure.
-- Full conversations in English, Spanish, Arabic, and Farsi.
+- Full conversations in English.
 - Insurance-question capture: carrier plus the caller's exact question, word for word, for the team to answer. Capture only — this is not insurance verification.
 - One morning callback list, urgencies first, ready before the office opens.
 - Owner proof report: the week's calls, requests, and urgency mix.
@@ -27,6 +27,7 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 - Honest boundary: Sunny does not book into the practice's schedule today and never touches the patient database. The team calls back — in control.
 
 ## Coming (labeled coming, gate named)
+- Full conversations in Spanish, Arabic, and Farsi — coming soon (each language goes live only after real-path proof plus an ear pass; Spanish is closest).
 - Missed-call text-back — coming (carrier texting approval; resubmission pending).
 - Appointment confirmations and same-day backfill of cancelled slots — coming (rides texting + schedule read).
 - Recall and reactivation runs on the office's own list — coming.
