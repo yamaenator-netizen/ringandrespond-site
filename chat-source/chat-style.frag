@@ -69,4 +69,78 @@
 .chat-launcher { transition: opacity .25s ease, transform .25s ease; }
 body.bar-on .chat-launcher { opacity: 0; pointer-events: none; transform: translateY(10px); }
 .signup-card a.checkout-button{display:block;text-align:center;text-decoration:none}
+/* === Variant B header (hdrB-) — Logo only · Guides dropdown · static pill, evolved === */
+.hdrB-header{padding:0 16px;margin-top:12px;position:relative;z-index:40;background:transparent;border-bottom:0}
+.hdrB-pill{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:10px;min-height:62px;background:rgba(255,255,255,.94);border:1px solid var(--line,#CFE6F0);border-radius:999px;padding:8px 10px 8px 18px;box-shadow:0 12px 34px rgba(12,80,110,.13)}
+.hdrB-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink,#0C2B3E);flex:none}
+.hdrB-brand img{width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(18,165,214,.35)}
+.hdrB-brand b{display:block;font-size:17px;line-height:1.12;white-space:nowrap}
+.hdrB-brand small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--link,#096E94);font-weight:700;white-space:nowrap}
+.hdrB-nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.hdrB-link{color:var(--body,#33566B);text-decoration:none;font-size:15px;font-weight:600;padding:10px 11px;white-space:nowrap;border-radius:999px}
+.hdrB-link:hover{color:var(--ink,#0C2B3E)}
+.hdrB-guides{position:relative}
+.hdrB-guides-btn{appearance:none;background:transparent;border:0;font-family:inherit;color:var(--body,#33566B);font-size:15px;font-weight:600;padding:10px 11px;cursor:pointer;white-space:nowrap;border-radius:999px;display:inline-flex;align-items:center;gap:5px;min-height:44px}
+.hdrB-guides-btn:hover{color:var(--ink,#0C2B3E)}
+.hdrB-guides-btn .hdrB-caret{font-size:11px;line-height:1}
+.hdrB-drop{position:absolute;top:calc(100% + 10px);left:auto;right:0;width:350px;max-width:calc(100vw - 32px);background:#fff;border:1px solid var(--line,#CFE6F0);border-radius:18px;box-shadow:0 18px 50px rgba(12,80,110,.16);padding:8px;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s ease,transform .15s ease,visibility .15s;z-index:60}
+.hdrB-guides.open .hdrB-drop,.hdrB-guides:focus-within .hdrB-drop{opacity:1;visibility:visible;transform:none}
+.hdrB-noanim .hdrB-drop{transition:none}
+@media(hover:hover) and (min-width:561px){.hdrB-guides:hover .hdrB-drop{opacity:1;visibility:visible;transform:none}}
+.hdrB-drop a{display:flex;align-items:center;min-height:44px;padding:11px 14px;color:var(--body,#33566B);text-decoration:none;font-size:14.5px;font-weight:600;border-radius:12px;line-height:1.3}
+.hdrB-drop a:hover,.hdrB-drop a:focus-visible{background:var(--panel2,#EFF7FB);color:var(--ink,#0C2B3E)}
+.hdrB-header .lang-toggle{flex:none}
+a.btn.hdrB-cta,.hdrB-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 20px;border-radius:999px;background:var(--cta,#0B7FA8);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 2px 14px rgba(12,80,110,.07);white-space:nowrap;flex:none;border:0}
+.hdrB-burger{display:none;appearance:none;background:transparent;border:1px solid var(--line,#CFE6F0);border-radius:999px;width:42px;height:42px;min-height:42px;font-size:19px;line-height:1;color:var(--ink,#0C2B3E);cursor:pointer;flex:none;align-items:center;justify-content:center;font-family:inherit}
+.hdrB-panel{display:none}
+.hdrB-subbar{padding:10px 16px 0;position:sticky;top:0;z-index:60;background:var(--bg,transparent)}
+.hdrB-subbar-in{max-width:1140px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:flex-end;background:rgba(255,255,255,.94);border:1px solid var(--line,#CFE6F0);border-radius:999px;padding:6px 8px;box-shadow:0 2px 14px rgba(12,80,110,.07)}
+/* Tablet band 561–900px: tighten, do not collapse */
+@media(max-width:900px) and (min-width:701px){
+  .hdrB-pill{gap:6px;padding:8px 8px 8px 14px}
+  .hdrB-brand{gap:8px}
+  .hdrB-link{padding:10px 7px;font-size:14.5px}
+  .hdrB-guides-btn{padding:10px 7px;font-size:14.5px}
+  .hdrB-header .lang-toggle button{min-width:38px;padding:8px 7px}
+  a.btn.hdrB-cta,.hdrB-cta{padding:10px 14px;font-size:14px}
+}
+/* Narrow tablet 561–700px: harder tightening (brand small line hides, as on phone) */
+@media(max-width:700px) and (min-width:561px){
+  .hdrB-header{padding:0 10px}
+  .hdrB-pill{gap:5px;padding:8px 6px 8px 12px}
+  .hdrB-brand{gap:6px}
+  .hdrB-brand img{width:36px;height:36px}
+  .hdrB-brand small{display:none}
+  .hdrB-link{padding:10px 5px;font-size:14px}
+  .hdrB-guides-btn{padding:10px 5px;font-size:14px}
+  .hdrB-header .lang-toggle{margin:0 2px}
+  .hdrB-header .lang-toggle button{min-width:32px;min-height:40px;padding:7px 5px;font-size:12.5px}
+  a.btn.hdrB-cta,.hdrB-cta{padding:9px 11px;font-size:13.5px;min-height:42px}
+}
+/* Phone ≤560px (site's existing header breakpoint) */
+@media(max-width:560px){
+  .hdrB-nav{display:none}
+  .hdrB-burger{display:inline-flex;width:40px}
+  .hdrB-pill{gap:4px;padding:6px 6px 6px 10px;min-height:56px}
+  .hdrB-brand{gap:6px}
+  .hdrB-brand small{display:none}
+  .hdrB-header .lang-toggle{margin:0}
+  .hdrB-header .lang-toggle button{min-width:36px;min-height:40px;padding:7px 6px;font-size:12.5px}
+  a.btn.hdrB-cta,.hdrB-cta{min-height:40px;padding:9px 11px;font-size:13.5px}
+  .hdrB-panel{max-width:1140px;margin:8px auto 0;background:#fff;border:1px solid var(--line,#CFE6F0);border-radius:20px;box-shadow:0 18px 50px rgba(12,80,110,.16);padding:8px}
+  .hdrB-panel.open{display:block}
+  .hdrB-panel a{display:flex;align-items:center;min-height:44px;padding:11px 14px;color:var(--body,#33566B);text-decoration:none;font-size:15px;font-weight:600;border-radius:12px}
+  .hdrB-panel a:hover,.hdrB-panel a:focus-visible{background:var(--panel2,#EFF7FB);color:var(--ink,#0C2B3E)}
+  .hdrB-panel .hdrB-group{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--link,#096E94);padding:12px 14px 4px}
+  .hdrB-panel a.hdrB-sub{padding-left:28px;font-size:14.5px}
+}
+@media(max-width:380px){
+  .hdrB-header{padding:0 10px}
+  .hdrB-pill{gap:5px;padding:6px 6px 6px 10px}
+  .hdrB-brand img{width:36px;height:36px}
+  .hdrB-brand b{font-size:16px}
+  .hdrB-header .lang-toggle button{min-width:32px;padding:6px 5px;font-size:12px}
+  a.btn.hdrB-cta,.hdrB-cta{padding:8px 10px;font-size:13px}
+  .hdrB-burger{width:38px;height:40px;min-height:40px}
+}
 </style>

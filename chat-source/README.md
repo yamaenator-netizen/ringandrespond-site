@@ -30,8 +30,11 @@ claims, per-minute-fee claims, open-ended minute claims, personal
 names/numbers) before
 anything ships.
 - `chat-style.frag` — the standalone chat `<style>` block used by the
-  17 template pages (index.html keeps its chat styles in its own
-  stylesheets and is not style-synced)
+  15 template pages; it also carries the Variant B header (hdrB-) CSS
+  at the end of the block, where those pages keep it. index.html and
+  websites.html are not style-synced (see `STYLE_SKIP_PAGES` in
+  `sync-chat.py`): each keeps its hdrB block in its own page-local
+  `<style>` block, so splicing the frag in would duplicate it
 
 ## To change the chat
 

@@ -27,11 +27,15 @@ Coverage:
                       inline brain (marker "function answerFor") are
                       migrated: that block is replaced by the shell.
 - chat-panel.frag  -> every page with the chat launcher (18 pages)
-- chat-style.frag  -> the 17 template pages that carry the standalone
-                      "Sunny site chat" <style> block. index.html keeps
-                      its chat styles inside its own stylesheets (its
-                      CSS is organised differently) and is skipped for
-                      the style segment only.
+- chat-style.frag  -> the 15 template pages that carry the standalone
+                      "Sunny site chat" <style> block. The frag also
+                      carries the Variant B header (hdrB-) CSS, which
+                      lives at the end of that same block on those
+                      pages. index.html and websites.html are skipped
+                      for the style segment only (see STYLE_SKIP_PAGES):
+                      each keeps the hdrB block in its own page-local
+                      <style> block, so splicing the frag into them
+                      would duplicate it.
 Pages with no chat (champion holding page, onboard, thank-you, the
 Google verification file) are left untouched.
 """
@@ -46,6 +50,14 @@ SRC = os.path.join(ROOT, "chat-source")
 BRAIN_PATH = os.path.join(ROOT, "chat-brain.js")
 SHELL_MARKER = "sunny-chat-shell"
 LEGACY_MARKER = "function answerFor"
+# Pages whose style segment is NOT synced from chat-style.frag: both
+# carry the Variant B header (hdrB-) CSS in their own page-local
+# <style> block (index.html: the "Port cascade guard" block;
+# websites.html: the page-local fix block). The frag carries hdrB for
+# the 15 template pages, where it lives inside the chat <style>
+# block; splicing it into these two pages as well would leave each
+# with two hdrB copies.
+STYLE_SKIP_PAGES = {"index.html", "websites.html"}
 
 
 def load(name):
@@ -118,9 +130,10 @@ def swap_panel(html, page):
 
 def synced(html, page):
     changed = []
-    html, ch = swap_block(html, "style", "Sunny site chat", STYLE_FRAG, page, "chat style", required=False)
-    if ch:
-        changed.append("style")
+    if page not in STYLE_SKIP_PAGES:
+        html, ch = swap_block(html, "style", "Sunny site chat", STYLE_FRAG, page, "chat style", required=False)
+        if ch:
+            changed.append("style")
     html, ch, has_panel = swap_panel(html, page)
     if ch:
         changed.append("panel")
