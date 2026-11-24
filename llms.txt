@@ -26,16 +26,16 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 - The same Sunny at every location.
 - Honest boundary: Sunny does not book into the practice's schedule today and never touches the patient database. The team calls back — in control.
 
-## Coming (labeled coming, gate named)
-- Full conversations in Spanish, Arabic, and Farsi — coming soon (each language goes live only after real-path proof plus an ear pass; Spanish is closest).
-- Missed-call text-back — coming (carrier texting approval; resubmission pending).
-- Appointment confirmations and same-day backfill of cancelled slots — coming (rides texting + schedule read).
-- Recall and reactivation runs on the office's own list — coming.
-- Review requests by text — coming (a QR version works today).
-- Booking into Open Dental — coming (developer access in progress; nothing is booked by Sunny until this is live and proven).
-- Insurance eligibility verification — in the sandbox today; production comes with a signed pilot office.
-- Patient billing portal (patients pay the office directly) — coming, later phase.
-- Caller recognition and intent — coming, phased: Phase 1 (with the office dashboard) labels every call by intent (book / reschedule / billing / insurance / emergency) from the conversation itself and recognizes repeat callers from Sunny's own call history. Phase 2 (with the Open Dental connection) adds full patient match — a caller card with name, next appointment, and pending treatment. Neither phase is live today; Sunny does not match patient records today.
+## Not live today (state + gate named on every line)
+- Full conversations in Spanish, Arabic, and Farsi — IN BUILD (each language goes live only after real-path proof plus an ear pass; Spanish is closest).
+- Missed-call text-back — OFF the menu today (carrier texting approval; A2P registration rejected 2026-11-13, resubmission pending the EIN confirmation). Never sold or charged for before it exists.
+- Appointment confirmations and same-day backfill of cancelled slots — IN BUILD (rides texting approval + schedule read; books nothing).
+- Recall and reactivation runs on the office's own list — IN BUILD.
+- Review requests by text — IN BUILD (a QR version is LIVE today).
+- Booking into Open Dental — PILOT (direct booking proven 6-for-6 on Open Dental's test system/sandbox 2026-11-20; pilot offices first; nothing is booked by Sunny at a live office until booking is live and proven there).
+- Insurance eligibility verification — IN BUILD (works in our test environment today; production comes with a signed pilot office, BAA first).
+- Patient billing portal (patients pay the office directly) — IN BUILD, later phase.
+- Caller recognition and intent — IN BUILD, phased: Phase 1 (with the office dashboard) labels every call by intent (book / reschedule / billing / insurance / emergency) from the conversation itself and recognizes repeat callers from Sunny's own call history. Phase 2 (with the Open Dental connection) adds full patient match — a caller card with name, next appointment, and pending treatment. Neither phase is live today; Sunny does not match patient records today.
 
 ## Option — office-controlled
 - Warm transfer to the on-call dentist: NOT AVAILABLE YET — a spec item until the transfer path is built and tested end-to-end. When it ships, it is an office-controlled ON/OFF option: ON = a true emergency can be connected live to the on-call dentist. OFF = Sunny captures the details, flags it urgent, and alerts the team instead.
@@ -43,8 +43,8 @@ Sunny turns every missed call into a name, a number, and a next step — sorted 
 ## Pricing
 - After-Hours Capture — $199/mo.
 - 24/7 Complete — $299/mo.
-- Booked — $449/mo. Coming — gate: direct booking into the practice's own system (Open Dental first); Sunny captures-only until booking is live and proven, so Booked is not sold today.
-- Complete System — $549/mo. Coming — 1,500 minutes a month and 300 insurance eligibility checks included ($1.95 per check past those); sold only once its automated checking passes our measured labor test — until then, not sold at any price.
+- Booked — $449/mo. Not sold today — direct booking is in PILOT (proven 6-for-6 on Open Dental's test system, pilot offices first); Booked starts when booking is live and proven at real offices. Sunny captures-only until then.
+- Complete System — $549/mo. OFF as a buyable package today — 1,500 minutes a month and 300 insurance eligibility checks included ($1.95 per check past those); sold only once its automated checking passes our measured labor test — until then, not sold at any price.
 - $0 setup. Minutes included: 500 a month on After-Hours Capture, 1,000 on 24/7 Complete — past them, a small overage of $0.25/min. Month-to-month.
 - Included minutes: After-Hours Capture 500/mo · 24/7 Complete 1,000/mo · Booked 1,000/mo · Complete System 1,500/mo.
 - Paid 30-day pilot: first month up front, unconditional money-back guarantee — email hello@ringandrespond.com within 30 days.
